@@ -1,0 +1,62 @@
+[
+    {
+        "content": "<p>4:54 PM</p>\n<p>In Numbers Game, Level 4/4, I can specify a in<br>\nrw add_zero(a),<br>\nbut why do I get an error from<br>\nrw add_succ(a 0),<br>\ndespite the definition<br>\nadd_succ (a d : mynat) : a + succ(d) = succ (a + d) ?</p>",
+        "id": 203691543,
+        "sender_full_name": "Philip Vetter",
+        "timestamp": 1594630663
+    },
+    {
+        "content": "<p>What happens if you write <code>rw add_succ a 0</code> instead of <code>rw add_succ(a 0)</code>?</p>",
+        "id": 203691661,
+        "sender_full_name": "Markus Himmel",
+        "timestamp": 1594630732
+    },
+    {
+        "content": "<p>add_succ (a 0) means apply add_succ to the result of applying a to 0</p>",
+        "id": 203691861,
+        "sender_full_name": "Kenny Lau",
+        "timestamp": 1594630845
+    },
+    {
+        "content": "<p>well a cannot be applied to 0</p>",
+        "id": 203691872,
+        "sender_full_name": "Kenny Lau",
+        "timestamp": 1594630851
+    },
+    {
+        "content": "<p>I guess the syntax <code>def add_succ (a d : mynat) : a + succ(d) = succ (a + d)</code> can be confusing.</p>",
+        "id": 203691903,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1594630886
+    },
+    {
+        "content": "<p>You should read it as <code>def add_succ (a : mynat) (d : mynat) : etc...</code></p>",
+        "id": 203691926,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1594630908
+    },
+    {
+        "content": "<p>it's not a definition :P</p>",
+        "id": 203692039,
+        "sender_full_name": "Kenny Lau",
+        "timestamp": 1594630995
+    },
+    {
+        "content": "<p>What would you call it? A type declaration?</p>",
+        "id": 203692545,
+        "sender_full_name": "Philip Vetter",
+        "timestamp": 1594631357
+    },
+    {
+        "content": "<p>THIS WORKS: rw add_succ a 0</p>",
+        "id": 203692591,
+        "sender_full_name": "Philip Vetter",
+        "timestamp": 1594631402
+    },
+    {
+        "content": "<p>(Note this was Markus' first suggestion above.)</p>",
+        "id": 203692632,
+        "sender_full_name": "Scott Morrison",
+        "timestamp": 1594631425
+    }
+]

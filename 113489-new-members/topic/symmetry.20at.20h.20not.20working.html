@@ -1,0 +1,62 @@
+---
+layout: archive
+title: Zulip Chat Archive
+permalink: /stream/113489-new-members/topic/symmetry.20at.20h.20not.20working.html
+---
+
+<h2>Stream: <a href="http://robertylewis.com/archive/stream/113489-new-members/index.html">new members</a></h2>
+<h3>Topic: <a href="http://robertylewis.com/archive/stream/113489-new-members/topic/symmetry.20at.20h.20not.20working.html">symmetry at h not working</a></h3>
+
+<hr>
+
+<base href="https://leanprover.zulipchat.com">
+
+<head><link href="/style.css" rel="stylesheet"></head>
+
+{% raw %}
+
+<a name="199228126"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113489-new%20members/topic/symmetry%20at%20h%20not%20working/near/199228126" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Alena Gusakov <a href="http://robertylewis.com/archive/stream/113489-new-members/topic/symmetry.20at.20h.20not.20working.html#199228126">(May 30 2020 at 00:28)</a>:</h4>
+<p>I'm going through the complex number game and, for whatever reason, "symmetry at h" never works for me. I've found workarounds for it but I finally got stuck on a lemma without it and I don't know what's wrong with it. Could I just be on a version that doesn't allow symmetry on a hypothesis? I'm on version 3.13.2</p>
+
+
+
+<a name="199228298"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113489-new%20members/topic/symmetry%20at%20h%20not%20working/near/199228298" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bryan Gin-ge Chen <a href="http://robertylewis.com/archive/stream/113489-new-members/topic/symmetry.20at.20h.20not.20working.html#199228298">(May 30 2020 at 00:32)</a>:</h4>
+<p>I think you have to write <code>symmetry' at h</code>. Looks like there's a gap in our tactic docs...</p>
+
+
+
+<a name="199228595"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113489-new%20members/topic/symmetry%20at%20h%20not%20working/near/199228595" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/archive/stream/113489-new-members/topic/symmetry.20at.20h.20not.20working.html#199228595">(May 30 2020 at 00:37)</a>:</h4>
+<p>FYI you can always work around it with <code>have h := h.symm</code></p>
+
+
+
+<a name="199228671"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113489-new%20members/topic/symmetry%20at%20h%20not%20working/near/199228671" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/archive/stream/113489-new-members/topic/symmetry.20at.20h.20not.20working.html#199228671">(May 30 2020 at 00:38)</a>:</h4>
+<p>or generally use <code>h.symm</code> or <code>&lt;- h</code> where you would have used <code>h</code></p>
+
+
+
+<a name="199228842"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113489-new%20members/topic/symmetry%20at%20h%20not%20working/near/199228842" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Alena Gusakov <a href="http://robertylewis.com/archive/stream/113489-new-members/topic/symmetry.20at.20h.20not.20working.html#199228842">(May 30 2020 at 00:42)</a>:</h4>
+<p>symmetry' worked!! Thank you :)</p>
+
+
+
+<a name="199228852"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113489-new%20members/topic/symmetry%20at%20h%20not%20working/near/199228852" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Alena Gusakov <a href="http://robertylewis.com/archive/stream/113489-new-members/topic/symmetry.20at.20h.20not.20working.html#199228852">(May 30 2020 at 00:42)</a>:</h4>
+<p>And good to know</p>
+
+
+
+<a name="199242041"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113489-new%20members/topic/symmetry%20at%20h%20not%20working/near/199242041" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="http://robertylewis.com/archive/stream/113489-new-members/topic/symmetry.20at.20h.20not.20working.html#199242041">(May 30 2020 at 06:37)</a>:</h4>
+<p>Sorry, I think I made symmetry work in the natural number game by hackery, expecting lean to catch up some day...</p>
+
+
+
+{% endraw %}
+
+<hr><p>Last updated: Jul 19 2020 at 13:36 UTC</p>

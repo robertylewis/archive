@@ -1,0 +1,73 @@
+---
+layout: archive
+title: Zulip Chat Archive
+permalink: /stream/113489-new-members/topic/Invalid.20field.20notation.html
+---
+
+<h2>Stream: <a href="http://robertylewis.com/archive/stream/113489-new-members/index.html">new members</a></h2>
+<h3>Topic: <a href="http://robertylewis.com/archive/stream/113489-new-members/topic/Invalid.20field.20notation.html">Invalid field notation</a></h3>
+
+<hr>
+
+<base href="https://leanprover.zulipchat.com">
+
+<head><link href="/style.css" rel="stylesheet"></head>
+
+{% raw %}
+
+<a name="200000296"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113489-new%20members/topic/Invalid%20field%20notation/near/200000296" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Lucas Viana <a href="http://robertylewis.com/archive/stream/113489-new-members/topic/Invalid.20field.20notation.html#200000296">(Jun 07 2020 at 00:40)</a>:</h4>
+<p>Here Lean complains <code>invalid field notation, function 'measure_theory.measure_space.μ' does not have explicit argument with type (measure_theory.measure_space ...)</code></p>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="n">measure_theory</span><span class="bp">.</span><span class="n">measure_space</span>
+
+<span class="kn">open</span> <span class="n">measure_theory</span> <span class="n">set</span>
+
+<span class="kn">variables</span> <span class="o">{</span><span class="n">α</span> <span class="o">:</span> <span class="kt">Type</span><span class="bp">*</span><span class="o">}</span> <span class="o">[</span><span class="n">measure_space</span> <span class="n">α</span><span class="o">]</span>
+
+<span class="kn">structure</span> <span class="n">dynamic</span> <span class="o">(</span><span class="n">α</span> <span class="o">:</span> <span class="kt">Type</span><span class="bp">*</span><span class="o">)</span> <span class="kn">extends</span> <span class="n">measure_space</span> <span class="n">α</span> <span class="o">:=</span>
+<span class="o">(</span><span class="n">f</span> <span class="o">:</span> <span class="n">α</span> <span class="bp">→</span> <span class="n">α</span><span class="o">)</span>
+
+<span class="n">def</span> <span class="n">dynamic</span><span class="bp">.</span><span class="n">invariant</span> <span class="o">(</span><span class="n">d</span> <span class="o">:</span> <span class="n">dynamic</span> <span class="n">α</span><span class="o">)</span> <span class="o">(</span><span class="n">b</span> <span class="o">:</span> <span class="n">set</span> <span class="n">α</span><span class="o">)</span>  <span class="o">:=</span> <span class="n">image</span> <span class="n">d</span><span class="bp">.</span><span class="n">f</span> <span class="n">b</span> <span class="bp">=</span> <span class="n">b</span>
+
+<span class="n">def</span> <span class="n">ergodic</span> <span class="o">(</span><span class="n">d</span> <span class="o">:</span> <span class="n">dynamic</span> <span class="n">α</span><span class="o">)</span> <span class="o">:=</span>
+   <span class="bp">∀</span> <span class="o">(</span><span class="n">b</span><span class="o">)</span> <span class="o">(</span><span class="n">b_measurable</span> <span class="o">:</span> <span class="n">is_measurable</span> <span class="n">b</span><span class="o">)</span> <span class="o">(</span><span class="n">b_invariant</span> <span class="o">:</span> <span class="n">d</span><span class="bp">.</span><span class="n">invariant</span> <span class="n">b</span><span class="o">),</span>
+   <span class="n">d</span><span class="bp">.</span><span class="n">μ</span> <span class="n">b</span> <span class="bp">=</span> <span class="mi">0</span> <span class="bp">∨</span> <span class="n">d</span><span class="bp">.</span><span class="n">μ</span> <span class="n">b</span> <span class="bp">=</span> <span class="mi">1</span>
+</code></pre></div>
+
+
+<p>I think I don't understand how extending a class works. How would I use the measure of the <code>dynamic</code> inherited from the <code>measure_space</code>?</p>
+
+
+
+<a name="200000956"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113489-new%20members/topic/Invalid%20field%20notation/near/200000956" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Lucas Viana <a href="http://robertylewis.com/archive/stream/113489-new-members/topic/Invalid.20field.20notation.html#200000956">(Jun 07 2020 at 01:03)</a>:</h4>
+<p>(deleted)</p>
+
+
+
+<a name="200001412"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113489-new%20members/topic/Invalid%20field%20notation/near/200001412" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sam Lichtenstein <a href="http://robertylewis.com/archive/stream/113489-new-members/topic/Invalid.20field.20notation.html#200001412">(Jun 07 2020 at 01:19)</a>:</h4>
+<p>I think so. The <code>measure_space</code> class that you extended includes a choice of measure  on the measurable space <code>α</code>, and <code>volume</code> refers to this choice of measure (at least in the version of mathlib that I am looking at at the moment).</p>
+
+
+
+<a name="200001510"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113489-new%20members/topic/Invalid%20field%20notation/near/200001510" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sam Lichtenstein <a href="http://robertylewis.com/archive/stream/113489-new-members/topic/Invalid.20field.20notation.html#200001510">(Jun 07 2020 at 01:23)</a>:</h4>
+<p>I think if you want to work explicitly with the <code>μ</code> component of the measure space class, you can also do:</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">variables</span> <span class="o">{</span><span class="n">α</span> <span class="o">:</span> <span class="kt">Type</span><span class="bp">*</span><span class="o">}</span> <span class="o">[</span><span class="n">measure_space</span> <span class="n">α</span><span class="o">]</span>
+<span class="kn">variables</span> <span class="o">(</span><span class="n">b</span> <span class="o">:</span> <span class="n">set</span> <span class="n">α</span><span class="o">)[</span><span class="n">is_measurable</span> <span class="n">b</span><span class="o">]</span>
+<span class="bp">#</span><span class="kn">check</span> <span class="bp">@</span><span class="n">measure_space</span><span class="bp">.</span><span class="n">μ</span> <span class="n">α</span> <span class="bp">_</span> <span class="n">b</span>  <span class="c1">-- the underscore corresponds to the choice of [measure_space α] instance, which Lean infers from context</span>
+<span class="bp">``</span>
+</code></pre></div>
+
+
+
+<a name="200001562"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113489-new%20members/topic/Invalid%20field%20notation/near/200001562" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sam Lichtenstein <a href="http://robertylewis.com/archive/stream/113489-new-members/topic/Invalid.20field.20notation.html#200001562">(Jun 07 2020 at 01:25)</a>:</h4>
+<p>Or just <code>measure_space.μ b</code>. Since <code>b</code> is a subset of  <code>α</code>, Lean will look for the measure space instance on α that you declared and use that</p>
+
+
+
+{% endraw %}
+
+<hr><p>Last updated: Jul 19 2020 at 13:36 UTC</p>

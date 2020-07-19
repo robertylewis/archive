@@ -1,0 +1,32 @@
+[
+    {
+        "content": "<p>How do I download a specific version of mathlib (and Lean)?</p>",
+        "id": 197414333,
+        "sender_full_name": "Kenny Lau",
+        "timestamp": 1589377497
+    },
+    {
+        "content": "<p>currently I just created a new project using <code>leanproject new</code>and then changed the <code>leanpkg.toml</code>manually (by copying from another repo and changing the commit to what I need) and then using <code>leanproject get-mathlib-cache</code></p>",
+        "id": 197417910,
+        "sender_full_name": "Kenny Lau",
+        "timestamp": 1589379033
+    },
+    {
+        "content": "<p>do I need to do this every time?</p>",
+        "id": 197417941,
+        "sender_full_name": "Kenny Lau",
+        "timestamp": 1589379043
+    },
+    {
+        "content": "<p>what would you want to see in terms of workflow?</p>",
+        "id": 197851544,
+        "sender_full_name": "Ryan Lahfa",
+        "timestamp": 1589725172
+    },
+    {
+        "content": "<p>it could be possible I guess to have leanproject new --leanversion XXX, but for mathlib, I don't know if there's any proper tagging or versioning beyond the commit SHA256</p>",
+        "id": 197851588,
+        "sender_full_name": "Ryan Lahfa",
+        "timestamp": 1589725206
+    }
+]

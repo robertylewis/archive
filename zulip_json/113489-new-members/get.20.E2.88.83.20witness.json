@@ -1,0 +1,38 @@
+[
+    {
+        "content": "<p>How to get a witness from a hypothesis that starts with \"∃\" ?</p>",
+        "id": 203854390,
+        "sender_full_name": "Valéry Croizier",
+        "timestamp": 1594743887
+    },
+    {
+        "content": "<p>You can do <code>cases h with wit hw</code>.</p>",
+        "id": 203854654,
+        "sender_full_name": "Alex J. Best",
+        "timestamp": 1594744035
+    },
+    {
+        "content": "<p>If <code>h</code> is the name of your hypothesis.</p>",
+        "id": 203854689,
+        "sender_full_name": "Alex J. Best",
+        "timestamp": 1594744060
+    },
+    {
+        "content": "<p>Looks good, thanks!</p>",
+        "id": 203854785,
+        "sender_full_name": "Valéry Croizier",
+        "timestamp": 1594744104
+    },
+    {
+        "content": "<p>Or equivalently, <code>obtain ⟨v, hv⟩ := hexists,</code> where the brackets are typed <code>\\&lt;</code> and <code>\\&gt;</code>.</p>",
+        "id": 203887913,
+        "sender_full_name": "Jason Orendorff",
+        "timestamp": 1594760585
+    },
+    {
+        "content": "<p>You can even put <code>obtain ⟨v, hv⟩ : ∃ v : V, f v = 0 := hexists</code> -- the advantage of this is that it's very readable</p>",
+        "id": 203888077,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1594760657
+    }
+]

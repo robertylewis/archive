@@ -1,0 +1,482 @@
+[
+    {
+        "content": "<p>I fixed some of the easier sorrys on <code>caratheodory2</code> and enabled bigops notation.</p>",
+        "id": 199798360,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1591299379
+    },
+    {
+        "content": "<p>Removed another one</p>",
+        "id": 199802167,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1591301221
+    },
+    {
+        "content": "<p><code>convex_coefficients</code> is now sorry free</p>",
+        "id": 199802830,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1591301602
+    },
+    {
+        "content": "<p>Excellent. <code>exists_nontrivial_relation_of_dim_lt_card</code> is now sorry free.</p>",
+        "id": 199830713,
+        "sender_full_name": "Scott Morrison",
+        "timestamp": 1591324202
+    },
+    {
+        "content": "<p>There's one piece of maths still to do:</p>\n<div class=\"codehilite\"><pre><span></span><code><span class=\"kn\">lemma</span> <span class=\"n\">exists_nontrivial_relation_sum_zero_of_dim_succ_lt_card</span>\n  <span class=\"o\">{</span><span class=\"n\">t</span> <span class=\"o\">:</span> <span class=\"n\">finset</span> <span class=\"n\">E</span><span class=\"o\">}</span> <span class=\"o\">(</span><span class=\"n\">h</span> <span class=\"o\">:</span> <span class=\"n\">findim</span> <span class=\"n\">ℝ</span> <span class=\"n\">E</span> <span class=\"bp\">+</span> <span class=\"mi\">1</span> <span class=\"bp\">&lt;</span> <span class=\"n\">t</span><span class=\"bp\">.</span><span class=\"n\">card</span><span class=\"o\">)</span> <span class=\"o\">:</span>\n  <span class=\"bp\">∃</span> <span class=\"n\">f</span> <span class=\"o\">:</span> <span class=\"n\">E</span> <span class=\"bp\">→</span> <span class=\"n\">ℝ</span><span class=\"o\">,</span> <span class=\"err\">∑</span> <span class=\"n\">e</span> <span class=\"k\">in</span> <span class=\"n\">t</span><span class=\"o\">,</span> <span class=\"n\">f</span> <span class=\"n\">e</span> <span class=\"err\">•</span> <span class=\"n\">e</span> <span class=\"bp\">=</span> <span class=\"mi\">0</span> <span class=\"bp\">∧</span> <span class=\"err\">∑</span> <span class=\"n\">e</span> <span class=\"k\">in</span> <span class=\"n\">t</span><span class=\"o\">,</span> <span class=\"n\">f</span> <span class=\"n\">e</span> <span class=\"bp\">=</span> <span class=\"mi\">0</span> <span class=\"bp\">∧</span> <span class=\"bp\">∃</span> <span class=\"n\">x</span> <span class=\"err\">∈</span> <span class=\"n\">t</span><span class=\"o\">,</span> <span class=\"n\">f</span> <span class=\"n\">x</span> <span class=\"bp\">≠</span> <span class=\"mi\">0</span> <span class=\"o\">:=</span>\n<span class=\"k\">begin</span>\n  <span class=\"c1\">-- pick an element x₀ ∈ t,</span>\n  <span class=\"c1\">-- apply the previous lemma to the other xᵢ - x₀,</span>\n  <span class=\"c1\">-- to obtain a function `f`</span>\n  <span class=\"c1\">-- and then adjust f x₀ := - others.sum f</span>\n  <span class=\"n\">sorry</span>\n<span class=\"kn\">end</span>\n</code></pre></div>\n\n\n<p>and five easy sorries in <code>mem_convex_hull_erase</code>.</p>",
+        "id": 199830752,
+        "sender_full_name": "Scott Morrison",
+        "timestamp": 1591324238
+    },
+    {
+        "content": "<p>five - four = one</p>",
+        "id": 199851388,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1591348182
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"110087\">@Scott Morrison</span> are you working on this atm?</p>",
+        "id": 199852091,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1591348618
+    },
+    {
+        "content": "<p>I'd just paused for a bit, but yes, apparently we've been working at the same time.</p>",
+        "id": 199853253,
+        "sender_full_name": "Scott Morrison",
+        "timestamp": 1591349423
+    },
+    {
+        "content": "<p>Only 1 sorry left! (<span class=\"user-mention\" data-user-id=\"110087\">@Scott Morrison</span>)</p>",
+        "id": 199853321,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1591349489
+    },
+    {
+        "content": "<p>Just merged our changes.</p>",
+        "id": 199853334,
+        "sender_full_name": "Scott Morrison",
+        "timestamp": 1591349500
+    },
+    {
+        "content": "<p>It's surprisingly unpainful to have two people working at once</p>",
+        "id": 199853347,
+        "sender_full_name": "Scott Morrison",
+        "timestamp": 1591349510
+    },
+    {
+        "content": "<p>Well, we weren't doing the same lemma</p>",
+        "id": 199853426,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1591349537
+    },
+    {
+        "content": "<p>That <em>would</em> have been painful, I guess</p>",
+        "id": 199853436,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1591349545
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"110087\">@Scott Morrison</span> why is the final sorry true?</p>",
+        "id": 199853494,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1591349605
+    },
+    {
+        "content": "<p>it seems I have to do some recompiling</p>",
+        "id": 199853628,
+        "sender_full_name": "Scott Morrison",
+        "timestamp": 1591349707
+    },
+    {
+        "content": "<p>I guess that is a downside of too-active work on a branch :-)</p>",
+        "id": 199853641,
+        "sender_full_name": "Scott Morrison",
+        "timestamp": 1591349718
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"112680\">Johan Commelin</span> <a href=\"#narrow/stream/116395-maths/topic/Caratheodory/near/199851388\">said</a>:</p>\n<blockquote>\n<p>five - four = one</p>\n</blockquote>\n<p>have you tried <code>by norm_num</code>?</p>",
+        "id": 199853953,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1591349916
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"110087\">@Scott Morrison</span> I found my way out</p>",
+        "id": 199853975,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1591349934
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"110049\">@Mario Carneiro</span> Can <code>norm_num</code> already count sorrys in a file?</p>",
+        "id": 199853993,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1591349953
+    },
+    {
+        "content": "<p>I'm wondering if we should ship this branch to the sphere-eversion repository, postponing putting it in mathlib.</p>",
+        "id": 199854088,
+        "sender_full_name": "Scott Morrison",
+        "timestamp": 1591350014
+    },
+    {
+        "content": "<p>no, but it can verify exactly how far from done you are :)</p>",
+        "id": 199854092,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1591350016
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"110087\">@Scott Morrison</span> <span class=\"user-mention\" data-user-id=\"110031\">@Patrick Massot</span> We're sorry free</p>",
+        "id": 199854266,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1591350132
+    },
+    {
+        "content": "<p>I want to tack on a final theorem</p>",
+        "id": 199854284,
+        "sender_full_name": "Scott Morrison",
+        "timestamp": 1591350146
+    },
+    {
+        "content": "<p>given an explicit centre-of-mass of (d+1)-points formula</p>",
+        "id": 199854301,
+        "sender_full_name": "Scott Morrison",
+        "timestamp": 1591350160
+    },
+    {
+        "content": "<p>Go ahead. I need to prepare an exercise sheet <span aria-label=\"head bandage\" class=\"emoji emoji-1f915\" role=\"img\" title=\"head bandage\">:head_bandage:</span></p>",
+        "id": 199854307,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1591350164
+    },
+    {
+        "content": "<p>it's essentially just unfolding a definition</p>",
+        "id": 199854312,
+        "sender_full_name": "Scott Morrison",
+        "timestamp": 1591350167
+    },
+    {
+        "content": "<p>Why do you want postponing putting it in mathlib?</p>",
+        "id": 199854448,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1591350256
+    },
+    {
+        "content": "<p>There are a lot of specialized lemmas in this project, but that one goes to mathlib without any discussion.</p>",
+        "id": 199854477,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1591350284
+    },
+    {
+        "content": "<p>I mean we can discuss the implementation, but not the fact it belongs to mathlib.</p>",
+        "id": 199854511,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1591350304
+    },
+    {
+        "content": "<p>I would like to keep the number of lines in the sphere eversion project ≤ 2 as long as possible <span aria-label=\"grinning face with smiling eyes\" class=\"emoji emoji-1f601\" role=\"img\" title=\"grinning face with smiling eyes\">:grinning_face_with_smiling_eyes:</span></p>",
+        "id": 199854715,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1591350413
+    },
+    {
+        "content": "<p>I do want to make a PR to sphere-eversion to learn how to make something have a green background in the dependency graph. :-)</p>",
+        "id": 199857314,
+        "sender_full_name": "Scott Morrison",
+        "timestamp": 1591352184
+    },
+    {
+        "content": "<p>Presumably we should also make a PR to sphere-eversion to provide a link to the theorem once it is merged into mathlib.</p>",
+        "id": 199857333,
+        "sender_full_name": "Scott Morrison",
+        "timestamp": 1591352210
+    },
+    {
+        "content": "<p>Should we in the meantime give a link to the PR or something?</p>",
+        "id": 199857341,
+        "sender_full_name": "Scott Morrison",
+        "timestamp": 1591352223
+    },
+    {
+        "content": "<p>If the point of the dependency graph is to track sorries, then we should color caratheodory on the dependency graph as soon as there's a PR to mathlib which has no sorries and provides the theorem.</p>",
+        "id": 199921875,
+        "sender_full_name": "Jalex Stark",
+        "timestamp": 1591384554
+    },
+    {
+        "content": "<p>a low-tech and probably-bad way to do this is to copy-paste the proof from the PR, and leave a note saying \"once mathlib#xxxx is merged, we can replace all of the proofs in these files with calls to the library\"</p>",
+        "id": 199921972,
+        "sender_full_name": "Jalex Stark",
+        "timestamp": 1591384565
+    },
+    {
+        "content": "<p>a higher-tech thing would be to have a sphere-eversion branch of mathlib, and have it accept a merge from caratheodory2 as soon as it's sorry free</p>",
+        "id": 199922196,
+        "sender_full_name": "Jalex Stark",
+        "timestamp": 1591384696
+    },
+    {
+        "content": "<p>then the post-game work after defeating sphere-eversion is clear : get the sphere-eversion branch merged into master. this requires getting all of the machinery that was written as mathlib PRs to get merged into master.</p>",
+        "id": 199922496,
+        "sender_full_name": "Jalex Stark",
+        "timestamp": 1591384862
+    },
+    {
+        "content": "<p>I suggest adding an extra color or badge to differentiate between <code>sorry-free</code> and <code>merged-into-mathlib</code>.</p>",
+        "id": 199923507,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1591385421
+    },
+    {
+        "content": "<p>Because both are interesting states, but there can still be a decent amount of work between <code>sorry-free</code> and <code>merge-into-mathlib</code>.</p>",
+        "id": 199923555,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1591385460
+    },
+    {
+        "content": "<p>oh i guess we expect <em>everything</em> to end up in mathlib, and there are parts that we're PRing to mathlib early because they live far away from differential_topology or wherever the bulk of this work is going to end up</p>",
+        "id": 199923946,
+        "sender_full_name": "Jalex Stark",
+        "timestamp": 1591385696
+    },
+    {
+        "content": "<p>If we want everything into mathlib then the mathlib badge is not being in the project repo</p>",
+        "id": 199924165,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1591385818
+    },
+    {
+        "content": "<p>But it would be nice to see this in the graph</p>",
+        "id": 199924186,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1591385839
+    },
+    {
+        "content": "<p>Maybe a lighter green for stuff not in mathlib then?</p>",
+        "id": 199924333,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1591385910
+    },
+    {
+        "content": "<p>sounds good</p>",
+        "id": 199925215,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1591386368
+    },
+    {
+        "content": "<p>Let me officially start to change the blueprint because it was not precise enough. This is related to <a href=\"#narrow/stream/116395-maths/topic/Sphere.20eversion.20project/near/199963846\">Scott's comment</a>. So we no longer have Carathédory's lemma, because I slightly strengthened <a href=\"https://leanprover-community.github.io/sphere-eversion/blueprint/chap-loops.html#lem:caratheodory\">the statement</a>. The good point is that the next lemma now has a <a href=\"https://leanprover-community.github.io/sphere-eversion/blueprint/chap-loops.html#a0000000016\">proof blueprint</a>.</p>",
+        "id": 199974767,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1591449712
+    },
+    {
+        "content": "<p>I'd like to also write a proof blueprint for Carathéodory, but I fear it wouldn't match the almost proof that is currently PRed, so I'll let other people do that.</p>",
+        "id": 199974829,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1591449808
+    },
+    {
+        "content": "<p>Should we have stacks-style tags for statements in the blue print?</p>",
+        "id": 200004064,
+        "sender_full_name": "Scott Morrison",
+        "timestamp": 1591498162
+    },
+    {
+        "content": "<p>(i.e. names that don't change when theorem numbering changes?</p>",
+        "id": 200004067,
+        "sender_full_name": "Scott Morrison",
+        "timestamp": 1591498177
+    },
+    {
+        "content": "<p>It might be helpful when development is happening directly in mathlib or elsewhere on a \"blueprinted\" goal, to be able to give stable references back to the motivating points of a blueprint.</p>",
+        "id": 200004109,
+        "sender_full_name": "Scott Morrison",
+        "timestamp": 1591498210
+    },
+    {
+        "content": "<p>Do you mean LaTeX-style labels?</p>",
+        "id": 200005816,
+        "sender_full_name": "Yury G. Kudryashov",
+        "timestamp": 1591501675
+    },
+    {
+        "content": "<p>Can't we use implicit function theorem to get <a href=\"https://leanprover-community.github.io/sphere-eversion/blueprint/chap-loops.html#lem:smooth_convex_hull\">Lemma 1.6</a> for free?</p>",
+        "id": 200006416,
+        "sender_full_name": "Yury G. Kudryashov",
+        "timestamp": 1591502799
+    },
+    {
+        "content": "<p>No, we still need the derivative of <code>center_mass</code> w.r.t. the weights.</p>",
+        "id": 200006693,
+        "sender_full_name": "Yury G. Kudryashov",
+        "timestamp": 1591503438
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"214703\">@Yury G. Kudryashov</span>. Yes. More specifically, the suggestion was the the LaTeX style labels are just opaque alphanumeric identifiers, but with the implicit promise that they will never change. (If the theorem statement itself needs to change significantly, it should be given a new label.)</p>",
+        "id": 200006794,
+        "sender_full_name": "Scott Morrison",
+        "timestamp": 1591503574
+    },
+    {
+        "content": "<p>But the link <a href=\"https://leanprover-community.github.io/sphere-eversion/blueprint/chap-loops.html#lem:smooth_convex_hull\">https://leanprover-community.github.io/sphere-eversion/blueprint/chap-loops.html#lem:smooth_convex_hull</a> contains the LaTeX label. What else do you want?</p>",
+        "id": 200006851,
+        "sender_full_name": "Yury G. Kudryashov",
+        "timestamp": 1591503662
+    },
+    {
+        "content": "<ol>\n<li>To know how to name the corresponding Lean file for that lemma.</li>\n<li>To know how to refer to that lemma from a PR to mathlib</li>\n<li>To know what string to search for to find existing work on this lemma in the sphere-eversion repository.</li>\n</ol>\n<p><code>lem:smooth_convex_hull</code> doesn't quite answer all of these questions, because it's not a valid file name. But I agree it's close.<br>\nIncluding <code>chap-loops.html</code> in the unique identifier seems dangerous, because then it Patrick ever wants to move files around links break.</p>",
+        "id": 200007134,
+        "sender_full_name": "Scott Morrison",
+        "timestamp": 1591504129
+    },
+    {
+        "content": "<p>The Stacks Project solution is described at <a href=\"https://stacks.math.columbia.edu/tags\">https://stacks.math.columbia.edu/tags</a></p>",
+        "id": 200007139,
+        "sender_full_name": "Scott Morrison",
+        "timestamp": 1591504145
+    },
+    {
+        "content": "<p>(deleted)</p>",
+        "id": 200007320,
+        "sender_full_name": "Scott Morrison",
+        "timestamp": 1591504465
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"110031\">@Patrick Massot</span>, I think I disagree with your decision to strengthen the statement of Caratheodory's convexity itself in your blueprint.</p>\n<ol>\n<li>It makes it different from the statements I can find in the literature (which don't bother saying the coefficients are nonzero), and indeed more complicated.</li>\n<li>It's very easy to prove from the usual statement: \"Finally discard any of the points with coefficient zero.\"</li>\n<li>It just seems more natural to postpone talking about positive coefficients at all until we're in a context where it matters: we add the assumption the original set is open.</li>\n</ol>",
+        "id": 200007572,
+        "sender_full_name": "Scott Morrison",
+        "timestamp": 1591504986
+    },
+    {
+        "content": "<p>In any case, I pushed to <code>caratheodory2</code> an incomplete proof of the statement including positivity.</p>",
+        "id": 200008104,
+        "sender_full_name": "Scott Morrison",
+        "timestamp": 1591506081
+    },
+    {
+        "content": "<p>Still a little big_operator munging to do; two sorries remain.</p>",
+        "id": 200008107,
+        "sender_full_name": "Scott Morrison",
+        "timestamp": 1591506102
+    },
+    {
+        "content": "<p>Sorry I'm late to this discussion, I've been on family duty all day. I just started my computer 10 minutes ago.</p>",
+        "id": 200033571,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1591550726
+    },
+    {
+        "content": "<p>About the TeX label vs identifier discussion, I don't think we need to go down the stacks tag road. The Stacks project is about 6000 pages of mathematics which evolved a lot, and is cited in a <em>lot</em> of papers. Here we are discussing formalizing 20 pages of mathematics, even if I suspect it will be at least 30 pages at the end of the project. TeX labels are unique within a TeX document, and they can carry information. Certainly my choice of labels could be improved, but they are meant to help reading the dependency graph.</p>",
+        "id": 200033732,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1591550933
+    },
+    {
+        "content": "<p>Of course I want to automatically generate links to the source code from the website, instead of hardcoding them in the TeX source as is currently done. I'll work on that really soon. I didn't think about it but we could also have special comments in the Lean source referring to tex labels, and CI could check that those labels exist in the TeX source. This is all easy to do, it only takes time.</p>",
+        "id": 200033841,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1591551089
+    },
+    {
+        "content": "<p>About Carathéodory, I hesitated and went for the lazy solution, but I agree that we should stick to the usual statement for the lemma that is called Carathéodory in the TeX and Lean, and state the slightly more precise corollary as another lemma.</p>",
+        "id": 200033923,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1591551182
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"214703\">Yury G. Kudryashov</span> <a href=\"#narrow/stream/116395-maths/topic/Caratheodory/near/200006416\">said</a>:</p>\n<blockquote>\n<p>Can't we use implicit function theorem to get <a href=\"https://leanprover-community.github.io/sphere-eversion/blueprint/chap-loops.html#lem:smooth_convex_hull\">Lemma 1.6</a> for free?</p>\n</blockquote>\n<p>If you look at the git history, you'll see this was the original plan. But somehow I had remorse yesterday because this implicit function is totally explicit. Actually the current version of the proof is not totally explicit because I needed to go to bed, but I'll finish expliciting it tonight. I'm not too happy about how long it turned out to be in TeX, so I wouldn't mind going back to the implicit function plan. In terms of library development I think both roads are interesting. Making sure the implicit function theorem is nice to use is important, and developing linear algebra is important. For instance the elementary road I have in mind would use the determinant of a family of vectors with respect to a basis, and I think we don't have that yet.</p>",
+        "id": 200034169,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1591551526
+    },
+    {
+        "content": "<p>I pushed details about smoothness of the explicit function in <a href=\"https://github.com/leanprover-community/sphere-eversion/commit/e64b710025e18c7432b86775d714ef8b96f21aa5\">https://github.com/leanprover-community/sphere-eversion/commit/e64b710025e18c7432b86775d714ef8b96f21aa5</a></p>",
+        "id": 200044104,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1591566378
+    },
+    {
+        "content": "<p>I created <a href=\"https://github.com/leanprover-community/mathlib/issues/3030\">#3030</a> (<span class=\"user-mention\" data-user-id=\"110087\">@Scott Morrison</span>) that splits of all the smaller changes (10 files, ~138 lines).<br>\nWhat remains is 2 larger diffs.</p>",
+        "id": 200547514,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1591883918
+    },
+    {
+        "content": "<p>I lost track of the plan here. Are we still waiting for some affine geometry stuff? Or are you trying to get the linear space version merged?</p>",
+        "id": 200601731,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1591907382
+    },
+    {
+        "content": "<p>I think it makes sense to merge the vector space version, and to plan to upgrade it to affine spaces later, when the requirements are in place, and someone has the energy/need.</p>\n<p>\"Perfect is the enemy of good.\"</p>",
+        "id": 200620572,
+        "sender_full_name": "Scott Morrison",
+        "timestamp": 1591918805
+    },
+    {
+        "content": "<p>(deleted)</p>",
+        "id": 200633434,
+        "sender_full_name": "Floris van Doorn",
+        "timestamp": 1591935171
+    },
+    {
+        "content": "<p>We now have a version of Carathéodory in mathlib ( <span aria-label=\"tada\" class=\"emoji emoji-1f389\" role=\"img\" title=\"tada\">:tada:</span>) but I think this was no longer exactly the statement that was needed for Sphere Eversion, right?</p>",
+        "id": 200916374,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1592240148
+    },
+    {
+        "content": "<p>I'll switch back to this statement in the sphere eversion project, and add the more precise statement as another lemma.</p>",
+        "id": 200923434,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1592243555
+    },
+    {
+        "content": "<p>Does that mean we get some green in the graph? <span aria-label=\"green heart\" class=\"emoji emoji-1f49a\" role=\"img\" title=\"green heart\">:green_heart:</span></p>",
+        "id": 200923518,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1592243611
+    },
+    {
+        "content": "<p>Yes, I'll try to do that tonight</p>",
+        "id": 200923557,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1592243640
+    },
+    {
+        "content": "<p>Awesome!</p>",
+        "id": 200923608,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1592243648
+    },
+    {
+        "content": "<p>I'm confused now. I wanted to update the sphere eversion but <a href=\"https://github.com/leanprover-community/mathlib/issues/2960\">#2960</a> actually isn't merged, right?</p>",
+        "id": 200947266,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1592255961
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"110031\">@Patrick Massot</span> Do you mind giving your approval to bors if you're happy with it?</p>",
+        "id": 200969273,
+        "sender_full_name": "Bryan Gin-ge Chen",
+        "timestamp": 1592277581
+    },
+    {
+        "content": "<p>Huh... I don't know why I thought so.... but I was convinced it was merged.</p>",
+        "id": 200973481,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1592283493
+    },
+    {
+        "content": "<p>Carathéodory now appears in green at <a href=\"https://leanprover-community.github.io/sphere-eversion/blueprint/dep_graph.html\">https://leanprover-community.github.io/sphere-eversion/blueprint/dep_graph.html</a>. But the proof probably needs refactoring in order to prove the refined statement. Note that <a href=\"https://github.com/leanprover-community/mathlib/blob/a432a3a193aac390d347835881f48a5e5bac6ed9/src/analysis/convex/caratheodory.lean#L213\">https://github.com/leanprover-community/mathlib/blob/a432a3a193aac390d347835881f48a5e5bac6ed9/src/analysis/convex/caratheodory.lean#L213</a> is only half of the refinement (dropping the points having vanishing weights, but without ensuring the remaining points are affinely independent).</p>",
+        "id": 201066387,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1592337602
+    },
+    {
+        "content": "<p>Also, that lemma didn't have a proof in the blueprint, so <a href=\"https://leanprover-community.github.io/sphere-eversion/blueprint/chap-loops.html#a0000000016\">I added one</a> following the Lean code. It's hard to believe that the Lean proof wouldn't be simpler by using a map from <code>fin n</code> to <code>E</code> instead of a <code>finset E</code>. I couldn't bring myself to use weights indexed by points of <code>E</code> in the blueprint.</p>",
+        "id": 201066804,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1592337771
+    }
+]

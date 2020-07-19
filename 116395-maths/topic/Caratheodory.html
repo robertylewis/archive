@@ -1,0 +1,535 @@
+---
+layout: archive
+title: Zulip Chat Archive
+permalink: /stream/116395-maths/topic/Caratheodory.html
+---
+
+<h2>Stream: <a href="http://robertylewis.com/archive/stream/116395-maths/index.html">maths</a></h2>
+<h3>Topic: <a href="http://robertylewis.com/archive/stream/116395-maths/topic/Caratheodory.html">Caratheodory</a></h3>
+
+<hr>
+
+<base href="https://leanprover.zulipchat.com">
+
+<head><link href="/style.css" rel="stylesheet"></head>
+
+{% raw %}
+
+<a name="199798360"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/Caratheodory/near/199798360" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="http://robertylewis.com/archive/stream/116395-maths/topic/Caratheodory.html#199798360">(Jun 04 2020 at 19:36)</a>:</h4>
+<p>I fixed some of the easier sorrys on <code>caratheodory2</code> and enabled bigops notation.</p>
+
+
+
+<a name="199802167"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/Caratheodory/near/199802167" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="http://robertylewis.com/archive/stream/116395-maths/topic/Caratheodory.html#199802167">(Jun 04 2020 at 20:07)</a>:</h4>
+<p>Removed another one</p>
+
+
+
+<a name="199802830"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/Caratheodory/near/199802830" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="http://robertylewis.com/archive/stream/116395-maths/topic/Caratheodory.html#199802830">(Jun 04 2020 at 20:13)</a>:</h4>
+<p><code>convex_coefficients</code> is now sorry free</p>
+
+
+
+<a name="199830713"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/Caratheodory/near/199830713" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Scott Morrison <a href="http://robertylewis.com/archive/stream/116395-maths/topic/Caratheodory.html#199830713">(Jun 05 2020 at 02:30)</a>:</h4>
+<p>Excellent. <code>exists_nontrivial_relation_of_dim_lt_card</code> is now sorry free.</p>
+
+
+
+<a name="199830752"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/Caratheodory/near/199830752" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Scott Morrison <a href="http://robertylewis.com/archive/stream/116395-maths/topic/Caratheodory.html#199830752">(Jun 05 2020 at 02:30)</a>:</h4>
+<p>There's one piece of maths still to do:</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">lemma</span> <span class="n">exists_nontrivial_relation_sum_zero_of_dim_succ_lt_card</span>
+  <span class="o">{</span><span class="n">t</span> <span class="o">:</span> <span class="n">finset</span> <span class="n">E</span><span class="o">}</span> <span class="o">(</span><span class="n">h</span> <span class="o">:</span> <span class="n">findim</span> <span class="n">ℝ</span> <span class="n">E</span> <span class="bp">+</span> <span class="mi">1</span> <span class="bp">&lt;</span> <span class="n">t</span><span class="bp">.</span><span class="n">card</span><span class="o">)</span> <span class="o">:</span>
+  <span class="bp">∃</span> <span class="n">f</span> <span class="o">:</span> <span class="n">E</span> <span class="bp">→</span> <span class="n">ℝ</span><span class="o">,</span> <span class="err">∑</span> <span class="n">e</span> <span class="k">in</span> <span class="n">t</span><span class="o">,</span> <span class="n">f</span> <span class="n">e</span> <span class="err">•</span> <span class="n">e</span> <span class="bp">=</span> <span class="mi">0</span> <span class="bp">∧</span> <span class="err">∑</span> <span class="n">e</span> <span class="k">in</span> <span class="n">t</span><span class="o">,</span> <span class="n">f</span> <span class="n">e</span> <span class="bp">=</span> <span class="mi">0</span> <span class="bp">∧</span> <span class="bp">∃</span> <span class="n">x</span> <span class="err">∈</span> <span class="n">t</span><span class="o">,</span> <span class="n">f</span> <span class="n">x</span> <span class="bp">≠</span> <span class="mi">0</span> <span class="o">:=</span>
+<span class="k">begin</span>
+  <span class="c1">-- pick an element x₀ ∈ t,</span>
+  <span class="c1">-- apply the previous lemma to the other xᵢ - x₀,</span>
+  <span class="c1">-- to obtain a function `f`</span>
+  <span class="c1">-- and then adjust f x₀ := - others.sum f</span>
+  <span class="n">sorry</span>
+<span class="kn">end</span>
+</code></pre></div>
+
+
+<p>and five easy sorries in <code>mem_convex_hull_erase</code>.</p>
+
+
+
+<a name="199851388"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/Caratheodory/near/199851388" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="http://robertylewis.com/archive/stream/116395-maths/topic/Caratheodory.html#199851388">(Jun 05 2020 at 09:09)</a>:</h4>
+<p>five - four = one</p>
+
+
+
+<a name="199852091"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/Caratheodory/near/199852091" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="http://robertylewis.com/archive/stream/116395-maths/topic/Caratheodory.html#199852091">(Jun 05 2020 at 09:16)</a>:</h4>
+<p><span class="user-mention" data-user-id="110087">@Scott Morrison</span> are you working on this atm?</p>
+
+
+
+<a name="199853253"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/Caratheodory/near/199853253" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Scott Morrison <a href="http://robertylewis.com/archive/stream/116395-maths/topic/Caratheodory.html#199853253">(Jun 05 2020 at 09:30)</a>:</h4>
+<p>I'd just paused for a bit, but yes, apparently we've been working at the same time.</p>
+
+
+
+<a name="199853321"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/Caratheodory/near/199853321" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="http://robertylewis.com/archive/stream/116395-maths/topic/Caratheodory.html#199853321">(Jun 05 2020 at 09:31)</a>:</h4>
+<p>Only 1 sorry left! (<span class="user-mention" data-user-id="110087">@Scott Morrison</span>)</p>
+
+
+
+<a name="199853334"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/Caratheodory/near/199853334" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Scott Morrison <a href="http://robertylewis.com/archive/stream/116395-maths/topic/Caratheodory.html#199853334">(Jun 05 2020 at 09:31)</a>:</h4>
+<p>Just merged our changes.</p>
+
+
+
+<a name="199853347"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/Caratheodory/near/199853347" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Scott Morrison <a href="http://robertylewis.com/archive/stream/116395-maths/topic/Caratheodory.html#199853347">(Jun 05 2020 at 09:31)</a>:</h4>
+<p>It's surprisingly unpainful to have two people working at once</p>
+
+
+
+<a name="199853426"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/Caratheodory/near/199853426" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="http://robertylewis.com/archive/stream/116395-maths/topic/Caratheodory.html#199853426">(Jun 05 2020 at 09:32)</a>:</h4>
+<p>Well, we weren't doing the same lemma</p>
+
+
+
+<a name="199853436"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/Caratheodory/near/199853436" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="http://robertylewis.com/archive/stream/116395-maths/topic/Caratheodory.html#199853436">(Jun 05 2020 at 09:32)</a>:</h4>
+<p>That <em>would</em> have been painful, I guess</p>
+
+
+
+<a name="199853494"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/Caratheodory/near/199853494" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="http://robertylewis.com/archive/stream/116395-maths/topic/Caratheodory.html#199853494">(Jun 05 2020 at 09:33)</a>:</h4>
+<p><span class="user-mention" data-user-id="110087">@Scott Morrison</span> why is the final sorry true?</p>
+
+
+
+<a name="199853628"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/Caratheodory/near/199853628" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Scott Morrison <a href="http://robertylewis.com/archive/stream/116395-maths/topic/Caratheodory.html#199853628">(Jun 05 2020 at 09:35)</a>:</h4>
+<p>it seems I have to do some recompiling</p>
+
+
+
+<a name="199853641"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/Caratheodory/near/199853641" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Scott Morrison <a href="http://robertylewis.com/archive/stream/116395-maths/topic/Caratheodory.html#199853641">(Jun 05 2020 at 09:35)</a>:</h4>
+<p>I guess that is a downside of too-active work on a branch :-)</p>
+
+
+
+<a name="199853953"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/Caratheodory/near/199853953" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/archive/stream/116395-maths/topic/Caratheodory.html#199853953">(Jun 05 2020 at 09:38)</a>:</h4>
+<p><span class="user-mention silent" data-user-id="112680">Johan Commelin</span> <a href="#narrow/stream/116395-maths/topic/Caratheodory/near/199851388">said</a>:</p>
+<blockquote>
+<p>five - four = one</p>
+</blockquote>
+<p>have you tried <code>by norm_num</code>?</p>
+
+
+
+<a name="199853975"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/Caratheodory/near/199853975" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="http://robertylewis.com/archive/stream/116395-maths/topic/Caratheodory.html#199853975">(Jun 05 2020 at 09:38)</a>:</h4>
+<p><span class="user-mention" data-user-id="110087">@Scott Morrison</span> I found my way out</p>
+
+
+
+<a name="199853993"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/Caratheodory/near/199853993" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="http://robertylewis.com/archive/stream/116395-maths/topic/Caratheodory.html#199853993">(Jun 05 2020 at 09:39)</a>:</h4>
+<p><span class="user-mention" data-user-id="110049">@Mario Carneiro</span> Can <code>norm_num</code> already count sorrys in a file?</p>
+
+
+
+<a name="199854088"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/Caratheodory/near/199854088" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Scott Morrison <a href="http://robertylewis.com/archive/stream/116395-maths/topic/Caratheodory.html#199854088">(Jun 05 2020 at 09:40)</a>:</h4>
+<p>I'm wondering if we should ship this branch to the sphere-eversion repository, postponing putting it in mathlib.</p>
+
+
+
+<a name="199854092"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/Caratheodory/near/199854092" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/archive/stream/116395-maths/topic/Caratheodory.html#199854092">(Jun 05 2020 at 09:40)</a>:</h4>
+<p>no, but it can verify exactly how far from done you are :)</p>
+
+
+
+<a name="199854266"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/Caratheodory/near/199854266" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="http://robertylewis.com/archive/stream/116395-maths/topic/Caratheodory.html#199854266">(Jun 05 2020 at 09:42)</a>:</h4>
+<p><span class="user-mention" data-user-id="110087">@Scott Morrison</span> <span class="user-mention" data-user-id="110031">@Patrick Massot</span> We're sorry free</p>
+
+
+
+<a name="199854284"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/Caratheodory/near/199854284" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Scott Morrison <a href="http://robertylewis.com/archive/stream/116395-maths/topic/Caratheodory.html#199854284">(Jun 05 2020 at 09:42)</a>:</h4>
+<p>I want to tack on a final theorem</p>
+
+
+
+<a name="199854301"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/Caratheodory/near/199854301" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Scott Morrison <a href="http://robertylewis.com/archive/stream/116395-maths/topic/Caratheodory.html#199854301">(Jun 05 2020 at 09:42)</a>:</h4>
+<p>given an explicit centre-of-mass of (d+1)-points formula</p>
+
+
+
+<a name="199854307"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/Caratheodory/near/199854307" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="http://robertylewis.com/archive/stream/116395-maths/topic/Caratheodory.html#199854307">(Jun 05 2020 at 09:42)</a>:</h4>
+<p>Go ahead. I need to prepare an exercise sheet <span aria-label="head bandage" class="emoji emoji-1f915" role="img" title="head bandage">:head_bandage:</span></p>
+
+
+
+<a name="199854312"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/Caratheodory/near/199854312" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Scott Morrison <a href="http://robertylewis.com/archive/stream/116395-maths/topic/Caratheodory.html#199854312">(Jun 05 2020 at 09:42)</a>:</h4>
+<p>it's essentially just unfolding a definition</p>
+
+
+
+<a name="199854448"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/Caratheodory/near/199854448" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="http://robertylewis.com/archive/stream/116395-maths/topic/Caratheodory.html#199854448">(Jun 05 2020 at 09:44)</a>:</h4>
+<p>Why do you want postponing putting it in mathlib?</p>
+
+
+
+<a name="199854477"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/Caratheodory/near/199854477" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="http://robertylewis.com/archive/stream/116395-maths/topic/Caratheodory.html#199854477">(Jun 05 2020 at 09:44)</a>:</h4>
+<p>There are a lot of specialized lemmas in this project, but that one goes to mathlib without any discussion.</p>
+
+
+
+<a name="199854511"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/Caratheodory/near/199854511" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="http://robertylewis.com/archive/stream/116395-maths/topic/Caratheodory.html#199854511">(Jun 05 2020 at 09:45)</a>:</h4>
+<p>I mean we can discuss the implementation, but not the fact it belongs to mathlib.</p>
+
+
+
+<a name="199854715"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/Caratheodory/near/199854715" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="http://robertylewis.com/archive/stream/116395-maths/topic/Caratheodory.html#199854715">(Jun 05 2020 at 09:46)</a>:</h4>
+<p>I would like to keep the number of lines in the sphere eversion project ≤ 2 as long as possible <span aria-label="grinning face with smiling eyes" class="emoji emoji-1f601" role="img" title="grinning face with smiling eyes">:grinning_face_with_smiling_eyes:</span></p>
+
+
+
+<a name="199857314"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/Caratheodory/near/199857314" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Scott Morrison <a href="http://robertylewis.com/archive/stream/116395-maths/topic/Caratheodory.html#199857314">(Jun 05 2020 at 10:16)</a>:</h4>
+<p>I do want to make a PR to sphere-eversion to learn how to make something have a green background in the dependency graph. :-)</p>
+
+
+
+<a name="199857333"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/Caratheodory/near/199857333" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Scott Morrison <a href="http://robertylewis.com/archive/stream/116395-maths/topic/Caratheodory.html#199857333">(Jun 05 2020 at 10:16)</a>:</h4>
+<p>Presumably we should also make a PR to sphere-eversion to provide a link to the theorem once it is merged into mathlib.</p>
+
+
+
+<a name="199857341"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/Caratheodory/near/199857341" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Scott Morrison <a href="http://robertylewis.com/archive/stream/116395-maths/topic/Caratheodory.html#199857341">(Jun 05 2020 at 10:17)</a>:</h4>
+<p>Should we in the meantime give a link to the PR or something?</p>
+
+
+
+<a name="199921875"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/Caratheodory/near/199921875" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jalex Stark <a href="http://robertylewis.com/archive/stream/116395-maths/topic/Caratheodory.html#199921875">(Jun 05 2020 at 19:15)</a>:</h4>
+<p>If the point of the dependency graph is to track sorries, then we should color caratheodory on the dependency graph as soon as there's a PR to mathlib which has no sorries and provides the theorem.</p>
+
+
+
+<a name="199921972"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/Caratheodory/near/199921972" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jalex Stark <a href="http://robertylewis.com/archive/stream/116395-maths/topic/Caratheodory.html#199921972">(Jun 05 2020 at 19:16)</a>:</h4>
+<p>a low-tech and probably-bad way to do this is to copy-paste the proof from the PR, and leave a note saying "once mathlib#xxxx is merged, we can replace all of the proofs in these files with calls to the library"</p>
+
+
+
+<a name="199922196"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/Caratheodory/near/199922196" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jalex Stark <a href="http://robertylewis.com/archive/stream/116395-maths/topic/Caratheodory.html#199922196">(Jun 05 2020 at 19:18)</a>:</h4>
+<p>a higher-tech thing would be to have a sphere-eversion branch of mathlib, and have it accept a merge from caratheodory2 as soon as it's sorry free</p>
+
+
+
+<a name="199922496"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/Caratheodory/near/199922496" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jalex Stark <a href="http://robertylewis.com/archive/stream/116395-maths/topic/Caratheodory.html#199922496">(Jun 05 2020 at 19:21)</a>:</h4>
+<p>then the post-game work after defeating sphere-eversion is clear : get the sphere-eversion branch merged into master. this requires getting all of the machinery that was written as mathlib PRs to get merged into master.</p>
+
+
+
+<a name="199923507"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/Caratheodory/near/199923507" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="http://robertylewis.com/archive/stream/116395-maths/topic/Caratheodory.html#199923507">(Jun 05 2020 at 19:30)</a>:</h4>
+<p>I suggest adding an extra color or badge to differentiate between <code>sorry-free</code> and <code>merged-into-mathlib</code>.</p>
+
+
+
+<a name="199923555"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/Caratheodory/near/199923555" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="http://robertylewis.com/archive/stream/116395-maths/topic/Caratheodory.html#199923555">(Jun 05 2020 at 19:31)</a>:</h4>
+<p>Because both are interesting states, but there can still be a decent amount of work between <code>sorry-free</code> and <code>merge-into-mathlib</code>.</p>
+
+
+
+<a name="199923946"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/Caratheodory/near/199923946" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jalex Stark <a href="http://robertylewis.com/archive/stream/116395-maths/topic/Caratheodory.html#199923946">(Jun 05 2020 at 19:34)</a>:</h4>
+<p>oh i guess we expect <em>everything</em> to end up in mathlib, and there are parts that we're PRing to mathlib early because they live far away from differential_topology or wherever the bulk of this work is going to end up</p>
+
+
+
+<a name="199924165"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/Caratheodory/near/199924165" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="http://robertylewis.com/archive/stream/116395-maths/topic/Caratheodory.html#199924165">(Jun 05 2020 at 19:36)</a>:</h4>
+<p>If we want everything into mathlib then the mathlib badge is not being in the project repo</p>
+
+
+
+<a name="199924186"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/Caratheodory/near/199924186" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="http://robertylewis.com/archive/stream/116395-maths/topic/Caratheodory.html#199924186">(Jun 05 2020 at 19:37)</a>:</h4>
+<p>But it would be nice to see this in the graph</p>
+
+
+
+<a name="199924333"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/Caratheodory/near/199924333" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="http://robertylewis.com/archive/stream/116395-maths/topic/Caratheodory.html#199924333">(Jun 05 2020 at 19:38)</a>:</h4>
+<p>Maybe a lighter green for stuff not in mathlib then?</p>
+
+
+
+<a name="199925215"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/Caratheodory/near/199925215" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="http://robertylewis.com/archive/stream/116395-maths/topic/Caratheodory.html#199925215">(Jun 05 2020 at 19:46)</a>:</h4>
+<p>sounds good</p>
+
+
+
+<a name="199974767"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/Caratheodory/near/199974767" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="http://robertylewis.com/archive/stream/116395-maths/topic/Caratheodory.html#199974767">(Jun 06 2020 at 13:21)</a>:</h4>
+<p>Let me officially start to change the blueprint because it was not precise enough. This is related to <a href="#narrow/stream/116395-maths/topic/Sphere.20eversion.20project/near/199963846">Scott's comment</a>. So we no longer have Carathédory's lemma, because I slightly strengthened <a href="https://leanprover-community.github.io/sphere-eversion/blueprint/chap-loops.html#lem:caratheodory">the statement</a>. The good point is that the next lemma now has a <a href="https://leanprover-community.github.io/sphere-eversion/blueprint/chap-loops.html#a0000000016">proof blueprint</a>.</p>
+
+
+
+<a name="199974829"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/Caratheodory/near/199974829" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="http://robertylewis.com/archive/stream/116395-maths/topic/Caratheodory.html#199974829">(Jun 06 2020 at 13:23)</a>:</h4>
+<p>I'd like to also write a proof blueprint for Carathéodory, but I fear it wouldn't match the almost proof that is currently PRed, so I'll let other people do that.</p>
+
+
+
+<a name="200004064"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/Caratheodory/near/200004064" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Scott Morrison <a href="http://robertylewis.com/archive/stream/116395-maths/topic/Caratheodory.html#200004064">(Jun 07 2020 at 02:49)</a>:</h4>
+<p>Should we have stacks-style tags for statements in the blue print?</p>
+
+
+
+<a name="200004067"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/Caratheodory/near/200004067" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Scott Morrison <a href="http://robertylewis.com/archive/stream/116395-maths/topic/Caratheodory.html#200004067">(Jun 07 2020 at 02:49)</a>:</h4>
+<p>(i.e. names that don't change when theorem numbering changes?</p>
+
+
+
+<a name="200004109"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/Caratheodory/near/200004109" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Scott Morrison <a href="http://robertylewis.com/archive/stream/116395-maths/topic/Caratheodory.html#200004109">(Jun 07 2020 at 02:50)</a>:</h4>
+<p>It might be helpful when development is happening directly in mathlib or elsewhere on a "blueprinted" goal, to be able to give stable references back to the motivating points of a blueprint.</p>
+
+
+
+<a name="200005816"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/Caratheodory/near/200005816" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Yury G. Kudryashov <a href="http://robertylewis.com/archive/stream/116395-maths/topic/Caratheodory.html#200005816">(Jun 07 2020 at 03:47)</a>:</h4>
+<p>Do you mean LaTeX-style labels?</p>
+
+
+
+<a name="200006416"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/Caratheodory/near/200006416" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Yury G. Kudryashov <a href="http://robertylewis.com/archive/stream/116395-maths/topic/Caratheodory.html#200006416">(Jun 07 2020 at 04:06)</a>:</h4>
+<p>Can't we use implicit function theorem to get <a href="https://leanprover-community.github.io/sphere-eversion/blueprint/chap-loops.html#lem:smooth_convex_hull">Lemma 1.6</a> for free?</p>
+
+
+
+<a name="200006693"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/Caratheodory/near/200006693" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Yury G. Kudryashov <a href="http://robertylewis.com/archive/stream/116395-maths/topic/Caratheodory.html#200006693">(Jun 07 2020 at 04:17)</a>:</h4>
+<p>No, we still need the derivative of <code>center_mass</code> w.r.t. the weights.</p>
+
+
+
+<a name="200006794"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/Caratheodory/near/200006794" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Scott Morrison <a href="http://robertylewis.com/archive/stream/116395-maths/topic/Caratheodory.html#200006794">(Jun 07 2020 at 04:19)</a>:</h4>
+<p><span class="user-mention" data-user-id="214703">@Yury G. Kudryashov</span>. Yes. More specifically, the suggestion was the the LaTeX style labels are just opaque alphanumeric identifiers, but with the implicit promise that they will never change. (If the theorem statement itself needs to change significantly, it should be given a new label.)</p>
+
+
+
+<a name="200006851"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/Caratheodory/near/200006851" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Yury G. Kudryashov <a href="http://robertylewis.com/archive/stream/116395-maths/topic/Caratheodory.html#200006851">(Jun 07 2020 at 04:21)</a>:</h4>
+<p>But the link <a href="https://leanprover-community.github.io/sphere-eversion/blueprint/chap-loops.html#lem:smooth_convex_hull">https://leanprover-community.github.io/sphere-eversion/blueprint/chap-loops.html#lem:smooth_convex_hull</a> contains the LaTeX label. What else do you want?</p>
+
+
+
+<a name="200007134"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/Caratheodory/near/200007134" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Scott Morrison <a href="http://robertylewis.com/archive/stream/116395-maths/topic/Caratheodory.html#200007134">(Jun 07 2020 at 04:28)</a>:</h4>
+<ol>
+<li>To know how to name the corresponding Lean file for that lemma.</li>
+<li>To know how to refer to that lemma from a PR to mathlib</li>
+<li>To know what string to search for to find existing work on this lemma in the sphere-eversion repository.</li>
+</ol>
+<p><code>lem:smooth_convex_hull</code> doesn't quite answer all of these questions, because it's not a valid file name. But I agree it's close.<br>
+Including <code>chap-loops.html</code> in the unique identifier seems dangerous, because then it Patrick ever wants to move files around links break.</p>
+
+
+
+<a name="200007139"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/Caratheodory/near/200007139" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Scott Morrison <a href="http://robertylewis.com/archive/stream/116395-maths/topic/Caratheodory.html#200007139">(Jun 07 2020 at 04:29)</a>:</h4>
+<p>The Stacks Project solution is described at <a href="https://stacks.math.columbia.edu/tags">https://stacks.math.columbia.edu/tags</a></p>
+
+
+
+<a name="200007320"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/Caratheodory/near/200007320" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Scott Morrison <a href="http://robertylewis.com/archive/stream/116395-maths/topic/Caratheodory.html#200007320">(Jun 07 2020 at 04:34)</a>:</h4>
+<p>(deleted)</p>
+
+
+
+<a name="200007572"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/Caratheodory/near/200007572" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Scott Morrison <a href="http://robertylewis.com/archive/stream/116395-maths/topic/Caratheodory.html#200007572">(Jun 07 2020 at 04:43)</a>:</h4>
+<p><span class="user-mention" data-user-id="110031">@Patrick Massot</span>, I think I disagree with your decision to strengthen the statement of Caratheodory's convexity itself in your blueprint.</p>
+<ol>
+<li>It makes it different from the statements I can find in the literature (which don't bother saying the coefficients are nonzero), and indeed more complicated.</li>
+<li>It's very easy to prove from the usual statement: "Finally discard any of the points with coefficient zero."</li>
+<li>It just seems more natural to postpone talking about positive coefficients at all until we're in a context where it matters: we add the assumption the original set is open.</li>
+</ol>
+
+
+
+<a name="200008104"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/Caratheodory/near/200008104" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Scott Morrison <a href="http://robertylewis.com/archive/stream/116395-maths/topic/Caratheodory.html#200008104">(Jun 07 2020 at 05:01)</a>:</h4>
+<p>In any case, I pushed to <code>caratheodory2</code> an incomplete proof of the statement including positivity.</p>
+
+
+
+<a name="200008107"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/Caratheodory/near/200008107" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Scott Morrison <a href="http://robertylewis.com/archive/stream/116395-maths/topic/Caratheodory.html#200008107">(Jun 07 2020 at 05:01)</a>:</h4>
+<p>Still a little big_operator munging to do; two sorries remain.</p>
+
+
+
+<a name="200033571"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/Caratheodory/near/200033571" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="http://robertylewis.com/archive/stream/116395-maths/topic/Caratheodory.html#200033571">(Jun 07 2020 at 17:25)</a>:</h4>
+<p>Sorry I'm late to this discussion, I've been on family duty all day. I just started my computer 10 minutes ago.</p>
+
+
+
+<a name="200033732"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/Caratheodory/near/200033732" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="http://robertylewis.com/archive/stream/116395-maths/topic/Caratheodory.html#200033732">(Jun 07 2020 at 17:28)</a>:</h4>
+<p>About the TeX label vs identifier discussion, I don't think we need to go down the stacks tag road. The Stacks project is about 6000 pages of mathematics which evolved a lot, and is cited in a <em>lot</em> of papers. Here we are discussing formalizing 20 pages of mathematics, even if I suspect it will be at least 30 pages at the end of the project. TeX labels are unique within a TeX document, and they can carry information. Certainly my choice of labels could be improved, but they are meant to help reading the dependency graph.</p>
+
+
+
+<a name="200033841"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/Caratheodory/near/200033841" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="http://robertylewis.com/archive/stream/116395-maths/topic/Caratheodory.html#200033841">(Jun 07 2020 at 17:31)</a>:</h4>
+<p>Of course I want to automatically generate links to the source code from the website, instead of hardcoding them in the TeX source as is currently done. I'll work on that really soon. I didn't think about it but we could also have special comments in the Lean source referring to tex labels, and CI could check that those labels exist in the TeX source. This is all easy to do, it only takes time.</p>
+
+
+
+<a name="200033923"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/Caratheodory/near/200033923" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="http://robertylewis.com/archive/stream/116395-maths/topic/Caratheodory.html#200033923">(Jun 07 2020 at 17:33)</a>:</h4>
+<p>About Carathéodory, I hesitated and went for the lazy solution, but I agree that we should stick to the usual statement for the lemma that is called Carathéodory in the TeX and Lean, and state the slightly more precise corollary as another lemma.</p>
+
+
+
+<a name="200034169"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/Caratheodory/near/200034169" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="http://robertylewis.com/archive/stream/116395-maths/topic/Caratheodory.html#200034169">(Jun 07 2020 at 17:38)</a>:</h4>
+<p><span class="user-mention silent" data-user-id="214703">Yury G. Kudryashov</span> <a href="#narrow/stream/116395-maths/topic/Caratheodory/near/200006416">said</a>:</p>
+<blockquote>
+<p>Can't we use implicit function theorem to get <a href="https://leanprover-community.github.io/sphere-eversion/blueprint/chap-loops.html#lem:smooth_convex_hull">Lemma 1.6</a> for free?</p>
+</blockquote>
+<p>If you look at the git history, you'll see this was the original plan. But somehow I had remorse yesterday because this implicit function is totally explicit. Actually the current version of the proof is not totally explicit because I needed to go to bed, but I'll finish expliciting it tonight. I'm not too happy about how long it turned out to be in TeX, so I wouldn't mind going back to the implicit function plan. In terms of library development I think both roads are interesting. Making sure the implicit function theorem is nice to use is important, and developing linear algebra is important. For instance the elementary road I have in mind would use the determinant of a family of vectors with respect to a basis, and I think we don't have that yet.</p>
+
+
+
+<a name="200044104"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/Caratheodory/near/200044104" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="http://robertylewis.com/archive/stream/116395-maths/topic/Caratheodory.html#200044104">(Jun 07 2020 at 21:46)</a>:</h4>
+<p>I pushed details about smoothness of the explicit function in <a href="https://github.com/leanprover-community/sphere-eversion/commit/e64b710025e18c7432b86775d714ef8b96f21aa5">https://github.com/leanprover-community/sphere-eversion/commit/e64b710025e18c7432b86775d714ef8b96f21aa5</a></p>
+
+
+
+<a name="200547514"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/Caratheodory/near/200547514" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="http://robertylewis.com/archive/stream/116395-maths/topic/Caratheodory.html#200547514">(Jun 11 2020 at 13:58)</a>:</h4>
+<p>I created <a href="https://github.com/leanprover-community/mathlib/issues/3030">#3030</a> (<span class="user-mention" data-user-id="110087">@Scott Morrison</span>) that splits of all the smaller changes (10 files, ~138 lines).<br>
+What remains is 2 larger diffs.</p>
+
+
+
+<a name="200601731"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/Caratheodory/near/200601731" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="http://robertylewis.com/archive/stream/116395-maths/topic/Caratheodory.html#200601731">(Jun 11 2020 at 20:29)</a>:</h4>
+<p>I lost track of the plan here. Are we still waiting for some affine geometry stuff? Or are you trying to get the linear space version merged?</p>
+
+
+
+<a name="200620572"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/Caratheodory/near/200620572" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Scott Morrison <a href="http://robertylewis.com/archive/stream/116395-maths/topic/Caratheodory.html#200620572">(Jun 11 2020 at 23:40)</a>:</h4>
+<p>I think it makes sense to merge the vector space version, and to plan to upgrade it to affine spaces later, when the requirements are in place, and someone has the energy/need.</p>
+<p>"Perfect is the enemy of good."</p>
+
+
+
+<a name="200633434"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/Caratheodory/near/200633434" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Floris van Doorn <a href="http://robertylewis.com/archive/stream/116395-maths/topic/Caratheodory.html#200633434">(Jun 12 2020 at 04:12)</a>:</h4>
+<p>(deleted)</p>
+
+
+
+<a name="200916374"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/Caratheodory/near/200916374" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="http://robertylewis.com/archive/stream/116395-maths/topic/Caratheodory.html#200916374">(Jun 15 2020 at 16:55)</a>:</h4>
+<p>We now have a version of Carathéodory in mathlib ( <span aria-label="tada" class="emoji emoji-1f389" role="img" title="tada">:tada:</span>) but I think this was no longer exactly the statement that was needed for Sphere Eversion, right?</p>
+
+
+
+<a name="200923434"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/Caratheodory/near/200923434" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="http://robertylewis.com/archive/stream/116395-maths/topic/Caratheodory.html#200923434">(Jun 15 2020 at 17:52)</a>:</h4>
+<p>I'll switch back to this statement in the sphere eversion project, and add the more precise statement as another lemma.</p>
+
+
+
+<a name="200923518"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/Caratheodory/near/200923518" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="http://robertylewis.com/archive/stream/116395-maths/topic/Caratheodory.html#200923518">(Jun 15 2020 at 17:53)</a>:</h4>
+<p>Does that mean we get some green in the graph? <span aria-label="green heart" class="emoji emoji-1f49a" role="img" title="green heart">:green_heart:</span></p>
+
+
+
+<a name="200923557"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/Caratheodory/near/200923557" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="http://robertylewis.com/archive/stream/116395-maths/topic/Caratheodory.html#200923557">(Jun 15 2020 at 17:54)</a>:</h4>
+<p>Yes, I'll try to do that tonight</p>
+
+
+
+<a name="200923608"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/Caratheodory/near/200923608" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="http://robertylewis.com/archive/stream/116395-maths/topic/Caratheodory.html#200923608">(Jun 15 2020 at 17:54)</a>:</h4>
+<p>Awesome!</p>
+
+
+
+<a name="200947266"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/Caratheodory/near/200947266" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="http://robertylewis.com/archive/stream/116395-maths/topic/Caratheodory.html#200947266">(Jun 15 2020 at 21:19)</a>:</h4>
+<p>I'm confused now. I wanted to update the sphere eversion but <a href="https://github.com/leanprover-community/mathlib/issues/2960">#2960</a> actually isn't merged, right?</p>
+
+
+
+<a name="200969273"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/Caratheodory/near/200969273" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bryan Gin-ge Chen <a href="http://robertylewis.com/archive/stream/116395-maths/topic/Caratheodory.html#200969273">(Jun 16 2020 at 03:19)</a>:</h4>
+<p><span class="user-mention" data-user-id="110031">@Patrick Massot</span> Do you mind giving your approval to bors if you're happy with it?</p>
+
+
+
+<a name="200973481"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/Caratheodory/near/200973481" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="http://robertylewis.com/archive/stream/116395-maths/topic/Caratheodory.html#200973481">(Jun 16 2020 at 04:58)</a>:</h4>
+<p>Huh... I don't know why I thought so.... but I was convinced it was merged.</p>
+
+
+
+<a name="201066387"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/Caratheodory/near/201066387" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="http://robertylewis.com/archive/stream/116395-maths/topic/Caratheodory.html#201066387">(Jun 16 2020 at 20:00)</a>:</h4>
+<p>Carathéodory now appears in green at <a href="https://leanprover-community.github.io/sphere-eversion/blueprint/dep_graph.html">https://leanprover-community.github.io/sphere-eversion/blueprint/dep_graph.html</a>. But the proof probably needs refactoring in order to prove the refined statement. Note that <a href="https://github.com/leanprover-community/mathlib/blob/a432a3a193aac390d347835881f48a5e5bac6ed9/src/analysis/convex/caratheodory.lean#L213">https://github.com/leanprover-community/mathlib/blob/a432a3a193aac390d347835881f48a5e5bac6ed9/src/analysis/convex/caratheodory.lean#L213</a> is only half of the refinement (dropping the points having vanishing weights, but without ensuring the remaining points are affinely independent).</p>
+
+
+
+<a name="201066804"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/Caratheodory/near/201066804" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="http://robertylewis.com/archive/stream/116395-maths/topic/Caratheodory.html#201066804">(Jun 16 2020 at 20:02)</a>:</h4>
+<p>Also, that lemma didn't have a proof in the blueprint, so <a href="https://leanprover-community.github.io/sphere-eversion/blueprint/chap-loops.html#a0000000016">I added one</a> following the Lean code. It's hard to believe that the Lean proof wouldn't be simpler by using a map from <code>fin n</code> to <code>E</code> instead of a <code>finset E</code>. I couldn't bring myself to use weights indexed by points of <code>E</code> in the blueprint.</p>
+
+
+
+{% endraw %}
+
+<hr><p>Last updated: Jul 19 2020 at 13:36 UTC</p>

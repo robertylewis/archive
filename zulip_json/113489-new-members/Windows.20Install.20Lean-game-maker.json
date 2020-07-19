@@ -1,0 +1,44 @@
+[
+    {
+        "content": "<p>I'd like to install <a href=\"https://github.com/mpedramfar/Lean-game-maker/blob/master/INSTALL.md\">https://github.com/mpedramfar/Lean-game-maker/blob/master/INSTALL.md</a> but I have a windows laptop, not linux, how do I go about doing this? In particular the command for:</p>\n<p>sudo apt install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev python-openssl</p>",
+        "id": 204326781,
+        "sender_full_name": "ZainAK283",
+        "timestamp": 1595122995
+    },
+    {
+        "content": "<p>I haven't tried it before, but maybe you could try <a href=\"https://github.com/pyenv-win/pyenv-win\">https://github.com/pyenv-win/pyenv-win</a></p>",
+        "id": 204327161,
+        "sender_full_name": "Bryan Gin-ge Chen",
+        "timestamp": 1595123706
+    },
+    {
+        "content": "<p>I tried to install it on a Mac and gave up. It will be even more difficult on Windows. <br>\nInstalling <code>pyenv</code> is advised, but that line <code>sudo apt ...</code> is about installing all the dependencies for python.<br>\nI think one of the best bets is to install Anaconda, which puts just about everything on Windows and gives you an environment (currently it comes with python 3.7.6 I think).</p>",
+        "id": 204327362,
+        "sender_full_name": "Dan Stanescu",
+        "timestamp": 1595124067
+    },
+    {
+        "content": "<p>But even this will eventually require quite some experience with handling read/write permissions on Windows and so on.</p>",
+        "id": 204327431,
+        "sender_full_name": "Dan Stanescu",
+        "timestamp": 1595124196
+    },
+    {
+        "content": "<p>Then it'll be <code>npm</code> and <code>gettext</code>, the latter I have no idea how to get it on Windoze yet.</p>",
+        "id": 204327625,
+        "sender_full_name": "Dan Stanescu",
+        "timestamp": 1595124534
+    },
+    {
+        "content": "<p>It is usually installed with <code>apt-get</code> on Linux (although most of the time is pre-installed) and I'm not sure that GitBash will handle it.</p>",
+        "id": 204327708,
+        "sender_full_name": "Dan Stanescu",
+        "timestamp": 1595124684
+    },
+    {
+        "content": "<p>We should probably tag <span class=\"user-mention\" data-user-id=\"132175\">@Mohammad Pedramfar</span>.</p>",
+        "id": 204328998,
+        "sender_full_name": "Bryan Gin-ge Chen",
+        "timestamp": 1595126642
+    }
+]

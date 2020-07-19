@@ -1,0 +1,87 @@
+---
+layout: archive
+title: Zulip Chat Archive
+permalink: /stream/113489-new-members/topic/deterministic.20timeout.html
+---
+
+<h2>Stream: <a href="http://robertylewis.com/archive/stream/113489-new-members/index.html">new members</a></h2>
+<h3>Topic: <a href="http://robertylewis.com/archive/stream/113489-new-members/topic/deterministic.20timeout.html">deterministic timeout</a></h3>
+
+<hr>
+
+<base href="https://leanprover.zulipchat.com">
+
+<head><link href="/style.css" rel="stylesheet"></head>
+
+{% raw %}
+
+<a name="201069297"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113489-new%20members/topic/deterministic%20timeout/near/201069297" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Michael Beeson <a href="http://robertylewis.com/archive/stream/113489-new-members/topic/deterministic.20timeout.html#201069297">(Jun 16 2020 at 20:24)</a>:</h4>
+<p>I sometimes but not always get errors like<br>
+inf.lean:153:0: error<br>
+(deterministic) timeout</p>
+<p>The line is always the start of a new lemma.   #check commands<br>
+show that the previous lemmas were indeed proved and the <br>
+next lemma was indeed proved.   Should I worry about this error?<br>
+What causes it?</p>
+
+
+
+<a name="201070523"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113489-new%20members/topic/deterministic%20timeout/near/201070523" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="http://robertylewis.com/archive/stream/113489-new-members/topic/deterministic.20timeout.html#201070523">(Jun 16 2020 at 20:34)</a>:</h4>
+<p>Something tried to run for too long and Lean gave up on that particular lemma.</p>
+
+
+
+<a name="201070714"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113489-new%20members/topic/deterministic%20timeout/near/201070714" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Michael Beeson <a href="http://robertylewis.com/archive/stream/113489-new-members/topic/deterministic.20timeout.html#201070714">(Jun 16 2020 at 20:36)</a>:</h4>
+<p>Well, but it didn't give up because all the lemmas are actually proved.</p>
+
+
+
+<a name="201070766"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113489-new%20members/topic/deterministic%20timeout/near/201070766" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="http://robertylewis.com/archive/stream/113489-new-members/topic/deterministic.20timeout.html#201070766">(Jun 16 2020 at 20:37)</a>:</h4>
+<p>You said the previous and next lemmas were proved, not the current lemma.</p>
+
+
+
+<a name="201070876"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113489-new%20members/topic/deterministic%20timeout/near/201070876" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="http://robertylewis.com/archive/stream/113489-new-members/topic/deterministic.20timeout.html#201070876">(Jun 16 2020 at 20:38)</a>:</h4>
+<p>But also <code>#check</code> won't complain if the lemma wasn't actually proved. Basically it's as though you wrote <code>lemma ... := sorry</code>, I think.</p>
+
+
+
+<a name="201070880"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113489-new%20members/topic/deterministic%20timeout/near/201070880" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Michael Beeson <a href="http://robertylewis.com/archive/stream/113489-new-members/topic/deterministic.20timeout.html#201070880">(Jun 16 2020 at 20:38)</a>:</h4>
+<p>All the lemmas in the whole file are correctly proved.   The error mentions a line number that is the <br>
+first line of one lemma.  By previous and next I meant,  the one preceding that line, and the one starting  on that line.</p>
+
+
+
+<a name="201070915"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113489-new%20members/topic/deterministic%20timeout/near/201070915" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Michael Beeson <a href="http://robertylewis.com/archive/stream/113489-new-members/topic/deterministic.20timeout.html#201070915">(Jun 16 2020 at 20:38)</a>:</h4>
+<p>Oh!  That is very important thing to know!</p>
+
+
+
+<a name="201070953"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113489-new%20members/topic/deterministic%20timeout/near/201070953" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="http://robertylewis.com/archive/stream/113489-new-members/topic/deterministic.20timeout.html#201070953">(Jun 16 2020 at 20:39)</a>:</h4>
+<p>If you see any error, like this one, it means your file was not accepted.</p>
+
+
+
+<a name="201070975"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113489-new%20members/topic/deterministic%20timeout/near/201070975" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="http://robertylewis.com/archive/stream/113489-new-members/topic/deterministic.20timeout.html#201070975">(Jun 16 2020 at 20:39)</a>:</h4>
+<p>You can also use <code>#print axioms lemma_name</code> to test this.</p>
+
+
+
+<a name="201073486"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113489-new%20members/topic/deterministic%20timeout/near/201073486" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="http://robertylewis.com/archive/stream/113489-new-members/topic/deterministic.20timeout.html#201073486">(Jun 16 2020 at 21:01)</a>:</h4>
+<p>As a technical note, Lean checks proofs of lemmas in parallel, with the lemma statement added to the environment immediately on the main task--so when Lean gets to <code>#check</code>, it doesn't necessarily even know yet whether or not the lemma contained an error. But mainly, it would be quite annoying if an error in one lemma prevented any future use of that lemma (imagine you update mathlib and it changes the name of something you use in one place--you want to get one error and not have that cause zillions of downstream errors).</p>
+
+
+
+{% endraw %}
+
+<hr><p>Last updated: Jul 19 2020 at 13:36 UTC</p>

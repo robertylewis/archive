@@ -1,0 +1,26 @@
+[
+    {
+        "content": "<p>Hi! I installed Lean maybe a few months ago (via a nonstandard install in a few ways I wanted to modify) and then didn't touch it much, but am about to try again --  on macOS, it looks like the version that's in the Homebrew core repo is the 3.4.2 non-community version -- does anyone know if there's someone maintaining a tap for the community-maintained one that I can use? (If not I guess I'll try making one...)</p>",
+        "id": 204027245,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1594856633
+    },
+    {
+        "content": "<p>The recommended install on mac is via, <a href=\"https://leanprover-community.github.io/install/macos.html\">https://leanprover-community.github.io/install/macos.html</a> the homebrew tap is completely outdated if you want to use mathlib at this point, as the community version is on 3.17.1. Nobody is maintaining a tap, as we use the lean specific elan to manage lean versions rather than brew.</p>",
+        "id": 204027528,
+        "sender_full_name": "Alex J. Best",
+        "timestamp": 1594856833
+    },
+    {
+        "content": "<p>Got it, yeah I found that page, ok cool, will figure something out. Appreciated!</p>",
+        "id": 204029173,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1594857994
+    },
+    {
+        "content": "<p>We're planning, starting hopefully next week, to try to remove the 3.4.2 packages in <code>apt-get</code>, <code>homebrew</code>, etc. Ideally these packages would instead install elan+leanproject, and leave it to <code>elan</code> to obtain Lean versions.</p>",
+        "id": 204042575,
+        "sender_full_name": "Scott Morrison",
+        "timestamp": 1594872128
+    }
+]

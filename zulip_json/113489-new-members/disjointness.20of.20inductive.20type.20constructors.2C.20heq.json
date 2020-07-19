@@ -1,0 +1,26 @@
+[
+    {
+        "content": "<p>I'm trying to prove something very simple based on the disjointness of inductive type constructors. The strategy I'd use that works for normal equality doesn't seem to work when I have terms with heterogeneous equality. Is there a way to do this? </p>\n<div class=\"codehilite\"><pre><span></span><code><span class=\"kn\">inductive</span> <span class=\"n\">X</span> <span class=\"o\">:</span> <span class=\"bp\">ℕ</span> <span class=\"bp\">→</span> <span class=\"kt\">Type</span>\n <span class=\"bp\">|</span> <span class=\"n\">x1</span> <span class=\"o\">(</span><span class=\"n\">n</span><span class=\"o\">:</span><span class=\"bp\">ℕ</span><span class=\"o\">):</span> <span class=\"n\">X</span> <span class=\"n\">n</span>\n <span class=\"bp\">|</span> <span class=\"n\">x2</span> <span class=\"o\">(</span><span class=\"n\">n</span><span class=\"o\">:</span><span class=\"bp\">ℕ</span><span class=\"o\">):</span> <span class=\"n\">X</span> <span class=\"n\">n</span>\n\n <span class=\"kn\">lemma</span> <span class=\"n\">xx</span> <span class=\"o\">:</span> <span class=\"bp\">∀</span> <span class=\"n\">m</span> <span class=\"n\">n</span><span class=\"o\">,</span> <span class=\"bp\">¬</span> <span class=\"o\">(</span><span class=\"n\">X</span><span class=\"bp\">.</span><span class=\"n\">x1</span> <span class=\"n\">m</span> <span class=\"bp\">==</span> <span class=\"n\">X</span><span class=\"bp\">.</span><span class=\"n\">x2</span> <span class=\"n\">n</span><span class=\"o\">)</span> <span class=\"o\">:=</span> <span class=\"k\">by</span> <span class=\"k\">begin</span>\n <span class=\"n\">intros</span> <span class=\"n\">h</span><span class=\"o\">,</span>\n <span class=\"n\">contradiction</span> <span class=\"c1\">-- this would work for ∀ m, ¬ (X.x1 m  = X.x2 m)</span>\n <span class=\"kn\">end</span>\n</code></pre></div>",
+        "id": 204063614,
+        "sender_full_name": "Kris Brown",
+        "timestamp": 1594892666
+    },
+    {
+        "content": "<p>I suspect this is not provable.</p>",
+        "id": 204071942,
+        "sender_full_name": "Reid Barton",
+        "timestamp": 1594899510
+    },
+    {
+        "content": "<p>Is this because  you suspect it's not true? Or is it just a matter of engineering a variation of <code>meta def contradiction : tactic unit := ...</code> in the core library that works with <code>heq</code> too?</p>",
+        "id": 204115389,
+        "sender_full_name": "Kris Brown",
+        "timestamp": 1594920353
+    },
+    {
+        "content": "<p>I think it is not true in all models</p>",
+        "id": 204116611,
+        "sender_full_name": "Reid Barton",
+        "timestamp": 1594920912
+    }
+]

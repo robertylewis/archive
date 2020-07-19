@@ -1,0 +1,254 @@
+[
+    {
+        "content": "<p>Is it only me or Zulip just suddenly changed its logo?</p>",
+        "id": 204059568,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1594889600
+    },
+    {
+        "content": "<p>Yes, it changed a few minutes ago</p>",
+        "id": 204059604,
+        "sender_full_name": "Markus Himmel",
+        "timestamp": 1594889641
+    },
+    {
+        "content": "<p>Same here.</p>",
+        "id": 204059650,
+        "sender_full_name": "Sebastien Gouezel",
+        "timestamp": 1594889648
+    },
+    {
+        "content": "<p>Whoa, so high tech.</p>",
+        "id": 204059713,
+        "sender_full_name": "Rob Lewis",
+        "timestamp": 1594889708
+    },
+    {
+        "content": "<p>This is crap: the new Z is much further away from Bourbaki's dangerous bend sign that was so fitting for this Zulip instance.</p>",
+        "id": 204059714,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1594889708
+    },
+    {
+        "content": "<p>I feel like we've made it to 2012 now.</p>",
+        "id": 204059745,
+        "sender_full_name": "Rob Lewis",
+        "timestamp": 1594889746
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"110031\">Patrick Massot</span> <a href=\"#narrow/stream/236604-Zulip-meta/topic/Logo/near/204059714\">said</a>:</p>\n<blockquote>\n<p>This is crap: the new Z is much further away from Bourbaki's dangerous bend sign that was so fitting for this Zulip instance.</p>\n</blockquote>\n<p>It looks like this can be changed? <a href=\"https://zulip.com/help/create-your-organization-profile#add-a-wide-logo\">https://zulip.com/help/create-your-organization-profile#add-a-wide-logo</a></p>",
+        "id": 204062283,
+        "sender_full_name": "Markus Himmel",
+        "timestamp": 1594891691
+    },
+    {
+        "content": "<p>I actually like the idea of using a Bourbaki Z followed by the word Zulip</p>",
+        "id": 204062580,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1594891923
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"110596\">Rob Lewis</span> <a href=\"#narrow/stream/236604-Zulip-meta/topic/Logo/near/204059745\">said</a>:</p>\n<blockquote>\n<p>I feel like we've made it to 2012 now.</p>\n</blockquote>\n<p>That's the retro-futuristic look. Let's go retro instead.</p>",
+        "id": 204062657,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1594891987
+    },
+    {
+        "content": "<p>We should add a ☡ emoji reaction as well!</p>",
+        "id": 204062660,
+        "sender_full_name": "Anne Baanen",
+        "timestamp": 1594891988
+    },
+    {
+        "content": "<p>Is that possible?</p>",
+        "id": 204062710,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1594892016
+    },
+    {
+        "content": "<p>The Zulip emoji is in a section called 'custom', so I assume it should be?</p>",
+        "id": 204062786,
+        "sender_full_name": "Anne Baanen",
+        "timestamp": 1594892060
+    },
+    {
+        "content": "<p>But, at least in the font I see now, this is not quite orthodox. Someone clearly decided that Bourbaki's version was hard to distinguish from a Z and decided to rotate it.</p>",
+        "id": 204062790,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1594892064
+    },
+    {
+        "content": "<p>In the printed book there absolutely no possible confusion because it's too large and bold to be a Z</p>",
+        "id": 204062818,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1594892096
+    },
+    {
+        "content": "<p>Doesn't that imply that lean is dangerous and/or easily misunderstood?</p>",
+        "id": 204062840,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1594892116
+    },
+    {
+        "content": "<p>Yes?</p>",
+        "id": 204062853,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1594892132
+    },
+    {
+        "content": "<p>How could it be fun otherwise?</p>",
+        "id": 204062866,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1594892139
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"110031\">Patrick Massot</span> <a href=\"#narrow/stream/236604-Zulip-meta/topic/Logo/near/204062710\">said</a>:</p>\n<blockquote>\n<p>Is that possible?</p>\n</blockquote>\n<p>admins can add emoji</p>",
+        "id": 204062873,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1594892141
+    },
+    {
+        "content": "<p>They also changed the menu icon on messages</p>",
+        "id": 204062911,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1594892163
+    },
+    {
+        "content": "<p>Hmm, how difficult would it be to hack a font so '<span aria-label=\"warning\" class=\"emoji emoji-26a0\" role=\"img\" title=\"warning\">:warning:</span>️☡' displays as <a href=\"https://en.wikipedia.org/wiki/File:Knuth%27s_dangerous_bend_symbol.svg\">Knuth's symbol</a>? <span aria-label=\"thinking\" class=\"emoji emoji-1f914\" role=\"img\" title=\"thinking\">:thinking:</span></p>",
+        "id": 204062956,
+        "sender_full_name": "Anne Baanen",
+        "timestamp": 1594892189
+    },
+    {
+        "content": "<p>Knuth's symbol is also deviant. He also clearly thought  Bourbaki's symbol looked too much like a Z</p>",
+        "id": 204063013,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1594892231
+    },
+    {
+        "content": "<p>isn't that what the actual \"dangerous bend\" sign looks like?</p>",
+        "id": 204063085,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1594892280
+    },
+    {
+        "content": "<p>We should preface each use of '☡' with '☡' because people might think the dangerous bend symbol looks like '☡'.</p>",
+        "id": 204063140,
+        "sender_full_name": "Anne Baanen",
+        "timestamp": 1594892302
+    },
+    {
+        "content": "<p>Mario, that's the American version</p>",
+        "id": 204063187,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1594892351
+    },
+    {
+        "content": "<p>Actually the current French version now looks like a N rather than a Z</p>",
+        "id": 204063212,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1594892378
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"238446\">Anne Baanen</span> <a href=\"#narrow/stream/236604-Zulip-meta/topic/Logo/near/204063140\">said</a>:</p>\n<blockquote>\n<p>We should preface each use of '☡' with '☡' because people might think the dangerous bend symbol looks like '☡'.</p>\n</blockquote>\n<p>Don't forget the <code>meta</code> keyword then.</p>",
+        "id": 204063277,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1594892404
+    },
+    {
+        "content": "<p>On the Xena discord, when I made a bunch of students admins, the first thing they did was added loads of extra emojis.</p>",
+        "id": 204064270,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1594893187
+    },
+    {
+        "content": "<p>We have several Lean emojis</p>",
+        "id": 204064287,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1594893211
+    },
+    {
+        "content": "<p><img alt=\":bourbaki:\" class=\"emoji\" src=\"https://zulip-avatars.s3.amazonaws.com/3121/emoji/images/17374.png\" title=\"bourbaki\"></p>",
+        "id": 204064374,
+        "sender_full_name": "Rob Lewis",
+        "timestamp": 1594893274
+    },
+    {
+        "content": "<p>Ah, that image didn't have a transparent background</p>",
+        "id": 204064386,
+        "sender_full_name": "Rob Lewis",
+        "timestamp": 1594893285
+    },
+    {
+        "content": "<p><a href=\"/user_uploads/3121/nEUdNp0Hbir-bUj9qbRdZyx9/hmmskell.png\">hmmskell.png</a></p>\n<div class=\"message_inline_image\"><a href=\"/user_uploads/3121/nEUdNp0Hbir-bUj9qbRdZyx9/hmmskell.png\" title=\"hmmskell.png\"><img src=\"/user_uploads/3121/nEUdNp0Hbir-bUj9qbRdZyx9/hmmskell.png\"></a></div>",
+        "id": 204064414,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1594893304
+    },
+    {
+        "content": "<p>We have a \"hmmskell\" emoji</p>",
+        "id": 204064456,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1594893335
+    },
+    {
+        "content": "<p>If you care about emojis you should switch to discord. We have a stream for cat pictures and everything</p>",
+        "id": 204064843,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1594893611
+    },
+    {
+        "content": "<p>Ugh, I hate Gimp, if someone sends me logos/emoji I'll add them but I'm not gonna give that a transparent background myself</p>",
+        "id": 204064848,
+        "sender_full_name": "Rob Lewis",
+        "timestamp": 1594893617
+    },
+    {
+        "content": "<p>Deal. My vacation starts in one week, fear the worst <span aria-label=\"smiley\" class=\"emoji emoji-1f603\" role=\"img\" title=\"smiley\">:smiley:</span></p>",
+        "id": 204065064,
+        "sender_full_name": "Anne Baanen",
+        "timestamp": 1594893804
+    },
+    {
+        "content": "<p>Oh yeah I need to make a hmmlean emoji</p>",
+        "id": 204072091,
+        "sender_full_name": "Bhavik Mehta",
+        "timestamp": 1594899661
+    },
+    {
+        "content": "<p><a href=\"/user_uploads/3121/hR9EA4yXgEM-evCHO9F4-35I/2020-07-17.png\">2020-07-17.png</a></p>\n<div class=\"message_inline_image\"><a href=\"/user_uploads/3121/hR9EA4yXgEM-evCHO9F4-35I/2020-07-17.png\" title=\"2020-07-17.png\"><img src=\"/user_uploads/3121/hR9EA4yXgEM-evCHO9F4-35I/2020-07-17.png\"></a></div>",
+        "id": 204121649,
+        "sender_full_name": "Kenny Lau",
+        "timestamp": 1594923274
+    },
+    {
+        "content": "<p>this is how the tab looks on my side</p>",
+        "id": 204121669,
+        "sender_full_name": "Kenny Lau",
+        "timestamp": 1594923284
+    },
+    {
+        "content": "<p>the number (of new messages) got displaced and is much blurrier</p>",
+        "id": 204121685,
+        "sender_full_name": "Kenny Lau",
+        "timestamp": 1594923291
+    },
+    {
+        "content": "<p>I tried to find a screenshot from before the change happened to no avail</p>",
+        "id": 204121699,
+        "sender_full_name": "Kenny Lau",
+        "timestamp": 1594923302
+    },
+    {
+        "content": "<p>Looks like the new logo is for Zulip 3.0: <a href=\"https://blog.zulip.com/2020/07/16/zulip-3-0-released/\">https://blog.zulip.com/2020/07/16/zulip-3-0-released/</a></p>\n<p>I also noticed the numbers in the favicon looking a lot uglier. I didn't see an issue on their github and don't feel like making one though.</p>",
+        "id": 204127277,
+        "sender_full_name": "Bryan Gin-ge Chen",
+        "timestamp": 1594925896
+    },
+    {
+        "content": "<p>I looked at the new logo for too long and now all I see is a \\rightharpoondown and \\leftharpoonup</p>",
+        "id": 204135591,
+        "sender_full_name": "Sebastian Ullrich",
+        "timestamp": 1594929823
+    }
+]

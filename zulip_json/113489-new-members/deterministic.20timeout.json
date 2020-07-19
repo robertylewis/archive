@@ -1,0 +1,62 @@
+[
+    {
+        "content": "<p>I sometimes but not always get errors like<br>\ninf.lean:153:0: error<br>\n(deterministic) timeout</p>\n<p>The line is always the start of a new lemma.   #check commands<br>\nshow that the previous lemmas were indeed proved and the <br>\nnext lemma was indeed proved.   Should I worry about this error?<br>\nWhat causes it?</p>",
+        "id": 201069297,
+        "sender_full_name": "Michael Beeson",
+        "timestamp": 1592339072
+    },
+    {
+        "content": "<p>Something tried to run for too long and Lean gave up on that particular lemma.</p>",
+        "id": 201070523,
+        "sender_full_name": "Reid Barton",
+        "timestamp": 1592339694
+    },
+    {
+        "content": "<p>Well, but it didn't give up because all the lemmas are actually proved.</p>",
+        "id": 201070714,
+        "sender_full_name": "Michael Beeson",
+        "timestamp": 1592339804
+    },
+    {
+        "content": "<p>You said the previous and next lemmas were proved, not the current lemma.</p>",
+        "id": 201070766,
+        "sender_full_name": "Reid Barton",
+        "timestamp": 1592339840
+    },
+    {
+        "content": "<p>But also <code>#check</code> won't complain if the lemma wasn't actually proved. Basically it's as though you wrote <code>lemma ... := sorry</code>, I think.</p>",
+        "id": 201070876,
+        "sender_full_name": "Reid Barton",
+        "timestamp": 1592339896
+    },
+    {
+        "content": "<p>All the lemmas in the whole file are correctly proved.   The error mentions a line number that is the <br>\nfirst line of one lemma.  By previous and next I meant,  the one preceding that line, and the one starting  on that line.</p>",
+        "id": 201070880,
+        "sender_full_name": "Michael Beeson",
+        "timestamp": 1592339900
+    },
+    {
+        "content": "<p>Oh!  That is very important thing to know!</p>",
+        "id": 201070915,
+        "sender_full_name": "Michael Beeson",
+        "timestamp": 1592339922
+    },
+    {
+        "content": "<p>If you see any error, like this one, it means your file was not accepted.</p>",
+        "id": 201070953,
+        "sender_full_name": "Reid Barton",
+        "timestamp": 1592339953
+    },
+    {
+        "content": "<p>You can also use <code>#print axioms lemma_name</code> to test this.</p>",
+        "id": 201070975,
+        "sender_full_name": "Reid Barton",
+        "timestamp": 1592339967
+    },
+    {
+        "content": "<p>As a technical note, Lean checks proofs of lemmas in parallel, with the lemma statement added to the environment immediately on the main task--so when Lean gets to <code>#check</code>, it doesn't necessarily even know yet whether or not the lemma contained an error. But mainly, it would be quite annoying if an error in one lemma prevented any future use of that lemma (imagine you update mathlib and it changes the name of something you use in one place--you want to get one error and not have that cause zillions of downstream errors).</p>",
+        "id": 201073486,
+        "sender_full_name": "Reid Barton",
+        "timestamp": 1592341288
+    }
+]

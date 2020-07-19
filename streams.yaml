@@ -1,0 +1,6 @@
+included:
+  - travis
+
+excluded:
+  - rss
+  - announce

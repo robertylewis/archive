@@ -1,0 +1,122 @@
+[
+    {
+        "content": "<p>You are running Lean in a directory without a leanpkg.toml file, this is NOT<br>\nsupported.  Please open the directory containing the leanpkg.toml file<br>\ninstead (using \"File / Open Folder...\"). <a href=\"https://leanprover-community.github.io/install/project.html\">More details\nhere</a></p>",
+        "id": 203682403,
+        "sender_full_name": "Philip Vetter",
+        "timestamp": 1594622635
+    },
+    {
+        "content": "<p>Did you open the <code>src</code> folder in VS Code? If so you want to go up a directory and open the folder which contains the <code>src</code> folder in VSCode</p>",
+        "id": 203682567,
+        "sender_full_name": "Shing Tak Lam",
+        "timestamp": 1594622835
+    },
+    {
+        "content": "<p>Please be more specific where this src folder would be located.</p>",
+        "id": 203682794,
+        "sender_full_name": "Philip Vetter",
+        "timestamp": 1594623097
+    },
+    {
+        "content": "<p>So I assume you opened a <code>.lean</code> file in VSCode?</p>\n<p>Are you working in a Lean project or not?</p>",
+        "id": 203682866,
+        "sender_full_name": "Shing Tak Lam",
+        "timestamp": 1594623167
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"320120\">@Philip Vetter</span> Did you follow <a href=\"https://leanprover-community.github.io/install/project.html\">https://leanprover-community.github.io/install/project.html</a> ?</p>",
+        "id": 203682977,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1594623321
+    },
+    {
+        "content": "<p>I am following the directions in <br>\n<a href=\"https://leanprover-community.github.io/install/linux.html\">https://leanprover-community.github.io/install/linux.html</a><br>\nI have downloaded <a href=\"http://elan-init.sh\">elan-init.sh</a> and executed it and it replied<br>\nstable installed - Lean (version 3.17.1, commit 05d7184a6642, Release)<br>\nI installed VS Code with leanprover . Step 5 fails. I have also installed emac lean extension.</p>",
+        "id": 203683035,
+        "sender_full_name": "Philip Vetter",
+        "timestamp": 1594623395
+    },
+    {
+        "content": "<p>No I am following <a href=\"https://leanprover-community.github.io/install/linux.html\">https://leanprover-community.github.io/install/linux.html</a><br>\nis that wrong?</p>\n<p><span class=\"user-mention silent\" data-user-id=\"112680\">Johan Commelin</span> <a href=\"#narrow/stream/113489-new-members/topic/VS.20Code/near/203682977\">said</a>:</p>\n<blockquote>\n<p><span class=\"user-mention silent\" data-user-id=\"320120\">Philip Vetter</span> Did you follow <a href=\"https://leanprover-community.github.io/install/project.html\">https://leanprover-community.github.io/install/project.html</a> ?</p>\n</blockquote>",
+        "id": 203683119,
+        "sender_full_name": "Philip Vetter",
+        "timestamp": 1594623505
+    },
+    {
+        "content": "<p>No, I thought you were already a bit further. That page should be fine.</p>",
+        "id": 203683141,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1594623554
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"320120\">@Philip Vetter</span>, there are two steps --- first an OS-specific installation step, for which you are correctly using <a href=\"https://leanprover-community.github.io/install/linux.html\">https://leanprover-community.github.io/install/linux.html</a>, and second a step to set up a project, following <a href=\"https://leanprover-community.github.io/install/project.html\">https://leanprover-community.github.io/install/project.html</a></p>",
+        "id": 203683146,
+        "sender_full_name": "Scott Morrison",
+        "timestamp": 1594623576
+    },
+    {
+        "content": "<p>If you want, you can share your screen via Zoom, and we can try to fix it.</p>",
+        "id": 203683197,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1594623603
+    },
+    {
+        "content": "<p>If you're trying to verify Step 5 from <a href=\"https://leanprover-community.github.io/install/linux.html\">https://leanprover-community.github.io/install/linux.html</a>, could you say exactly what fails?</p>",
+        "id": 203683214,
+        "sender_full_name": "Scott Morrison",
+        "timestamp": 1594623612
+    },
+    {
+        "content": "<p>Ah I see. Instructions said something about click reload. (where is that?) <br>\nI restarted VSC and it works!</p>",
+        "id": 203683385,
+        "sender_full_name": "Philip Vetter",
+        "timestamp": 1594623838
+    },
+    {
+        "content": "<p>Now see if <a href=\"https://leanprover-community.github.io/install/project.html\">https://leanprover-community.github.io/install/project.html</a> works!</p>",
+        "id": 203683449,
+        "sender_full_name": "Scott Morrison",
+        "timestamp": 1594623879
+    },
+    {
+        "content": "<p>In VSCode, when viewing the tutorial exercises are partially covered by a column of preview images of the text. Is this normal and how can I move it?</p>",
+        "id": 203693214,
+        "sender_full_name": "Philip Vetter",
+        "timestamp": 1594631873
+    },
+    {
+        "content": "<p>I don't understand what you mean. Could you paste a screenshot?</p>",
+        "id": 203693298,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1594631920
+    },
+    {
+        "content": "<p>Do you mean the minimap? You can disable it by selecting \"View &gt; Show Minimap\"</p>",
+        "id": 203693332,
+        "sender_full_name": "Markus Himmel",
+        "timestamp": 1594631945
+    },
+    {
+        "content": "<p>Yes this works. Is it possible to move it off of the text? I could not hear someone's comments.</p>",
+        "id": 203693665,
+        "sender_full_name": "Philip Vetter",
+        "timestamp": 1594632222
+    },
+    {
+        "content": "<p>No. Just turn it off, it's not helpful.</p>",
+        "id": 203693673,
+        "sender_full_name": "Scott Morrison",
+        "timestamp": 1594632237
+    },
+    {
+        "content": "<p>ok thank you!</p>",
+        "id": 203693744,
+        "sender_full_name": "Philip Vetter",
+        "timestamp": 1594632276
+    },
+    {
+        "content": "<p>You should watch <a href=\"https://www.youtube.com/watch?v=CM0wYOrYII8&amp;list=PLlF-CfQhukNnxF1S22cNGKyfOrd380NUv&amp;index=6&amp;t=0s\">https://www.youtube.com/watch?v=CM0wYOrYII8&amp;list=PLlF-CfQhukNnxF1S22cNGKyfOrd380NUv&amp;index=6&amp;t=0s</a> this is covered there</p>\n<div class=\"youtube-video message_inline_image\"><a data-id=\"CM0wYOrYII8\" href=\"https://www.youtube.com/watch?v=CM0wYOrYII8&amp;list=PLlF-CfQhukNnxF1S22cNGKyfOrd380NUv&amp;index=6&amp;t=0s\"><img src=\"https://i.ytimg.com/vi/CM0wYOrYII8/default.jpg\"></a></div>",
+        "id": 203693769,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1594632309
+    }
+]

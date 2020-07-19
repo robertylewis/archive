@@ -1,0 +1,98 @@
+[
+    {
+        "content": "<p>Dear Colleagues, I am really sorry for asking such a stupid question... So I installed lean using elan and it basically works. But some features do not. For example it does not recognize the words \"obtain\" \"take\" and \"premise\". Surprisingly, if I type \"obtain\" in VCS, it gets blue while \"take\" and \"premise\" do not. Again, I am really sorry for such stupid a question but I was trying to resolve it for two days and to no avail.</p>",
+        "id": 198901757,
+        "sender_full_name": "Roman Fedorov",
+        "timestamp": 1590590799
+    },
+    {
+        "content": "<p>what is <code>take</code> supposed to do?</p>",
+        "id": 198902035,
+        "sender_full_name": "Jalex Stark",
+        "timestamp": 1590590908
+    },
+    {
+        "content": "<p>These keywords are from Lean 2. They've been gone for 3+ years. What documentation are you following that taught you those?</p>",
+        "id": 198902072,
+        "sender_full_name": "Rob Lewis",
+        "timestamp": 1590590924
+    },
+    {
+        "content": "<p>(also, questions like this are completely appropriate, don't wring your hands too much about it)</p>",
+        "id": 198902101,
+        "sender_full_name": "Jalex Stark",
+        "timestamp": 1590590934
+    },
+    {
+        "content": "<p>I really wish there were a way to scrub old docs off the internet :/</p>",
+        "id": 198902131,
+        "sender_full_name": "Rob Lewis",
+        "timestamp": 1590590943
+    },
+    {
+        "content": "<p><a href=\"https://leanprover-community.github.io/\">https://leanprover-community.github.io/</a></p>",
+        "id": 198902239,
+        "sender_full_name": "Jalex Stark",
+        "timestamp": 1590590976
+    },
+    {
+        "content": "<p>I'll make a wild guess that you're following Lean 2 TPIL, and you really want <a href=\"https://leanprover.github.io/theorem_proving_in_lean/\">#tpil</a></p>",
+        "id": 198902284,
+        "sender_full_name": "Rob Lewis",
+        "timestamp": 1590590992
+    },
+    {
+        "content": "<p>That's the modern place to start</p>",
+        "id": 198902285,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1590590992
+    },
+    {
+        "content": "<p>I was using this tutorial, which I found pretty good <a href=\"https://leanprover.github.io/tutorial/\">https://leanprover.github.io/tutorial/</a> Is there another one?</p>",
+        "id": 198902299,
+        "sender_full_name": "Roman Fedorov",
+        "timestamp": 1590590998
+    },
+    {
+        "content": "<p>I think the correct way to get rid of old documentation is to update it instead of producing new tutorials every year.</p>",
+        "id": 198902304,
+        "sender_full_name": "Gabriel Ebner",
+        "timestamp": 1590591000
+    },
+    {
+        "content": "<p>Please read the warning right at the beginning of what you linked to <span class=\"user-mention\" data-user-id=\"306866\">@Roman Fedorov</span></p>",
+        "id": 198902458,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1590591037
+    },
+    {
+        "content": "<p>actually, don't even read that, look at the link which Jalex posted :D</p>",
+        "id": 198902569,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1590591078
+    },
+    {
+        "content": "<p>and the link which Rob posted</p>",
+        "id": 198902837,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1590591183
+    },
+    {
+        "content": "<p>In short, the active community here uses a fork of Lean 3, which is actively maintained and updated; the links coming from Microsoft and the official Lean pages are all frozen and out of date because they are working on Lean 4, which still doesn't have a release.</p>",
+        "id": 198903534,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1590591396
+    },
+    {
+        "content": "<p>Ok, thanks! I was sure something was wrong with my installation, but obviously you are all right<br>\n.</p>",
+        "id": 198903850,
+        "sender_full_name": "Roman Fedorov",
+        "timestamp": 1590591487
+    },
+    {
+        "content": "<p>The \"upstream\" Lean 3.x is unmaintained (together with its documentation). There is a community fork with community docs but upstream website doesn't redirect users to the community website.</p>",
+        "id": 198919087,
+        "sender_full_name": "Yury G. Kudryashov",
+        "timestamp": 1590597949
+    }
+]

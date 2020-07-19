@@ -1,0 +1,218 @@
+[
+    {
+        "content": "<p>Hello, are there people working on the spectral theorem for finite dimensional Hilbert spaces (or anything of greater generality)?</p>",
+        "id": 204140690,
+        "sender_full_name": "Kevin Shu",
+        "timestamp": 1594932515
+    },
+    {
+        "content": "<p>we just finished Cayley Hamilton, so defining eigenstuff is definitely in striking distance</p>",
+        "id": 204142839,
+        "sender_full_name": "Jalex Stark",
+        "timestamp": 1594933497
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"245078\">@Apurva Nakade</span> was looking to start on a project like this</p>",
+        "id": 204142872,
+        "sender_full_name": "Jalex Stark",
+        "timestamp": 1594933516
+    },
+    {
+        "content": "<p>Anne Baanen's recent linear algebra video is great, have you watched it yet?</p>",
+        "id": 204142909,
+        "sender_full_name": "Jalex Stark",
+        "timestamp": 1594933538
+    },
+    {
+        "content": "<p><a href=\"https://www.youtube.com/watch?v=EnZvGCU_jpc&amp;feature=youtu.be\">https://www.youtube.com/watch?v=EnZvGCU_jpc&amp;feature=youtu.be</a></p>\n<div class=\"youtube-video message_inline_image\"><a data-id=\"EnZvGCU_jpc\" href=\"https://www.youtube.com/watch?v=EnZvGCU_jpc&amp;feature=youtu.be\"><img src=\"https://i.ytimg.com/vi/EnZvGCU_jpc/default.jpg\"></a></div>",
+        "id": 204142946,
+        "sender_full_name": "Jalex Stark",
+        "timestamp": 1594933561
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"252300\">Jalex Stark</span> <a href=\"#narrow/stream/217875-Is-there.20code.20for.20X.3F/topic/Status.20of.20Spectral.20Theorem.3F/near/204142839\">said</a>:</p>\n<blockquote>\n<p>we just finished Cayley Hamilton, so defining eigenstuff is definitely in striking distance</p>\n</blockquote>\n<p>I really don't understand why everybody keeps repeating that. Why would you need CH to defining eigenstuff?</p>",
+        "id": 204143070,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1594933606
+    },
+    {
+        "content": "<p>This is totally insane.</p>",
+        "id": 204143121,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1594933633
+    },
+    {
+        "content": "<p>in my head, the number of eigenvalues with multiplicity is equal to the degree of the characteristic polynomial</p>",
+        "id": 204143159,
+        "sender_full_name": "Jalex Stark",
+        "timestamp": 1594933666
+    },
+    {
+        "content": "<p>but maybe there's a much more efficient path</p>",
+        "id": 204143172,
+        "sender_full_name": "Jalex Stark",
+        "timestamp": 1594933677
+    },
+    {
+        "content": "<p>Even if you don't do \"linear algebra done right\", you can define eigenstuff and prove a lot about them with Cayley-Hamilton.</p>",
+        "id": 204143222,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1594933685
+    },
+    {
+        "content": "<p>i agree you don't need all this for the definition of eignstuff</p>",
+        "id": 204143257,
+        "sender_full_name": "Jalex Stark",
+        "timestamp": 1594933707
+    },
+    {
+        "content": "<p>The degree of the characteristic polynomial is the size of the matrix.</p>",
+        "id": 204143271,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1594933714
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"243947\">@Miguel Raz Guzmán Macedo</span> was also interested in eigenvalues</p>",
+        "id": 204143402,
+        "sender_full_name": "Alex J. Best",
+        "timestamp": 1594933790
+    },
+    {
+        "content": "<p>i should maybe pick up a book and read an efficient development of the theory before commenting further about the best past forward</p>",
+        "id": 204143410,
+        "sender_full_name": "Jalex Stark",
+        "timestamp": 1594933794
+    },
+    {
+        "content": "<p>We need a #bourbaki, for Patrick's use only.</p>",
+        "id": 204143490,
+        "sender_full_name": "Heather Macbeth",
+        "timestamp": 1594933820
+    },
+    {
+        "content": "<p>Hey! I am very interested in trying to prove the spectral theorem, for normal operators maybe?<br>\nAm still browsing the library and trying to figure out what is known about hilbert spaces...</p>",
+        "id": 204144508,
+        "sender_full_name": "Apurva Nakade",
+        "timestamp": 1594934289
+    },
+    {
+        "content": "<p>Looks like inner product spaces are defined under normed spaces but quadratic forms are defined under linear algebra. Hmm... Where would Hilbert spaces go?</p>",
+        "id": 204145157,
+        "sender_full_name": "Apurva Nakade",
+        "timestamp": 1594934670
+    },
+    {
+        "content": "<p>One observation is that the existence of eigenvalues for real symmetric matrices can be done using 'only' calculus, and observing that the corresponding quadratic form is minimized on the unit sphere, since it is compact. This is a relatively ugly proof, but I think it's just a computation once you know that the sphere is compact. Do we have that fact?</p>",
+        "id": 204145366,
+        "sender_full_name": "Kevin Shu",
+        "timestamp": 1594934800
+    },
+    {
+        "content": "<p>Heather, I don't think the exposition style in \"Linear algebra done right\" is so close to Bourbaki's style...</p>",
+        "id": 204145808,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1594935032
+    },
+    {
+        "content": "<p>But the definition of eigenstuff is independent of determinant and Cayley-Hamilton in any case, even in determinant-centric expositions.</p>",
+        "id": 204145894,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1594935075
+    },
+    {
+        "content": "<p>Kevin, we know finite dimensional spheres are compact.</p>",
+        "id": 204145943,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1594935112
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"296764\">@Kevin Shu</span> I feel like proving spectral theorem the \"standard way\" will force us to build the theory of finite dim Hilbert spaces which will be useful on its own.</p>",
+        "id": 204147329,
+        "sender_full_name": "Apurva Nakade",
+        "timestamp": 1594935915
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"245078\">@Apurva Nakade</span> That is true, you probably want this standard proof in the end. That said, the proof I described might also be used to show the variational characterization of eigenvalues, which is useful in other places, and it might be thought of as a stopgap. I will give a shot at that version, though since I am new, how far I'll get is questionable :)</p>",
+        "id": 204150037,
+        "sender_full_name": "Kevin Shu",
+        "timestamp": 1594937618
+    },
+    {
+        "content": "<p>kevin, if you post a link to a github project, i'll happy follow</p>",
+        "id": 204150252,
+        "sender_full_name": "Jalex Stark",
+        "timestamp": 1594937738
+    },
+    {
+        "content": "<p>I tried defining eigenstuff a month ago (to be fair, I'm not experienced now, and I was REALLY new then). I found that defining what an eigenvalue/eigenvector is works just fine, but if you want to do anything that involves finsets in the finite-dimensional case, or prove any existence results, Cayley-Hamilton seemed by far the easiest place to start</p>",
+        "id": 204157281,
+        "sender_full_name": "Aaron Anderson",
+        "timestamp": 1594943513
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"110031\">@Patrick Massot</span>, I only had in mind the existence of eigenvalues for finite dimensional matrices over C, when I've been advertising Cayley-Hamilton.  (Pretty much as <span class=\"user-mention\" data-user-id=\"302826\">@Aaron Anderson</span> says.)</p>",
+        "id": 204163600,
+        "sender_full_name": "Scott Morrison",
+        "timestamp": 1594950255
+    },
+    {
+        "content": "<p>I think it would be great if we just do Banach algebra / C*-algebras / functional calculus, and then derive finite dimensional stuff from that (it would fit with how the rest of mathlib goes ...).</p>",
+        "id": 204163635,
+        "sender_full_name": "Scott Morrison",
+        "timestamp": 1594950329
+    },
+    {
+        "content": "<p>I'm not actually sure that that route helps at all for the \"finite-dimensional-but-not-necessarily-normal\" part of the theory. I guess I've only ever thought about the route to that via CH...</p>",
+        "id": 204163698,
+        "sender_full_name": "Scott Morrison",
+        "timestamp": 1594950405
+    },
+    {
+        "content": "<p>I think that existence of eigenvalues for finite dimensional matrices over C is precisely where the path advocated by \"Linear algebra done right\" is better without any possible debate.</p>",
+        "id": 204179167,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1594972197
+    },
+    {
+        "content": "<p>As a start, would it make sense to prove that a normal matrix with complex entries can be written as <code>UDU*</code> where <code>U</code> is unitary and <code>D</code> is diagonal?</p>",
+        "id": 204250630,
+        "sender_full_name": "Apurva Nakade",
+        "timestamp": 1595015443
+    },
+    {
+        "content": "<p>And then one day when f.d. complex inner product spaces exist we can produce a more direct proof by proving the existence of an eigenbasis?</p>",
+        "id": 204251268,
+        "sender_full_name": "Apurva Nakade",
+        "timestamp": 1595015857
+    },
+    {
+        "content": "<p>mathematically, don't <code>U</code> and the eigenbasis have the same data? if you think know how to prove the first form, you should do it.</p>",
+        "id": 204253783,
+        "sender_full_name": "Jalex Stark",
+        "timestamp": 1595017196
+    },
+    {
+        "content": "<p>Yes, theoretically it is the same information. But proving the existence of an eigenbasis for normal operators requires one to setup the theory of complex inner product spaces whereas I believe all the theory needed for proving the theorem for matrices already exists in mathlib.</p>",
+        "id": 204255074,
+        "sender_full_name": "Apurva Nakade",
+        "timestamp": 1595017726
+    },
+    {
+        "content": "<p>got it, so to move between the two forms of the theorem you need... a *-algebra isomorphism between <code>matrix n n R</code> and the linear endomorphisms of <code>(n \\to R)</code>? I think we already have this as a linear isomorphism and maybe even an algebra isomorphism</p>",
+        "id": 204255355,
+        "sender_full_name": "Jalex Stark",
+        "timestamp": 1595017842
+    },
+    {
+        "content": "<p>I think the strategy of \"first prove any form of the theorem, then see what API you need to convert to other forms\" is a good one</p>",
+        "id": 204255439,
+        "sender_full_name": "Jalex Stark",
+        "timestamp": 1595017893
+    },
+    {
+        "content": "<p>once you've proven the first theorem, you reduce the problem from a maths + software engineering challenge to only a software engineering challenge :)</p>",
+        "id": 204255535,
+        "sender_full_name": "Jalex Stark",
+        "timestamp": 1595017929
+    }
+]

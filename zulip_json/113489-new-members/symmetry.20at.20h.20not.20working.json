@@ -1,0 +1,44 @@
+[
+    {
+        "content": "<p>I'm going through the complex number game and, for whatever reason, \"symmetry at h\" never works for me. I've found workarounds for it but I finally got stuck on a lemma without it and I don't know what's wrong with it. Could I just be on a version that doesn't allow symmetry on a hypothesis? I'm on version 3.13.2</p>",
+        "id": 199228126,
+        "sender_full_name": "Alena Gusakov",
+        "timestamp": 1590798501
+    },
+    {
+        "content": "<p>I think you have to write <code>symmetry' at h</code>. Looks like there's a gap in our tactic docs...</p>",
+        "id": 199228298,
+        "sender_full_name": "Bryan Gin-ge Chen",
+        "timestamp": 1590798720
+    },
+    {
+        "content": "<p>FYI you can always work around it with <code>have h := h.symm</code></p>",
+        "id": 199228595,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1590799039
+    },
+    {
+        "content": "<p>or generally use <code>h.symm</code> or <code>&lt;- h</code> where you would have used <code>h</code></p>",
+        "id": 199228671,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1590799120
+    },
+    {
+        "content": "<p>symmetry' worked!! Thank you :)</p>",
+        "id": 199228842,
+        "sender_full_name": "Alena Gusakov",
+        "timestamp": 1590799341
+    },
+    {
+        "content": "<p>And good to know</p>",
+        "id": 199228852,
+        "sender_full_name": "Alena Gusakov",
+        "timestamp": 1590799365
+    },
+    {
+        "content": "<p>Sorry, I think I made symmetry work in the natural number game by hackery, expecting lean to catch up some day...</p>",
+        "id": 199242041,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1590820677
+    }
+]

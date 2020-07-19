@@ -1,0 +1,179 @@
+---
+layout: archive
+title: Zulip Chat Archive
+permalink: /stream/113488-general/topic/n.20.E2.89.A0.200.20vs.200.20.3C.20n.html
+---
+
+<h2>Stream: <a href="http://robertylewis.com/archive/stream/113488-general/index.html">general</a></h2>
+<h3>Topic: <a href="http://robertylewis.com/archive/stream/113488-general/topic/n.20.E2.89.A0.200.20vs.200.20.3C.20n.html">n ≠ 0 vs 0 < n</a></h3>
+
+<hr>
+
+<base href="https://leanprover.zulipchat.com">
+
+<head><link href="/style.css" rel="stylesheet"></head>
+
+{% raw %}
+
+<a name="202195837"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113488-general/topic/n%20%E2%89%A0%200%20vs%200%20%3C%20n/near/202195837" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="http://robertylewis.com/archive/stream/113488-general/topic/n.20.E2.89.A0.200.20vs.200.20.3C.20n.html#202195837">(Jun 27 2020 at 17:14)</a>:</h4>
+<p>Do we have a convention on whether we assume <code>n ≠ 0</code> or <code>0 &lt; n</code> in statements (for <code>n : nat</code>)? Should we have a linter for this?</p>
+
+
+
+<a name="202195927"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113488-general/topic/n%20%E2%89%A0%200%20vs%200%20%3C%20n/near/202195927" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Floris van Doorn <a href="http://robertylewis.com/archive/stream/113488-general/topic/n.20.E2.89.A0.200.20vs.200.20.3C.20n.html#202195927">(Jun 27 2020 at 17:16)</a>:</h4>
+<p>I would also like to standardize this and similar things (like <code>n ≠ 0</code> vs <code>0 &lt; n</code> in <code>ennreal</code> or <code>n ≠ \top</code> vs <code>n &lt; \top</code> in <code>ennreal</code>).</p>
+
+
+
+<a name="202195939"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113488-general/topic/n%20%E2%89%A0%200%20vs%200%20%3C%20n/near/202195939" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Chris Hughes <a href="http://robertylewis.com/archive/stream/113488-general/topic/n.20.E2.89.A0.200.20vs.200.20.3C.20n.html#202195939">(Jun 27 2020 at 17:17)</a>:</h4>
+<p>The convention is <code>0 &lt; n</code> but I would prefer <code>n ne 0</code></p>
+
+
+
+<a name="202196004"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113488-general/topic/n%20%E2%89%A0%200%20vs%200%20%3C%20n/near/202196004" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Floris van Doorn <a href="http://robertylewis.com/archive/stream/113488-general/topic/n.20.E2.89.A0.200.20vs.200.20.3C.20n.html#202196004">(Jun 27 2020 at 17:18)</a>:</h4>
+<p>My vote would be to use inequalities as default: they are more easily usable. For example <code>n ≠ 0</code> and <code>n \le m</code> doesn't immediately give <code>m ≠ 0</code>, but replace <code>ne 0</code> by inequalities and it's one step.<br>
+(inequalities are sometimes 1 step longer to prove, but I think "immediate usability" is more useful).</p>
+
+
+
+<a name="202196010"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113488-general/topic/n%20%E2%89%A0%200%20vs%200%20%3C%20n/near/202196010" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Floris van Doorn <a href="http://robertylewis.com/archive/stream/113488-general/topic/n.20.E2.89.A0.200.20vs.200.20.3C.20n.html#202196010">(Jun 27 2020 at 17:19)</a>:</h4>
+<p>Why would you prefer <code>\ne</code>, <span class="user-mention" data-user-id="110044">@Chris Hughes</span>?</p>
+
+
+
+<a name="202196158"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113488-general/topic/n%20%E2%89%A0%200%20vs%200%20%3C%20n/near/202196158" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Chris Hughes <a href="http://robertylewis.com/archive/stream/113488-general/topic/n.20.E2.89.A0.200.20vs.200.20.3C.20n.html#202196158">(Jun 27 2020 at 17:23)</a>:</h4>
+<p>It's usually easier to prove <code>ne 0</code>, <code>assume h : n = 0, simp * at *</code> works quite a lot. It's also more consistent with types other than <code>nat</code>, where a nonzero assumption is more common than positivity, so it's easier to prove a casted nat is nonzero if you already have <code>n ne 0</code></p>
+
+
+
+<a name="202196289"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113488-general/topic/n%20%E2%89%A0%200%20vs%200%20%3C%20n/near/202196289" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Chris Hughes <a href="http://robertylewis.com/archive/stream/113488-general/topic/n.20.E2.89.A0.200.20vs.200.20.3C.20n.html#202196289">(Jun 27 2020 at 17:27)</a>:</h4>
+<div class="codehilite"><pre><span></span><code><span class="kn">example</span> <span class="o">(</span><span class="n">n</span> <span class="n">m</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">)</span> <span class="o">(</span><span class="n">hn</span> <span class="o">:</span> <span class="n">n</span> <span class="bp">≠</span> <span class="mi">0</span><span class="o">)</span> <span class="o">(</span><span class="n">hm</span> <span class="o">:</span> <span class="n">n</span> <span class="bp">≤</span> <span class="n">m</span><span class="o">)</span> <span class="o">:</span> <span class="n">m</span> <span class="bp">≠</span> <span class="mi">0</span> <span class="o">:=</span> <span class="bp">λ</span> <span class="n">h</span><span class="o">,</span> <span class="k">by</span> <span class="n">simp</span> <span class="bp">*</span> <span class="n">at</span> <span class="bp">*</span>
+</code></pre></div>
+
+
+
+<a name="202196357"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113488-general/topic/n%20%E2%89%A0%200%20vs%200%20%3C%20n/near/202196357" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Chris Hughes <a href="http://robertylewis.com/archive/stream/113488-general/topic/n.20.E2.89.A0.200.20vs.200.20.3C.20n.html#202196357">(Jun 27 2020 at 17:29)</a>:</h4>
+<p>I think assumptions like <code>a * b \ne 0</code> are more common ways to prove nonzero-ness than transitivity of <code>le</code> or <code>lt</code></p>
+
+
+
+<a name="202196912"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113488-general/topic/n%20%E2%89%A0%200%20vs%200%20%3C%20n/near/202196912" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="http://robertylewis.com/archive/stream/113488-general/topic/n.20.E2.89.A0.200.20vs.200.20.3C.20n.html#202196912">(Jun 27 2020 at 17:43)</a>:</h4>
+<p>Before writing this post I was also intuitively leaning towards <code>≠</code>... I think unconsciously for reasons similar to the ones that Chris has listed.</p>
+
+
+
+<a name="202197083"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113488-general/topic/n%20%E2%89%A0%200%20vs%200%20%3C%20n/near/202197083" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Floris van Doorn <a href="http://robertylewis.com/archive/stream/113488-general/topic/n.20.E2.89.A0.200.20vs.200.20.3C.20n.html#202197083">(Jun 27 2020 at 17:47)</a>:</h4>
+<p>Ok, that's fair. I'm fine with switching to "not equal" as default.</p>
+
+
+
+<a name="202197971"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113488-general/topic/n%20%E2%89%A0%200%20vs%200%20%3C%20n/near/202197971" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="http://robertylewis.com/archive/stream/113488-general/topic/n.20.E2.89.A0.200.20vs.200.20.3C.20n.html#202197971">(Jun 27 2020 at 18:07)</a>:</h4>
+<p><span class="user-mention" data-user-id="111080">@Floris van Doorn</span> How hard is it to write a linter for this?</p>
+
+
+
+<a name="202198231"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113488-general/topic/n%20%E2%89%A0%200%20vs%200%20%3C%20n/near/202198231" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Floris van Doorn <a href="http://robertylewis.com/archive/stream/113488-general/topic/n.20.E2.89.A0.200.20vs.200.20.3C.20n.html#202198231">(Jun 27 2020 at 18:12)</a>:</h4>
+<p>It's not hard. <br>
+So the linter complains whenever you have an assumption of the form <code>0 &lt; _</code> in <code>nat</code>. That's easy. I think we want to allow other cases, like an <code>iff</code> containing <code>0 &lt; _</code>?</p>
+
+
+
+<a name="202198238"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113488-general/topic/n%20%E2%89%A0%200%20vs%200%20%3C%20n/near/202198238" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="http://robertylewis.com/archive/stream/113488-general/topic/n.20.E2.89.A0.200.20vs.200.20.3C.20n.html#202198238">(Jun 27 2020 at 18:13)</a>:</h4>
+<p>I don't know if we want that...</p>
+
+
+
+<a name="202198281"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113488-general/topic/n%20%E2%89%A0%200%20vs%200%20%3C%20n/near/202198281" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="http://robertylewis.com/archive/stream/113488-general/topic/n.20.E2.89.A0.200.20vs.200.20.3C.20n.html#202198281">(Jun 27 2020 at 18:14)</a>:</h4>
+<p>I think that apart from some cases that we explicitly <code>nolint</code>, we should strive to then keep <code>0 &lt; _</code> out of assumptions, and conclusions.</p>
+
+
+
+<a name="202198490"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113488-general/topic/n%20%E2%89%A0%200%20vs%200%20%3C%20n/near/202198490" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Floris van Doorn <a href="http://robertylewis.com/archive/stream/113488-general/topic/n.20.E2.89.A0.200.20vs.200.20.3C.20n.html#202198490">(Jun 27 2020 at 18:19)</a>:</h4>
+<p>ok, it's also easy to check for any occurrence of <code>0 &lt; _</code> in <code>nat</code>.</p>
+
+
+
+<a name="202198496"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113488-general/topic/n%20%E2%89%A0%200%20vs%200%20%3C%20n/near/202198496" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Floris van Doorn <a href="http://robertylewis.com/archive/stream/113488-general/topic/n.20.E2.89.A0.200.20vs.200.20.3C.20n.html#202198496">(Jun 27 2020 at 18:19)</a>:</h4>
+<p>Let's first get to a consensus though, few people have chimed in so far.</p>
+
+
+
+<a name="202198571"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113488-general/topic/n%20%E2%89%A0%200%20vs%200%20%3C%20n/near/202198571" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="http://robertylewis.com/archive/stream/113488-general/topic/n.20.E2.89.A0.200.20vs.200.20.3C.20n.html#202198571">(Jun 27 2020 at 18:21)</a>:</h4>
+<p>Let's ping some people with opinions: <span class="user-mention" data-user-id="110049">@Mario Carneiro</span> <span class="user-mention" data-user-id="110031">@Patrick Massot</span> <span class="user-mention" data-user-id="110050">@Sebastien Gouezel</span> <span class="user-mention" data-user-id="110026">@Simon Hudon</span> <span class="user-mention" data-user-id="110043">@Gabriel Ebner</span></p>
+
+
+
+<a name="202198579"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113488-general/topic/n%20%E2%89%A0%200%20vs%200%20%3C%20n/near/202198579" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="http://robertylewis.com/archive/stream/113488-general/topic/n.20.E2.89.A0.200.20vs.200.20.3C.20n.html#202198579">(Jun 27 2020 at 18:21)</a>:</h4>
+<p><span class="user-mention" data-user-id="110064">@Kenny Lau</span> <span class="user-mention" data-user-id="110087">@Scott Morrison</span> <span class="user-mention" data-user-id="110038">@Kevin Buzzard</span> <span class="user-mention" data-user-id="110032">@Reid Barton</span></p>
+
+
+
+<a name="202198617"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113488-general/topic/n%20%E2%89%A0%200%20vs%200%20%3C%20n/near/202198617" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="http://robertylewis.com/archive/stream/113488-general/topic/n.20.E2.89.A0.200.20vs.200.20.3C.20n.html#202198617">(Jun 27 2020 at 18:22)</a>:</h4>
+<p>Lol... I could almost as well have just used <code>@maintainers</code> <span aria-label="face palm" class="emoji emoji-1f926" role="img" title="face palm">:face_palm:</span></p>
+
+
+
+<a name="202198641"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113488-general/topic/n%20%E2%89%A0%200%20vs%200%20%3C%20n/near/202198641" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="http://robertylewis.com/archive/stream/113488-general/topic/n.20.E2.89.A0.200.20vs.200.20.3C.20n.html#202198641">(Jun 27 2020 at 18:22)</a>:</h4>
+<p>first let's remove all the <code>n &gt; 0</code> instances in core</p>
+
+
+
+<a name="202198694"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113488-general/topic/n%20%E2%89%A0%200%20vs%200%20%3C%20n/near/202198694" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="http://robertylewis.com/archive/stream/113488-general/topic/n.20.E2.89.A0.200.20vs.200.20.3C.20n.html#202198694">(Jun 27 2020 at 18:24)</a>:</h4>
+<p>For <code>n ≠ 0</code>, like this message (you can like both).</p>
+
+
+
+<a name="202198697"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113488-general/topic/n%20%E2%89%A0%200%20vs%200%20%3C%20n/near/202198697" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="http://robertylewis.com/archive/stream/113488-general/topic/n.20.E2.89.A0.200.20vs.200.20.3C.20n.html#202198697">(Jun 27 2020 at 18:24)</a>:</h4>
+<p>For <code>0 &lt; n</code>, like this message (you can like both).</p>
+
+
+
+<a name="202200894"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113488-general/topic/n%20%E2%89%A0%200%20vs%200%20%3C%20n/near/202200894" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="http://robertylewis.com/archive/stream/113488-general/topic/n.20.E2.89.A0.200.20vs.200.20.3C.20n.html#202200894">(Jun 27 2020 at 19:18)</a>:</h4>
+<p>I love that ne is a function: you can just apply it when you're showing simple term mode stuff to mathematicians or explaining definitional equality. The more <code>ne</code> the better</p>
+
+
+
+<a name="202202040"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113488-general/topic/n%20%E2%89%A0%200%20vs%200%20%3C%20n/near/202202040" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="http://robertylewis.com/archive/stream/113488-general/topic/n.20.E2.89.A0.200.20vs.200.20.3C.20n.html#202202040">(Jun 27 2020 at 19:45)</a>:</h4>
+<p>I don't see much point in a lint rule because it will be unavoidable to use both anyways.</p>
+
+
+
+<a name="202202765"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113488-general/topic/n%20%E2%89%A0%200%20vs%200%20%3C%20n/near/202202765" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="http://robertylewis.com/archive/stream/113488-general/topic/n.20.E2.89.A0.200.20vs.200.20.3C.20n.html#202202765">(Jun 27 2020 at 20:03)</a>:</h4>
+<p>I'd rather just write whatever is more natural/convenient locally, which I guess is the status quo.</p>
+
+
+
+<a name="202211432"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113488-general/topic/n%20%E2%89%A0%200%20vs%200%20%3C%20n/near/202211432" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Scott Morrison <a href="http://robertylewis.com/archive/stream/113488-general/topic/n.20.E2.89.A0.200.20vs.200.20.3C.20n.html#202211432">(Jun 28 2020 at 00:17)</a>:</h4>
+<p>A lint rule seems excessive, except for the fact that it would be really nice to be much more consistent/principled about this choice, and from experience it may take a linting rule to push us to achieve this. :-)</p>
+
+
+
+{% endraw %}
+
+<hr><p>Last updated: Jul 19 2020 at 13:36 UTC</p>

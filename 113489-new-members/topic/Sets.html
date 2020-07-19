@@ -1,0 +1,218 @@
+---
+layout: archive
+title: Zulip Chat Archive
+permalink: /stream/113489-new-members/topic/Sets.html
+---
+
+<h2>Stream: <a href="http://robertylewis.com/archive/stream/113489-new-members/index.html">new members</a></h2>
+<h3>Topic: <a href="http://robertylewis.com/archive/stream/113489-new-members/topic/Sets.html">Sets</a></h3>
+
+<hr>
+
+<base href="https://leanprover.zulipchat.com">
+
+<head><link href="/style.css" rel="stylesheet"></head>
+
+{% raw %}
+
+<a name="197645788"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113489-new%20members/topic/Sets/near/197645788" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Brandon Brown <a href="http://robertylewis.com/archive/stream/113489-new-members/topic/Sets.html#197645788">(May 15 2020 at 03:53)</a>:</h4>
+<p>How do I do something as trivial as proving set membership?</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="n">data</span><span class="bp">.</span><span class="n">finset</span>
+
+<span class="n">def</span> <span class="n">x1</span> <span class="o">:</span> <span class="n">finset</span> <span class="bp">ℕ</span> <span class="o">:=</span> <span class="o">{</span><span class="mi">1</span><span class="o">,</span><span class="mi">2</span><span class="o">,</span><span class="mi">3</span><span class="o">}</span>
+<span class="bp">#</span><span class="n">reduce</span> <span class="mi">1</span> <span class="err">∈</span> <span class="n">x1</span>   <span class="c1">--1 = 3 ∨ 1 = 2 ∨ 1 = 1 ∨ false</span>
+<span class="kn">example</span> <span class="o">:</span> <span class="mi">1</span> <span class="err">∈</span> <span class="n">x1</span> <span class="o">:=</span> <span class="n">sorry</span>
+</code></pre></div>
+
+
+
+<a name="197645957"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113489-new%20members/topic/Sets/near/197645957" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bryan Gin-ge Chen <a href="http://robertylewis.com/archive/stream/113489-new-members/topic/Sets.html#197645957">(May 15 2020 at 03:57)</a>:</h4>
+<p>In this case you can use <code>dec_trivial</code>:</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="n">data</span><span class="bp">.</span><span class="n">finset</span>
+
+<span class="n">def</span> <span class="n">x1</span> <span class="o">:</span> <span class="n">finset</span> <span class="bp">ℕ</span> <span class="o">:=</span> <span class="o">{</span><span class="mi">1</span><span class="o">,</span><span class="mi">2</span><span class="o">,</span><span class="mi">3</span><span class="o">}</span>
+<span class="bp">#</span><span class="n">reduce</span> <span class="mi">1</span> <span class="err">∈</span> <span class="n">x1</span>   <span class="c1">--1 = 3 ∨ 1 = 2 ∨ 1 = 1 ∨ false</span>
+<span class="kn">example</span> <span class="o">:</span> <span class="mi">1</span> <span class="err">∈</span> <span class="n">x1</span> <span class="o">:=</span> <span class="n">dec_trivial</span>
+</code></pre></div>
+
+
+
+<a name="197646023"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113489-new%20members/topic/Sets/near/197646023" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="http://robertylewis.com/archive/stream/113489-new-members/topic/Sets.html#197646023">(May 15 2020 at 03:58)</a>:</h4>
+<p><span class="user-mention" data-user-id="243102">@Brandon Brown</span> If you've got a very explicit set, like in your example, then it's <code>dec_trivial</code>, like Bryan said. If you have a set if the form <code>finset.range n</code> or <code>finset.filter foo bar</code>, then there will be lemmas <code>finset.mem_range</code> and <code>finset.mem_filter</code> etc... that help you proving this.</p>
+
+
+
+<a name="197646051"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113489-new%20members/topic/Sets/near/197646051" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Brandon Brown <a href="http://robertylewis.com/archive/stream/113489-new-members/topic/Sets.html#197646051">(May 15 2020 at 03:59)</a>:</h4>
+<p>Thanks!</p>
+
+
+
+<a name="197646109"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113489-new%20members/topic/Sets/near/197646109" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="http://robertylewis.com/archive/stream/113489-new-members/topic/Sets.html#197646109">(May 15 2020 at 04:00)</a>:</h4>
+<p><span class="user-mention silent" data-user-id="243102">Brandon Brown</span> <a href="#narrow/stream/113489-new-members/topic/Sets/near/197645788">said</a>:</p>
+<blockquote>
+<div class="codehilite"><pre><span></span><code><span class="bp">#</span><span class="n">reduce</span> <span class="mi">1</span> <span class="err">∈</span> <span class="n">x1</span>   <span class="c1">--1 = 3 ∨ 1 = 2 ∨ 1 = 1 ∨ false</span>
+</code></pre></div>
+
+
+</blockquote>
+<p>Note that this is about to change to</p>
+<div class="codehilite"><pre><span></span><code><span class="bp">#</span><span class="n">reduce</span> <span class="mi">1</span> <span class="err">∈</span> <span class="n">x1</span>   <span class="c1">--1 = 1 ∨ 1 = 2 ∨ 1 = 3</span>
+</code></pre></div>
+
+
+<p>which I think is a big improvement (-;</p>
+
+
+
+<a name="197646136"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113489-new%20members/topic/Sets/near/197646136" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="http://robertylewis.com/archive/stream/113489-new-members/topic/Sets.html#197646136">(May 15 2020 at 04:01)</a>:</h4>
+<p>Also, if you don't like <code>dec_trivial</code>, you could use a combination of <code>or.inl</code>, <code>or.inr</code> and <code>rfl</code>.</p>
+
+
+
+<a name="197646205"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113489-new%20members/topic/Sets/near/197646205" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bryan Gin-ge Chen <a href="http://robertylewis.com/archive/stream/113489-new-members/topic/Sets.html#197646205">(May 15 2020 at 04:02)</a>:</h4>
+<p>This reminds me a lot of <a href="#narrow/stream/113489-new-members/topic/proof.20of.20something.20that.20.23eval.20.2F.20.23reduce.20computes">one of my early threads here</a>.</p>
+
+
+
+<a name="197646822"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113489-new%20members/topic/Sets/near/197646822" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Brandon Brown <a href="http://robertylewis.com/archive/stream/113489-new-members/topic/Sets.html#197646822">(May 15 2020 at 04:17)</a>:</h4>
+<p>I have a more basic question. I understand constructions of the form</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">variables</span> <span class="o">(</span><span class="n">p</span> <span class="n">q</span> <span class="o">:</span> <span class="kt">Prop</span><span class="o">)</span>
+<span class="kn">example</span> <span class="o">(</span><span class="n">h</span> <span class="o">:</span> <span class="n">p</span><span class="o">)</span> <span class="o">:</span> <span class="n">p</span> <span class="bp">∨</span> <span class="n">q</span> <span class="o">:=</span> <span class="n">or</span><span class="bp">.</span><span class="n">inl</span> <span class="n">h</span>
+</code></pre></div>
+
+
+<p>Because I'm injecting h</p>
+
+
+
+<a name="197646869"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113489-new%20members/topic/Sets/near/197646869" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Brandon Brown <a href="http://robertylewis.com/archive/stream/113489-new-members/topic/Sets.html#197646869">(May 15 2020 at 04:18)</a>:</h4>
+<p>But I don't really understand what's going on under the hood with</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">example</span> <span class="o">:</span> <span class="o">(</span><span class="mi">1</span> <span class="bp">=</span> <span class="mi">1</span><span class="o">)</span> <span class="bp">∨</span> <span class="n">false</span> <span class="o">:=</span> <span class="n">or</span><span class="bp">.</span><span class="n">inl</span> <span class="o">(</span><span class="n">rfl</span><span class="o">)</span>
+</code></pre></div>
+
+
+
+<a name="197646881"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113489-new%20members/topic/Sets/near/197646881" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/archive/stream/113489-new-members/topic/Sets.html#197646881">(May 15 2020 at 04:18)</a>:</h4>
+<p><code>or.inl _</code> would expect a proof of <code>1 = 1</code> at the location of the <code>_</code></p>
+
+
+
+<a name="197646882"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113489-new%20members/topic/Sets/near/197646882" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="http://robertylewis.com/archive/stream/113489-new-members/topic/Sets.html#197646882">(May 15 2020 at 04:18)</a>:</h4>
+<p>Well, you need to inject a proof of <code>1 = 1</code></p>
+
+
+
+<a name="197646889"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113489-new%20members/topic/Sets/near/197646889" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bryan Gin-ge Chen <a href="http://robertylewis.com/archive/stream/113489-new-members/topic/Sets.html#197646889">(May 15 2020 at 04:18)</a>:</h4>
+<p>Let <code>p := 1=1</code>, <code>q := false</code> and <code>h := rfl</code>.</p>
+
+
+
+<a name="197646890"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113489-new%20members/topic/Sets/near/197646890" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/archive/stream/113489-new-members/topic/Sets.html#197646890">(May 15 2020 at 04:18)</a>:</h4>
+<p>and <code>rfl</code> is a proof of <code>1 = 1</code></p>
+
+
+
+<a name="197647072"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113489-new%20members/topic/Sets/near/197647072" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Brandon Brown <a href="http://robertylewis.com/archive/stream/113489-new-members/topic/Sets.html#197647072">(May 15 2020 at 04:22)</a>:</h4>
+<p>Ahh right I see</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">variable</span> <span class="n">p</span> <span class="o">:</span> <span class="o">(</span><span class="mi">1</span> <span class="bp">=</span> <span class="mi">1</span><span class="o">)</span>
+<span class="kn">example</span> <span class="o">:</span> <span class="o">(</span><span class="mi">1</span> <span class="bp">=</span> <span class="mi">1</span><span class="o">)</span> <span class="bp">∨</span> <span class="n">false</span> <span class="o">:=</span> <span class="n">or</span><span class="bp">.</span><span class="n">inl</span> <span class="n">p</span>
+</code></pre></div>
+
+
+<p>So using rfl is inferring this since what else could it be</p>
+
+
+
+<a name="197647079"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113489-new%20members/topic/Sets/near/197647079" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/archive/stream/113489-new-members/topic/Sets.html#197647079">(May 15 2020 at 04:23)</a>:</h4>
+<p><code>rfl</code> is short for <code>eq.refl _</code></p>
+
+
+
+<a name="197647080"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113489-new%20members/topic/Sets/near/197647080" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="http://robertylewis.com/archive/stream/113489-new-members/topic/Sets.html#197647080">(May 15 2020 at 04:23)</a>:</h4>
+<p>rfl is a smart kid (-;</p>
+
+
+
+<a name="197650843"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113489-new%20members/topic/Sets/near/197650843" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="http://robertylewis.com/archive/stream/113489-new-members/topic/Sets.html#197650843">(May 15 2020 at 05:59)</a>:</h4>
+<p><code>refl</code> is a powerful tactic!</p>
+
+
+
+<a name="197653464"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113489-new%20members/topic/Sets/near/197653464" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="http://robertylewis.com/archive/stream/113489-new-members/topic/Sets.html#197653464">(May 15 2020 at 06:54)</a>:</h4>
+<p>the correct way, much as I hate it, is <code>by simp</code>:</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="n">data</span><span class="bp">.</span><span class="n">finset</span>
+
+<span class="n">def</span> <span class="n">x1</span> <span class="o">:</span> <span class="n">finset</span> <span class="bp">ℕ</span> <span class="o">:=</span> <span class="o">{</span><span class="mi">1</span><span class="o">,</span><span class="mi">2</span><span class="o">,</span><span class="mi">3</span><span class="o">}</span>
+<span class="kn">example</span> <span class="o">:</span> <span class="mi">1</span> <span class="err">∈</span> <span class="n">x1</span> <span class="o">:=</span> <span class="k">by</span> <span class="n">simp</span> <span class="o">[</span><span class="n">x1</span><span class="o">]</span>
+
+<span class="kn">variables</span> <span class="o">{</span><span class="n">α</span> <span class="o">:</span> <span class="kt">Type</span><span class="bp">*</span><span class="o">}</span> <span class="o">[</span><span class="n">has_one</span> <span class="n">α</span><span class="o">]</span> <span class="o">[</span><span class="n">has_add</span> <span class="n">α</span><span class="o">]</span> <span class="o">[</span><span class="n">decidable_eq</span> <span class="n">α</span><span class="o">]</span>
+<span class="n">def</span> <span class="n">x2</span> <span class="o">:</span> <span class="n">finset</span> <span class="n">α</span> <span class="o">:=</span> <span class="o">{</span><span class="mi">1</span><span class="o">,</span><span class="mi">2</span><span class="o">,</span><span class="mi">3</span><span class="o">}</span>
+<span class="kn">example</span> <span class="o">:</span> <span class="o">(</span><span class="mi">1</span> <span class="o">:</span> <span class="n">α</span><span class="o">)</span> <span class="err">∈</span> <span class="o">(</span><span class="n">x2</span> <span class="o">:</span> <span class="n">finset</span> <span class="n">α</span><span class="o">)</span> <span class="o">:=</span> <span class="n">dec_trivial</span> <span class="c1">-- fails</span>
+<span class="kn">example</span> <span class="o">:</span> <span class="o">(</span><span class="mi">1</span> <span class="o">:</span> <span class="n">α</span><span class="o">)</span> <span class="err">∈</span> <span class="o">(</span><span class="n">x2</span> <span class="o">:</span> <span class="n">finset</span> <span class="n">α</span><span class="o">)</span> <span class="o">:=</span> <span class="k">by</span> <span class="n">simp</span> <span class="o">[</span><span class="n">x2</span><span class="o">]</span> <span class="c1">-- works</span>
+</code></pre></div>
+
+
+
+<a name="197653671"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113489-new%20members/topic/Sets/near/197653671" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="http://robertylewis.com/archive/stream/113489-new-members/topic/Sets.html#197653671">(May 15 2020 at 06:58)</a>:</h4>
+<p>the last line is equivalent to <code>simp only [x2, eq_self_iff_true, or_true, finset.mem_insert, finset.mem_singleton, finset.singleton_eq_singleton]</code></p>
+
+
+
+<a name="197653679"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113489-new%20members/topic/Sets/near/197653679" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="http://robertylewis.com/archive/stream/113489-new-members/topic/Sets.html#197653679">(May 15 2020 at 06:58)</a>:</h4>
+<p>(thanks, <code>squeeze_simp</code>)</p>
+
+
+
+<a name="197653881"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113489-new%20members/topic/Sets/near/197653881" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bryan Gin-ge Chen <a href="http://robertylewis.com/archive/stream/113489-new-members/topic/Sets.html#197653881">(May 15 2020 at 07:01)</a>:</h4>
+<p>That's surprising to me. Are there some missing decidability instances somewhere?</p>
+
+
+
+<a name="197654036"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113489-new%20members/topic/Sets/near/197654036" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="http://robertylewis.com/archive/stream/113489-new-members/topic/Sets.html#197654036">(May 15 2020 at 07:03)</a>:</h4>
+<p>no, it's just that asserting <code>\a</code> has decidable_eq does not actually give an algorithm to decide whether two terms of <code>\a</code> are equal</p>
+
+
+
+<a name="197654045"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113489-new%20members/topic/Sets/near/197654045" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="http://robertylewis.com/archive/stream/113489-new-members/topic/Sets.html#197654045">(May 15 2020 at 07:03)</a>:</h4>
+<p>if <code>\a</code> is anything concrete (like <code>\N</code>) then it will work</p>
+
+
+
+<a name="197654333"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113489-new%20members/topic/Sets/near/197654333" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bryan Gin-ge Chen <a href="http://robertylewis.com/archive/stream/113489-new-members/topic/Sets.html#197654333">(May 15 2020 at 07:07)</a>:</h4>
+<p>Oh, right. The type class is a <code>variable</code> so there's no actual definition.</p>
+
+
+
+<a name="197655263"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113489-new%20members/topic/Sets/near/197655263" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="http://robertylewis.com/archive/stream/113489-new-members/topic/Sets.html#197655263">(May 15 2020 at 07:19)</a>:</h4>
+<p>yeah that also confused me for a while :P</p>
+
+
+
+{% endraw %}
+
+<hr><p>Last updated: Jul 19 2020 at 13:36 UTC</p>

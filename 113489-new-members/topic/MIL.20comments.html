@@ -1,0 +1,81 @@
+---
+layout: archive
+title: Zulip Chat Archive
+permalink: /stream/113489-new-members/topic/MIL.20comments.html
+---
+
+<h2>Stream: <a href="http://robertylewis.com/archive/stream/113489-new-members/index.html">new members</a></h2>
+<h3>Topic: <a href="http://robertylewis.com/archive/stream/113489-new-members/topic/MIL.20comments.html">MIL comments</a></h3>
+
+<hr>
+
+<base href="https://leanprover.zulipchat.com">
+
+<head><link href="/style.css" rel="stylesheet"></head>
+
+{% raw %}
+
+<a name="203353408"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113489-new%20members/topic/MIL%20comments/near/203353408" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Julian Külshammer <a href="http://robertylewis.com/archive/stream/113489-new-members/topic/MIL.20comments.html#203353408">(Jul 09 2020 at 06:08)</a>:</h4>
+<p>Since <span class="user-mention" data-user-id="110031">@Patrick Massot</span> encouraged me to write comments about "Mathematics in Lean", here are some regarding Chapter 2 which I just finished (solving most of the exercises):</p>
+<p>2.2: In the example at the end if one "feels cocky": Normally I would prove mul_right_inv before proving mul_one. Maybe this is just me and maybe it is a good lesson for "cocky" people.<br>
+2.3 As a beginner in Lean I was very confused over le_trans that addition and multiplication are by default left associated while implication is right associated. I feel like, this could be pointed out at this point (it is at least stated in Chapter 3.<br>
+2.3 "however we will use that fact that" should be "however we will use the fact that", small typo I think.<br>
+2.3 In the exercise to prove 0\le a^2, if I follow the advice and use library_search, then it replies "failed" for me. If I tell it that it has e^a\le e^b, then library_search does work, but also linarith works (with the same "amount of help"), so I didn't quite get the sentence below the exercise.<br>
+2.4 In the example where one should prove x \| y * (x * z) + x^2 + w^2 could one put the lemma x \| x^2 in the code that was proved before, so that one can use that instead of duplicating this part of the goal?<br>
+2.5 Small typo: "algebraic structures likes" should be "algebraic structures like"<br>
+2.5 You write that "It is a good exercise to prove that not every lattice is distributive by constructing one", unfortunately, what this tutorial seems to be missing is an explanation how to set up such a structure, i.e. how does one give an example of a group, a vector space, etc. Maybe this is worth another section/chapter to explain how to define a mathematical object and how to give an instance of a mathematical object.</p>
+
+
+
+<a name="203354267"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113489-new%20members/topic/MIL%20comments/near/203354267" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="http://robertylewis.com/archive/stream/113489-new-members/topic/MIL.20comments.html#203354267">(Jul 09 2020 at 06:29)</a>:</h4>
+<p>Thanks!</p>
+
+
+
+<a name="203375471"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113489-new%20members/topic/MIL%20comments/near/203375471" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jeremy Avigad <a href="http://robertylewis.com/archive/stream/113489-new-members/topic/MIL.20comments.html#203375471">(Jul 09 2020 at 11:41)</a>:</h4>
+<p>Thanks, Julian! These are <em>extremely</em> helpful. We'll make these fixes to next version of MiL soon, and maybe come back with questions.</p>
+<p>A quick response to the last comment: indeed, we certainly intend to write a chapter on how to define and work with algebraic structures. There's a wiki here, <a href="https://github.com/avigad/mathematics_in_lean_source/wiki">https://github.com/avigad/mathematics_in_lean_source/wiki</a>, but the plans keep changing.</p>
+
+
+
+<a name="203450753"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113489-new%20members/topic/MIL%20comments/near/203450753" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jeremy Avigad <a href="http://robertylewis.com/archive/stream/113489-new-members/topic/MIL.20comments.html#203450753">(Jul 09 2020 at 22:37)</a>:</h4>
+<p><span class="user-mention" data-user-id="317890">@Julian Külshammer</span>, in my just-updated mathlib, I tried this:</p>
+<div class="codehilite"><pre><span></span><code>    <span class="kn">import</span> <span class="n">data</span><span class="bp">.</span><span class="n">real</span><span class="bp">.</span><span class="n">basic</span>
+    <span class="kn">import</span> <span class="n">tactic</span>
+
+    <span class="kn">example</span> <span class="o">(</span><span class="n">a</span> <span class="o">:</span> <span class="n">ℝ</span><span class="o">)</span> <span class="o">:</span> <span class="mi">0</span> <span class="bp">≤</span> <span class="n">a</span><span class="bp">^</span><span class="mi">2</span> <span class="o">:=</span>
+    <span class="k">begin</span>
+      <span class="n">library_search</span><span class="o">,</span>
+      <span class="c1">-- exact pow_two_nonneg a</span>
+    <span class="kn">end</span>
+</code></pre></div>
+
+
+<p>I get the suggestion: "Try this: exact pow_two_nonneg a". That is what we want. Can you confirm that it fails when you try it?</p>
+<p>In the next exercise, the idea was indeed to encourage you to use <code>library_search</code>figure out how to show <code>exp a &lt;= exp b</code>. You can then say this:</p>
+<div class="codehilite"><pre><span></span><code>    <span class="kn">example</span> <span class="o">(</span><span class="n">h</span> <span class="o">:</span> <span class="n">a</span> <span class="bp">≤</span> <span class="n">b</span><span class="o">)</span> <span class="o">:</span> <span class="n">c</span> <span class="bp">-</span> <span class="n">exp</span> <span class="n">b</span> <span class="bp">≤</span> <span class="n">c</span> <span class="bp">-</span> <span class="n">exp</span> <span class="n">a</span> <span class="o">:=</span>
+    <span class="k">begin</span>
+      <span class="k">have</span> <span class="o">:</span> <span class="n">exp</span> <span class="n">a</span> <span class="bp">≤</span> <span class="n">exp</span> <span class="n">b</span><span class="o">,</span>
+        <span class="k">from</span> <span class="n">exp_le_exp</span><span class="bp">.</span><span class="n">mpr</span> <span class="n">h</span><span class="o">,</span>
+      <span class="n">library_search</span>
+    <span class="kn">end</span>
+</code></pre></div>
+
+
+<p>Once again <code>library_search</code> gives you a one-liner that will finish it off, though <code>linarith</code> also works. We were trying to encourage you to play around with <code>library_search</code>, tab completion, and <code>linarith</code> -- whatever it takes to get the job done. Can you think of better wording for that?</p>
+
+
+
+<a name="203451441"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113489-new%20members/topic/MIL%20comments/near/203451441" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jeremy Avigad <a href="http://robertylewis.com/archive/stream/113489-new-members/topic/MIL.20comments.html#203451441">(Jul 09 2020 at 22:45)</a>:</h4>
+<p>In answer to the fifth question, yes, you could give the previous example a name like <code>dvd_square</code> or <code>dvd_pow_two</code> and then apply it. Though in this case it is probably easier to repeat the two commands.</p>
+
+
+
+{% endraw %}
+
+<hr><p>Last updated: Jul 19 2020 at 13:36 UTC</p>

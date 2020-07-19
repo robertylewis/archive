@@ -1,0 +1,44 @@
+[
+    {
+        "content": "<p>could someone kindly create a graph of imports?</p>",
+        "id": 152167877,
+        "sender_full_name": "Kenny Lau",
+        "timestamp": 1545209185
+    },
+    {
+        "content": "<p>do we have an import graph online?</p>",
+        "id": 198992419,
+        "sender_full_name": "Kenny Lau",
+        "timestamp": 1590652542
+    },
+    {
+        "content": "<p>Not yet, I think. It's WIP</p>",
+        "id": 198992693,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1590652744
+    },
+    {
+        "content": "<p>Also... now you have to update the title and first post of your PR <span aria-label=\"rofl\" class=\"emoji emoji-1f923\" role=\"img\" title=\"rofl\">:rofl:</span></p>",
+        "id": 198992727,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1590652759
+    },
+    {
+        "content": "<p>what do you mean?</p>",
+        "id": 198993044,
+        "sender_full_name": "Kenny Lau",
+        "timestamp": 1590653034
+    },
+    {
+        "content": "<p>Well... you're now attacking <code>nonzero_divisors</code> as well, right?</p>",
+        "id": 198993141,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1590653078
+    },
+    {
+        "content": "<p>It's less drastic, but it would be nice to mention it.</p>",
+        "id": 198993160,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1590653098
+    }
+]

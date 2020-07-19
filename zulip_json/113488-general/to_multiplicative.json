@@ -1,0 +1,20 @@
+[
+    {
+        "content": "<div class=\"codehilite\"><pre><span></span><code>490,725 {# change these line numbers\n  /lemma/ { h\n    /@/ { s/@\\[\\(.*\\)\\] lemma \\([a-z_.&#39;]*\\).*/@[\\1, to_additive \\2]/;b goto }\n    s/lemma \\([a-z_.&#39;]*\\).*/@[to_additive \\1]/\n    : goto\n    p; x\n    s/@\\[.*\\] // }\n  s/nonneg/one_le/g\n  s/nonpos/le_one/g\n  s/pos/one_lt/g\n  s/neg/lt_one/g\n  s/add/mul/g\n  s/zero/one/g\n  s/+/*/g\n  s/0/1/g }\n</code></pre></div>",
+        "id": 198869112,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1590572069
+    },
+    {
+        "content": "<p>This <span aria-label=\"up\" class=\"emoji emoji-2b06\" role=\"img\" title=\"up\">:up:</span> sed script might be helpful if you want to turn some additive file into a multiplicative file with <code>@[to_additive]</code> attributes.</p>",
+        "id": 198869158,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1590572105
+    },
+    {
+        "content": "<p>Also, it doesn't understand <code>theorem</code>, at the moment.</p>",
+        "id": 198869264,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1590572174
+    }
+]

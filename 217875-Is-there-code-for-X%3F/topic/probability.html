@@ -1,0 +1,463 @@
+---
+layout: archive
+title: Zulip Chat Archive
+permalink: /stream/217875-Is-there-code-for-X%3F/topic/probability.html
+---
+
+<h2>Stream: <a href="http://robertylewis.com/archive/stream/217875-Is-there-code-for-X%3F/index.html">Is there code for X?</a></h2>
+<h3>Topic: <a href="http://robertylewis.com/archive/stream/217875-Is-there-code-for-X%3F/topic/probability.html">probability</a></h3>
+
+<hr>
+
+<base href="https://leanprover.zulipchat.com">
+
+<head><link href="/style.css" rel="stylesheet"></head>
+
+{% raw %}
+
+<a name="196201588"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/217875-Is%20there%20code%20for%20X%3F/topic/probability/near/196201588" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jalex Stark <a href="http://robertylewis.com/archive/stream/217875-Is-there-code-for-X%3F/topic/probability.html#196201588">(May 04 2020 at 16:00)</a>:</h4>
+<p>I remember some people talking about how it's hard to think of a good API for probability (with random variables and independence and all that) in the context of proving the existence of special graphs with the probabilistic method</p>
+
+
+
+<a name="196201669"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/217875-Is%20there%20code%20for%20X%3F/topic/probability/near/196201669" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jalex Stark <a href="http://robertylewis.com/archive/stream/217875-Is-there-code-for-X%3F/topic/probability.html#196201669">(May 04 2020 at 16:01)</a>:</h4>
+<p>do we have any nontrivial theorems involving an infinite sequence of random variables on the same space, say a central limit theorem?</p>
+
+
+
+<a name="196201789"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/217875-Is%20there%20code%20for%20X%3F/topic/probability/near/196201789" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jalex Stark <a href="http://robertylewis.com/archive/stream/217875-Is-there-code-for-X%3F/topic/probability.html#196201789">(May 04 2020 at 16:02)</a>:</h4>
+<p>If not, I think that "prove anything that looks like a central limit theorem, and then study it to understand what is needed from the probability API" is a good line of work</p>
+
+
+
+<a name="196207028"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/217875-Is%20there%20code%20for%20X%3F/topic/probability/near/196207028" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="http://robertylewis.com/archive/stream/217875-Is-there-code-for-X%3F/topic/probability.html#196207028">(May 04 2020 at 16:37)</a>:</h4>
+<p>We have a whole bunch of stuff on measure spaces. But nothing specialised to probability. At some point there was a PR by <span class="user-mention" data-user-id="116448">@Koundinya Vajjha</span>. I don't know what happened to it. Maybe it can be resurrected?</p>
+
+
+
+<a name="196207417"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/217875-Is%20there%20code%20for%20X%3F/topic/probability/near/196207417" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jalex Stark <a href="http://robertylewis.com/archive/stream/217875-Is-there-code-for-X%3F/topic/probability.html#196207417">(May 04 2020 at 16:40)</a>:</h4>
+<p>Yeah, I agree that the measure spaces are mature enough that it should be easy to do probability on top of</p>
+
+
+
+<a name="196208835"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/217875-Is%20there%20code%20for%20X%3F/topic/probability/near/196208835" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Koundinya Vajjha <a href="http://robertylewis.com/archive/stream/217875-Is-there-code-for-X%3F/topic/probability.html#196208835">(May 04 2020 at 16:52)</a>:</h4>
+<p>Apologies. I do have a tiny probability theory library up in a different repo, but it's out of date and breaks with current mathlib. I keep putting it off but I promise to devote some time to it the next couple of weeks and will try to PR.</p>
+
+
+
+<a name="196208990"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/217875-Is%20there%20code%20for%20X%3F/topic/probability/near/196208990" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="http://robertylewis.com/archive/stream/217875-Is-there-code-for-X%3F/topic/probability.html#196208990">(May 04 2020 at 16:53)</a>:</h4>
+<p>PR, PR, PR before it's too late. Every Lean code that is not PRed to mathlib is doomed to bit rot.</p>
+
+
+
+<a name="196209957"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/217875-Is%20there%20code%20for%20X%3F/topic/probability/near/196209957" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jalex Stark <a href="http://robertylewis.com/archive/stream/217875-Is-there-code-for-X%3F/topic/probability.html#196209957">(May 04 2020 at 17:01)</a>:</h4>
+<p>link to your repo?</p>
+
+
+
+<a name="196210594"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/217875-Is%20there%20code%20for%20X%3F/topic/probability/near/196210594" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Koundinya Vajjha <a href="http://robertylewis.com/archive/stream/217875-Is-there-code-for-X%3F/topic/probability.html#196210594">(May 04 2020 at 17:05)</a>:</h4>
+<p><span class="user-mention silent" data-user-id="252300">Jalex Stark</span> <a href="#narrow/stream/217875-Is-there.20code.20for.20X.3F/topic/probability/near/196209957" title="#narrow/stream/217875-Is-there.20code.20for.20X.3F/topic/probability/near/196209957">said</a>:</p>
+<blockquote>
+<p>link to your repo?</p>
+</blockquote>
+<p><a href="https://github.com/jtristan/stump-learnable/tree/master/src/lib/attributed" title="https://github.com/jtristan/stump-learnable/tree/master/src/lib/attributed">https://github.com/jtristan/stump-learnable/tree/master/src/lib/attributed</a></p>
+
+
+
+<a name="196213638"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/217875-Is%20there%20code%20for%20X%3F/topic/probability/near/196213638" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> David Wärn <a href="http://robertylewis.com/archive/stream/217875-Is-there-code-for-X%3F/topic/probability.html#196213638">(May 04 2020 at 17:31)</a>:</h4>
+<p>This looks quite nice! I can see a pi-instance for measurable spaces, and binary products for measure spaces: is there a pi-instance for probability spaces somewhere?</p>
+
+
+
+<a name="196216403"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/217875-Is%20there%20code%20for%20X%3F/topic/probability/near/196216403" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Koundinya Vajjha <a href="http://robertylewis.com/archive/stream/217875-Is-there-code-for-X%3F/topic/probability.html#196216403">(May 04 2020 at 17:55)</a>:</h4>
+<p>no, sorry. isn't that <a href="https://en.wikipedia.org/wiki/Ionescu-Tulcea_theorem" title="https://en.wikipedia.org/wiki/Ionescu-Tulcea_theorem">https://en.wikipedia.org/wiki/Ionescu-Tulcea_theorem</a>?</p>
+
+
+
+<a name="196216615"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/217875-Is%20there%20code%20for%20X%3F/topic/probability/near/196216615" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Koundinya Vajjha <a href="http://robertylewis.com/archive/stream/217875-Is-there-code-for-X%3F/topic/probability.html#196216615">(May 04 2020 at 17:56)</a>:</h4>
+<p>I think proving Ionescu Tulcea was originally what <span class="user-mention" data-user-id="110294">@Johannes Hölzl</span> was aiming at</p>
+
+
+
+<a name="196222611"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/217875-Is%20there%20code%20for%20X%3F/topic/probability/near/196222611" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> David Wärn <a href="http://robertylewis.com/archive/stream/217875-Is-there-code-for-X%3F/topic/probability.html#196222611">(May 04 2020 at 18:42)</a>:</h4>
+<p>Hmm I haven't seen that. I'm thinking of something like question 14 here (countability is beside the point)<br>
+<a href="http://www.dpmms.cam.ac.uk/study/II/Probability%2BMeasure/ex2.pdf" title="http://www.dpmms.cam.ac.uk/study/II/Probability%2BMeasure/ex2.pdf">http://www.dpmms.cam.ac.uk/study/II/Probability%2BMeasure/ex2.pdf</a><br>
+It seems to me like you have all the ingredients for this construction, but it's maybe a bit technical</p>
+
+
+
+<a name="196266991"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/217875-Is%20there%20code%20for%20X%3F/topic/probability/near/196266991" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="http://robertylewis.com/archive/stream/217875-Is-there-code-for-X%3F/topic/probability.html#196266991">(May 05 2020 at 04:33)</a>:</h4>
+<p><span class="user-mention" data-user-id="116448">@Koundinya Vajjha</span> Would you mind starting a github project over at <a href="https://github.com/leanprover-community/mathlib/projects" title="https://github.com/leanprover-community/mathlib/projects">https://github.com/leanprover-community/mathlib/projects</a> with little stubs of what you think should be done?</p>
+
+
+
+<a name="197704887"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/217875-Is%20there%20code%20for%20X%3F/topic/probability/near/197704887" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jalex Stark <a href="http://robertylewis.com/archive/stream/217875-Is-there-code-for-X%3F/topic/probability.html#197704887">(May 15 2020 at 15:04)</a>:</h4>
+<p>I guess what I want from a probability interface is to just expose the "algebra of random variables". The fact that this can be modeled with measure spaces should be left on the inside</p>
+
+
+
+<a name="197709896"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/217875-Is%20there%20code%20for%20X%3F/topic/probability/near/197709896" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sebastien Gouezel <a href="http://robertylewis.com/archive/stream/217875-Is-there-code-for-X%3F/topic/probability.html#197709896">(May 15 2020 at 15:36)</a>:</h4>
+<p><span class="user-mention silent" data-user-id="252300">Jalex Stark</span> <a href="#narrow/stream/217875-Is-there.20code.20for.20X.3F/topic/probability/near/197704887">said</a>:</p>
+<blockquote>
+<p>I guess what I want from a probability interface is to just expose the "algebra of random variables". The fact that this can be modeled with measure spaces should be left on the inside</p>
+</blockquote>
+<p>Many interesting theorems in probability really depend on the fact that you have a measure space, and that the notion of "almost surely" is well behaved. Think of the strong law of large numbers, or the martingale convergence theorem, for instance.</p>
+
+
+
+<a name="197711120"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/217875-Is%20there%20code%20for%20X%3F/topic/probability/near/197711120" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jalex Stark <a href="http://robertylewis.com/archive/stream/217875-Is-there-code-for-X%3F/topic/probability.html#197711120">(May 15 2020 at 15:45)</a>:</h4>
+<p>how much well behavedness do you need? isn't it enough to know that countable intersections of almost sure events are almost sure?</p>
+
+
+
+<a name="197711457"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/217875-Is%20there%20code%20for%20X%3F/topic/probability/near/197711457" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/archive/stream/217875-Is-there-code-for-X%3F/topic/probability.html#197711457">(May 15 2020 at 15:47)</a>:</h4>
+<p>isn't that basically a measure space?</p>
+
+
+
+<a name="197711498"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/217875-Is%20there%20code%20for%20X%3F/topic/probability/near/197711498" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/archive/stream/217875-Is-there-code-for-X%3F/topic/probability.html#197711498">(May 15 2020 at 15:48)</a>:</h4>
+<p>or at least a sigma algebra</p>
+
+
+
+<a name="197711715"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/217875-Is%20there%20code%20for%20X%3F/topic/probability/near/197711715" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/archive/stream/217875-Is-there-code-for-X%3F/topic/probability.html#197711715">(May 15 2020 at 15:49)</a>:</h4>
+<p>I don't know how you intend to say anything quantitative about probabilities themselves without a measure though</p>
+
+
+
+<a name="197711885"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/217875-Is%20there%20code%20for%20X%3F/topic/probability/near/197711885" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="http://robertylewis.com/archive/stream/217875-Is-there-code-for-X%3F/topic/probability.html#197711885">(May 15 2020 at 15:50)</a>:</h4>
+<p>I think the idea behind "algebra of random variables" is that you want to avoid committing to the idea that random variables are functions at all</p>
+
+
+
+<a name="197711923"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/217875-Is%20there%20code%20for%20X%3F/topic/probability/near/197711923" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="http://robertylewis.com/archive/stream/217875-Is-there-code-for-X%3F/topic/probability.html#197711923">(May 15 2020 at 15:51)</a>:</h4>
+<p>or at least, you want to avoid committing to the idea that they are functions on some specific measure space <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Ω</mi></mrow><annotation encoding="application/x-tex">\Omega</annotation></semantics></math></span><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord">Ω</span></span></span></span></p>
+
+
+
+<a name="197711980"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/217875-Is%20there%20code%20for%20X%3F/topic/probability/near/197711980" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/archive/stream/217875-Is-there-code-for-X%3F/topic/probability.html#197711980">(May 15 2020 at 15:51)</a>:</h4>
+<p>but you can still ask probability questions about them?</p>
+
+
+
+<a name="197712016"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/217875-Is%20there%20code%20for%20X%3F/topic/probability/near/197712016" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jalex Stark <a href="http://robertylewis.com/archive/stream/217875-Is-there-code-for-X%3F/topic/probability.html#197712016">(May 15 2020 at 15:51)</a>:</h4>
+<p>yes</p>
+
+
+
+<a name="197712109"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/217875-Is%20there%20code%20for%20X%3F/topic/probability/near/197712109" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/archive/stream/217875-Is-there-code-for-X%3F/topic/probability.html#197712109">(May 15 2020 at 15:52)</a>:</h4>
+<p>then can't you reverse engineer a measure space from that?</p>
+
+
+
+<a name="197712119"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/217875-Is%20there%20code%20for%20X%3F/topic/probability/near/197712119" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sebastien Gouezel <a href="http://robertylewis.com/archive/stream/217875-Is-there-code-for-X%3F/topic/probability.html#197712119">(May 15 2020 at 15:52)</a>:</h4>
+<p>What really matters is not that they are functions, but their joint distribution, as a measure on <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi mathvariant="double-struck">R</mi><mi mathvariant="double-struck">N</mi></msup></mrow><annotation encoding="application/x-tex">\mathbb{R}^{\mathbb{N}}</annotation></semantics></math></span><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.845223em;vertical-align:0em;"></span><span class="mord"><span class="mord"><span class="mord mathbb">R</span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.845223em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mathbb mtight">N</span></span></span></span></span></span></span></span></span></span></span></span></span> if you are considering real-valued random variables indexed by integers for instance.</p>
+
+
+
+<a name="197712135"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/217875-Is%20there%20code%20for%20X%3F/topic/probability/near/197712135" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="http://robertylewis.com/archive/stream/217875-Is-there-code-for-X%3F/topic/probability.html#197712135">(May 15 2020 at 15:52)</a>:</h4>
+<p>They still have expectations, for example. Except for the ones that don't, and that is where things start to get a bit tricky...</p>
+
+
+
+<a name="197712243"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/217875-Is%20there%20code%20for%20X%3F/topic/probability/near/197712243" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jalex Stark <a href="http://robertylewis.com/archive/stream/217875-Is-there-code-for-X%3F/topic/probability.html#197712243">(May 15 2020 at 15:53)</a>:</h4>
+<p><span class="user-mention silent" data-user-id="110049">Mario Carneiro</span> <a href="#narrow/stream/217875-Is-there.20code.20for.20X.3F/topic/probability/near/197712109">said</a>:</p>
+<blockquote>
+<p>then can't you reverse engineer a measure space from that?</p>
+</blockquote>
+<p>yes, once you've given any finite amount of information about your variables, there's surely some "minimal" measure space + functions from it that models the things you've said</p>
+
+
+
+<a name="197712283"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/217875-Is%20there%20code%20for%20X%3F/topic/probability/near/197712283" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jalex Stark <a href="http://robertylewis.com/archive/stream/217875-Is-there-code-for-X%3F/topic/probability.html#197712283">(May 15 2020 at 15:53)</a>:</h4>
+<p>but you want to remain agnostic about whether you're using the minimal one or an arbitrary extension of it</p>
+
+
+
+<a name="197712344"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/217875-Is%20there%20code%20for%20X%3F/topic/probability/near/197712344" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/archive/stream/217875-Is-there-code-for-X%3F/topic/probability.html#197712344">(May 15 2020 at 15:54)</a>:</h4>
+<p>I was thinking of using all the possible questions you could ask about the variables</p>
+
+
+
+<a name="197712356"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/217875-Is%20there%20code%20for%20X%3F/topic/probability/near/197712356" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/archive/stream/217875-Is-there-code-for-X%3F/topic/probability.html#197712356">(May 15 2020 at 15:54)</a>:</h4>
+<p>(not finite)</p>
+
+
+
+<a name="197712410"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/217875-Is%20there%20code%20for%20X%3F/topic/probability/near/197712410" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jalex Stark <a href="http://robertylewis.com/archive/stream/217875-Is-there-code-for-X%3F/topic/probability.html#197712410">(May 15 2020 at 15:54)</a>:</h4>
+<p>sure, that will have a minimal model by a measure space</p>
+
+
+
+<a name="197712436"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/217875-Is%20there%20code%20for%20X%3F/topic/probability/near/197712436" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jalex Stark <a href="http://robertylewis.com/archive/stream/217875-Is-there-code-for-X%3F/topic/probability.html#197712436">(May 15 2020 at 15:54)</a>:</h4>
+<p>and we remain agnostic about whether or not we're adding more variables later</p>
+
+
+
+<a name="197712470"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/217875-Is%20there%20code%20for%20X%3F/topic/probability/near/197712470" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/archive/stream/217875-Is-there-code-for-X%3F/topic/probability.html#197712470">(May 15 2020 at 15:55)</a>:</h4>
+<p>that seems difficult to do in lean</p>
+
+
+
+<a name="197712514"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/217875-Is%20there%20code%20for%20X%3F/topic/probability/near/197712514" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/archive/stream/217875-Is-there-code-for-X%3F/topic/probability.html#197712514">(May 15 2020 at 15:55)</a>:</h4>
+<p>you can't just add elements to a type, not without rejiggering everything on top</p>
+
+
+
+<a name="197712672"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/217875-Is%20there%20code%20for%20X%3F/topic/probability/near/197712672" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jalex Stark <a href="http://robertylewis.com/archive/stream/217875-Is-there-code-for-X%3F/topic/probability.html#197712672">(May 15 2020 at 15:56)</a>:</h4>
+<p>i agree that it's hard</p>
+
+
+
+<a name="197712681"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/217875-Is%20there%20code%20for%20X%3F/topic/probability/near/197712681" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jalex Stark <a href="http://robertylewis.com/archive/stream/217875-Is-there-code-for-X%3F/topic/probability.html#197712681">(May 15 2020 at 15:56)</a>:</h4>
+<p>I don't think it's adding complexity though</p>
+
+
+
+<a name="197712713"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/217875-Is%20there%20code%20for%20X%3F/topic/probability/near/197712713" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="http://robertylewis.com/archive/stream/217875-Is-there-code-for-X%3F/topic/probability.html#197712713">(May 15 2020 at 15:57)</a>:</h4>
+<p>It's similar to how you might do a computation using "indeterminates", which you could think of as happening in a polynomial or power series ring, but then later you might introduce another indeterminate.</p>
+
+
+
+<a name="197712741"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/217875-Is%20there%20code%20for%20X%3F/topic/probability/near/197712741" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jalex Stark <a href="http://robertylewis.com/archive/stream/217875-Is-there-code-for-X%3F/topic/probability.html#197712741">(May 15 2020 at 15:57)</a>:</h4>
+<p>if you "do probability" with measure spaces then you're going to be dealing with these extensions of your measure space all the time</p>
+
+
+
+<a name="197712747"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/217875-Is%20there%20code%20for%20X%3F/topic/probability/near/197712747" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/archive/stream/217875-Is-there-code-for-X%3F/topic/probability.html#197712747">(May 15 2020 at 15:57)</a>:</h4>
+<p>if you have a measure space you already have all random variables that could ever exist, so adding a new one is trivial</p>
+
+
+
+<a name="197712855"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/217875-Is%20there%20code%20for%20X%3F/topic/probability/near/197712855" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="http://robertylewis.com/archive/stream/217875-Is-there-code-for-X%3F/topic/probability.html#197712855">(May 15 2020 at 15:58)</a>:</h4>
+<p>You only have the ones that exist on that space. The kind of thing you would want to add is a new variable that's independent from all of those (e.g., by forming a product measure space)</p>
+
+
+
+<a name="197712879"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/217875-Is%20there%20code%20for%20X%3F/topic/probability/near/197712879" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jalex Stark <a href="http://robertylewis.com/archive/stream/217875-Is-there-code-for-X%3F/topic/probability.html#197712879">(May 15 2020 at 15:58)</a>:</h4>
+<p>if I want to add a new one with the constraint that it's independent from all the ones I have talked about before, without extending the space, that's not trivial<br>
+I guess the way you'd do it is to extend to a product space and then apply an isomorphism of measure spaces between the original space and its extension</p>
+
+
+
+<a name="197713087"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/217875-Is%20there%20code%20for%20X%3F/topic/probability/near/197713087" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jalex Stark <a href="http://robertylewis.com/archive/stream/217875-Is-there-code-for-X%3F/topic/probability.html#197713087">(May 15 2020 at 16:00)</a>:</h4>
+<p>and the point is that it would be nice to have machinery that does that for you</p>
+
+
+
+<a name="197713124"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/217875-Is%20there%20code%20for%20X%3F/topic/probability/near/197713124" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jalex Stark <a href="http://robertylewis.com/archive/stream/217875-Is-there-code-for-X%3F/topic/probability.html#197713124">(May 15 2020 at 16:00)</a>:</h4>
+<p>you have to keep track of the notion of "random variables that are in scope for this discussion"</p>
+
+
+
+<a name="197713154"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/217875-Is%20there%20code%20for%20X%3F/topic/probability/near/197713154" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jalex Stark <a href="http://robertylewis.com/archive/stream/217875-Is-there-code-for-X%3F/topic/probability.html#197713154">(May 15 2020 at 16:00)</a>:</h4>
+<p>but you already have to do that when doing probability informally anyway</p>
+
+
+
+<a name="197713173"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/217875-Is%20there%20code%20for%20X%3F/topic/probability/near/197713173" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/archive/stream/217875-Is-there-code-for-X%3F/topic/probability.html#197713173">(May 15 2020 at 16:00)</a>:</h4>
+<p>Color me skeptical</p>
+
+
+
+<a name="197713202"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/217875-Is%20there%20code%20for%20X%3F/topic/probability/near/197713202" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="http://robertylewis.com/archive/stream/217875-Is-there-code-for-X%3F/topic/probability.html#197713202">(May 15 2020 at 16:00)</a>:</h4>
+<p>The funny thing is that type theory gets to have this built in</p>
+
+
+
+<a name="197713229"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/217875-Is%20there%20code%20for%20X%3F/topic/probability/near/197713229" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jalex Stark <a href="http://robertylewis.com/archive/stream/217875-Is-there-code-for-X%3F/topic/probability.html#197713229">(May 15 2020 at 16:01)</a>:</h4>
+<p>gets what built in?</p>
+
+
+
+<a name="197713290"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/217875-Is%20there%20code%20for%20X%3F/topic/probability/near/197713290" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="http://robertylewis.com/archive/stream/217875-Is-there-code-for-X%3F/topic/probability.html#197713290">(May 15 2020 at 16:01)</a>:</h4>
+<p>It basically took all the good ideas for itself but doesn't reexport them to the internal language</p>
+
+
+
+<a name="197713302"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/217875-Is%20there%20code%20for%20X%3F/topic/probability/near/197713302" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="http://robertylewis.com/archive/stream/217875-Is-there-code-for-X%3F/topic/probability.html#197713302">(May 15 2020 at 16:01)</a>:</h4>
+<p>having a variable context that can be extended by lambdas, etc</p>
+
+
+
+<a name="197713425"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/217875-Is%20there%20code%20for%20X%3F/topic/probability/near/197713425" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jalex Stark <a href="http://robertylewis.com/archive/stream/217875-Is-there-code-for-X%3F/topic/probability.html#197713425">(May 15 2020 at 16:02)</a>:</h4>
+<p><span class="user-mention silent" data-user-id="110049">Mario Carneiro</span> <a href="#narrow/stream/217875-Is-there.20code.20for.20X.3F/topic/probability/near/197713173">said</a>:</p>
+<blockquote>
+<p>Color me skeptical</p>
+</blockquote>
+<p>I'm taking your comment to mean "the things you're describing sounds possible in principle, but I bet if I thought about it for a while I would find a different way to do probability that felt easier and/or more natural"</p>
+
+
+
+<a name="197713501"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/217875-Is%20there%20code%20for%20X%3F/topic/probability/near/197713501" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/archive/stream/217875-Is-there-code-for-X%3F/topic/probability.html#197713501">(May 15 2020 at 16:02)</a>:</h4>
+<p>You would need to first do it the hard way enough times for us to notice the pattern and abstract it into a tactic</p>
+
+
+
+<a name="197713522"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/217875-Is%20there%20code%20for%20X%3F/topic/probability/near/197713522" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/archive/stream/217875-Is-there-code-for-X%3F/topic/probability.html#197713522">(May 15 2020 at 16:03)</a>:</h4>
+<p>this is not the kind of design you are likely to get right on the first try</p>
+
+
+
+<a name="197713745"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/217875-Is%20there%20code%20for%20X%3F/topic/probability/near/197713745" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/archive/stream/217875-Is-there-code-for-X%3F/topic/probability.html#197713745">(May 15 2020 at 16:04)</a>:</h4>
+<p>I need to see some of these probability arguments where you are dynamically adding variables to give guidance about how best to model them</p>
+
+
+
+<a name="197714024"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/217875-Is%20there%20code%20for%20X%3F/topic/probability/near/197714024" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sebastien Gouezel <a href="http://robertylewis.com/archive/stream/217875-Is-there-code-for-X%3F/topic/probability.html#197714024">(May 15 2020 at 16:06)</a>:</h4>
+<p>As I said, this "minimal model" is exactly the joint distribution of all your random variables on <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi mathvariant="double-struck">R</mi><mi mathvariant="double-struck">N</mi></msup></mrow><annotation encoding="application/x-tex">\mathbb{R}^{\mathbb{N}}</annotation></semantics></math></span><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.845223em;vertical-align:0em;"></span><span class="mord"><span class="mord"><span class="mord mathbb">R</span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.845223em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mathbb mtight">N</span></span></span></span></span></span></span></span></span></span></span></span></span> (i.e., the image of your probability on <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Ω</mi></mrow><annotation encoding="application/x-tex">\Omega</annotation></semantics></math></span><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord">Ω</span></span></span></span> under the map <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ω</mi><mo>↦</mo><mo stretchy="false">(</mo><msub><mi>X</mi><mn>0</mn></msub><mo stretchy="false">(</mo><mi>ω</mi><mo stretchy="false">)</mo><mo separator="true">,</mo><msub><mi>X</mi><mn>1</mn></msub><mo stretchy="false">(</mo><mi>ω</mi><mo stretchy="false">)</mo><mo separator="true">,</mo><mo>…</mo><mtext> </mtext><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\omega \mapsto (X_0(\omega), X_1(\omega), \dotsc)</annotation></semantics></math></span><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.522em;vertical-align:-0.011em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">ω</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">↦</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07847em;">X</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.07847em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.03588em;">ω</span><span class="mclose">)</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07847em;">X</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.07847em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.03588em;">ω</span><span class="mclose">)</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner">…</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mclose">)</span></span></span></span>), and your new random variable is just the <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span>-th coordinate.</p>
+
+
+
+<a name="197717724"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/217875-Is%20there%20code%20for%20X%3F/topic/probability/near/197717724" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="http://robertylewis.com/archive/stream/217875-Is-there-code-for-X%3F/topic/probability.html#197717724">(May 15 2020 at 16:33)</a>:</h4>
+<p>At POPL I had an interesting discussion with Neel Krishnaswami, and he explained that he was working on some DSL in DTT that captured the semantics of probability theory in a way interesting to the working probability theorist. Maybe we should ask him to explain it in more detail. (I guess that most of my first sentence is nonsense on the nose.)</p>
+
+
+
+<a name="197720845"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/217875-Is%20there%20code%20for%20X%3F/topic/probability/near/197720845" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jalex Stark <a href="http://robertylewis.com/archive/stream/217875-Is-there-code-for-X%3F/topic/probability.html#197720845">(May 15 2020 at 16:55)</a>:</h4>
+<p>I think DTT is dependent type theory, what DSL?</p>
+
+
+
+<a name="197720945"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/217875-Is%20there%20code%20for%20X%3F/topic/probability/near/197720945" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="http://robertylewis.com/archive/stream/217875-Is-there-code-for-X%3F/topic/probability.html#197720945">(May 15 2020 at 16:56)</a>:</h4>
+<p>Domain specific language?</p>
+
+
+
+<a name="197720947"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/217875-Is%20there%20code%20for%20X%3F/topic/probability/near/197720947" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="http://robertylewis.com/archive/stream/217875-Is-there-code-for-X%3F/topic/probability.html#197720947">(May 15 2020 at 16:56)</a>:</h4>
+<p>domain specific language</p>
+
+
+
+<a name="197720978"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/217875-Is%20there%20code%20for%20X%3F/topic/probability/near/197720978" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jalex Stark <a href="http://robertylewis.com/archive/stream/217875-Is-there-code-for-X%3F/topic/probability.html#197720978">(May 15 2020 at 16:56)</a>:</h4>
+<p>cool, thanks</p>
+
+
+
+<a name="197721007"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/217875-Is%20there%20code%20for%20X%3F/topic/probability/near/197721007" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="http://robertylewis.com/archive/stream/217875-Is-there-code-for-X%3F/topic/probability.html#197721007">(May 15 2020 at 16:56)</a>:</h4>
+<p>I put the question mark because I have no idea what this means ;-)</p>
+
+
+
+<a name="197721171"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/217875-Is%20there%20code%20for%20X%3F/topic/probability/near/197721171" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jalex Stark <a href="http://robertylewis.com/archive/stream/217875-Is-there-code-for-X%3F/topic/probability.html#197721171">(May 15 2020 at 16:58)</a>:</h4>
+<p>my guess is it means "programming language where you're always working inside of some specific monad"</p>
+
+
+
+<a name="197721225"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/217875-Is%20there%20code%20for%20X%3F/topic/probability/near/197721225" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/archive/stream/217875-Is-there-code-for-X%3F/topic/probability.html#197721225">(May 15 2020 at 16:58)</a>:</h4>
+<p>in this context it probably means that you can do things like Jalex suggested like create new random variables and put them together in a monad</p>
+
+
+
+<a name="197721286"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/217875-Is%20there%20code%20for%20X%3F/topic/probability/near/197721286" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sebastien Gouezel <a href="http://robertylewis.com/archive/stream/217875-Is-there-code-for-X%3F/topic/probability.html#197721286">(May 15 2020 at 16:59)</a>:</h4>
+<p>The Giry monad, right?</p>
+
+
+
+<a name="197721347"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/217875-Is%20there%20code%20for%20X%3F/topic/probability/near/197721347" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/archive/stream/217875-Is-there-code-for-X%3F/topic/probability.html#197721347">(May 15 2020 at 16:59)</a>:</h4>
+<p>I've been told there is some foundational issue with higher order functions in the Giry monad though</p>
+
+
+
+<a name="197721458"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/217875-Is%20there%20code%20for%20X%3F/topic/probability/near/197721458" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/archive/stream/217875-Is-there-code-for-X%3F/topic/probability.html#197721458">(May 15 2020 at 17:00)</a>:</h4>
+<p>which makes the denotation of "probabilistic programs" dubious</p>
+
+
+
+<a name="197775038"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/217875-Is%20there%20code%20for%20X%3F/topic/probability/near/197775038" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Koundinya Vajjha <a href="http://robertylewis.com/archive/stream/217875-Is-there-code-for-X%3F/topic/probability.html#197775038">(May 16 2020 at 03:54)</a>:</h4>
+<p>The category of measurable spaces isn't Cartesian closed. (There isn't a canonical measurable space structure on the function type which makes the evaluation maps measurable). So the Giry monad can't eat higher order functions and so you can use it to denotate only a small uninteresting subset of probabilistic programming languages.</p>
+
+
+
+<a name="197775048"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/217875-Is%20there%20code%20for%20X%3F/topic/probability/near/197775048" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Koundinya Vajjha <a href="http://robertylewis.com/archive/stream/217875-Is-there-code-for-X%3F/topic/probability.html#197775048">(May 16 2020 at 03:55)</a>:</h4>
+<p>But there have been other gadgets ("Quasi-Borel Spaces") which overcome this issue IIRC.</p>
+
+
+
+<a name="198711734"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/217875-Is%20there%20code%20for%20X%3F/topic/probability/near/198711734" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Alex J. Best <a href="http://robertylewis.com/archive/stream/217875-Is-there-code-for-X%3F/topic/probability.html#198711734">(May 26 2020 at 00:48)</a>:</h4>
+<p><span class="user-mention silent" data-user-id="116448">Koundinya Vajjha</span> <a href="#narrow/stream/217875-Is-there.20code.20for.20X.3F/topic/probability/near/196208835">said</a>:</p>
+<blockquote>
+<p>Apologies. I do have a tiny probability theory library up in a different repo, but it's out of date and breaks with current mathlib. I keep putting it off but I promise to devote some time to it the next couple of weeks and will try to PR.</p>
+</blockquote>
+<p>I've updated (almost all of?) this to a recent mathlib over at <a href="https://github.com/alexjbest/stump-learnable">https://github.com/alexjbest/stump-learnable</a></p>
+
+
+
+<a name="198718942"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/217875-Is%20there%20code%20for%20X%3F/topic/probability/near/198718942" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="http://robertylewis.com/archive/stream/217875-Is-there-code-for-X%3F/topic/probability.html#198718942">(May 26 2020 at 04:10)</a>:</h4>
+<p>everything not PR’d is lost in time — Ancient Chinese Proverb</p>
+
+
+
+{% endraw %}
+
+<hr><p>Last updated: Jul 19 2020 at 13:36 UTC</p>

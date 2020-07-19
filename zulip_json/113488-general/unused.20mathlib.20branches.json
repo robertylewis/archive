@@ -1,0 +1,8 @@
+[
+    {
+        "content": "<p>The mathlib repo has 228 branches right now. This isn't really an issue, but there are minor costs to having unneeded branches around: it makes the repo slightly bigger, and makes us store useless olean caches on Azure.</p>\n<p>So just a general FYI/request: if you have branches (<a href=\"https://github.com/leanprover-community/mathlib/branches\">https://github.com/leanprover-community/mathlib/branches</a>) that you know will never be used again, consider deleting them, if only for the sake of tidiness!</p>",
+        "id": 198751887,
+        "sender_full_name": "Rob Lewis",
+        "timestamp": 1590494691
+    }
+]

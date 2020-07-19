@@ -1,0 +1,26 @@
+[
+    {
+        "content": "<p>I'm trying to define C*-algebras on mathlib, but I'm running into problems with the old/new structure command.</p>\n<p>I have a definition like this:</p>\n<div class=\"codehilite\"><pre><span></span><code><span class=\"c\">/-</span><span class=\"cm\">- A normed *-ring, the part of the structure of a normed involutive algebra that does</span>\n<span class=\"cm\">  not mention the ring over which it lies. -/</span>\n<span class=\"n\">class</span> <span class=\"n\">normed_star_ring</span> <span class=\"o\">(</span><span class=\"n\">R</span> <span class=\"o\">:</span> <span class=\"kt\">Type</span><span class=\"bp\">*</span><span class=\"o\">)</span> <span class=\"kn\">extends</span> <span class=\"n\">normed_ring</span> <span class=\"n\">R</span><span class=\"o\">,</span> <span class=\"n\">star_ring</span> <span class=\"n\">R</span> <span class=\"o\">:=</span>\n  <span class=\"o\">(</span><span class=\"n\">norm_star</span> <span class=\"o\">:</span> <span class=\"bp\">∀</span> <span class=\"n\">x</span> <span class=\"o\">:</span> <span class=\"n\">R</span><span class=\"o\">,</span> <span class=\"n\">norm</span> <span class=\"o\">(</span><span class=\"n\">x</span><span class=\"err\">∗</span><span class=\"o\">)</span> <span class=\"bp\">=</span> <span class=\"n\">norm</span> <span class=\"n\">x</span><span class=\"o\">)</span>\n</code></pre></div>\n\n\n<p>This class requires <code>set_option old_structure_cmd true</code> because <code>star_ring</code> and <code>normed_ring</code> share many fields. However, <code>normed_ring</code> is not defined with the old structure command. <br>\nAccording to <span class=\"user-mention\" data-user-id=\"110043\">@Gabriel Ebner</span> this is not supported: <a href=\"#narrow/stream/113488-general/topic/not.20a.20structure/near/199043298\">https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/not.20a.20structure/near/199043298</a></p>\n<p>What is the way around this? Should I make a PR turning <code>normed_ring</code> (and <em>all</em> other structures in the algebraic hierarchy) into something that uses <code>old_structure_cmd</code>? Or should I, as a workaround, just add the fields of <code>star_ring</code> and then manually give the instance to <code>star_ring</code>? Or is there another workaround?</p>",
+        "id": 200144521,
+        "sender_full_name": "Floris van Doorn",
+        "timestamp": 1591644375
+    },
+    {
+        "content": "<p>The <code>old_structure_cmd</code> got its name for a reason. And I think that reason had to do with the fact that it was a bad idea to build the entire algebraic hierarchy using <code>old_structure_cmd</code>.<br>\nBut I'm not an expert.</p>",
+        "id": 200144806,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1591644537
+    },
+    {
+        "content": "<p>Maybe it's time for <code>set_option newer_structure_cmd true</code> <span aria-label=\"grinning\" class=\"emoji emoji-1f600\" role=\"img\" title=\"grinning\">:grinning:</span></p>",
+        "id": 200144987,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1591644634
+    },
+    {
+        "content": "<p>As mentioned elsewhere <code>old_structure_cmd</code> is a bad name <a href=\"#narrow/stream/113488-general/topic/linter.20doc_blame.20with.20old_structure_cmd/near/193763895\">and should be renamed</a>. It has features that the \"new\" structure command doesn't have. I believe the new structure command is more efficient, but I don't think that is an efficiency bottleneck we are running up against (it doesn't help anything with type-class inference performance, which I think is mathlib's main bottleneck)</p>",
+        "id": 200145483,
+        "sender_full_name": "Floris van Doorn",
+        "timestamp": 1591644925
+    }
+]

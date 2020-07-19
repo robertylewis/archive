@@ -1,0 +1,26 @@
+[
+    {
+        "content": "<p>what is the canonical way of saying that a group / module is trivial?</p>",
+        "id": 203803477,
+        "sender_full_name": "Kenny Lau",
+        "timestamp": 1594709510
+    },
+    {
+        "content": "<p><code>unique M</code>?</p>",
+        "id": 203803553,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1594709587
+    },
+    {
+        "content": "<p>what do we know about it?</p>",
+        "id": 203803645,
+        "sender_full_name": "Kenny Lau",
+        "timestamp": 1594709681
+    },
+    {
+        "content": "<p>That it's a type with 1 term... em tasol</p>",
+        "id": 203803662,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1594709704
+    }
+]

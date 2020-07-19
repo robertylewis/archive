@@ -1,0 +1,188 @@
+[
+    {
+        "content": "<p>As we discussed today, one option for the rest of the seminar is to try to complete some larger project together, perhaps with the goal of formalizing some catchy-sounding theorems. This thread is for discussion of project ideas: theorems that we could try to prove, ideas about how to organize it, etc.</p>",
+        "id": 204264661,
+        "sender_full_name": "Patrick Lutz",
+        "timestamp": 1595023206
+    },
+    {
+        "content": "<p>(deleted)</p>",
+        "id": 204264691,
+        "sender_full_name": "Patrick Lutz",
+        "timestamp": 1595023237
+    },
+    {
+        "content": "<p>contribute to sphere eversion? pick off something from freek's list? from the <a href=\"https://leanprover-community.github.io/undergrad_todo.html\">undergrad_todo list</a>?</p>",
+        "id": 204265886,
+        "sender_full_name": "Jalex Stark",
+        "timestamp": 1595024129
+    },
+    {
+        "content": "<p>Try and figure out why algebraic closures still aren't done? Prove that a short exact sequence of complexes induces a long exact sequence of cohomology in an abelian category?</p>",
+        "id": 204267294,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1595025307
+    },
+    {
+        "content": "<p>Define fundamental group of a topological space?</p>",
+        "id": 204267338,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1595025351
+    },
+    {
+        "content": "<p>Higher homotopy groups even?</p>",
+        "id": 204267384,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1595025365
+    },
+    {
+        "content": "<p>Make a basic API for locally ringed spaces?</p>",
+        "id": 204267437,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1595025423
+    },
+    {
+        "content": "<p>Define Picard groups?</p>",
+        "id": 204267458,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1595025441
+    },
+    {
+        "content": "<p>Ext and Tor?</p>",
+        "id": 204267466,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1595025446
+    },
+    {
+        "content": "<p>Sorry, I got interrupted when writing the original message. I meant to explain a bit more</p>",
+        "id": 204274272,
+        "sender_full_name": "Patrick Lutz",
+        "timestamp": 1595032065
+    },
+    {
+        "content": "<p>Some of the possible topics we discussed were:</p>",
+        "id": 204274316,
+        "sender_full_name": "Patrick Lutz",
+        "timestamp": 1595032084
+    },
+    {
+        "content": "<p>1) Fourier analysis. Goal: prove theorem about rate of decay of fourier series of <span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mi>C</mi><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">C^n</annotation></semantics></math></span><span aria-hidden=\"true\" class=\"katex-html\"><span class=\"base\"><span class=\"strut\" style=\"height:0.68333em;vertical-align:0em;\"></span><span class=\"mord\"><span class=\"mord mathdefault\" style=\"margin-right:0.07153em;\">C</span><span class=\"msupsub\"><span class=\"vlist-t\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.664392em;\"><span style=\"top:-3.063em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"sizing reset-size6 size3 mtight\"><span class=\"mord mathdefault mtight\">n</span></span></span></span></span></span></span></span></span></span></span> functions</p>",
+        "id": 204274338,
+        "sender_full_name": "Patrick Lutz",
+        "timestamp": 1595032122
+    },
+    {
+        "content": "<p>2) Fundamental Group. Goal: prove Galois connection between subgroups and covering spaces</p>",
+        "id": 204274347,
+        "sender_full_name": "Patrick Lutz",
+        "timestamp": 1595032143
+    },
+    {
+        "content": "<p>3) Fundamental theorem of calculus</p>",
+        "id": 204274353,
+        "sender_full_name": "Patrick Lutz",
+        "timestamp": 1595032155
+    },
+    {
+        "content": "<p>4) Galois Theory. Goal: prove Galois connection</p>",
+        "id": 204274365,
+        "sender_full_name": "Patrick Lutz",
+        "timestamp": 1595032172
+    },
+    {
+        "content": "<p>(4) seemed like the most popular option brought up so far</p>",
+        "id": 204274372,
+        "sender_full_name": "Patrick Lutz",
+        "timestamp": 1595032195
+    },
+    {
+        "content": "<p>but it would obviously involve figuring out how to do algebraic closures</p>",
+        "id": 204274420,
+        "sender_full_name": "Patrick Lutz",
+        "timestamp": 1595032212
+    },
+    {
+        "content": "<p>(or I guess assuming algebraic closures exist as an axiom and working from there)</p>",
+        "id": 204274436,
+        "sender_full_name": "Patrick Lutz",
+        "timestamp": 1595032236
+    },
+    {
+        "content": "<p>However, we haven't made any definite decisions. So this thread is for discussion of what topics sound most interesting, how feasible they are, what would be involved in completing different projects, and how to organize the project</p>",
+        "id": 204274496,
+        "sender_full_name": "Patrick Lutz",
+        "timestamp": 1595032322
+    },
+    {
+        "content": "<p>Thanks for the suggestions <span class=\"user-mention\" data-user-id=\"252300\">@Jalex Stark</span> and <span class=\"user-mention\" data-user-id=\"110038\">@Kevin Buzzard</span>! :)</p>",
+        "id": 204274548,
+        "sender_full_name": "Patrick Lutz",
+        "timestamp": 1595032377
+    },
+    {
+        "content": "<p>Since there seems to be the most interest in Galois theory, do either of you know anything about why algebraic closure is not in mathlib? Is it especially hard to do for some reason?</p>",
+        "id": 204274581,
+        "sender_full_name": "Patrick Lutz",
+        "timestamp": 1595032429
+    },
+    {
+        "content": "<p>And do either of you have any advice about how to organize this kind of project?</p>",
+        "id": 204274624,
+        "sender_full_name": "Patrick Lutz",
+        "timestamp": 1595032449
+    },
+    {
+        "content": "<p>(a) does Galois theory need the existence of algebraic closures? (b) one option would be to have algebraic closures start off as an axiom and get proved as a side project</p>",
+        "id": 204276046,
+        "sender_full_name": "Thomas Browning",
+        "timestamp": 1595034408
+    },
+    {
+        "content": "<p>I think successful past projects have started with a detailed exposition in latex or markdown</p>",
+        "id": 204276145,
+        "sender_full_name": "Jalex Stark",
+        "timestamp": 1595034571
+    },
+    {
+        "content": "<p>We have some Galois theory, written by Imperial undergrads, in some ImperialCollegeLpndon repo on GitHub.</p>",
+        "id": 204286755,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1595052725
+    },
+    {
+        "content": "<p>The fundamental theorem is still not in Lean</p>",
+        "id": 204286762,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1595052744
+    },
+    {
+        "content": "<p>If you do work on Galois theory your aim should not just be to prove FTG but to finish the job and get it into mathlib</p>",
+        "id": 204286769,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1595052780
+    },
+    {
+        "content": "<p><a href=\"https://github.com/ImperialCollegeLondon/P11-Galois-Theory\">https://github.com/ImperialCollegeLondon/P11-Galois-Theory</a></p>",
+        "id": 204286833,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1595052853
+    },
+    {
+        "content": "<p>You're more than welcome to use that material or add to it. The job is still far from done</p>",
+        "id": 204286840,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1595052891
+    },
+    {
+        "content": "<p>Kenny Lau has had some interesting ideas about how to deal with <span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>K</mi><mo>⊆</mo><mi>L</mi><mo>⊆</mo><mi>M</mi></mrow><annotation encoding=\"application/x-tex\">K\\subseteq L\\subseteq M</annotation></semantics></math></span><span aria-hidden=\"true\" class=\"katex-html\"><span class=\"base\"><span class=\"strut\" style=\"height:0.8193em;vertical-align:-0.13597em;\"></span><span class=\"mord mathdefault\" style=\"margin-right:0.07153em;\">K</span><span class=\"mspace\" style=\"margin-right:0.2777777777777778em;\"></span><span class=\"mrel\">⊆</span><span class=\"mspace\" style=\"margin-right:0.2777777777777778em;\"></span></span><span class=\"base\"><span class=\"strut\" style=\"height:0.8193em;vertical-align:-0.13597em;\"></span><span class=\"mord mathdefault\">L</span><span class=\"mspace\" style=\"margin-right:0.2777777777777778em;\"></span><span class=\"mrel\">⊆</span><span class=\"mspace\" style=\"margin-right:0.2777777777777778em;\"></span></span><span class=\"base\"><span class=\"strut\" style=\"height:0.68333em;vertical-align:0em;\"></span><span class=\"mord mathdefault\" style=\"margin-right:0.10903em;\">M</span></span></span></span></p>",
+        "id": 204286861,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1595052954
+    },
+    {
+        "content": "<p>He was live streaming a proof of the tower law on Discord last week</p>",
+        "id": 204286907,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1595052999
+    }
+]

@@ -1,0 +1,354 @@
+---
+layout: archive
+title: Zulip Chat Archive
+permalink: /stream/116395-maths/topic/reversing.20the.20coefficients.html
+---
+
+<h2>Stream: <a href="http://robertylewis.com/archive/stream/116395-maths/index.html">maths</a></h2>
+<h3>Topic: <a href="http://robertylewis.com/archive/stream/116395-maths/topic/reversing.20the.20coefficients.html">reversing the coefficients</a></h3>
+
+<hr>
+
+<base href="https://leanprover.zulipchat.com">
+
+<head><link href="/style.css" rel="stylesheet"></head>
+
+{% raw %}
+
+<a name="200078636"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/reversing%20the%20coefficients/near/200078636" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="http://robertylewis.com/archive/stream/116395-maths/topic/reversing.20the.20coefficients.html#200078636">(Jun 08 2020 at 10:13)</a>:</h4>
+<p>in maths this would be notated as <code>x ^ deg f * f(1/x)</code></p>
+
+
+
+<a name="200078640"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/reversing%20the%20coefficients/near/200078640" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="http://robertylewis.com/archive/stream/116395-maths/topic/reversing.20the.20coefficients.html#200078640">(Jun 08 2020 at 10:13)</a>:</h4>
+<p>this reverses the coefficients</p>
+
+
+
+<a name="200078695"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/reversing%20the%20coefficients/near/200078695" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="http://robertylewis.com/archive/stream/116395-maths/topic/reversing.20the.20coefficients.html#200078695">(Jun 08 2020 at 10:14)</a>:</h4>
+<p>this is a monoid isomorphism if the ring is an integral domain I think</p>
+
+
+
+<a name="200078703"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/reversing%20the%20coefficients/near/200078703" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="http://robertylewis.com/archive/stream/116395-maths/topic/reversing.20the.20coefficients.html#200078703">(Jun 08 2020 at 10:14)</a>:</h4>
+<p>should we put this in mathlib?</p>
+
+
+
+<a name="200082943"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/reversing%20the%20coefficients/near/200082943" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="http://robertylewis.com/archive/stream/116395-maths/topic/reversing.20the.20coefficients.html#200082943">(Jun 08 2020 at 11:06)</a>:</h4>
+<p>Looks good to me. <code>polynomial.reverse</code>?</p>
+
+
+
+<a name="200083879"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/reversing%20the%20coefficients/near/200083879" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="http://robertylewis.com/archive/stream/116395-maths/topic/reversing.20the.20coefficients.html#200083879">(Jun 08 2020 at 11:18)</a>:</h4>
+<p>this does not preserve addition of polynomials of different degrees</p>
+
+
+
+<a name="200083909"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/reversing%20the%20coefficients/near/200083909" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="http://robertylewis.com/archive/stream/116395-maths/topic/reversing.20the.20coefficients.html#200083909">(Jun 08 2020 at 11:19)</a>:</h4>
+<p>and it is not even a bijection: the reverse of X^n is 1</p>
+
+
+
+<a name="200083949"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/reversing%20the%20coefficients/near/200083949" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="http://robertylewis.com/archive/stream/116395-maths/topic/reversing.20the.20coefficients.html#200083949">(Jun 08 2020 at 11:19)</a>:</h4>
+<p>Right. But it shows up sufficiently often that it should have it's own definition in mathlib.</p>
+
+
+
+<a name="200084628"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/reversing%20the%20coefficients/near/200084628" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="http://robertylewis.com/archive/stream/116395-maths/topic/reversing.20the.20coefficients.html#200084628">(Jun 08 2020 at 11:28)</a>:</h4>
+<p>I think we can be sure that reverse^3 = reverse</p>
+
+
+
+<a name="200084642"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/reversing%20the%20coefficients/near/200084642" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="http://robertylewis.com/archive/stream/116395-maths/topic/reversing.20the.20coefficients.html#200084642">(Jun 08 2020 at 11:28)</a>:</h4>
+<p>(what is the name for this)</p>
+
+
+
+<a name="200084662"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/reversing%20the%20coefficients/near/200084662" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="http://robertylewis.com/archive/stream/116395-maths/topic/reversing.20the.20coefficients.html#200084662">(Jun 08 2020 at 11:29)</a>:</h4>
+<p>Galois insertion</p>
+
+
+
+<a name="200085470"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/reversing%20the%20coefficients/near/200085470" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/archive/stream/116395-maths/topic/reversing.20the.20coefficients.html#200085470">(Jun 08 2020 at 11:38)</a>:</h4>
+<p>Maybe this should be parameterized on the maximum degree and treated as a bijection on the submodule of deg &lt;= n polynomials?</p>
+
+
+
+<a name="200085500"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/reversing%20the%20coefficients/near/200085500" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/archive/stream/116395-maths/topic/reversing.20the.20coefficients.html#200085500">(Jun 08 2020 at 11:39)</a>:</h4>
+<p>I don't think it is true that reverse^3 = reverse</p>
+
+
+
+<a name="200085520"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/reversing%20the%20coefficients/near/200085520" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="http://robertylewis.com/archive/stream/116395-maths/topic/reversing.20the.20coefficients.html#200085520">(Jun 08 2020 at 11:39)</a>:</h4>
+<p>why not?</p>
+
+
+
+<a name="200085545"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/reversing%20the%20coefficients/near/200085545" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="http://robertylewis.com/archive/stream/116395-maths/topic/reversing.20the.20coefficients.html#200085545">(Jun 08 2020 at 11:39)</a>:</h4>
+<p><span class="user-mention silent" data-user-id="110049">Mario Carneiro</span> <a href="#narrow/stream/116395-maths/topic/reversing.20the.20coefficients/near/200085470">said</a>:</p>
+<blockquote>
+<p>Maybe this should be parameterized on the maximum degree and treated as a bijection on the submodule of deg &lt;= n polynomials?</p>
+</blockquote>
+<p>then we lose the fact that reverse is a monoid homomorphism</p>
+
+
+
+<a name="200085605"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/reversing%20the%20coefficients/near/200085605" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/archive/stream/116395-maths/topic/reversing.20the.20coefficients.html#200085605">(Jun 08 2020 at 11:40)</a>:</h4>
+<p>add monoid hom?</p>
+
+
+
+<a name="200085617"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/reversing%20the%20coefficients/near/200085617" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/archive/stream/116395-maths/topic/reversing.20the.20coefficients.html#200085617">(Jun 08 2020 at 11:40)</a>:</h4>
+<p>or monoid hom</p>
+
+
+
+<a name="200085625"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/reversing%20the%20coefficients/near/200085625" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="http://robertylewis.com/archive/stream/116395-maths/topic/reversing.20the.20coefficients.html#200085625">(Jun 08 2020 at 11:40)</a>:</h4>
+<p>monoid hom</p>
+
+
+
+<a name="200085683"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/reversing%20the%20coefficients/near/200085683" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="http://robertylewis.com/archive/stream/116395-maths/topic/reversing.20the.20coefficients.html#200085683">(Jun 08 2020 at 11:41)</a>:</h4>
+<p><code>reverse(pq) = x^(deg(pq)) (pq)(1/x) = x^(deg p + deg q) p(1/x) q(1/x) = [x^(deg p) p(1/x)] [x^(deg q) q(1/x)] = reverse(p) reverse(q)</code></p>
+
+
+
+<a name="200085694"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/reversing%20the%20coefficients/near/200085694" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="http://robertylewis.com/archive/stream/116395-maths/topic/reversing.20the.20coefficients.html#200085694">(Jun 08 2020 at 11:41)</a>:</h4>
+<p>the equality <code>deg(pq) = deg p + deg q</code> needs integral domain</p>
+
+
+
+<a name="200085768"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/reversing%20the%20coefficients/near/200085768" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/archive/stream/116395-maths/topic/reversing.20the.20coefficients.html#200085768">(Jun 08 2020 at 11:42)</a>:</h4>
+<p>I don't think you lose the monoid hom property, you just get some kind of graded multiplicativity property among the elements of the family</p>
+
+
+
+<a name="200085874"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/reversing%20the%20coefficients/near/200085874" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/archive/stream/116395-maths/topic/reversing.20the.20coefficients.html#200085874">(Jun 08 2020 at 11:43)</a>:</h4>
+<p><span class="user-mention silent" data-user-id="112680">Johan Commelin</span> <a href="#narrow/stream/116395-maths/topic/reversing.20the.20coefficients/near/200083949">said</a>:</p>
+<blockquote>
+<p>Right. But it shows up sufficiently often that it should have it's own definition in mathlib.</p>
+</blockquote>
+<p>citation?</p>
+
+
+
+<a name="200085897"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/reversing%20the%20coefficients/near/200085897" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="http://robertylewis.com/archive/stream/116395-maths/topic/reversing.20the.20coefficients.html#200085897">(Jun 08 2020 at 11:43)</a>:</h4>
+<p>My algebra course notes</p>
+
+
+
+<a name="200085958"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/reversing%20the%20coefficients/near/200085958" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/archive/stream/116395-maths/topic/reversing.20the.20coefficients.html#200085958">(Jun 08 2020 at 11:44)</a>:</h4>
+<p>To me without fixing the power of x this seems like a very awkward operation for the reasons Kevin noted</p>
+
+
+
+<a name="200086065"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/reversing%20the%20coefficients/near/200086065" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/archive/stream/116395-maths/topic/reversing.20the.20coefficients.html#200086065">(Jun 08 2020 at 11:45)</a>:</h4>
+<p>and I thought we had already established that <code>deg</code> is not a very well behaved function and the graded family of submodules deg p &lt;= n plays much better</p>
+
+
+
+<a name="200086086"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/reversing%20the%20coefficients/near/200086086" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="http://robertylewis.com/archive/stream/116395-maths/topic/reversing.20the.20coefficients.html#200086086">(Jun 08 2020 at 11:45)</a>:</h4>
+<p><span class="user-mention" data-user-id="110064">@Kenny Lau</span> If you fix the degree, it will become</p>
+<div class="codehilite"><pre><span></span><code><span class="n">reverse</span> <span class="o">(</span><span class="n">deg</span> <span class="n">p</span> <span class="bp">+</span> <span class="n">deg</span> <span class="n">q</span><span class="o">)</span> <span class="o">(</span><span class="n">p</span> <span class="bp">*</span> <span class="n">q</span><span class="o">)</span> <span class="bp">=</span> <span class="n">reverse</span> <span class="o">(</span><span class="n">deg</span> <span class="n">p</span><span class="o">)</span> <span class="n">p</span> <span class="bp">*</span> <span class="n">reverse</span> <span class="o">(</span><span class="n">deg</span> <span class="n">q</span><span class="o">)</span> <span class="n">q</span>
+</code></pre></div>
+
+
+
+<a name="200086149"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/reversing%20the%20coefficients/near/200086149" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/archive/stream/116395-maths/topic/reversing.20the.20coefficients.html#200086149">(Jun 08 2020 at 11:46)</a>:</h4>
+<p>I think it's <code>reverse (m + n) (p * q) = reverse m p * reverse n q</code>, right?</p>
+
+
+
+<a name="200086170"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/reversing%20the%20coefficients/near/200086170" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="http://robertylewis.com/archive/stream/116395-maths/topic/reversing.20the.20coefficients.html#200086170">(Jun 08 2020 at 11:46)</a>:</h4>
+<p>depends on how you totalize reverse m I guess</p>
+
+
+
+<a name="200086171"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/reversing%20the%20coefficients/near/200086171" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="http://robertylewis.com/archive/stream/116395-maths/topic/reversing.20the.20coefficients.html#200086171">(Jun 08 2020 at 11:46)</a>:</h4>
+<p>but sure</p>
+
+
+
+<a name="200086191"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/reversing%20the%20coefficients/near/200086191" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/archive/stream/116395-maths/topic/reversing.20the.20coefficients.html#200086191">(Jun 08 2020 at 11:47)</a>:</h4>
+<p>I think the right behavior is to drop coefficients that are flipped past zero</p>
+
+
+
+<a name="200086235"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/reversing%20the%20coefficients/near/200086235" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="http://robertylewis.com/archive/stream/116395-maths/topic/reversing.20the.20coefficients.html#200086235">(Jun 08 2020 at 11:47)</a>:</h4>
+<p>does this satisfy the property?</p>
+
+
+
+<a name="200086742"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/reversing%20the%20coefficients/near/200086742" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/archive/stream/116395-maths/topic/reversing.20the.20coefficients.html#200086742">(Jun 08 2020 at 11:53)</a>:</h4>
+<p>Not without additional assumptions: <code>reverse 1 (x^2 + 1) = 1</code> but <code>reverse 2 (x^4 + 2x^2 + 1) = x^2 + 2</code></p>
+
+
+
+<a name="200086811"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/reversing%20the%20coefficients/near/200086811" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/archive/stream/116395-maths/topic/reversing.20the.20coefficients.html#200086811">(Jun 08 2020 at 11:54)</a>:</h4>
+<p>I think it holds as long as at least one of <code>m</code> and <code>n</code> is more than its polynomial's degree</p>
+
+
+
+<a name="200087049"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/reversing%20the%20coefficients/near/200087049" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="http://robertylewis.com/archive/stream/116395-maths/topic/reversing.20the.20coefficients.html#200087049">(Jun 08 2020 at 11:57)</a>:</h4>
+<p>that is a bit unfortunate</p>
+
+
+
+<a name="200087164"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/reversing%20the%20coefficients/near/200087164" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/archive/stream/116395-maths/topic/reversing.20the.20coefficients.html#200087164">(Jun 08 2020 at 11:58)</a>:</h4>
+<p>Obviously this all works out much better in Laurent series</p>
+
+
+
+<a name="200087209"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/reversing%20the%20coefficients/near/200087209" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="http://robertylewis.com/archive/stream/116395-maths/topic/reversing.20the.20coefficients.html#200087209">(Jun 08 2020 at 11:59)</a>:</h4>
+<p>looks like there just is no section to the monoid surjection R[X] -&gt; R[X]/(X^n)</p>
+
+
+
+<a name="200087381"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/reversing%20the%20coefficients/near/200087381" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="http://robertylewis.com/archive/stream/116395-maths/topic/reversing.20the.20coefficients.html#200087381">(Jun 08 2020 at 12:01)</a>:</h4>
+<p>wait how does this work in laurent series</p>
+
+
+
+<a name="200087436"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/reversing%20the%20coefficients/near/200087436" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="http://robertylewis.com/archive/stream/116395-maths/topic/reversing.20the.20coefficients.html#200087436">(Jun 08 2020 at 12:01)</a>:</h4>
+<p>i dont think the result is still a Laurent series</p>
+
+
+
+<a name="200087518"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/reversing%20the%20coefficients/near/200087518" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jalex Stark <a href="http://robertylewis.com/archive/stream/116395-maths/topic/reversing.20the.20coefficients.html#200087518">(Jun 08 2020 at 12:02)</a>:</h4>
+<p>Sending x^n to x^{d-n} sounds like it takes Laurent series to Laurent series to me</p>
+
+
+
+<a name="200087554"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/reversing%20the%20coefficients/near/200087554" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/archive/stream/116395-maths/topic/reversing.20the.20coefficients.html#200087554">(Jun 08 2020 at 12:02)</a>:</h4>
+<p>Ah, I mean Laurent polynomial</p>
+
+
+
+<a name="200087567"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/reversing%20the%20coefficients/near/200087567" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="http://robertylewis.com/archive/stream/116395-maths/topic/reversing.20the.20coefficients.html#200087567">(Jun 08 2020 at 12:02)</a>:</h4>
+<p>ah ok</p>
+
+
+
+<a name="200087613"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/reversing%20the%20coefficients/near/200087613" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jalex Stark <a href="http://robertylewis.com/archive/stream/116395-maths/topic/reversing.20the.20coefficients.html#200087613">(Jun 08 2020 at 12:03)</a>:</h4>
+<p>(is a Laurent polynomial a Laurent series with finitely many nonzero terms?)</p>
+
+
+
+<a name="200087622"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/reversing%20the%20coefficients/near/200087622" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="http://robertylewis.com/archive/stream/116395-maths/topic/reversing.20the.20coefficients.html#200087622">(Jun 08 2020 at 12:03)</a>:</h4>
+<p>yeah that sounds like cheating though</p>
+
+
+
+<a name="200087627"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/reversing%20the%20coefficients/near/200087627" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/archive/stream/116395-maths/topic/reversing.20the.20coefficients.html#200087627">(Jun 08 2020 at 12:03)</a>:</h4>
+<p>yes</p>
+
+
+
+<a name="200087722"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/reversing%20the%20coefficients/near/200087722" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/archive/stream/116395-maths/topic/reversing.20the.20coefficients.html#200087722">(Jun 08 2020 at 12:04)</a>:</h4>
+<p>It pretty much is cheating, it's basically solving the problem by fiat</p>
+
+
+
+<a name="200087773"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/reversing%20the%20coefficients/near/200087773" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jalex Stark <a href="http://robertylewis.com/archive/stream/116395-maths/topic/reversing.20the.20coefficients.html#200087773">(Jun 08 2020 at 12:05)</a>:</h4>
+<p>It's pushing the work into defining the appropriate truncation map from Laurent polynomials to polynomials</p>
+
+
+
+<a name="200087789"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/reversing%20the%20coefficients/near/200087789" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/archive/stream/116395-maths/topic/reversing.20the.20coefficients.html#200087789">(Jun 08 2020 at 12:05)</a>:</h4>
+<p>This probably extends to group rings where the monomials take exponents in a group</p>
+
+
+
+<a name="200087865"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/reversing%20the%20coefficients/near/200087865" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="http://robertylewis.com/archive/stream/116395-maths/topic/reversing.20the.20coefficients.html#200087865">(Jun 08 2020 at 12:06)</a>:</h4>
+<p>this is just a special case of R[G] being a bifunctor</p>
+
+
+
+<a name="200090859"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/reversing%20the%20coefficients/near/200090859" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="http://robertylewis.com/archive/stream/116395-maths/topic/reversing.20the.20coefficients.html#200090859">(Jun 08 2020 at 12:37)</a>:</h4>
+<p>The only times I've had to reverse polynomials, they were char polys, so monic and the degree was a constant which was everywhere</p>
+
+
+
+<a name="200091656"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/reversing%20the%20coefficients/near/200091656" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="http://robertylewis.com/archive/stream/116395-maths/topic/reversing.20the.20coefficients.html#200091656">(Jun 08 2020 at 12:45)</a>:</h4>
+<p>And I guess typically the constant coefficient was nonzero...</p>
+
+
+
+<a name="200095998"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/reversing%20the%20coefficients/near/200095998" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="http://robertylewis.com/archive/stream/116395-maths/topic/reversing.20the.20coefficients.html#200095998">(Jun 08 2020 at 13:20)</a>:</h4>
+<p>I was actually reminded by this when it was implicitly used in <a href="https://math.berkeley.edu/~hwl/papers/witt.pdf">the paper I linked in the Witt vector paper</a> where every monic polynomial splits in some ring and as a consequence every polynomial with constant coefficient 1 splits</p>
+
+
+
+<a name="200097232"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/reversing%20the%20coefficients/near/200097232" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="http://robertylewis.com/archive/stream/116395-maths/topic/reversing.20the.20coefficients.html#200097232">(Jun 08 2020 at 13:30)</a>:</h4>
+<p>So I was in exactly this situation where the only polynomials I ever reversed were either monic or had constant coeff 1. It's a bijection between these two things, perhaps even an iso of multiplicative monoids</p>
+
+
+
+<a name="200116438"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/reversing%20the%20coefficients/near/200116438" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Yury G. Kudryashov <a href="http://robertylewis.com/archive/stream/116395-maths/topic/reversing.20the.20coefficients.html#200116438">(Jun 08 2020 at 15:42)</a>:</h4>
+<p>I vote for having a name for <code>x ^ n * f(1 / x)</code> where <code>deg f ≤ n</code>. If it has better properties in case <code>n = deg f</code>, then we can have two names.</p>
+
+
+
+<a name="200117165"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/reversing%20the%20coefficients/near/200117165" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/archive/stream/116395-maths/topic/reversing.20the.20coefficients.html#200117165">(Jun 08 2020 at 15:47)</a>:</h4>
+<p>My thoughts are to associate the name to <code>x ^ n * f(1 / x)</code> without the constraint but with <code>deg f ≤ n</code> being the soft domain of the function. I don't think it will be used enough to justify the added convenience of no side assumptions in the multiplication theorem</p>
+
+
+
+{% endraw %}
+
+<hr><p>Last updated: Jul 19 2020 at 13:36 UTC</p>

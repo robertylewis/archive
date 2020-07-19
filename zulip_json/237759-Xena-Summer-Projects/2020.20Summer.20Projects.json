@@ -1,0 +1,56 @@
+[
+    {
+        "content": "<p>I am running summer projects from 30th June to the end of August. I will give two talks per week <a href=\"https://discord.gg/AnHKcDm\" title=\"https://discord.gg/AnHKcDm\">on Discord</a> and generally will help beginners. The idea is that a student should, at the end of it, have a github repository containing working Lean code, and a little write-up explaining what they have done. </p>\n<p>Far more details are <a href=\"http://wwwf.imperial.ac.uk/~buzzard/xena/UROP2020.html\" title=\"http://wwwf.imperial.ac.uk/~buzzard/xena/UROP2020.html\">here</a>. Things will only get going at the end of June, but I'm setting this up now because people are asking what to do next.</p>",
+        "id": 196665777,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1588784888
+    },
+    {
+        "content": "<p>I would be interested! Is this open to not-anymore-but-been-very-recently undergrads too? How open are you to projects that are more on the logic/computation side of maths and have very little overlap with algebra? And would it be possible to start only at the third week or so? German exams are always a bit later than those in the English-speaking world..</p>",
+        "id": 196679541,
+        "sender_full_name": "Anton Lorenzen",
+        "timestamp": 1588790896
+    },
+    {
+        "content": "<p>I can't offer much supervision on the logic/computation side of things, but you're welcome to join in.</p>",
+        "id": 196684411,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1588793285
+    },
+    {
+        "content": "<p>There are people around here that know things about computation :)</p>",
+        "id": 196707016,
+        "sender_full_name": "Jalex Stark",
+        "timestamp": 1588804553
+    },
+    {
+        "content": "<p>Right :-) This whole thing is just a myth, I'm not going to supervise anything, I'm just going to bring a bunch of people together and get them to ask questions on the chat :-)</p>",
+        "id": 196709483,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1588806746
+    },
+    {
+        "content": "<p>Actually I am hoping that my performance will be better than in 2018, when I knew very little about Lean and the students realised very early on that they were better off asking Chris Hughes <span aria-label=\"rolling on the floor laughing\" class=\"emoji emoji-1f923\" role=\"img\" title=\"rolling on the floor laughing\">:rolling_on_the_floor_laughing:</span></p>",
+        "id": 196709620,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1588806850
+    },
+    {
+        "content": "<p>This time I feel much better equipped to deal with basic questions</p>",
+        "id": 196709637,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1588806867
+    },
+    {
+        "content": "<p>If some of the students will want to fill in some gaps in our analysis library, then I'm ready to help mentoring them.</p>",
+        "id": 198731281,
+        "sender_full_name": "Yury G. Kudryashov",
+        "timestamp": 1590480243
+    },
+    {
+        "content": "<p>I think that in June when I am out of marking hell I will try and do the analogue of what Patrick/Ryan/Rocky are doing -- go through Imperial's undergraduate course and figure out what is missing. I have not been paying attention to analysis development in mathlib, although I have been keeping more of an eye on algebra/number theory.</p>",
+        "id": 198740099,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1590486584
+    }
+]

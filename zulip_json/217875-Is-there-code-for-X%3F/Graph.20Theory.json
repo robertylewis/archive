@@ -1,0 +1,464 @@
+[
+    {
+        "content": "<p>Do we have Graph Theory in mathlib ? If not, I'd be happy to give it a try this summer</p>",
+        "id": 201783213,
+        "sender_full_name": "Anatole Dedecker",
+        "timestamp": 1592946425
+    },
+    {
+        "content": "<p>There was some work on it with the goal of formalizing the disproof of hedetniemis conjecture at <a href=\"https://github.com/leanprover-community/mathlib/tree/hedetniemi/src/graph_theory\">https://github.com/leanprover-community/mathlib/tree/hedetniemi/src/graph_theory</a></p>",
+        "id": 201783410,
+        "sender_full_name": "Alex J. Best",
+        "timestamp": 1592946524
+    },
+    {
+        "content": "<p>There's some stuff like Ramsey theory, Kruskal-Katona/Erdos-Ko-Rado (not in mathlib yet, they're on personal repos)</p>",
+        "id": 201783550,
+        "sender_full_name": "Alena Gusakov",
+        "timestamp": 1592946602
+    },
+    {
+        "content": "<p>Searching for Hedetniemi in chat will bring up some threads I guess.</p>",
+        "id": 201783603,
+        "sender_full_name": "Alex J. Best",
+        "timestamp": 1592946622
+    },
+    {
+        "content": "<p>See also this thread: <a href=\"#narrow/stream/113489-new-members/topic/Feasibility.20of.20graph.20or.20simplicial.20complex.20statement/near/187842633\">https://leanprover.zulipchat.com/#narrow/stream/113489-new-members/topic/Feasibility.20of.20graph.20or.20simplicial.20complex.20statement/near/187842633</a></p>",
+        "id": 201783704,
+        "sender_full_name": "Bryan Gin-ge Chen",
+        "timestamp": 1592946681
+    },
+    {
+        "content": "<p>Sorry those things aren't in mathlib btw</p>",
+        "id": 201783729,
+        "sender_full_name": "Alena Gusakov",
+        "timestamp": 1592946692
+    },
+    {
+        "content": "<p>I started trying to work on some basic definitions but I kept changing my mind on how I wanted to do that lol</p>",
+        "id": 201783982,
+        "sender_full_name": "Alena Gusakov",
+        "timestamp": 1592946799
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"303889\">Alena Gusakov</span> <a href=\"#narrow/stream/217875-Is-there.20code.20for.20X.3F/topic/Graph.20Theory/near/201783982\">said</a>:</p>\n<blockquote>\n<p>I started trying to work on some basic definitions but I kept changing my mind on how I wanted to do that lol</p>\n</blockquote>\n<p>I think this is the same reason no-one else has made a PR yet either</p>",
+        "id": 201784151,
+        "sender_full_name": "Bhavik Mehta",
+        "timestamp": 1592946848
+    },
+    {
+        "content": "<p>There's an even older post here: <a href=\"#narrow/stream/113488-general/topic/Type.20classes.20again/near/167340123\">https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Type.20classes.20again/near/167340123</a> (this could probably be PR'd to <code>archive/</code> once we get some of the stuff into mathlib)</p>",
+        "id": 201784173,
+        "sender_full_name": "Bryan Gin-ge Chen",
+        "timestamp": 1592946863
+    },
+    {
+        "content": "<p>I'm doing some graph theory things right now.  There are a few ways of defining graphs, depending on what you're wanting to do.  One version is using relations, another is Type-valued \"relations\" for multiple edges between vertices, and one I have now is like 1-D CW complexes.  With the latter, I proved yesterday the handshaking lemma, that the sum of the degrees of the vertices is twice the number of edges.</p>",
+        "id": 201784346,
+        "sender_full_name": "Kyle Miller",
+        "timestamp": 1592946945
+    },
+    {
+        "content": "<p>There are some papers on formalizing graph theory in Coq by Doczkal and collaborators <a href=\"https://perso.ens-lyon.fr/christian.doczkal/index.html\">here</a> which might be helpful when thinking about design decisions. I haven't had a chance to really dig in though.</p>",
+        "id": 201784554,
+        "sender_full_name": "Bryan Gin-ge Chen",
+        "timestamp": 1592947025
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"306601\">Kyle Miller</span> <a href=\"#narrow/stream/217875-Is-there.20code.20for.20X.3F/topic/Graph.20Theory/near/201784346\">said</a>:</p>\n<blockquote>\n<p>I proved yesterday the handshaking lemma, that the sum of the degrees of the vertices is twice the number of edges.</p>\n</blockquote>\n<p>Yeah this is a good exercise - I did it too when I proved Ramsey: <a href=\"https://github.com/b-mehta/combinatorics/blob/extras/src/handshaking.lean#L122\">https://github.com/b-mehta/combinatorics/blob/extras/src/handshaking.lean#L122</a></p>",
+        "id": 201784602,
+        "sender_full_name": "Bhavik Mehta",
+        "timestamp": 1592947052
+    },
+    {
+        "content": "<p>Ok so it has been done a lot but not in mathlib</p>",
+        "id": 201785075,
+        "sender_full_name": "Anatole Dedecker",
+        "timestamp": 1592947271
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"127136\">Alex J. Best</span> <a href=\"#narrow/stream/217875-Is-there.20code.20for.20X.3F/topic/Graph.20Theory/near/201783410\">said</a>:</p>\n<blockquote>\n<p>There was some work on it with the goal of formalizing the disproof of hedetniemis conjecture at <a href=\"https://github.com/leanprover-community/mathlib/tree/hedetniemi/src/graph_theory\">https://github.com/leanprover-community/mathlib/tree/hedetniemi/src/graph_theory</a></p>\n</blockquote>\n<p>By \"was\" do you mean it's inactive ?</p>",
+        "id": 201785116,
+        "sender_full_name": "Anatole Dedecker",
+        "timestamp": 1592947297
+    },
+    {
+        "content": "<p>Yeah, there's no one actively working on it any more unfortunately; though as far as I know it's the biggest bit of graph theory that's been done in lean</p>",
+        "id": 201785201,
+        "sender_full_name": "Bhavik Mehta",
+        "timestamp": 1592947334
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"246273\">@Bhavik Mehta</span>  It looks like you have it for simple graphs.  Since I'm going to need it, I used a definition that allows loops and multiple edges: <a href=\"https://github.com/kmill/lean-graphs/blob/master/src/graphs.lean#L25\">https://github.com/kmill/lean-graphs/blob/master/src/graphs.lean#L25</a></p>",
+        "id": 201785223,
+        "sender_full_name": "Kyle Miller",
+        "timestamp": 1592947349
+    },
+    {
+        "content": "<p>Well the last commit  was a couple of months ago, and the thread died off, but it was only this year so it should be in good shape still.</p>",
+        "id": 201785248,
+        "sender_full_name": "Alex J. Best",
+        "timestamp": 1592947366
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"306601\">Kyle Miller</span> <a href=\"#narrow/stream/217875-Is-there.20code.20for.20X.3F/topic/Graph.20Theory/near/201785223\">said</a>:</p>\n<blockquote>\n<p><span class=\"user-mention silent\" data-user-id=\"246273\">Bhavik Mehta</span>  It looks like you have it for simple graphs.  Since I'm going to need it, I used a definition that allows loops and multiple edges: <a href=\"https://github.com/kmill/lean-graphs/blob/master/src/graphs.lean#L25\">https://github.com/kmill/lean-graphs/blob/master/src/graphs.lean#L25</a></p>\n</blockquote>\n<p>Ah nice, yeah I see</p>",
+        "id": 201785271,
+        "sender_full_name": "Bhavik Mehta",
+        "timestamp": 1592947382
+    },
+    {
+        "content": "<p>(and every relation-based graph can be represented as such a graph using the constructor at <a href=\"https://github.com/kmill/lean-graphs/blob/master/src/graphs.lean#L128\">https://github.com/kmill/lean-graphs/blob/master/src/graphs.lean#L128</a>)</p>",
+        "id": 201785298,
+        "sender_full_name": "Kyle Miller",
+        "timestamp": 1592947399
+    },
+    {
+        "content": "<p>I wasn't too involved, but an important part of the disproof is the construction of some specific graph with a particular girth and chromatic number, the paper used a probabilistic argument here and my impression was that such arguments are harder to develop in lean at present. Might be better to try a more explicit approach to constructing this part of the proof instead.</p>",
+        "id": 201785480,
+        "sender_full_name": "Alex J. Best",
+        "timestamp": 1592947483
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"127136\">Alex J. Best</span> <a href=\"#narrow/stream/217875-Is-there.20code.20for.20X.3F/topic/Graph.20Theory/near/201785248\">said</a>:</p>\n<blockquote>\n<p>Well the last commit  was a couple of months ago, and the thread died off, but it was only this year so it should be in good shape still.</p>\n</blockquote>\n<p>I'll have a look and see if I can help, though I may be overestimating myself here <span aria-label=\"sweat smile\" class=\"emoji emoji-1f605\" role=\"img\" title=\"sweat smile\">:sweat_smile:</span></p>",
+        "id": 201785767,
+        "sender_full_name": "Anatole Dedecker",
+        "timestamp": 1592947646
+    },
+    {
+        "content": "<p>Yeah I'm thinking of the paper <a href=\"https://arxiv.org/abs/2004.09028\">https://arxiv.org/abs/2004.09028</a> which looks like it might give a more explicit example for that step than the Erdos-Renyi stuff (but once again I am not a graph theorist so would welcome corrections!)</p>",
+        "id": 201786359,
+        "sender_full_name": "Alex J. Best",
+        "timestamp": 1592947949
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"123965\">Bryan Gin-ge Chen</span> <a href=\"#narrow/stream/217875-Is-there.20code.20for.20X.3F/topic/Graph.20Theory/near/201784554\">said</a>:</p>\n<blockquote>\n<p>There are some papers on formalizing graph theory in Coq by Doczkal and collaborators <a href=\"https://perso.ens-lyon.fr/christian.doczkal/index.html\">here</a> which might be helpful when thinking about design decisions. I haven't had a chance to really dig in though.</p>\n</blockquote>\n<p>If I wanna work on a generic-purpose approach, I think I'm going to keep that as a reference</p>",
+        "id": 201786784,
+        "sender_full_name": "Anatole Dedecker",
+        "timestamp": 1592948203
+    },
+    {
+        "content": "<p>(deleted)</p>",
+        "id": 201786881,
+        "sender_full_name": "Anatole Dedecker",
+        "timestamp": 1592948259
+    },
+    {
+        "content": "<p>(deleted)</p>",
+        "id": 201786886,
+        "sender_full_name": "Anatole Dedecker",
+        "timestamp": 1592948262
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"268315\">@Anatole Dedecker</span>  Given my experiences so far with graphs (where I need non-simple graphs with multiple edges) and what I've seen in those papers that <span class=\"user-mention\" data-user-id=\"123965\">@Bryan Gin-ge Chen</span> kindly shared, here's how I might define directed and undirected non-simple graphs (optionally edge-labeled):</p>\n<div class=\"codehilite\"><pre><span></span><code><span class=\"c1\">-- An edge-labeled directed graph</span>\n<span class=\"kn\">structure</span> <span class=\"n\">dgraph</span> <span class=\"o\">(</span><span class=\"n\">L</span> <span class=\"o\">:</span> <span class=\"kt\">Type</span><span class=\"bp\">*</span><span class=\"o\">)</span> <span class=\"o\">:=</span>\n<span class=\"o\">(</span><span class=\"n\">V</span> <span class=\"o\">:</span> <span class=\"kt\">Type</span><span class=\"bp\">*</span><span class=\"o\">)</span> <span class=\"o\">(</span><span class=\"n\">E</span> <span class=\"o\">:</span> <span class=\"kt\">Type</span><span class=\"bp\">*</span><span class=\"o\">)</span> <span class=\"o\">(</span><span class=\"n\">p</span> <span class=\"o\">:</span> <span class=\"n\">E</span> <span class=\"bp\">→</span> <span class=\"n\">V</span> <span class=\"bp\">×</span> <span class=\"n\">V</span><span class=\"o\">)</span> <span class=\"o\">(</span><span class=\"n\">ℓ</span> <span class=\"o\">:</span> <span class=\"n\">E</span> <span class=\"bp\">→</span> <span class=\"n\">L</span><span class=\"o\">)</span>\n\n<span class=\"kn\">inductive</span> <span class=\"n\">sym2_rel</span> <span class=\"o\">(</span><span class=\"n\">α</span> <span class=\"o\">:</span> <span class=\"kt\">Type</span><span class=\"bp\">*</span><span class=\"o\">)</span> <span class=\"o\">:</span> <span class=\"o\">(</span><span class=\"n\">α</span> <span class=\"bp\">×</span> <span class=\"n\">α</span><span class=\"o\">)</span> <span class=\"bp\">→</span> <span class=\"o\">(</span><span class=\"n\">α</span> <span class=\"bp\">×</span> <span class=\"n\">α</span><span class=\"o\">)</span> <span class=\"bp\">→</span> <span class=\"kt\">Prop</span>\n<span class=\"bp\">|</span> <span class=\"n\">refl</span> <span class=\"o\">(</span><span class=\"n\">x</span> <span class=\"n\">y</span> <span class=\"o\">:</span> <span class=\"n\">α</span><span class=\"o\">)</span> <span class=\"o\">:</span> <span class=\"n\">sym2_rel</span> <span class=\"bp\">⟨</span><span class=\"n\">x</span><span class=\"o\">,</span><span class=\"n\">y</span><span class=\"bp\">⟩</span> <span class=\"bp\">⟨</span><span class=\"n\">x</span><span class=\"o\">,</span><span class=\"n\">y</span><span class=\"bp\">⟩</span>\n<span class=\"bp\">|</span> <span class=\"n\">swap</span> <span class=\"o\">(</span><span class=\"n\">x</span> <span class=\"n\">y</span> <span class=\"o\">:</span> <span class=\"n\">α</span><span class=\"o\">)</span> <span class=\"o\">:</span> <span class=\"n\">sym2_rel</span> <span class=\"bp\">⟨</span><span class=\"n\">x</span><span class=\"o\">,</span><span class=\"n\">y</span><span class=\"bp\">⟩</span> <span class=\"bp\">⟨</span><span class=\"n\">y</span><span class=\"o\">,</span><span class=\"n\">x</span><span class=\"bp\">⟩</span>\n\n<span class=\"c1\">-- The symmetric square is the cartesian product α × α modulo `swap`.</span>\n<span class=\"n\">def</span> <span class=\"n\">sym2</span> <span class=\"o\">(</span><span class=\"n\">α</span> <span class=\"o\">:</span> <span class=\"kt\">Type</span><span class=\"bp\">*</span><span class=\"o\">)</span> <span class=\"o\">:=</span> <span class=\"n\">quot</span> <span class=\"o\">(</span><span class=\"n\">sym2_rel</span> <span class=\"n\">α</span><span class=\"o\">)</span>\n<span class=\"n\">def</span> <span class=\"n\">incl_diag</span> <span class=\"o\">{</span><span class=\"n\">α</span> <span class=\"o\">:</span> <span class=\"kt\">Type</span><span class=\"bp\">*</span><span class=\"o\">}</span> <span class=\"o\">(</span><span class=\"n\">x</span> <span class=\"o\">:</span> <span class=\"n\">α</span><span class=\"o\">)</span> <span class=\"o\">:</span> <span class=\"n\">sym2</span> <span class=\"n\">α</span> <span class=\"o\">:=</span> <span class=\"n\">quot</span><span class=\"bp\">.</span><span class=\"n\">mk</span> <span class=\"o\">(</span><span class=\"n\">sym2_rel</span> <span class=\"n\">α</span><span class=\"o\">)</span> <span class=\"bp\">⟨</span><span class=\"n\">x</span><span class=\"o\">,</span> <span class=\"n\">x</span><span class=\"bp\">⟩</span>\n\n<span class=\"c1\">-- An edge-labeled undirected graph</span>\n<span class=\"kn\">structure</span> <span class=\"n\">graph</span> <span class=\"o\">(</span><span class=\"n\">L</span> <span class=\"o\">:</span> <span class=\"kt\">Type</span><span class=\"bp\">*</span><span class=\"o\">)</span> <span class=\"o\">:=</span>\n<span class=\"o\">(</span><span class=\"n\">V</span> <span class=\"o\">:</span> <span class=\"kt\">Type</span><span class=\"bp\">*</span><span class=\"o\">)</span> <span class=\"o\">(</span><span class=\"n\">E</span> <span class=\"o\">:</span> <span class=\"kt\">Type</span><span class=\"bp\">*</span><span class=\"o\">)</span> <span class=\"o\">(</span><span class=\"n\">p</span> <span class=\"o\">:</span> <span class=\"n\">E</span> <span class=\"bp\">→</span> <span class=\"n\">sym2</span> <span class=\"n\">V</span><span class=\"o\">)</span> <span class=\"o\">(</span><span class=\"n\">ℓ</span> <span class=\"o\">:</span> <span class=\"n\">E</span> <span class=\"bp\">→</span> <span class=\"n\">L</span><span class=\"o\">)</span>\n\n<span class=\"c1\">-- For example,</span>\n<span class=\"n\">def</span> <span class=\"n\">loopless</span> <span class=\"o\">{</span><span class=\"n\">L</span><span class=\"o\">}</span> <span class=\"o\">(</span><span class=\"n\">g</span> <span class=\"o\">:</span> <span class=\"n\">graph</span> <span class=\"n\">L</span><span class=\"o\">)</span> <span class=\"o\">:=</span>\n<span class=\"bp\">∀</span> <span class=\"o\">(</span><span class=\"n\">v</span> <span class=\"o\">:</span> <span class=\"n\">g</span><span class=\"bp\">.</span><span class=\"n\">V</span><span class=\"o\">),</span> <span class=\"bp\">¬∃</span> <span class=\"o\">(</span><span class=\"n\">e</span> <span class=\"o\">:</span> <span class=\"n\">g</span><span class=\"bp\">.</span><span class=\"n\">E</span><span class=\"o\">),</span> <span class=\"n\">g</span><span class=\"bp\">.</span><span class=\"n\">p</span> <span class=\"n\">e</span> <span class=\"bp\">=</span> <span class=\"n\">incl_diag</span> <span class=\"n\">v</span>\n</code></pre></div>\n\n\n<p>The benefit with this definition for undirected graphs is that the edges are <em>intrinsically</em> undirected.  (Depending on your tastes, you might change <code>sym2</code> to <code>finset</code> and add in the axiom that <code>(p e).card</code> is either 1 or 2.)</p>",
+        "id": 201788634,
+        "sender_full_name": "Kyle Miller",
+        "timestamp": 1592949164
+    },
+    {
+        "content": "<p>Yeah I think I'd have done something like that. In classical logic I would rather have used quotient, but I've never used them in Lean yet, so I don't really know</p>",
+        "id": 201788979,
+        "sender_full_name": "Anatole Dedecker",
+        "timestamp": 1592949396
+    },
+    {
+        "content": "<p>See also David and Johan's definition here: <a href=\"https://github.com/leanprover-community/mathlib/blob/hedetniemi/src/graph_theory/basic.lean\">https://github.com/leanprover-community/mathlib/blob/hedetniemi/src/graph_theory/basic.lean</a></p>",
+        "id": 201789218,
+        "sender_full_name": "Bhavik Mehta",
+        "timestamp": 1592949537
+    },
+    {
+        "content": "<p>I'd move <code>V</code> to the arguments because sometimes you want to consider a graph on a given type and having two ways to represent a type (<code>α</code> and <code>g.V</code>) can be bad for <code>simp</code> etc. But this is not too important, and it would be nice of someone finally PRs one of the definitions + basic theory to <code>mathlib</code>.</p>",
+        "id": 201790716,
+        "sender_full_name": "Yury G. Kudryashov",
+        "timestamp": 1592950411
+    },
+    {
+        "content": "<p>Yup that is true indeed, in some sense we are building a structure of graph on the type of its vertices</p>",
+        "id": 201791017,
+        "sender_full_name": "Anatole Dedecker",
+        "timestamp": 1592950614
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"246273\">@Bhavik Mehta</span>  Yeah, the \"Type/Sort-valued relation\" seems like a good generalization of the Prop-valued relation approach to graphs, and it probably also makes edge labelings sort of come for free if you want them.  One thing I want to do is induct on the edge set in a graph, and I went for the sort of dual definition (edges are <em>attached</em> to the vertices) in anticipation of that.  You also get the number of edges in the graph by looking at the cardinality of the edge set this way, rather than having to sum up the edge sets over all pairs of vertices.</p>\n<p>One thing I've struggled with when thinking about a graph library is how a lot of graph theory can be turned into statements about irreflexive symmetric relations on a (finite) type.  It makes me think that there should be some part of mathlib about this specific case, maybe defining <code>relation.graph</code> and giving basic statements about these sorts of relations.  However, there's also the part of graph theory that considers non-simple graphs, and for this you might have something like the definitions I gave.  <span class=\"user-mention\" data-user-id=\"214703\">@Yury G. Kudryashov</span> Do you think it's reasonable to have both definitions in mathlib?</p>",
+        "id": 201791488,
+        "sender_full_name": "Kyle Miller",
+        "timestamp": 1592950933
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"268315\">Anatole Dedecker</span> <a href=\"#narrow/stream/217875-Is-there.20code.20for.20X.3F/topic/Graph.20Theory/near/201791017\">said</a>:</p>\n<blockquote>\n<p>Yup that is true indeed, in some sense we are building a structure of graph on the type of its vertices</p>\n</blockquote>\n<p>I think the decision might be more based on whether you think you want to consider lots of different graphs on the same vertex set.  I wasn't sure which way to go with the above definitions (and, in fact, I've been doing it with <code>graph V</code> in my own code).  It seems like it would be annoying working with <code>{g // g.V = V}</code>, and if you really did need the type of all graphs, there's always <code>Σ (V : Type*), graph V</code>.</p>",
+        "id": 201791930,
+        "sender_full_name": "Kyle Miller",
+        "timestamp": 1592951255
+    },
+    {
+        "content": "<p>It's <code>Σ V, graph V</code>, not <code>Π</code>.</p>",
+        "id": 201792026,
+        "sender_full_name": "Yury G. Kudryashov",
+        "timestamp": 1592951303
+    },
+    {
+        "content": "<p>Oh, thanks!</p>",
+        "id": 201792048,
+        "sender_full_name": "Kyle Miller",
+        "timestamp": 1592951322
+    },
+    {
+        "content": "<p><code>Π</code> type is the type of functions sending each <code>V</code> to some graph on <code>V</code>.</p>",
+        "id": 201792066,
+        "sender_full_name": "Yury G. Kudryashov",
+        "timestamp": 1592951339
+    },
+    {
+        "content": "<p>I'm not sure how many definitions of a graph do we want to have in <code>mathlib</code> but I'm pretty sure that we need at least one.</p>",
+        "id": 201792243,
+        "sender_full_name": "Yury G. Kudryashov",
+        "timestamp": 1592951466
+    },
+    {
+        "content": "<p>I'd suggest starting with some general definition, then see what special cases do we need.</p>",
+        "id": 201792286,
+        "sender_full_name": "Yury G. Kudryashov",
+        "timestamp": 1592951500
+    },
+    {
+        "content": "<p>Do you know if mathlib already has symmetric products (like sym2)?  If not, where would be a good place to put their definition?</p>",
+        "id": 201793169,
+        "sender_full_name": "Kyle Miller",
+        "timestamp": 1592951973
+    },
+    {
+        "content": "<p>I'd encourage PR'ing parts of the hedetniemi branch. The definitions there have been at least partially battle-tested.</p>",
+        "id": 201793291,
+        "sender_full_name": "Scott Morrison",
+        "timestamp": 1592952047
+    },
+    {
+        "content": "<p>It seems like the <a href=\"https://github.com/leanprover-community/mathlib/blob/hedetniemi/src/graph_theory/basic.lean#L16\">definition of a multigraph</a> isn't quite right for loop edges.  You'd want <code>inv</code> to be the identity equivalence on the diagonal, I think.</p>",
+        "id": 201794754,
+        "sender_full_name": "Kyle Miller",
+        "timestamp": 1592953046
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"252300\">@Jalex Stark</span> and I have done all of the graph theory in a proof of the Friendship Theorem, but we've slowed down on the linear algebra. <a href=\"https://github.com/jalex-stark/friendship-theorem/tree/master/src\">https://github.com/jalex-stark/friendship-theorem/tree/master/src</a></p>",
+        "id": 201797911,
+        "sender_full_name": "Aaron Anderson",
+        "timestamp": 1592955604
+    },
+    {
+        "content": "<p>I'd be happy to join a bigger graph theory (or other combinatorics) project, if people want a summer collaboration.</p>",
+        "id": 201798048,
+        "sender_full_name": "Aaron Anderson",
+        "timestamp": 1592955781
+    },
+    {
+        "content": "<p>Don't forget: whatever is not PRed, will stop compiling against <code>master</code> soon.</p>",
+        "id": 201806292,
+        "sender_full_name": "Yury G. Kudryashov",
+        "timestamp": 1592965676
+    },
+    {
+        "content": "<p>And it's better to make 10 small PRs than one huge PR.</p>",
+        "id": 201806340,
+        "sender_full_name": "Yury G. Kudryashov",
+        "timestamp": 1592965713
+    },
+    {
+        "content": "<p>So, don't wait till you have nice theorems.</p>",
+        "id": 201806430,
+        "sender_full_name": "Yury G. Kudryashov",
+        "timestamp": 1592965839
+    },
+    {
+        "content": "<p>A PR with basic definitions and \"obvious\" <code>simp</code> lemmas is a good start.</p>",
+        "id": 201806442,
+        "sender_full_name": "Yury G. Kudryashov",
+        "timestamp": 1592965863
+    },
+    {
+        "content": "<p>We can always fix the definitions in later PRs. :-)</p>",
+        "id": 201809646,
+        "sender_full_name": "Scott Morrison",
+        "timestamp": 1592971263
+    },
+    {
+        "content": "<p>If no one is already working on a PR, I propose that someone who worked on the <code>hedetniemi</code> branch either:</p>\n<ol>\n<li>makes a PR, or </li>\n<li>gives pointers to what files are in PR-ready shape </li>\n</ol>\n<p><span aria-label=\"slight smile\" class=\"emoji emoji-1f642\" role=\"img\" title=\"slight smile\">:slight_smile:</span></p>",
+        "id": 201811054,
+        "sender_full_name": "Bryan Gin-ge Chen",
+        "timestamp": 1592973630
+    },
+    {
+        "content": "<p>I'm working on a PR.  I'm taking some of what's in hedetniemi and reworking it for multigraphs.  I'm just trying to prove that the definition I'm using is equivalent to (a corrected version) of what's already there.</p>",
+        "id": 201811934,
+        "sender_full_name": "Kyle Miller",
+        "timestamp": 1592975049
+    },
+    {
+        "content": "<p>Great! I've sent you an invitation to collaborate, so you can push to a branch in mathlib and PR from that.</p>",
+        "id": 201812159,
+        "sender_full_name": "Bryan Gin-ge Chen",
+        "timestamp": 1592975358
+    },
+    {
+        "content": "<p>Thanks, received!</p>",
+        "id": 201812236,
+        "sender_full_name": "Kyle Miller",
+        "timestamp": 1592975444
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"306601\">@Kyle Miller</span>, what was the mistake that needed correcting?</p>",
+        "id": 201818158,
+        "sender_full_name": "Scott Morrison",
+        "timestamp": 1592983610
+    },
+    {
+        "content": "<p>Will your generalisation to multigraphs still be usable for simple graphs?</p>",
+        "id": 201818172,
+        "sender_full_name": "Scott Morrison",
+        "timestamp": 1592983626
+    },
+    {
+        "content": "<p>The mistake is that in</p>\n<div class=\"codehilite\"><pre><span></span><code><span class=\"kn\">structure</span> <span class=\"n\">multigraph</span> <span class=\"o\">(</span><span class=\"n\">V</span> <span class=\"o\">:</span> <span class=\"kt\">Type</span> <span class=\"n\">u</span><span class=\"o\">)</span> <span class=\"kn\">extends</span> <span class=\"n\">directed_multigraph</span><span class=\"bp\">.</span><span class=\"o\">{</span><span class=\"n\">v</span><span class=\"o\">}</span> <span class=\"n\">V</span> <span class=\"o\">:=</span>\n<span class=\"o\">(</span><span class=\"n\">inv</span> <span class=\"o\">:</span> <span class=\"bp\">Π</span> <span class=\"o\">(</span><span class=\"n\">x</span> <span class=\"n\">y</span><span class=\"o\">),</span> <span class=\"n\">edge</span> <span class=\"n\">x</span> <span class=\"n\">y</span> <span class=\"err\">≃</span> <span class=\"n\">edge</span> <span class=\"n\">y</span> <span class=\"n\">x</span><span class=\"o\">)</span>\n</code></pre></div>\n\n\n<p>the <code>inv x x</code> permutation might not be trivial, so you can do some weird quantum thing where you keep flipping over the edge and get a totally new one.  It seems loop edges aren't particularly popular to consider, but I use them a lot in my own work so I'd like them to be supported.</p>",
+        "id": 201818432,
+        "sender_full_name": "Kyle Miller",
+        "timestamp": 1592983827
+    },
+    {
+        "content": "<p>My plan for graphs is something like this:</p>\n<div class=\"codehilite\"><pre><span></span><code><span class=\"kn\">structure</span> <span class=\"n\">multigraph</span> <span class=\"o\">(</span><span class=\"n\">V</span> <span class=\"o\">:</span> <span class=\"kt\">Type</span> <span class=\"n\">u</span><span class=\"o\">)</span> <span class=\"o\">:=</span>\n<span class=\"o\">(</span><span class=\"n\">E</span> <span class=\"o\">:</span> <span class=\"kt\">Type</span> <span class=\"n\">v</span><span class=\"o\">)</span> <span class=\"o\">(</span><span class=\"n\">ends</span> <span class=\"o\">:</span> <span class=\"n\">E</span> <span class=\"bp\">→</span> <span class=\"n\">sym2</span> <span class=\"n\">V</span><span class=\"o\">)</span>\n\n<span class=\"kn\">structure</span> <span class=\"n\">graph</span> <span class=\"o\">(</span><span class=\"n\">V</span> <span class=\"o\">:</span> <span class=\"kt\">Type</span> <span class=\"n\">u</span><span class=\"o\">)</span> <span class=\"kn\">extends</span> <span class=\"n\">multigraph</span> <span class=\"n\">V</span> <span class=\"o\">:=</span>\n<span class=\"o\">(</span><span class=\"n\">single_edge</span> <span class=\"o\">:</span> <span class=\"n\">injective</span> <span class=\"n\">ends</span><span class=\"o\">)</span>\n\n<span class=\"kn\">structure</span> <span class=\"n\">simple_graph</span> <span class=\"o\">(</span><span class=\"n\">V</span> <span class=\"o\">:</span> <span class=\"kt\">Type</span> <span class=\"n\">u</span><span class=\"o\">)</span> <span class=\"kn\">extends</span> <span class=\"n\">graph</span> <span class=\"n\">V</span> <span class=\"o\">:=</span>\n<span class=\"o\">(</span><span class=\"n\">loopless</span> <span class=\"o\">:</span> <span class=\"bp\">∀</span> <span class=\"n\">e</span> <span class=\"o\">:</span> <span class=\"n\">E</span><span class=\"o\">,</span> <span class=\"bp\">¬</span><span class=\"o\">(</span><span class=\"n\">ends</span> <span class=\"n\">e</span><span class=\"o\">)</span><span class=\"bp\">.</span><span class=\"n\">is_diag</span><span class=\"o\">)</span>\n</code></pre></div>\n\n\n<p>There would be a number of constructors to put the main ways of working with graphs into one of these forms.  For example, there's one that takes a corrected version of the hedetniemi-branch multigraph in the following format:</p>\n<div class=\"codehilite\"><pre><span></span><code><span class=\"kn\">structure</span> <span class=\"n\">edge_set_desc</span> <span class=\"o\">(</span><span class=\"n\">V</span> <span class=\"o\">:</span> <span class=\"kt\">Type</span> <span class=\"n\">u</span><span class=\"o\">)</span> <span class=\"o\">:=</span>\n<span class=\"o\">(</span><span class=\"n\">edge</span> <span class=\"o\">:</span> <span class=\"n\">V</span> <span class=\"bp\">→</span> <span class=\"n\">V</span> <span class=\"bp\">→</span> <span class=\"n\">Sort</span> <span class=\"n\">v</span><span class=\"o\">)</span>\n<span class=\"o\">(</span><span class=\"n\">inv</span> <span class=\"o\">:</span> <span class=\"bp\">Π</span> <span class=\"n\">x</span> <span class=\"n\">y</span><span class=\"o\">,</span> <span class=\"n\">edge</span> <span class=\"n\">x</span> <span class=\"n\">y</span> <span class=\"err\">≃</span> <span class=\"n\">edge</span> <span class=\"n\">y</span> <span class=\"n\">x</span><span class=\"o\">)</span>\n<span class=\"o\">(</span><span class=\"n\">loops</span> <span class=\"o\">:</span> <span class=\"bp\">Π</span> <span class=\"n\">x</span><span class=\"o\">,</span> <span class=\"n\">inv</span> <span class=\"n\">x</span> <span class=\"n\">x</span> <span class=\"bp\">=</span> <span class=\"n\">equiv</span><span class=\"bp\">.</span><span class=\"n\">refl</span> <span class=\"o\">(</span><span class=\"n\">edge</span> <span class=\"n\">x</span> <span class=\"n\">x</span><span class=\"o\">))</span>\n</code></pre></div>",
+        "id": 201818570,
+        "sender_full_name": "Kyle Miller",
+        "timestamp": 1592983980
+    },
+    {
+        "content": "<p>Another constructor (not yet written) would be</p>\n<div class=\"codehilite\"><pre><span></span><code><span class=\"n\">def</span> <span class=\"n\">from_relation</span> <span class=\"o\">{</span><span class=\"n\">α</span> <span class=\"o\">:</span> <span class=\"kt\">Type</span> <span class=\"n\">u</span><span class=\"o\">}</span> <span class=\"o\">{</span><span class=\"n\">r</span> <span class=\"o\">:</span> <span class=\"n\">α</span> <span class=\"bp\">→</span> <span class=\"n\">α</span> <span class=\"bp\">→</span> <span class=\"kt\">Prop</span><span class=\"o\">}</span> <span class=\"o\">(</span><span class=\"n\">h1</span> <span class=\"o\">:</span> <span class=\"n\">symmetric</span> <span class=\"n\">r</span><span class=\"o\">)</span> <span class=\"o\">(</span><span class=\"n\">h2</span> <span class=\"o\">:</span> <span class=\"n\">irreflexive</span> <span class=\"n\">r</span><span class=\"o\">):</span> <span class=\"n\">simple_graph</span> <span class=\"n\">α</span>\n</code></pre></div>",
+        "id": 201818836,
+        "sender_full_name": "Kyle Miller",
+        "timestamp": 1592984175
+    },
+    {
+        "content": "<p>Does this use of structure extensions seem OK?</p>",
+        "id": 201818889,
+        "sender_full_name": "Kyle Miller",
+        "timestamp": 1592984245
+    },
+    {
+        "content": "<p>I'm also unsure about the terminology.  And, maybe it would make sense to combine <code>graph</code> and <code>simple_graph</code>, since now that I think about it, <code>graph</code> doesn't seem particularly useful.</p>",
+        "id": 201818977,
+        "sender_full_name": "Kyle Miller",
+        "timestamp": 1592984335
+    },
+    {
+        "content": "<p>It's good to hear that you're working on a PR! There are a lot of questions here about how to set up definitions. One of the most basic is whether we want a type <code>E</code> of all edges together with an assignment of endpoints, or an indexed family <code>V -&gt; V -&gt; Sort u</code>. One issue with the former definition is that when you say \"given <code>a b : V</code>, consider an edge <code>e</code> with endpoints <code>a b</code>\", then the endpoints of <code>e</code> will never be definitionally equal to <code>a b</code> -- instead you will have some equalities to rewrite along. (It's easier to bundle an unbundled definition than it is to unbundle a bundled definition.)</p>",
+        "id": 201823848,
+        "sender_full_name": "David Wärn",
+        "timestamp": 1592988231
+    },
+    {
+        "content": "<p>I think this issue of loops being their own reversal never came up because Johan was working exclusively with the <code>Prop</code>-case, where loops definitionally equal their reversals. Another lawfulness issue is that edge reversal should be involutive -- the reversal of the reversal is the original loop. I think sometimes you might want this condition, while allowing loops which do not equal their reversal? (The example I have in mind is a groupoid, where the reversal of an arrow / edge is its inverse.)</p>",
+        "id": 201824515,
+        "sender_full_name": "David Wärn",
+        "timestamp": 1592988822
+    },
+    {
+        "content": "<p>An awkwardness with undirected graphs is that edges don't really have endpoints in a specific order.  It seems the indexed family approach requires you to sort of keep track of a quotient type yourself by having some involution that inverts edges.  The dual to the approach I was considering might be having the edges be an indexed family <code>sym2 V -&gt; Sort u</code>, which makes the edges inherently unoriented.</p>\n<p>I need to go to sleep now, but here's what I have so far: <a href=\"https://github.com/leanprover-community/mathlib/tree/graphs/src/combinatorics/graphs\">https://github.com/leanprover-community/mathlib/tree/graphs/src/combinatorics/graphs</a></p>",
+        "id": 201824534,
+        "sender_full_name": "Kyle Miller",
+        "timestamp": 1592988839
+    },
+    {
+        "content": "<p>Yes, undirected graphs are awkward in the indexed approach. <code>edge : sym2 V -&gt; Sort u</code> might also be problematic since <code>edge (a, b)</code> and <code>edge (b, a)</code> are still not def eq.</p>",
+        "id": 201824970,
+        "sender_full_name": "David Wärn",
+        "timestamp": 1592989153
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"130377\">David Wärn</span> <a href=\"#narrow/stream/217875-Is-there.20code.20for.20X.3F/topic/Graph.20Theory/near/201824515\">said</a>:</p>\n<blockquote>\n<p>I think this issue of loops being their own reversal never came up because Johan was working exclusively with the <code>Prop</code>-case, where loops definitionally equal their reversals. Another lawfulness issue is that edge reversal should be involutive -- the reversal of the reversal is the original loop. I think sometimes you might want this condition, while allowing loops which do not equal their reversal? (The example I have in mind is a groupoid, where the reversal of an arrow / edge is its inverse.)</p>\n</blockquote>\n<p>Loops don't seem to be too popular, so that's fair.  The sorts of things I have in mind in the future (say, Tutte polynomials) involve any numbers of loops at vertex, so it would be nice to make sure this works.  </p>\n<p>(I sort of like the approach of gluing edges to the vertices, but I'm probably just biased as a topologist.)</p>",
+        "id": 201825071,
+        "sender_full_name": "Kyle Miller",
+        "timestamp": 1592989210
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"130377\">@David Wärn</span> Another approach I was using in a different project is</p>\n<div class=\"codehilite\"><pre><span></span><code><span class=\"kn\">structure</span> <span class=\"n\">multigraph</span> <span class=\"o\">(</span><span class=\"n\">V</span> <span class=\"o\">:</span> <span class=\"kt\">Type</span> <span class=\"n\">u</span><span class=\"o\">)</span> <span class=\"o\">:=</span>\n<span class=\"o\">(</span><span class=\"n\">D</span> <span class=\"o\">:</span> <span class=\"kt\">Type</span> <span class=\"n\">u</span><span class=\"o\">)</span> <span class=\"o\">(</span><span class=\"n\">ε</span> <span class=\"o\">:</span> <span class=\"n\">perm</span> <span class=\"n\">D</span><span class=\"o\">)</span> <span class=\"o\">(</span><span class=\"n\">ϕ</span> <span class=\"o\">:</span> <span class=\"n\">D</span> <span class=\"bp\">→</span> <span class=\"n\">V</span><span class=\"o\">)</span> <span class=\"o\">(</span><span class=\"n\">ε_inv</span> <span class=\"o\">:</span> <span class=\"n\">involutive</span> <span class=\"n\">ε</span><span class=\"o\">)</span> <span class=\"o\">(</span><span class=\"n\">ε_fp_free</span> <span class=\"o\">:</span> <span class=\"bp\">¬</span><span class=\"n\">has_fixed_point</span> <span class=\"n\">ε</span><span class=\"o\">)</span>\n</code></pre></div>\n\n\n<p>Here, <code>D</code> is the set of \"darts,\" which are the two ends of an edge.  The edges are the orbits under <code>ε</code>.  This, at least, makes accounting easier for the proof that <code>∑ (v : V), g.deg v = 2 * g.nedges</code>, since it has an intermediate <code>g.ndarts</code>.</p>",
+        "id": 201825758,
+        "sender_full_name": "Kyle Miller",
+        "timestamp": 1592989738
+    },
+    {
+        "content": "<p>Wow great to see someone taking care of it ! <span class=\"user-mention\" data-user-id=\"306601\">@Kyle Miller</span> Are you restarting from scratch or do you use the hedetniemi base ?</p>",
+        "id": 201835546,
+        "sender_full_name": "Anatole Dedecker",
+        "timestamp": 1592997393
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"268315\">@Anatole Dedecker</span> Right now, I'm looking deeper into the literature and trying to prove some basic theorems with a given formalism to evaluate the options, and the plan is to port over the hedetniemi branch as much as possible.  I'm happy to have some help, especially since you wanted to work on graphs, too -- I mostly just want to make sure whatever graph formalism mathlib has is general enough for the sorts of things I like to do with graphs.</p>\n<p><a href=\"https://link.springer.com/chapter/10.1007/3-540-58450-1_40\">This paper's</a> approach looks very promising.  It avoids the mess of dealing with quotient types (<code>sym2</code>), which has been OK but leaves something to be desired.  Here's the paper's definition in Lean (modified a bit to make use of some Lean features):</p>\n<div class=\"codehilite\"><pre><span></span><code><span class=\"n\">universes</span> <span class=\"n\">u</span> <span class=\"n\">v</span>\n\n<span class=\"c1\">-- A *link* represents an edge along with its endpoints in some given</span>\n<span class=\"c1\">-- order.</span>\n<span class=\"kn\">structure</span> <span class=\"n\">links</span> <span class=\"o\">(</span><span class=\"n\">V</span> <span class=\"o\">:</span> <span class=\"kt\">Type</span> <span class=\"n\">u</span><span class=\"o\">)</span> <span class=\"o\">(</span><span class=\"n\">E</span> <span class=\"o\">:</span> <span class=\"kt\">Type</span> <span class=\"n\">v</span><span class=\"o\">)</span> <span class=\"o\">:=</span>\n<span class=\"o\">(</span><span class=\"n\">src</span> <span class=\"o\">:</span> <span class=\"n\">V</span><span class=\"o\">)</span> <span class=\"o\">(</span><span class=\"n\">via</span> <span class=\"o\">:</span> <span class=\"n\">E</span><span class=\"o\">)</span> <span class=\"o\">(</span><span class=\"n\">dest</span> <span class=\"o\">:</span> <span class=\"n\">V</span><span class=\"o\">)</span>\n\n<span class=\"kn\">section</span> <span class=\"n\">links</span>\n<span class=\"kn\">variables</span> <span class=\"o\">{</span><span class=\"n\">V</span> <span class=\"o\">:</span> <span class=\"kt\">Type</span> <span class=\"n\">u</span><span class=\"o\">}</span> <span class=\"o\">{</span><span class=\"n\">E</span> <span class=\"o\">:</span> <span class=\"kt\">Type</span> <span class=\"n\">v</span><span class=\"o\">}</span>\n\n<span class=\"n\">def</span> <span class=\"n\">links</span><span class=\"bp\">.</span><span class=\"n\">rev</span> <span class=\"o\">(</span><span class=\"n\">x</span> <span class=\"o\">:</span> <span class=\"n\">links</span> <span class=\"n\">V</span> <span class=\"n\">E</span><span class=\"o\">)</span> <span class=\"o\">:</span> <span class=\"n\">links</span> <span class=\"n\">V</span> <span class=\"n\">E</span> <span class=\"o\">:=</span> <span class=\"bp\">⟨</span><span class=\"n\">x</span><span class=\"bp\">.</span><span class=\"n\">dest</span><span class=\"o\">,</span> <span class=\"n\">x</span><span class=\"bp\">.</span><span class=\"n\">via</span><span class=\"o\">,</span> <span class=\"n\">x</span><span class=\"bp\">.</span><span class=\"n\">src</span><span class=\"bp\">⟩</span>\n\n<span class=\"c1\">-- Since we are modeling undirected graphs, two links are essentially</span>\n<span class=\"c1\">-- the same if they correspond to the same edge.</span>\n<span class=\"n\">def</span> <span class=\"n\">links</span><span class=\"bp\">.</span><span class=\"n\">almost_equal</span> <span class=\"o\">:</span> <span class=\"n\">links</span> <span class=\"n\">V</span> <span class=\"n\">E</span> <span class=\"bp\">→</span> <span class=\"n\">links</span> <span class=\"n\">V</span> <span class=\"n\">E</span> <span class=\"bp\">→</span> <span class=\"kt\">Prop</span> <span class=\"o\">:=</span>\n<span class=\"bp\">λ</span> <span class=\"n\">x₁</span> <span class=\"n\">x₂</span><span class=\"o\">,</span> <span class=\"n\">x₁</span> <span class=\"bp\">=</span> <span class=\"n\">x₂</span> <span class=\"bp\">∨</span> <span class=\"n\">x₁</span> <span class=\"bp\">=</span> <span class=\"n\">x₂</span><span class=\"bp\">.</span><span class=\"n\">rev</span>\n\n<span class=\"kn\">instance</span> <span class=\"o\">:</span> <span class=\"n\">has_equiv</span> <span class=\"o\">(</span><span class=\"n\">links</span> <span class=\"n\">V</span> <span class=\"n\">E</span><span class=\"o\">)</span> <span class=\"o\">:=</span> <span class=\"bp\">⟨</span><span class=\"n\">links</span><span class=\"bp\">.</span><span class=\"n\">almost_equal</span><span class=\"bp\">⟩</span>\n\n<span class=\"kn\">end</span> <span class=\"n\">links</span>\n\n<span class=\"c1\">-- Surjectivity of f restricted to s.</span>\n<span class=\"n\">def</span> <span class=\"n\">surjective_on</span> <span class=\"o\">{</span><span class=\"n\">α</span> <span class=\"o\">:</span> <span class=\"kt\">Type</span> <span class=\"n\">u</span><span class=\"o\">}</span> <span class=\"o\">{</span><span class=\"n\">β</span> <span class=\"o\">:</span> <span class=\"kt\">Type</span> <span class=\"n\">v</span><span class=\"o\">}</span> <span class=\"o\">(</span><span class=\"n\">f</span> <span class=\"o\">:</span> <span class=\"n\">α</span> <span class=\"bp\">→</span> <span class=\"n\">β</span><span class=\"o\">)</span> <span class=\"o\">(</span><span class=\"n\">s</span> <span class=\"o\">:</span> <span class=\"n\">set</span> <span class=\"n\">α</span><span class=\"o\">)</span> <span class=\"o\">:=</span> <span class=\"bp\">∀</span> <span class=\"n\">y</span><span class=\"o\">,</span> <span class=\"bp\">∃</span> <span class=\"n\">x</span> <span class=\"err\">∈</span> <span class=\"n\">s</span><span class=\"o\">,</span> <span class=\"n\">f</span> <span class=\"n\">x</span> <span class=\"bp\">=</span> <span class=\"n\">y</span>\n\n<span class=\"c1\">-- Injectivity of f on a given set s modulo a given relation R.</span>\n<span class=\"n\">def</span> <span class=\"n\">injective_mod_on</span> <span class=\"o\">{</span><span class=\"n\">α</span> <span class=\"o\">:</span> <span class=\"kt\">Type</span> <span class=\"n\">u</span><span class=\"o\">}</span> <span class=\"o\">{</span><span class=\"n\">β</span> <span class=\"o\">:</span> <span class=\"kt\">Type</span> <span class=\"n\">v</span><span class=\"o\">}</span> <span class=\"o\">(</span><span class=\"n\">R</span> <span class=\"o\">:</span> <span class=\"n\">α</span> <span class=\"bp\">→</span> <span class=\"n\">α</span> <span class=\"bp\">→</span> <span class=\"kt\">Prop</span><span class=\"o\">)</span> <span class=\"o\">(</span><span class=\"n\">f</span> <span class=\"o\">:</span> <span class=\"n\">α</span> <span class=\"bp\">→</span> <span class=\"n\">β</span><span class=\"o\">)</span> <span class=\"o\">(</span><span class=\"n\">s</span> <span class=\"o\">:</span> <span class=\"n\">set</span> <span class=\"n\">α</span><span class=\"o\">)</span>\n<span class=\"o\">:=</span> <span class=\"bp\">∀</span> <span class=\"n\">x</span> <span class=\"err\">∈</span> <span class=\"n\">s</span><span class=\"o\">,</span> <span class=\"bp\">∀</span> <span class=\"n\">y</span> <span class=\"err\">∈</span> <span class=\"n\">s</span><span class=\"o\">,</span> <span class=\"n\">y</span> <span class=\"err\">∈</span> <span class=\"n\">s</span> <span class=\"bp\">→</span> <span class=\"n\">f</span> <span class=\"n\">x</span> <span class=\"bp\">=</span> <span class=\"n\">f</span> <span class=\"n\">y</span> <span class=\"bp\">→</span> <span class=\"n\">R</span> <span class=\"n\">x</span> <span class=\"n\">y</span>\n\n<span class=\"c1\">-- A multigraph consists of a vertex set and an edge set along with</span>\n<span class=\"c1\">-- exactly two links per non-loop edge and one link per loop edge,</span>\n<span class=\"c1\">-- representing how the edge is glued to the vertices.</span>\n<span class=\"kn\">structure</span> <span class=\"n\">multigraph</span> <span class=\"o\">(</span><span class=\"n\">V</span> <span class=\"o\">:</span> <span class=\"kt\">Type</span> <span class=\"n\">u</span><span class=\"o\">)</span> <span class=\"o\">:=</span>\n<span class=\"o\">(</span><span class=\"n\">E</span> <span class=\"o\">:</span> <span class=\"kt\">Type</span> <span class=\"n\">v</span><span class=\"o\">)</span> <span class=\"o\">(</span><span class=\"n\">L</span> <span class=\"o\">:</span> <span class=\"n\">set</span> <span class=\"o\">(</span><span class=\"n\">links</span> <span class=\"n\">V</span> <span class=\"n\">E</span><span class=\"o\">))</span>\n<span class=\"o\">(</span><span class=\"n\">all_edges</span> <span class=\"o\">:</span> <span class=\"n\">surjective_on</span> <span class=\"n\">links</span><span class=\"bp\">.</span><span class=\"n\">via</span> <span class=\"n\">L</span><span class=\"o\">)</span>\n<span class=\"o\">(</span><span class=\"n\">all_links</span> <span class=\"o\">:</span> <span class=\"n\">surjective_on</span> <span class=\"n\">links</span><span class=\"bp\">.</span><span class=\"n\">rev</span> <span class=\"n\">L</span><span class=\"o\">)</span>\n<span class=\"o\">(</span><span class=\"n\">adequate</span> <span class=\"o\">:</span> <span class=\"n\">injective_mod_on</span> <span class=\"o\">(</span><span class=\"bp\">≈</span><span class=\"o\">)</span> <span class=\"n\">links</span><span class=\"bp\">.</span><span class=\"n\">via</span> <span class=\"n\">L</span><span class=\"o\">)</span>\n</code></pre></div>\n\n\n<p>This definition will support things like paths through a graph as a sequence of links with compatible <code>src</code> and <code>dest</code> fields.</p>\n<p>A \"dual\" version, like in hedetneimi, might be</p>\n<div class=\"codehilite\"><pre><span></span><code><span class=\"kn\">structure</span> <span class=\"n\">multigraph</span> <span class=\"o\">(</span><span class=\"n\">V</span> <span class=\"o\">:</span> <span class=\"kt\">Type</span> <span class=\"n\">u</span><span class=\"o\">)</span> <span class=\"o\">:=</span>\n<span class=\"o\">(</span><span class=\"n\">E</span> <span class=\"o\">:</span> <span class=\"kt\">Type</span> <span class=\"n\">v</span><span class=\"o\">)</span> <span class=\"o\">(</span><span class=\"n\">edges</span> <span class=\"o\">:</span> <span class=\"n\">V</span> <span class=\"bp\">→</span> <span class=\"n\">V</span> <span class=\"bp\">→</span> <span class=\"n\">set</span> <span class=\"n\">E</span><span class=\"o\">)</span>\n<span class=\"o\">(</span><span class=\"n\">all_edges</span> <span class=\"o\">:</span> <span class=\"bp\">∀</span> <span class=\"n\">e</span><span class=\"o\">,</span> <span class=\"bp\">∃</span> <span class=\"n\">x</span> <span class=\"n\">y</span><span class=\"o\">,</span> <span class=\"n\">e</span> <span class=\"err\">∈</span> <span class=\"n\">edges</span> <span class=\"n\">x</span> <span class=\"n\">y</span><span class=\"o\">)</span>\n<span class=\"o\">(</span><span class=\"n\">reversible</span> <span class=\"o\">:</span> <span class=\"bp\">∀</span> <span class=\"n\">x</span> <span class=\"n\">y</span><span class=\"o\">,</span> <span class=\"n\">edges</span> <span class=\"n\">x</span> <span class=\"n\">y</span> <span class=\"bp\">=</span> <span class=\"n\">edges</span> <span class=\"n\">y</span> <span class=\"n\">x</span><span class=\"o\">)</span>\n<span class=\"o\">(</span><span class=\"n\">adequate</span> <span class=\"o\">:</span> <span class=\"bp\">∀</span> <span class=\"o\">{</span><span class=\"n\">x</span> <span class=\"n\">y</span><span class=\"o\">}</span> <span class=\"o\">(</span><span class=\"n\">e</span> <span class=\"err\">∈</span> <span class=\"n\">edges</span> <span class=\"n\">x</span> <span class=\"n\">y</span><span class=\"o\">)</span> <span class=\"o\">{</span><span class=\"n\">x&#39;</span> <span class=\"n\">y&#39;</span><span class=\"o\">},</span> <span class=\"n\">e</span> <span class=\"err\">∈</span> <span class=\"n\">edges</span> <span class=\"n\">x&#39;</span> <span class=\"n\">y&#39;</span> <span class=\"bp\">→</span> <span class=\"o\">(</span><span class=\"n\">x</span> <span class=\"bp\">=</span> <span class=\"n\">x&#39;</span> <span class=\"bp\">∧</span> <span class=\"n\">y</span> <span class=\"bp\">=</span> <span class=\"n\">y&#39;</span><span class=\"o\">)</span> <span class=\"bp\">∨</span> <span class=\"o\">(</span><span class=\"n\">x</span> <span class=\"bp\">=</span> <span class=\"n\">y&#39;</span> <span class=\"bp\">∧</span> <span class=\"n\">y</span> <span class=\"bp\">=</span> <span class=\"n\">x&#39;</span><span class=\"o\">))</span>\n</code></pre></div>\n\n\n<p>This unbundles the hedetneimi graph definition even further, I think, since we don't need to think of edges as being equivalence classes under the <code>inv</code> operation: there is an actual type representing the edges.</p>\n<p>I need to think about <span class=\"user-mention\" data-user-id=\"130377\">@David Wärn</span>'s point about definitional equalities.  It seems to me that the first definition might indirectly address it: you ask for the set of <em>links</em> between vertices <code>a</code> and <code>b</code>, and these carry the corresponding edges.  The second definition gives you edge sets, and the <code>reversible</code> axiom identifies <code>edge a b</code> with <code>edge b a</code>.  I'd like having a total edge set, like in this definition, since you can do things like define a finite graph as one where both <code>V</code> and <code>g.E</code> are <code>fintype</code>s, so perhaps this is a nice variation on the hedetneimi branch's definition.</p>\n<p>I'm going to try rewriting everything I have using this second definition and see how it goes -- while many things were OK already, I think this one will go more smoothly.  (I would appreciate any thoughts about improving these definitions, including finding better names for the structure's fields, especially <code>adequate</code>.)</p>",
+        "id": 201884493,
+        "sender_full_name": "Kyle Miller",
+        "timestamp": 1593022870
+    },
+    {
+        "content": "<p>This all looks very promising ! To be honest I'm not at all a specialist of graph theory, so I'm happy you're doing the hard part of choosing the best definition, I wouldn't have been self-confident enough to do it <span aria-label=\"sweat smile\" class=\"emoji emoji-1f605\" role=\"img\" title=\"sweat smile\">:sweat_smile:</span> . But once you've made your choice I'll be glad to help you stating and proving as many useful lemmas as I can (I even do know some friends who might be interested too) !</p>",
+        "id": 202000395,
+        "sender_full_name": "Anatole Dedecker",
+        "timestamp": 1593106650
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"268315\">Anatole Dedecker</span> <a href=\"#narrow/stream/217875-Is-there.20code.20for.20X.3F/topic/Graph.20Theory/near/202000395\">said</a>:</p>\n<blockquote>\n<p>But once you've made your choice I'll be glad to help you stating and proving as many useful lemmas as I can (I even do know some friends who might be interested too) !</p>\n</blockquote>\n<p>Great! My goal is to finish up this current design today or tomorrow, since a variation on <a href=\"https://link.springer.com/chapter/10.1007/3-540-58450-1_40\">Chou94</a>'s approach seems like it's working out well enough for what you'd want out of multigraphs and simple graphs.</p>\n<p>There are some surprising issues when it comes to some basic graph operations.  For example, none of the approaches seem to let you define a computable function that gives you the vertex opposite a given edge from a vertex.  The Chou approach sidesteps this by having you work with links instead, which already carry that opposite vertex (proving it was computable).  I'm wanting to avoid anything noncomputable as far as possible.</p>\n<p>The definition ends up being very similar to the one in <code>hedetneimi</code>.  There, you effectively have a function <code>edges : V → V → set E</code> that gives the edge set between two vertices along with an axiom <code>∀ v w, edges v w = edges w v</code>.  Here, it's instead essentially a function <code>links : set (V × E × V)</code> with an axiom that reversing a link is still a link.  While this is just an uncurried version of the <code>edges</code> function (recall, a set is a function to <code>Prop</code>), it's proven to be convenient working with elements of <code>V × E × V</code>.  (Don't worry, I'm just expanding definitions here for sake of explanation.  There is a structure definition for links.)</p>",
+        "id": 202006605,
+        "sender_full_name": "Kyle Miller",
+        "timestamp": 1593109669
+    },
+    {
+        "content": "<p>Hmm, it's interesting that \"the other end\" should be noncomputable. Fwiw, I think the issue is with <code>Prop</code> -- it generally causes issues when you want things to be computable. Here I computably define \"the other element\" of an unordered pair, by defining membership using <code>trunc</code> instead of <code>Prop</code>:</p>\n<div class=\"codehilite\"><pre><span></span><code><span class=\"kn\">import</span> <span class=\"n\">trunc</span>\n<span class=\"kn\">import</span> <span class=\"n\">tactic</span>\n<span class=\"kn\">universe</span> <span class=\"n\">u</span>\n<span class=\"kn\">variable</span> <span class=\"o\">(</span><span class=\"n\">α</span> <span class=\"o\">:</span> <span class=\"kt\">Type</span> <span class=\"n\">u</span><span class=\"o\">)</span>\n\n<span class=\"c1\">-- the relation &quot;equal as unordered pairs&quot;</span>\n<span class=\"kn\">inductive</span> <span class=\"n\">swap_rel</span> <span class=\"o\">:</span> <span class=\"n\">α</span> <span class=\"bp\">×</span> <span class=\"n\">α</span> <span class=\"bp\">→</span> <span class=\"n\">α</span> <span class=\"bp\">×</span> <span class=\"n\">α</span> <span class=\"bp\">→</span> <span class=\"kt\">Prop</span>\n<span class=\"bp\">|</span> <span class=\"n\">same</span> <span class=\"o\">(</span><span class=\"n\">a</span> <span class=\"n\">b</span> <span class=\"o\">:</span> <span class=\"n\">α</span><span class=\"o\">)</span> <span class=\"o\">:</span> <span class=\"n\">swap_rel</span> <span class=\"o\">(</span><span class=\"n\">a</span><span class=\"o\">,</span> <span class=\"n\">b</span><span class=\"o\">)</span> <span class=\"o\">(</span><span class=\"n\">a</span><span class=\"o\">,</span> <span class=\"n\">b</span><span class=\"o\">)</span>\n<span class=\"bp\">|</span> <span class=\"n\">swap</span> <span class=\"o\">(</span><span class=\"n\">a</span> <span class=\"n\">b</span> <span class=\"o\">:</span> <span class=\"n\">α</span><span class=\"o\">)</span> <span class=\"o\">:</span> <span class=\"n\">swap_rel</span> <span class=\"o\">(</span><span class=\"n\">a</span><span class=\"o\">,</span> <span class=\"n\">b</span><span class=\"o\">)</span> <span class=\"o\">(</span><span class=\"n\">b</span><span class=\"o\">,</span> <span class=\"n\">a</span><span class=\"o\">)</span>\n\n<span class=\"c1\">-- the relation &quot;equal as unordered pairs&quot; is an equivalence</span>\n<span class=\"kn\">instance</span> <span class=\"n\">swap_setoid</span> <span class=\"o\">:</span> <span class=\"n\">setoid</span> <span class=\"o\">(</span><span class=\"n\">α</span> <span class=\"bp\">×</span> <span class=\"n\">α</span><span class=\"o\">)</span> <span class=\"o\">:=</span>\n<span class=\"k\">begin</span>\n  <span class=\"n\">refine_struct</span> <span class=\"o\">{</span> <span class=\"n\">r</span><span class=\"o\">:=</span> <span class=\"n\">swap_rel</span> <span class=\"n\">α</span> <span class=\"o\">},</span> <span class=\"n\">tidy</span><span class=\"bp\">;</span>\n  <span class=\"o\">{</span> <span class=\"n\">cases_matching</span><span class=\"bp\">*</span> <span class=\"n\">swap_rel</span> <span class=\"bp\">_</span> <span class=\"bp\">_</span> <span class=\"bp\">_;</span>\n    <span class=\"n\">apply</span> <span class=\"n\">swap_rel</span><span class=\"bp\">.</span><span class=\"n\">same</span> <span class=\"bp\">&lt;|&gt;</span> <span class=\"n\">apply</span> <span class=\"n\">swap_rel</span><span class=\"bp\">.</span><span class=\"n\">swap</span><span class=\"o\">,</span> <span class=\"o\">},</span>\n<span class=\"kn\">end</span>\n\n<span class=\"c1\">-- hence we can quotient by it</span>\n<span class=\"n\">def</span> <span class=\"n\">unordered_pair</span> <span class=\"o\">:=</span> <span class=\"n\">quotient</span> <span class=\"o\">(</span><span class=\"n\">swap_setoid</span> <span class=\"n\">α</span><span class=\"o\">)</span>\n\n<span class=\"kn\">variable</span> <span class=\"o\">{</span><span class=\"n\">α</span><span class=\"o\">}</span>\n\n<span class=\"c1\">-- swapping order really does give the same unordered pair</span>\n<span class=\"kn\">lemma</span> <span class=\"n\">eq_swap</span> <span class=\"o\">{</span><span class=\"n\">a</span> <span class=\"n\">b</span> <span class=\"o\">:</span> <span class=\"n\">α</span><span class=\"o\">}</span> <span class=\"o\">:</span> <span class=\"err\">⟦</span><span class=\"o\">(</span><span class=\"n\">a</span><span class=\"o\">,</span> <span class=\"n\">b</span><span class=\"o\">)</span><span class=\"err\">⟧</span> <span class=\"bp\">=</span> <span class=\"err\">⟦</span><span class=\"o\">(</span><span class=\"n\">b</span><span class=\"o\">,</span> <span class=\"n\">a</span><span class=\"o\">)</span><span class=\"err\">⟧</span> <span class=\"o\">:=</span>\n<span class=\"k\">by</span> <span class=\"o\">{</span> <span class=\"n\">rw</span> <span class=\"n\">quotient</span><span class=\"bp\">.</span><span class=\"n\">eq</span><span class=\"o\">,</span> <span class=\"n\">apply</span> <span class=\"n\">swap_rel</span><span class=\"bp\">.</span><span class=\"n\">swap</span> <span class=\"o\">}</span>\n\n<span class=\"c1\">-- the &quot;other element&quot; of an unordered pair is unique</span>\n<span class=\"kn\">lemma</span> <span class=\"n\">other_unique</span> <span class=\"o\">(</span><span class=\"n\">a</span> <span class=\"n\">b</span> <span class=\"n\">c</span> <span class=\"o\">:</span> <span class=\"n\">α</span><span class=\"o\">)</span> <span class=\"o\">(</span><span class=\"n\">h</span> <span class=\"o\">:</span> <span class=\"err\">⟦</span><span class=\"o\">(</span><span class=\"n\">a</span><span class=\"o\">,</span> <span class=\"n\">b</span><span class=\"o\">)</span><span class=\"err\">⟧</span> <span class=\"bp\">=</span> <span class=\"err\">⟦</span><span class=\"o\">(</span><span class=\"n\">a</span><span class=\"o\">,</span> <span class=\"n\">c</span><span class=\"o\">)</span><span class=\"err\">⟧</span><span class=\"o\">)</span> <span class=\"o\">:</span> <span class=\"n\">b</span> <span class=\"bp\">=</span> <span class=\"n\">c</span> <span class=\"o\">:=</span>\n<span class=\"k\">by</span> <span class=\"o\">{</span> <span class=\"n\">rw</span> <span class=\"n\">quotient</span><span class=\"bp\">.</span><span class=\"n\">eq</span> <span class=\"n\">at</span> <span class=\"n\">h</span><span class=\"o\">,</span> <span class=\"n\">cases</span> <span class=\"n\">h</span><span class=\"bp\">;</span> <span class=\"n\">refl</span> <span class=\"o\">}</span>\n\n<span class=\"c1\">-- `trunc_mem a p` is a constructive way of saying that `a` is an element of `p`.</span>\n<span class=\"c1\">-- Crucially, it is a subsingleton, but not a `Prop`.</span>\n<span class=\"n\">def</span> <span class=\"n\">trunc_mem</span> <span class=\"o\">(</span><span class=\"n\">a</span> <span class=\"o\">:</span> <span class=\"n\">α</span><span class=\"o\">)</span> <span class=\"o\">(</span><span class=\"n\">p</span> <span class=\"o\">:</span> <span class=\"n\">unordered_pair</span> <span class=\"n\">α</span><span class=\"o\">)</span> <span class=\"o\">:</span> <span class=\"kt\">Type</span> <span class=\"n\">u</span> <span class=\"o\">:=</span>\n<span class=\"n\">trunc</span> <span class=\"err\">$</span> <span class=\"o\">{</span><span class=\"n\">b</span> <span class=\"bp\">//</span> <span class=\"n\">p</span> <span class=\"bp\">=</span> <span class=\"err\">⟦</span><span class=\"o\">(</span><span class=\"n\">a</span><span class=\"o\">,</span> <span class=\"n\">b</span><span class=\"o\">)</span><span class=\"err\">⟧</span><span class=\"o\">}</span>\n\n<span class=\"c1\">-- if `a` is an element of `p`, then we can computably extract &quot;the other element&quot; of `p`</span>\n<span class=\"n\">def</span> <span class=\"n\">other</span> <span class=\"o\">(</span><span class=\"n\">a</span> <span class=\"o\">:</span> <span class=\"n\">α</span><span class=\"o\">)</span> <span class=\"o\">(</span><span class=\"n\">p</span> <span class=\"o\">:</span> <span class=\"n\">unordered_pair</span> <span class=\"n\">α</span><span class=\"o\">)</span> <span class=\"o\">(</span><span class=\"n\">h</span> <span class=\"o\">:</span> <span class=\"n\">trunc_mem</span> <span class=\"n\">a</span> <span class=\"n\">p</span><span class=\"o\">)</span> <span class=\"o\">:</span> <span class=\"n\">α</span> <span class=\"o\">:=</span>\n<span class=\"n\">trunc</span><span class=\"bp\">.</span><span class=\"n\">rec_on</span> <span class=\"n\">h</span> <span class=\"n\">subtype</span><span class=\"bp\">.</span><span class=\"n\">val</span> <span class=\"err\">$</span> <span class=\"bp\">λ</span> <span class=\"bp\">⟨</span><span class=\"n\">b</span><span class=\"o\">,</span> <span class=\"bp\">_⟩</span> <span class=\"bp\">⟨</span><span class=\"n\">c</span><span class=\"o\">,</span> <span class=\"bp\">_⟩</span><span class=\"o\">,</span>\n<span class=\"k\">by</span> <span class=\"o\">{</span> <span class=\"n\">convert</span> <span class=\"n\">other_unique</span> <span class=\"n\">a</span> <span class=\"n\">b</span> <span class=\"n\">c</span> <span class=\"o\">(</span><span class=\"k\">by</span> <span class=\"n\">cc</span><span class=\"o\">),</span> <span class=\"n\">simp</span> <span class=\"o\">}</span>\n\n<span class=\"c1\">-- checking that `other` computes as expected</span>\n<span class=\"kn\">variables</span> <span class=\"o\">(</span><span class=\"n\">a</span> <span class=\"n\">b</span> <span class=\"o\">:</span> <span class=\"n\">α</span><span class=\"o\">)</span>\n<span class=\"bp\">#</span><span class=\"n\">reduce</span> <span class=\"n\">other</span> <span class=\"n\">a</span> <span class=\"err\">⟦</span><span class=\"o\">(</span><span class=\"n\">a</span><span class=\"o\">,</span> <span class=\"n\">b</span><span class=\"o\">)</span><span class=\"err\">⟧</span> <span class=\"o\">(</span><span class=\"n\">trunc</span><span class=\"bp\">.</span><span class=\"n\">mk</span> <span class=\"bp\">⟨</span><span class=\"n\">b</span><span class=\"o\">,</span> <span class=\"n\">rfl</span><span class=\"bp\">⟩</span><span class=\"o\">)</span> <span class=\"c1\">-- b</span>\n<span class=\"bp\">#</span><span class=\"n\">reduce</span> <span class=\"n\">other</span> <span class=\"n\">b</span> <span class=\"err\">⟦</span><span class=\"o\">(</span><span class=\"n\">a</span><span class=\"o\">,</span> <span class=\"n\">b</span><span class=\"o\">)</span><span class=\"err\">⟧</span> <span class=\"o\">(</span><span class=\"n\">trunc</span><span class=\"bp\">.</span><span class=\"n\">mk</span> <span class=\"bp\">⟨</span><span class=\"n\">a</span><span class=\"o\">,</span> <span class=\"n\">eq_swap</span><span class=\"bp\">⟩</span><span class=\"o\">)</span> <span class=\"c1\">-- a</span>\n</code></pre></div>",
+        "id": 202023925,
+        "sender_full_name": "David Wärn",
+        "timestamp": 1593118622
+    },
+    {
+        "content": "<p>Thanks for showing me this use of <code>trunc</code>.  A few days ago I was trying to prove <code>other</code> for <code>unordered_pair</code>, but I ran into issues because I only had <code>a ∈ p</code> with a <code>has_mem</code> instance that checked if <code>a</code> equaled either component of the pair.</p>",
+        "id": 202027529,
+        "sender_full_name": "Kyle Miller",
+        "timestamp": 1593120547
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"252300\">@Jalex Stark</span> and I are almost done with the Friendship Theorem, and have started breaking up non-graph-theoretic parts into PRs. <a href=\"https://github.com/jalex-stark/friendship-theorem\">https://github.com/jalex-stark/friendship-theorem</a></p>",
+        "id": 204281837,
+        "sender_full_name": "Aaron Anderson",
+        "timestamp": 1595043697
+    },
+    {
+        "content": "<p>The definition of a graph is on <code>adjacency_matrix.lean</code>. Does anyone with experience on Hedetniemi want to discuss with me whether I should change that definition? Perhaps model theory has biased me, but I like thinking of simple graphs as basically just relations, which can be coerced to be two-sorted multigraphs when relevant.</p>",
+        "id": 204281969,
+        "sender_full_name": "Aaron Anderson",
+        "timestamp": 1595043860
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"306601\">@Kyle Miller</span> <span class=\"user-mention\" data-user-id=\"130377\">@David Wärn</span>  <span class=\"user-mention\" data-user-id=\"112680\">@Johan Commelin</span></p>",
+        "id": 204281995,
+        "sender_full_name": "Aaron Anderson",
+        "timestamp": 1595043947
+    },
+    {
+        "content": "<p>While some of this is just going in the Freek 100 archive, I want to be consistent with whatever else is going into mathlib.</p>",
+        "id": 204282057,
+        "sender_full_name": "Aaron Anderson",
+        "timestamp": 1595044072
+    },
+    {
+        "content": "<p>This seems to be the correct definition for a simple graph.  In what I've been working on, I have the same <code>simple_graph</code> (though I decided to reserve <code>E</code> for <code>sym2.from_rel</code> of the relation) and a <code>multigraphs</code> typeclass for giving it the structure of a multigraph when needed.</p>",
+        "id": 204284022,
+        "sender_full_name": "Kyle Miller",
+        "timestamp": 1595047494
+    },
+    {
+        "content": "<p>Cool. It sounds like merging eventually will be easy, but link me to some code if you want me to adjust mine.</p>",
+        "id": 204284493,
+        "sender_full_name": "Aaron Anderson",
+        "timestamp": 1595048400
+    },
+    {
+        "content": "<p>I've been mostly focusing on multigraphs, but here's what the simple graphs version might look like.  This seems like a good enough time to check the underlying idea with everyone.  One design goal is to be able to treat subgraphs of a given graph as graphs themselves.</p>\n<p>A conceptual problem with graphs is that the usual synecdoche of referring to a structure by its carrier type fails: a graph is both its vertex and edge sets simultaneously.  A way I found to get around this is to say a type <em>consists</em> of graphs.  Then, you can have the variables <code>{α : Type*} [simple_graphs α] (G : α) </code> to be able to refer to <code>G</code> as a graph, as you'd want.  We can also write <code>G' : subgraph G</code> to denote a subgraph, and there is an instance so that the graph interface applies to <code>G'</code>, too.</p>\n<p>I'd like to hear if there are any problems with this approach, or better ways of doing things.</p>\n<div class=\"codehilite\"><pre><span></span><code><span class=\"kn\">import</span> <span class=\"n\">data</span><span class=\"bp\">.</span><span class=\"n\">sym2</span>\n<span class=\"kn\">import</span> <span class=\"n\">tactic</span>\n\n<span class=\"c\">/-</span><span class=\"cm\">-</span>\n<span class=\"cm\">A type consists of simple graphs if each term has a corresponding</span>\n<span class=\"cm\">vertex type and symmetric irreflexive adjacency relation on the</span>\n<span class=\"cm\">vertices.  See `simple_graph` for the primary implementation.</span>\n<span class=\"cm\">-/</span>\n<span class=\"n\">class</span> <span class=\"n\">simple_graphs</span> <span class=\"o\">(</span><span class=\"n\">α</span> <span class=\"o\">:</span> <span class=\"kt\">Type</span><span class=\"bp\">*</span><span class=\"o\">)</span> <span class=\"o\">:=</span>\n<span class=\"o\">(</span><span class=\"n\">V</span> <span class=\"o\">:</span> <span class=\"bp\">Π</span> <span class=\"n\">G</span> <span class=\"o\">:</span> <span class=\"n\">α</span><span class=\"o\">,</span> <span class=\"kt\">Type</span><span class=\"bp\">*</span><span class=\"o\">)</span>\n<span class=\"o\">(</span><span class=\"n\">adj</span> <span class=\"o\">:</span> <span class=\"bp\">Π</span> <span class=\"n\">G</span> <span class=\"o\">:</span> <span class=\"n\">α</span><span class=\"o\">,</span> <span class=\"n\">V</span> <span class=\"n\">G</span> <span class=\"bp\">→</span> <span class=\"n\">V</span> <span class=\"n\">G</span> <span class=\"bp\">→</span> <span class=\"kt\">Prop</span><span class=\"o\">)</span>\n<span class=\"o\">(</span><span class=\"n\">sym</span> <span class=\"o\">:</span> <span class=\"bp\">Π</span> <span class=\"n\">G</span><span class=\"o\">,</span> <span class=\"n\">symmetric</span> <span class=\"o\">(</span><span class=\"n\">adj</span> <span class=\"n\">G</span><span class=\"o\">))</span>\n<span class=\"o\">(</span><span class=\"n\">loopless</span> <span class=\"o\">:</span> <span class=\"bp\">Π</span> <span class=\"n\">G</span><span class=\"o\">,</span> <span class=\"n\">irreflexive</span> <span class=\"o\">(</span><span class=\"n\">adj</span> <span class=\"n\">G</span><span class=\"o\">))</span>\n\n<span class=\"kn\">namespace</span> <span class=\"n\">simple_graphs</span>\n\n<span class=\"c\">/-</span><span class=\"cm\">-</span>\n<span class=\"cm\">The edge set of a simple graph consists of all the unordered pairs</span>\n<span class=\"cm\">that satisfy the adjacency relation.</span>\n<span class=\"cm\">-/</span>\n<span class=\"n\">def</span> <span class=\"n\">E</span> <span class=\"o\">{</span><span class=\"n\">α</span> <span class=\"o\">:</span> <span class=\"kt\">Type</span><span class=\"bp\">*</span><span class=\"o\">}</span> <span class=\"o\">[</span><span class=\"n\">simple_graphs</span> <span class=\"n\">α</span><span class=\"o\">]</span> <span class=\"o\">(</span><span class=\"n\">G</span> <span class=\"o\">:</span> <span class=\"n\">α</span><span class=\"o\">)</span> <span class=\"o\">:</span> <span class=\"n\">set</span> <span class=\"o\">(</span><span class=\"n\">sym2</span> <span class=\"o\">(</span><span class=\"n\">V</span> <span class=\"n\">G</span><span class=\"o\">))</span> <span class=\"o\">:=</span>\n<span class=\"n\">sym2</span><span class=\"bp\">.</span><span class=\"n\">from_rel</span> <span class=\"o\">(</span><span class=\"n\">sym</span> <span class=\"n\">G</span><span class=\"o\">)</span>\n\n<span class=\"kn\">end</span> <span class=\"n\">simple_graphs</span>\n\n<span class=\"c\">/-</span><span class=\"cm\">-</span>\n<span class=\"cm\">A simple graph on a vertex set `V` is an irreflexive symmetric</span>\n<span class=\"cm\">relation, representing which vertices are adjacent.</span>\n<span class=\"cm\">-/</span>\n<span class=\"kn\">structure</span> <span class=\"n\">simple_graph</span> <span class=\"o\">(</span><span class=\"n\">V</span> <span class=\"o\">:</span> <span class=\"kt\">Type</span><span class=\"bp\">*</span><span class=\"o\">)</span> <span class=\"o\">:=</span>\n<span class=\"o\">(</span><span class=\"n\">adj</span> <span class=\"o\">:</span> <span class=\"n\">V</span> <span class=\"bp\">→</span> <span class=\"n\">V</span> <span class=\"bp\">→</span> <span class=\"kt\">Prop</span><span class=\"o\">)</span>\n<span class=\"o\">(</span><span class=\"n\">sym</span> <span class=\"o\">:</span> <span class=\"n\">symmetric</span> <span class=\"n\">adj</span><span class=\"o\">)</span>\n<span class=\"o\">(</span><span class=\"n\">loopless</span> <span class=\"o\">:</span> <span class=\"n\">irreflexive</span> <span class=\"n\">adj</span><span class=\"o\">)</span>\n\n<span class=\"c\">/-</span><span class=\"cm\">-</span>\n<span class=\"cm\">Of course, the type of simple graphs on a vertex set consists of</span>\n<span class=\"cm\">simple graphs.</span>\n<span class=\"cm\">-/</span>\n<span class=\"kn\">instance</span> <span class=\"o\">{</span><span class=\"n\">V</span> <span class=\"o\">:</span> <span class=\"kt\">Type</span><span class=\"bp\">*</span><span class=\"o\">}</span> <span class=\"o\">:</span> <span class=\"n\">simple_graphs</span> <span class=\"o\">(</span><span class=\"n\">simple_graph</span> <span class=\"n\">V</span><span class=\"o\">)</span> <span class=\"o\">:=</span>\n<span class=\"o\">{</span> <span class=\"n\">V</span> <span class=\"o\">:=</span> <span class=\"bp\">λ</span> <span class=\"n\">G</span><span class=\"o\">,</span> <span class=\"n\">V</span><span class=\"o\">,</span>\n  <span class=\"n\">adj</span> <span class=\"o\">:=</span> <span class=\"n\">simple_graph</span><span class=\"bp\">.</span><span class=\"n\">adj</span><span class=\"o\">,</span>\n  <span class=\"n\">sym</span> <span class=\"o\">:=</span> <span class=\"n\">simple_graph</span><span class=\"bp\">.</span><span class=\"n\">sym</span><span class=\"o\">,</span>\n  <span class=\"n\">loopless</span> <span class=\"o\">:=</span> <span class=\"n\">simple_graph</span><span class=\"bp\">.</span><span class=\"n\">loopless</span> <span class=\"o\">}</span>\n\n<span class=\"n\">def</span> <span class=\"n\">complete_graph</span> <span class=\"o\">(</span><span class=\"n\">V</span> <span class=\"o\">:</span> <span class=\"kt\">Type</span><span class=\"bp\">*</span><span class=\"o\">)</span> <span class=\"o\">:</span> <span class=\"n\">simple_graph</span> <span class=\"n\">V</span> <span class=\"o\">:=</span>\n<span class=\"o\">{</span> <span class=\"n\">adj</span> <span class=\"o\">:=</span> <span class=\"bp\">λ</span> <span class=\"n\">v</span> <span class=\"n\">w</span><span class=\"o\">,</span> <span class=\"n\">v</span> <span class=\"bp\">≠</span> <span class=\"n\">w</span><span class=\"o\">,</span>\n  <span class=\"n\">sym</span> <span class=\"o\">:=</span> <span class=\"k\">by</span> <span class=\"n\">tidy</span><span class=\"o\">,</span>\n  <span class=\"n\">loopless</span> <span class=\"o\">:=</span> <span class=\"k\">by</span> <span class=\"n\">tidy</span> <span class=\"o\">}</span>\n\n<span class=\"kn\">open</span> <span class=\"n\">simple_graphs</span>\n\n<span class=\"c\">/-</span><span class=\"cm\">-</span>\n<span class=\"cm\">A subgraph of a simple graph `G`.</span>\n<span class=\"cm\">-/</span>\n<span class=\"kn\">structure</span> <span class=\"n\">subgraph</span> <span class=\"o\">{</span><span class=\"n\">α</span> <span class=\"o\">:</span> <span class=\"kt\">Type</span><span class=\"bp\">*</span><span class=\"o\">}</span> <span class=\"o\">[</span><span class=\"n\">simple_graphs</span> <span class=\"n\">α</span><span class=\"o\">]</span> <span class=\"o\">(</span><span class=\"n\">G</span> <span class=\"o\">:</span> <span class=\"n\">α</span><span class=\"o\">)</span> <span class=\"o\">:=</span>\n<span class=\"o\">(</span><span class=\"n\">V&#39;</span> <span class=\"o\">:</span> <span class=\"n\">set</span> <span class=\"o\">(</span><span class=\"n\">V</span> <span class=\"n\">G</span><span class=\"o\">))</span>\n<span class=\"o\">(</span><span class=\"n\">E&#39;</span> <span class=\"o\">:</span> <span class=\"n\">set</span> <span class=\"o\">(</span><span class=\"n\">sym2</span> <span class=\"o\">(</span><span class=\"n\">V</span> <span class=\"n\">G</span><span class=\"o\">)))</span>\n<span class=\"o\">(</span><span class=\"n\">edge_subset</span> <span class=\"o\">:</span> <span class=\"n\">E&#39;</span> <span class=\"err\">⊆</span> <span class=\"n\">E</span> <span class=\"n\">G</span><span class=\"o\">)</span>\n<span class=\"o\">(</span><span class=\"n\">has_ends</span> <span class=\"o\">:</span> <span class=\"bp\">∀</span> <span class=\"o\">(</span><span class=\"n\">e</span> <span class=\"err\">∈</span> <span class=\"n\">E&#39;</span><span class=\"o\">)</span> <span class=\"o\">(</span><span class=\"n\">v</span> <span class=\"err\">∈</span> <span class=\"n\">e</span><span class=\"o\">),</span> <span class=\"n\">v</span> <span class=\"err\">∈</span> <span class=\"n\">V&#39;</span><span class=\"o\">)</span>\n\n<span class=\"kn\">instance</span> <span class=\"o\">{</span><span class=\"n\">α</span> <span class=\"o\">:</span> <span class=\"kt\">Type</span><span class=\"bp\">*</span><span class=\"o\">}</span> <span class=\"o\">[</span><span class=\"n\">simple_graphs</span> <span class=\"n\">α</span><span class=\"o\">]</span> <span class=\"o\">(</span><span class=\"n\">G</span> <span class=\"o\">:</span> <span class=\"n\">α</span><span class=\"o\">)</span> <span class=\"o\">:</span> <span class=\"n\">simple_graphs</span> <span class=\"o\">(</span><span class=\"n\">subgraph</span> <span class=\"n\">G</span><span class=\"o\">)</span> <span class=\"o\">:=</span>\n<span class=\"o\">{</span> <span class=\"n\">V</span> <span class=\"o\">:=</span> <span class=\"bp\">λ</span> <span class=\"n\">G&#39;</span><span class=\"o\">,</span> <span class=\"n\">subgraph</span><span class=\"bp\">.</span><span class=\"n\">V&#39;</span> <span class=\"n\">G&#39;</span><span class=\"o\">,</span>\n  <span class=\"n\">adj</span> <span class=\"o\">:=</span> <span class=\"bp\">λ</span> <span class=\"n\">G&#39;</span> <span class=\"n\">v</span> <span class=\"n\">w</span><span class=\"o\">,</span> <span class=\"err\">⟦</span><span class=\"o\">(</span><span class=\"n\">v</span><span class=\"bp\">.</span><span class=\"n\">val</span><span class=\"o\">,</span> <span class=\"n\">w</span><span class=\"bp\">.</span><span class=\"n\">val</span><span class=\"o\">)</span><span class=\"err\">⟧</span> <span class=\"err\">∈</span> <span class=\"n\">subgraph</span><span class=\"bp\">.</span><span class=\"n\">E&#39;</span> <span class=\"n\">G&#39;</span><span class=\"o\">,</span>\n  <span class=\"n\">sym</span> <span class=\"o\">:=</span> <span class=\"k\">by</span> <span class=\"o\">{</span> <span class=\"n\">intros</span> <span class=\"n\">G&#39;</span> <span class=\"n\">v</span> <span class=\"n\">w</span> <span class=\"n\">h</span><span class=\"o\">,</span> <span class=\"n\">rwa</span> <span class=\"n\">sym2</span><span class=\"bp\">.</span><span class=\"n\">eq_swap</span> <span class=\"o\">},</span>\n  <span class=\"n\">loopless</span> <span class=\"o\">:=</span> <span class=\"k\">begin</span>\n    <span class=\"n\">intros</span> <span class=\"n\">G&#39;</span> <span class=\"n\">v</span> <span class=\"n\">h</span><span class=\"o\">,</span>\n    <span class=\"n\">apply</span> <span class=\"n\">sym2</span><span class=\"bp\">.</span><span class=\"n\">from_rel_irreflexive</span><span class=\"bp\">.</span><span class=\"n\">mp</span> <span class=\"o\">(</span><span class=\"n\">simple_graphs</span><span class=\"bp\">.</span><span class=\"n\">loopless</span> <span class=\"n\">G</span><span class=\"o\">)</span> <span class=\"o\">(</span><span class=\"n\">subgraph</span><span class=\"bp\">.</span><span class=\"n\">edge_subset</span> <span class=\"bp\">_</span> <span class=\"n\">h</span><span class=\"o\">),</span>\n    <span class=\"n\">rw</span> <span class=\"n\">sym2</span><span class=\"bp\">.</span><span class=\"n\">is_diag_iff_proj_eq</span><span class=\"o\">,</span>\n  <span class=\"kn\">end</span> <span class=\"o\">}</span>\n\n<span class=\"c\">/-</span><span class=\"cm\">-</span>\n<span class=\"cm\">The type of subgraphs on a given simple graph is a bounded lattice.</span>\n<span class=\"cm\">-/</span>\n<span class=\"kn\">instance</span> <span class=\"o\">{</span><span class=\"n\">α</span> <span class=\"o\">:</span> <span class=\"kt\">Type</span><span class=\"bp\">*</span><span class=\"o\">}</span> <span class=\"o\">[</span><span class=\"n\">simple_graphs</span> <span class=\"n\">α</span><span class=\"o\">]</span> <span class=\"o\">(</span><span class=\"n\">G</span> <span class=\"o\">:</span> <span class=\"n\">α</span><span class=\"o\">)</span> <span class=\"o\">:</span> <span class=\"n\">bounded_lattice</span> <span class=\"o\">(</span><span class=\"n\">subgraph</span> <span class=\"n\">G</span><span class=\"o\">)</span> <span class=\"o\">:=</span> <span class=\"n\">sorry</span>\n\n<span class=\"c\">/-</span><span class=\"cm\">-</span>\n<span class=\"cm\">A spanning subgraph consists of all of the vertices along with a</span>\n<span class=\"cm\">subset of the edges.</span>\n<span class=\"cm\">-/</span>\n<span class=\"kn\">structure</span> <span class=\"n\">spanning_subgraph</span> <span class=\"o\">{</span><span class=\"n\">α</span> <span class=\"o\">:</span> <span class=\"kt\">Type</span><span class=\"bp\">*</span><span class=\"o\">}</span> <span class=\"o\">[</span><span class=\"n\">simple_graphs</span> <span class=\"n\">α</span><span class=\"o\">]</span> <span class=\"o\">(</span><span class=\"n\">G</span> <span class=\"o\">:</span> <span class=\"n\">α</span><span class=\"o\">)</span> <span class=\"o\">:=</span>\n<span class=\"o\">(</span><span class=\"n\">E&#39;</span> <span class=\"o\">:</span> <span class=\"n\">set</span> <span class=\"o\">(</span><span class=\"n\">sym2</span> <span class=\"o\">(</span><span class=\"n\">V</span> <span class=\"n\">G</span><span class=\"o\">)))</span>\n<span class=\"o\">(</span><span class=\"n\">edge_subset</span> <span class=\"o\">:</span> <span class=\"n\">E&#39;</span> <span class=\"err\">⊆</span> <span class=\"n\">E</span> <span class=\"n\">G</span><span class=\"o\">)</span>\n\n<span class=\"kn\">instance</span> <span class=\"o\">{</span><span class=\"n\">α</span> <span class=\"o\">:</span> <span class=\"kt\">Type</span><span class=\"bp\">*</span><span class=\"o\">}</span> <span class=\"o\">[</span><span class=\"n\">simple_graphs</span> <span class=\"n\">α</span><span class=\"o\">]</span> <span class=\"o\">(</span><span class=\"n\">G</span> <span class=\"o\">:</span> <span class=\"n\">α</span><span class=\"o\">)</span> <span class=\"o\">:</span> <span class=\"n\">simple_graphs</span> <span class=\"o\">(</span><span class=\"n\">spanning_subgraph</span> <span class=\"n\">G</span><span class=\"o\">)</span> <span class=\"o\">:=</span>\n<span class=\"o\">{</span> <span class=\"n\">V</span> <span class=\"o\">:=</span> <span class=\"bp\">λ</span> <span class=\"n\">G&#39;</span><span class=\"o\">,</span> <span class=\"n\">V</span> <span class=\"n\">G</span><span class=\"o\">,</span>\n  <span class=\"n\">adj</span> <span class=\"o\">:=</span> <span class=\"bp\">λ</span> <span class=\"n\">G&#39;</span> <span class=\"n\">v</span> <span class=\"n\">w</span><span class=\"o\">,</span> <span class=\"err\">⟦</span><span class=\"o\">(</span><span class=\"n\">v</span><span class=\"o\">,</span> <span class=\"n\">w</span><span class=\"o\">)</span><span class=\"err\">⟧</span> <span class=\"err\">∈</span> <span class=\"n\">spanning_subgraph</span><span class=\"bp\">.</span><span class=\"n\">E&#39;</span> <span class=\"n\">G&#39;</span><span class=\"o\">,</span>\n  <span class=\"n\">sym</span> <span class=\"o\">:=</span> <span class=\"k\">by</span> <span class=\"o\">{</span> <span class=\"n\">intros</span> <span class=\"n\">G&#39;</span> <span class=\"n\">v</span> <span class=\"n\">w</span> <span class=\"n\">h</span><span class=\"o\">,</span> <span class=\"n\">rwa</span> <span class=\"n\">sym2</span><span class=\"bp\">.</span><span class=\"n\">eq_swap</span> <span class=\"o\">},</span>\n  <span class=\"n\">loopless</span> <span class=\"o\">:=</span> <span class=\"k\">begin</span>\n    <span class=\"n\">intros</span> <span class=\"n\">G&#39;</span> <span class=\"n\">v</span> <span class=\"n\">h</span><span class=\"o\">,</span>\n    <span class=\"n\">apply</span> <span class=\"n\">sym2</span><span class=\"bp\">.</span><span class=\"n\">from_rel_irreflexive</span><span class=\"bp\">.</span><span class=\"n\">mp</span> <span class=\"o\">(</span><span class=\"n\">simple_graphs</span><span class=\"bp\">.</span><span class=\"n\">loopless</span> <span class=\"n\">G</span><span class=\"o\">)</span> <span class=\"o\">(</span><span class=\"n\">spanning_subgraph</span><span class=\"bp\">.</span><span class=\"n\">edge_subset</span> <span class=\"bp\">_</span> <span class=\"n\">h</span><span class=\"o\">),</span>\n    <span class=\"n\">rw</span> <span class=\"n\">sym2</span><span class=\"bp\">.</span><span class=\"n\">is_diag_iff_proj_eq</span><span class=\"o\">,</span>\n  <span class=\"kn\">end</span> <span class=\"o\">}</span>\n\n<span class=\"kn\">instance</span> <span class=\"o\">{</span><span class=\"n\">α</span> <span class=\"o\">:</span> <span class=\"kt\">Type</span><span class=\"bp\">*</span><span class=\"o\">}</span> <span class=\"o\">[</span><span class=\"n\">simple_graphs</span> <span class=\"n\">α</span><span class=\"o\">]</span> <span class=\"o\">(</span><span class=\"n\">G</span> <span class=\"o\">:</span> <span class=\"n\">α</span><span class=\"o\">)</span> <span class=\"o\">:</span> <span class=\"n\">bounded_lattice</span> <span class=\"o\">(</span><span class=\"n\">spanning_subgraph</span> <span class=\"n\">G</span><span class=\"o\">)</span> <span class=\"o\">:=</span> <span class=\"n\">sorry</span>\n</code></pre></div>",
+        "id": 204286472,
+        "sender_full_name": "Kyle Miller",
+        "timestamp": 1595052131
+    }
+]

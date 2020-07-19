@@ -1,0 +1,65 @@
+---
+layout: archive
+title: Zulip Chat Archive
+permalink: /stream/113489-new-members/topic/Windows.20Install.20Lean-game-maker.html
+---
+
+<h2>Stream: <a href="http://robertylewis.com/archive/stream/113489-new-members/index.html">new members</a></h2>
+<h3>Topic: <a href="http://robertylewis.com/archive/stream/113489-new-members/topic/Windows.20Install.20Lean-game-maker.html">Windows Install Lean-game-maker</a></h3>
+
+<hr>
+
+<base href="https://leanprover.zulipchat.com">
+
+<head><link href="/style.css" rel="stylesheet"></head>
+
+{% raw %}
+
+<a name="204326781"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113489-new%20members/topic/Windows%20Install%20Lean-game-maker/near/204326781" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> ZainAK283 <a href="http://robertylewis.com/archive/stream/113489-new-members/topic/Windows.20Install.20Lean-game-maker.html#204326781">(Jul 19 2020 at 01:43)</a>:</h4>
+<p>I'd like to install <a href="https://github.com/mpedramfar/Lean-game-maker/blob/master/INSTALL.md">https://github.com/mpedramfar/Lean-game-maker/blob/master/INSTALL.md</a> but I have a windows laptop, not linux, how do I go about doing this? In particular the command for:</p>
+<p>sudo apt install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev python-openssl</p>
+
+
+
+<a name="204327161"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113489-new%20members/topic/Windows%20Install%20Lean-game-maker/near/204327161" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bryan Gin-ge Chen <a href="http://robertylewis.com/archive/stream/113489-new-members/topic/Windows.20Install.20Lean-game-maker.html#204327161">(Jul 19 2020 at 01:55)</a>:</h4>
+<p>I haven't tried it before, but maybe you could try <a href="https://github.com/pyenv-win/pyenv-win">https://github.com/pyenv-win/pyenv-win</a></p>
+
+
+
+<a name="204327362"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113489-new%20members/topic/Windows%20Install%20Lean-game-maker/near/204327362" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Dan Stanescu <a href="http://robertylewis.com/archive/stream/113489-new-members/topic/Windows.20Install.20Lean-game-maker.html#204327362">(Jul 19 2020 at 02:01)</a>:</h4>
+<p>I tried to install it on a Mac and gave up. It will be even more difficult on Windows. <br>
+Installing <code>pyenv</code> is advised, but that line <code>sudo apt ...</code> is about installing all the dependencies for python.<br>
+I think one of the best bets is to install Anaconda, which puts just about everything on Windows and gives you an environment (currently it comes with python 3.7.6 I think).</p>
+
+
+
+<a name="204327431"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113489-new%20members/topic/Windows%20Install%20Lean-game-maker/near/204327431" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Dan Stanescu <a href="http://robertylewis.com/archive/stream/113489-new-members/topic/Windows.20Install.20Lean-game-maker.html#204327431">(Jul 19 2020 at 02:03)</a>:</h4>
+<p>But even this will eventually require quite some experience with handling read/write permissions on Windows and so on.</p>
+
+
+
+<a name="204327625"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113489-new%20members/topic/Windows%20Install%20Lean-game-maker/near/204327625" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Dan Stanescu <a href="http://robertylewis.com/archive/stream/113489-new-members/topic/Windows.20Install.20Lean-game-maker.html#204327625">(Jul 19 2020 at 02:08)</a>:</h4>
+<p>Then it'll be <code>npm</code> and <code>gettext</code>, the latter I have no idea how to get it on Windoze yet.</p>
+
+
+
+<a name="204327708"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113489-new%20members/topic/Windows%20Install%20Lean-game-maker/near/204327708" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Dan Stanescu <a href="http://robertylewis.com/archive/stream/113489-new-members/topic/Windows.20Install.20Lean-game-maker.html#204327708">(Jul 19 2020 at 02:11)</a>:</h4>
+<p>It is usually installed with <code>apt-get</code> on Linux (although most of the time is pre-installed) and I'm not sure that GitBash will handle it.</p>
+
+
+
+<a name="204328998"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113489-new%20members/topic/Windows%20Install%20Lean-game-maker/near/204328998" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bryan Gin-ge Chen <a href="http://robertylewis.com/archive/stream/113489-new-members/topic/Windows.20Install.20Lean-game-maker.html#204328998">(Jul 19 2020 at 02:44)</a>:</h4>
+<p>We should probably tag <span class="user-mention" data-user-id="132175">@Mohammad Pedramfar</span>.</p>
+
+
+
+{% endraw %}
+
+<hr><p>Last updated: Jul 19 2020 at 13:36 UTC</p>

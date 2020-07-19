@@ -1,0 +1,20 @@
+[
+    {
+        "content": "<p>This project is sorry-free except for one theorem at the end of <code>archive/100-theorems-list/83_friendship/char_poly.lean</code>:<a href=\"https://github.com/leanprover-community/mathlib/compare/freek_83_friendship_theorem\">https://github.com/leanprover-community/mathlib/compare/freek_83_friendship_theorem</a></p>",
+        "id": 204321893,
+        "sender_full_name": "Aaron Anderson",
+        "timestamp": 1595113642
+    },
+    {
+        "content": "<p>The sorries in that theorem seem like they should be solvable by <code>refl</code>, but there's some subtle difference in the definitions.</p>",
+        "id": 204321935,
+        "sender_full_name": "Aaron Anderson",
+        "timestamp": 1595113713
+    },
+    {
+        "content": "<p>Can anybody help figure out how to make lean realize these things are trivially equal, or even better, avoid using <code>transitivity</code> to begin with?</p>",
+        "id": 204321944,
+        "sender_full_name": "Aaron Anderson",
+        "timestamp": 1595113778
+    }
+]

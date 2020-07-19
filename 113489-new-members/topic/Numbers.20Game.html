@@ -1,0 +1,86 @@
+---
+layout: archive
+title: Zulip Chat Archive
+permalink: /stream/113489-new-members/topic/Numbers.20Game.html
+---
+
+<h2>Stream: <a href="http://robertylewis.com/archive/stream/113489-new-members/index.html">new members</a></h2>
+<h3>Topic: <a href="http://robertylewis.com/archive/stream/113489-new-members/topic/Numbers.20Game.html">Numbers Game</a></h3>
+
+<hr>
+
+<base href="https://leanprover.zulipchat.com">
+
+<head><link href="/style.css" rel="stylesheet"></head>
+
+{% raw %}
+
+<a name="203691543"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113489-new%20members/topic/Numbers%20Game/near/203691543" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Philip Vetter <a href="http://robertylewis.com/archive/stream/113489-new-members/topic/Numbers.20Game.html#203691543">(Jul 13 2020 at 08:57)</a>:</h4>
+<p>4:54 PM</p>
+<p>In Numbers Game, Level 4/4, I can specify a in<br>
+rw add_zero(a),<br>
+but why do I get an error from<br>
+rw add_succ(a 0),<br>
+despite the definition<br>
+add_succ (a d : mynat) : a + succ(d) = succ (a + d) ?</p>
+
+
+
+<a name="203691661"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113489-new%20members/topic/Numbers%20Game/near/203691661" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Markus Himmel <a href="http://robertylewis.com/archive/stream/113489-new-members/topic/Numbers.20Game.html#203691661">(Jul 13 2020 at 08:58)</a>:</h4>
+<p>What happens if you write <code>rw add_succ a 0</code> instead of <code>rw add_succ(a 0)</code>?</p>
+
+
+
+<a name="203691861"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113489-new%20members/topic/Numbers%20Game/near/203691861" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="http://robertylewis.com/archive/stream/113489-new-members/topic/Numbers.20Game.html#203691861">(Jul 13 2020 at 09:00)</a>:</h4>
+<p>add_succ (a 0) means apply add_succ to the result of applying a to 0</p>
+
+
+
+<a name="203691872"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113489-new%20members/topic/Numbers%20Game/near/203691872" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="http://robertylewis.com/archive/stream/113489-new-members/topic/Numbers.20Game.html#203691872">(Jul 13 2020 at 09:00)</a>:</h4>
+<p>well a cannot be applied to 0</p>
+
+
+
+<a name="203691903"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113489-new%20members/topic/Numbers%20Game/near/203691903" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="http://robertylewis.com/archive/stream/113489-new-members/topic/Numbers.20Game.html#203691903">(Jul 13 2020 at 09:01)</a>:</h4>
+<p>I guess the syntax <code>def add_succ (a d : mynat) : a + succ(d) = succ (a + d)</code> can be confusing.</p>
+
+
+
+<a name="203691926"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113489-new%20members/topic/Numbers%20Game/near/203691926" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="http://robertylewis.com/archive/stream/113489-new-members/topic/Numbers.20Game.html#203691926">(Jul 13 2020 at 09:01)</a>:</h4>
+<p>You should read it as <code>def add_succ (a : mynat) (d : mynat) : etc...</code></p>
+
+
+
+<a name="203692039"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113489-new%20members/topic/Numbers%20Game/near/203692039" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="http://robertylewis.com/archive/stream/113489-new-members/topic/Numbers.20Game.html#203692039">(Jul 13 2020 at 09:03)</a>:</h4>
+<p>it's not a definition :P</p>
+
+
+
+<a name="203692545"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113489-new%20members/topic/Numbers%20Game/near/203692545" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Philip Vetter <a href="http://robertylewis.com/archive/stream/113489-new-members/topic/Numbers.20Game.html#203692545">(Jul 13 2020 at 09:09)</a>:</h4>
+<p>What would you call it? A type declaration?</p>
+
+
+
+<a name="203692591"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113489-new%20members/topic/Numbers%20Game/near/203692591" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Philip Vetter <a href="http://robertylewis.com/archive/stream/113489-new-members/topic/Numbers.20Game.html#203692591">(Jul 13 2020 at 09:10)</a>:</h4>
+<p>THIS WORKS: rw add_succ a 0</p>
+
+
+
+<a name="203692632"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113489-new%20members/topic/Numbers%20Game/near/203692632" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Scott Morrison <a href="http://robertylewis.com/archive/stream/113489-new-members/topic/Numbers.20Game.html#203692632">(Jul 13 2020 at 09:10)</a>:</h4>
+<p>(Note this was Markus' first suggestion above.)</p>
+
+
+
+{% endraw %}
+
+<hr><p>Last updated: Jul 19 2020 at 13:36 UTC</p>

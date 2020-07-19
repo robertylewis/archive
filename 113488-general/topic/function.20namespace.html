@@ -1,0 +1,123 @@
+---
+layout: archive
+title: Zulip Chat Archive
+permalink: /stream/113488-general/topic/function.20namespace.html
+---
+
+<h2>Stream: <a href="http://robertylewis.com/archive/stream/113488-general/index.html">general</a></h2>
+<h3>Topic: <a href="http://robertylewis.com/archive/stream/113488-general/topic/function.20namespace.html">function namespace</a></h3>
+
+<hr>
+
+<base href="https://leanprover.zulipchat.com">
+
+<head><link href="/style.css" rel="stylesheet"></head>
+
+{% raw %}
+
+<a name="196733385"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113488-general/topic/function%20namespace/near/196733385" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="http://robertylewis.com/archive/stream/113488-general/topic/function.20namespace.html#196733385">(May 07 2020 at 07:05)</a>:</h4>
+<p>I fear this is impossible, but I don't actually know why. Could</p>
+<ol>
+<li><code>X → Y</code> be notation for <code>function X Y</code>, and</li>
+<li><code>function X Y</code> be an abbreviation for whatever Pi-type it should be.</li>
+</ol>
+<p>Then we could write <code>(hf : f.injective)</code> if I'm not mistaken.</p>
+
+
+
+<a name="196734297"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113488-general/topic/function%20namespace/near/196734297" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Yury G. Kudryashov <a href="http://robertylewis.com/archive/stream/113488-general/topic/function.20namespace.html#196734297">(May 07 2020 at 07:17)</a>:</h4>
+<p>I'd love to have this. I don't know if it's easier to implement this in Lean, or in C++.</p>
+
+
+
+<a name="196737141"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113488-general/topic/function%20namespace/near/196737141" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Gabriel Ebner <a href="http://robertylewis.com/archive/stream/113488-general/topic/function.20namespace.html#196737141">(May 07 2020 at 07:56)</a>:</h4>
+<p>1) seems like a really bad idea, 2) is extremely easy to do, you just need to add a case for <code>is_pi</code> here: <a href="https://github.com/leanprover-community/lean/blob/675c47294a57c98e3215b6edd9e7efc80ec99475/src/frontends/lean/elaborator.cpp#L2728" title="https://github.com/leanprover-community/lean/blob/675c47294a57c98e3215b6edd9e7efc80ec99475/src/frontends/lean/elaborator.cpp#L2728">https://github.com/leanprover-community/lean/blob/675c47294a57c98e3215b6edd9e7efc80ec99475/src/frontends/lean/elaborator.cpp#L2728</a><br>
+I think we should also have this for <code>Sort</code>.</p>
+
+
+
+<a name="196737500"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113488-general/topic/function%20namespace/near/196737500" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Yury G. Kudryashov <a href="http://robertylewis.com/archive/stream/113488-general/topic/function.20namespace.html#196737500">(May 07 2020 at 08:00)</a>:</h4>
+<p>What do you mean by 1) and 2)?</p>
+
+
+
+<a name="196737883"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113488-general/topic/function%20namespace/near/196737883" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Yury G. Kudryashov <a href="http://robertylewis.com/archive/stream/113488-general/topic/function.20namespace.html#196737883">(May 07 2020 at 08:04)</a>:</h4>
+<p>Can we differentiate between <code>pi</code> and <code>function</code> here?</p>
+
+
+
+<a name="196738926"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113488-general/topic/function%20namespace/near/196738926" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Gabriel Ebner <a href="http://robertylewis.com/archive/stream/113488-general/topic/function.20namespace.html#196738926">(May 07 2020 at 08:14)</a>:</h4>
+<p>1) and 2) refer to Johan's questions.<br>
+Oh, <code>function</code> is supposed to be a non-dependent pi!  My advice still stands: 1) is probably a bad idea, 2) is easy and should be done.  You could differentiate between pis and non-dependent pis, for example you could try <code>function.injective</code> if it is non-dependent as well as <code>pi.injective</code>.  I'm not sure if this difference is important.  Do you want different definitions for pis and non-dependent pis?</p>
+
+
+
+<a name="196739360"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113488-general/topic/function%20namespace/near/196739360" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="http://robertylewis.com/archive/stream/113488-general/topic/function.20namespace.html#196739360">(May 07 2020 at 08:18)</a>:</h4>
+<p>But if we don't have 1), what is the benefit of 2)?</p>
+
+
+
+<a name="196739386"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113488-general/topic/function%20namespace/near/196739386" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="http://robertylewis.com/archive/stream/113488-general/topic/function.20namespace.html#196739386">(May 07 2020 at 08:18)</a>:</h4>
+<p>We can't write <code>f.injective</code> for <code>f : X → Y</code> in that case, right?</p>
+
+
+
+<a name="196739517"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113488-general/topic/function%20namespace/near/196739517" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Yury G. Kudryashov <a href="http://robertylewis.com/archive/stream/113488-general/topic/function.20namespace.html#196739517">(May 07 2020 at 08:20)</a>:</h4>
+<p>Gabriel pointed to C++ source file where we can hardcode "if you see a function, try <code>function</code> namespace".</p>
+
+
+
+<a name="196739580"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113488-general/topic/function%20namespace/near/196739580" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Yury G. Kudryashov <a href="http://robertylewis.com/archive/stream/113488-general/topic/function.20namespace.html#196739580">(May 07 2020 at 08:20)</a>:</h4>
+<p>Instead of doing this in Lean.</p>
+
+
+
+<a name="196739613"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113488-general/topic/function%20namespace/near/196739613" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="http://robertylewis.com/archive/stream/113488-general/topic/function.20namespace.html#196739613">(May 07 2020 at 08:20)</a>:</h4>
+<p>Aah, I see. We add a hack (-;</p>
+
+
+
+<a name="196739631"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113488-general/topic/function%20namespace/near/196739631" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="http://robertylewis.com/archive/stream/113488-general/topic/function.20namespace.html#196739631">(May 07 2020 at 08:20)</a>:</h4>
+<p><span class="user-mention" data-user-id="110043">@Gabriel Ebner</span> Can you also explain why 1) is a bad idea?</p>
+
+
+
+<a name="196739701"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113488-general/topic/function%20namespace/near/196739701" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="http://robertylewis.com/archive/stream/113488-general/topic/function.20namespace.html#196739701">(May 07 2020 at 08:21)</a>:</h4>
+<p>why not just write <code>f : X \hom Y</code> and <code>f.injective</code></p>
+
+
+
+<a name="196739759"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113488-general/topic/function%20namespace/near/196739759" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="http://robertylewis.com/archive/stream/113488-general/topic/function.20namespace.html#196739759">(May 07 2020 at 08:22)</a>:</h4>
+<p>or whatever unicode variant of the arrow that hasn't been used</p>
+
+
+
+<a name="196739769"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113488-general/topic/function%20namespace/near/196739769" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Gabriel Ebner <a href="http://robertylewis.com/archive/stream/113488-general/topic/function.20namespace.html#196739769">(May 07 2020 at 08:22)</a>:</h4>
+<p>This is more a gut feeling.  But adding definitions typically breaks stuff.  For example defining <code>(≥)</code> as <code>flip (≤)</code> breaks the simplifier.  I would imagine many similar things to happen if <code>→</code> was suddenly no longer a pi.</p>
+
+
+
+<a name="196739773"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113488-general/topic/function%20namespace/near/196739773" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="http://robertylewis.com/archive/stream/113488-general/topic/function.20namespace.html#196739773">(May 07 2020 at 08:22)</a>:</h4>
+<p>my point is, there's no need to change <code>\to</code></p>
+
+
+
+{% endraw %}
+
+<hr><p>Last updated: Jul 19 2020 at 13:36 UTC</p>

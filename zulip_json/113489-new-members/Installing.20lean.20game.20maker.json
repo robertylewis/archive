@@ -1,0 +1,44 @@
+[
+    {
+        "content": "<p>Has anyone installed Mohammad Pedramfar's Lean Game Maker in windows? ( <a href=\"https://github.com/mpedramfar/Lean-game-maker/blob/master/INSTALL.mdhttps://github.com/mpedramfar/Lean-game-maker/blob/master/INSTALL.md\">https://github.com/mpedramfar/Lean-game-maker/blob/master/INSTALL.mdhttps://github.com/mpedramfar/Lean-game-maker/blob/master/INSTALL.md</a> )</p>\n<p>I managed to do the first git clone no problem</p>\n<p>echo 'export PATH=\"$HOME/.pyenv/bin:$PATH\"' &gt;&gt; ~/.bashrc <br>\ndoesn't give any output, but I'm assuming that's what I'm supposed to see?</p>\n<p>The main issue is when I try: <br>\nsudo apt install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev python-openssl <br>\nI get:<br>\nbash: sudo: command not found</p>",
+        "id": 203648965,
+        "sender_full_name": "ZainAK283",
+        "timestamp": 1594569206
+    },
+    {
+        "content": "<p>That <code>sudo apt...</code> line is definitely not Windows.</p>",
+        "id": 203649474,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1594569969
+    },
+    {
+        "content": "<p>It's about Linux (and more precisely Debian-based Linux but you don't care about this).</p>",
+        "id": 203649487,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1594569995
+    },
+    {
+        "content": "<p>However that while line is about getting python 3.7. So you can simply skip it if you already have a recent python</p>",
+        "id": 203649545,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1594570093
+    },
+    {
+        "content": "<p>Otherwise go to <a href=\"http://python.org\">python.org</a> to see how to install python on Windows</p>",
+        "id": 203649553,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1594570108
+    },
+    {
+        "content": "<p>Thanks for the comment! I've installed a WSL ( <a href=\"https://ubuntu.com/wsl\">https://ubuntu.com/wsl</a> if it matters) and the install is mostly working I think,  </p>\n<p>at the end of <a href=\"https://github.com/mpedramfar/Lean-game-maker/blob/master/INSTALL.mdhttps://github.com/mpedramfar/Lean-game-maker/blob/master/INSTALL.md\">https://github.com/mpedramfar/Lean-game-maker/blob/master/INSTALL.mdhttps://github.com/mpedramfar/Lean-game-maker/blob/master/INSTALL.md</a> it says to \"Clone the repository. \", what does this mean/how do I do this?</p>",
+        "id": 203659910,
+        "sender_full_name": "ZainAK283",
+        "timestamp": 1594586196
+    },
+    {
+        "content": "<p><code>git clone https://github.com/mpedramfar/Lean-game-maker</code></p>",
+        "id": 203660465,
+        "sender_full_name": "Yakov Pechersky",
+        "timestamp": 1594587083
+    }
+]

@@ -1,0 +1,122 @@
+[
+    {
+        "content": "<p>Greetings from the Berkeley Lean Seminar, where a bunch of us are learning Lean this summer.  As my first \"real\" project, I decided to formalize the Nash-Williams argument for the following version of the De Bruijn–Erdős theorem, that if a graph with countably many vertices has the property that every finite subgraph can be n-colored, then the graph can be n-colored.  This involved proving a specialization of Kőnig's lemma, that the inverse limit of an ℕ-indexed family of nonempty finite sets is nonempty.</p>\n<p>So, fresh off the presses, here it is:</p>\n<p>Coloring statement: <a href=\"https://github.com/kmill/lean-graphcoloring/blob/master/src/graph.lean#L347\">https://github.com/kmill/lean-graphcoloring/blob/master/src/graph.lean#L347</a></p>\n<p>Kőnig's lemma: <a href=\"https://github.com/kmill/lean-graphcoloring/blob/master/src/konig.lean#L153\">https://github.com/kmill/lean-graphcoloring/blob/master/src/konig.lean#L153</a></p>\n<p>The proofs are terrible, but, hey, it's proved.  (While any hints to clean things up would be appreciated, I don't want to harm any of your eyes with its very hacky state.  I feel like much of it was constructed through pure force of will.)</p>\n<p>Many decisions were made for pedagogical reasons, to learn different parts of Lean.  Probably a more straightforward proof would be for the full De Bruijn–Erdős theorem, using ultrafilters to construct a coloring from a choice of coloring for each finite subgraph. (That is, a compactness argument.)</p>",
+        "id": 200298738,
+        "sender_full_name": "Kyle Miller",
+        "timestamp": 1591741374
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"306601\">@Kyle Miller</span> Nice! We also wrote a bunch of graph colouring stuff on the <code>hedetniemi</code> branch. But it hasn't made it into mathlib master yet.</p>",
+        "id": 200382504,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1591770840
+    },
+    {
+        "content": "<p>Are you planning to PR this to mathlib?</p>",
+        "id": 200382546,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1591770848
+    },
+    {
+        "content": "<p>feature request: GUI for hedetniemi branch</p>",
+        "id": 200382660,
+        "sender_full_name": "Kenny Lau",
+        "timestamp": 1591771032
+    },
+    {
+        "content": "<p>Assigned to: <span class=\"user-mention\" data-user-id=\"110064\">@Kenny Lau</span> <span aria-label=\"rofl\" class=\"emoji emoji-1f923\" role=\"img\" title=\"rofl\">:rofl:</span> <span aria-label=\"oops\" class=\"emoji emoji-1f643\" role=\"img\" title=\"oops\">:oops:</span> <span aria-label=\"stuck out tongue wink\" class=\"emoji emoji-1f61c\" role=\"img\" title=\"stuck out tongue wink\">:stuck_out_tongue_wink:</span></p>",
+        "id": 200382679,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1591771072
+    },
+    {
+        "content": "<p>Very nice! I agree that the full theorem might be easier to prove -- either using ultrafilters, or Tychonoff, or Zorn (consider the poset of partial colourings that can be extended to cover any finite subgraph).</p>",
+        "id": 200396512,
+        "sender_full_name": "David Wärn",
+        "timestamp": 1591782769
+    },
+    {
+        "content": "<p>I want to say that this follows from the compactness theorem from logic but I'm no expert in this area</p>",
+        "id": 200397353,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1591783375
+    },
+    {
+        "content": "<p>Who hacked Kevin's Zulip account <em>again</em>?</p>",
+        "id": 200397436,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1591783429
+    },
+    {
+        "content": "<p>We already had people posting type theory messages using his account and now logic?!</p>",
+        "id": 200397528,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1591783464
+    },
+    {
+        "content": "<p>Yes, compactness theorem for propositional logic is basically same thing as Tychonoff for products of finite spaces</p>",
+        "id": 200398101,
+        "sender_full_name": "David Wärn",
+        "timestamp": 1591783903
+    },
+    {
+        "content": "<p>^This is not totally true. Tychonoff implies it, yes, but you only need Boolean prime ideal theorem (they are equivalent), which is weaker than choice and so weaker than Tychonoff.</p>",
+        "id": 200405778,
+        "sender_full_name": "Dave",
+        "timestamp": 1591789914
+    },
+    {
+        "content": "<p>Right, I'm saying it's equivalent to \"product of finite spaces is compact\", which is all you need for De Bruijn–Erdos</p>",
+        "id": 200414071,
+        "sender_full_name": "David Wärn",
+        "timestamp": 1591794893
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"110038\">@Kevin Buzzard</span>  Yes, there is a pretty straightforward proof using the compactness theorem for first order logic. That proof also works for uncountable graphs, unlike the Konig's lemma proof (but like the Tychonoff proof).</p>",
+        "id": 200444704,
+        "sender_full_name": "Patrick Lutz",
+        "timestamp": 1591808382
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"112680\">Johan Commelin</span> <a href=\"#narrow/stream/116395-maths/topic/countable.20De.20Bruijn.E2.80.93Erd.C5.91s.20theorem/near/200382546\">said</a>:</p>\n<blockquote>\n<p>Are you planning to PR this to mathlib?</p>\n</blockquote>\n<p>I'm willing to create PRs, but I'm not exactly sure what the criteria for inclusion is.  I've at least now factored out and cleaned up some possibly useful results in <code>mylist</code>, <code>myoption</code>, and <code>myfintype</code> (<a href=\"https://github.com/kmill/lean-graphcoloring/tree/master/src\">https://github.com/kmill/lean-graphcoloring/tree/master/src</a>).  The proof of this specialization of Konig's lemma has also been cleaned up a bit.</p>",
+        "id": 200616821,
+        "sender_full_name": "Kyle Miller",
+        "timestamp": 1591915573
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"306601\">@Kyle Miller</span> The criteria for inclusion are: it should follow the style guidelines, and it should not be \"crackpot\". If you cook up a definition of <code>boolala</code>s and prove 10.000 lines of code about them, without any connection to the outside world... then we probably aren't very interested. (Clearly, this doesn't apply to whay you've done.)<br>\nAlso, when you PR, expect to get 50 comments about how to improve things... they're meant to help you (-;</p>",
+        "id": 200634758,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1591937164
+    },
+    {
+        "content": "<p>I don't know, <code>boolala</code> sounds pretty interesting if there is that much to say about it</p>",
+        "id": 200634885,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1591937421
+    },
+    {
+        "content": "<p>If it's \"recognisably maths\", it passes the interest criterion. :-)</p>",
+        "id": 200634888,
+        "sender_full_name": "Scott Morrison",
+        "timestamp": 1591937434
+    },
+    {
+        "content": "<p>I've been wondering about whether to submit my <a href=\"https://github.com/digama0/vc0\">formalization of the type theory of C</a> to mathlib. It's definitely starting to rot but it's also very far removed from everything else currently in mathlib</p>",
+        "id": 200634908,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1591937510
+    },
+    {
+        "content": "<p>Why don't you start a <code>computer_science/</code> top-level directory?</p>",
+        "id": 200634960,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1591937569
+    },
+    {
+        "content": "<p>You could always put it in <code>archive/</code></p>",
+        "id": 200634967,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1591937592
+    }
+]

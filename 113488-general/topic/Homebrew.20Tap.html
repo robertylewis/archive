@@ -1,0 +1,44 @@
+---
+layout: archive
+title: Zulip Chat Archive
+permalink: /stream/113488-general/topic/Homebrew.20Tap.html
+---
+
+<h2>Stream: <a href="http://robertylewis.com/archive/stream/113488-general/index.html">general</a></h2>
+<h3>Topic: <a href="http://robertylewis.com/archive/stream/113488-general/topic/Homebrew.20Tap.html">Homebrew Tap</a></h3>
+
+<hr>
+
+<base href="https://leanprover.zulipchat.com">
+
+<head><link href="/style.css" rel="stylesheet"></head>
+
+{% raw %}
+
+<a name="204027245"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113488-general/topic/Homebrew%20Tap/near/204027245" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Julian Berman <a href="http://robertylewis.com/archive/stream/113488-general/topic/Homebrew.20Tap.html#204027245">(Jul 15 2020 at 23:43)</a>:</h4>
+<p>Hi! I installed Lean maybe a few months ago (via a nonstandard install in a few ways I wanted to modify) and then didn't touch it much, but am about to try again --  on macOS, it looks like the version that's in the Homebrew core repo is the 3.4.2 non-community version -- does anyone know if there's someone maintaining a tap for the community-maintained one that I can use? (If not I guess I'll try making one...)</p>
+
+
+
+<a name="204027528"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113488-general/topic/Homebrew%20Tap/near/204027528" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Alex J. Best <a href="http://robertylewis.com/archive/stream/113488-general/topic/Homebrew.20Tap.html#204027528">(Jul 15 2020 at 23:47)</a>:</h4>
+<p>The recommended install on mac is via, <a href="https://leanprover-community.github.io/install/macos.html">https://leanprover-community.github.io/install/macos.html</a> the homebrew tap is completely outdated if you want to use mathlib at this point, as the community version is on 3.17.1. Nobody is maintaining a tap, as we use the lean specific elan to manage lean versions rather than brew.</p>
+
+
+
+<a name="204029173"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113488-general/topic/Homebrew%20Tap/near/204029173" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Julian Berman <a href="http://robertylewis.com/archive/stream/113488-general/topic/Homebrew.20Tap.html#204029173">(Jul 16 2020 at 00:06)</a>:</h4>
+<p>Got it, yeah I found that page, ok cool, will figure something out. Appreciated!</p>
+
+
+
+<a name="204042575"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113488-general/topic/Homebrew%20Tap/near/204042575" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Scott Morrison <a href="http://robertylewis.com/archive/stream/113488-general/topic/Homebrew.20Tap.html#204042575">(Jul 16 2020 at 04:02)</a>:</h4>
+<p>We're planning, starting hopefully next week, to try to remove the 3.4.2 packages in <code>apt-get</code>, <code>homebrew</code>, etc. Ideally these packages would instead install elan+leanproject, and leave it to <code>elan</code> to obtain Lean versions.</p>
+
+
+
+{% endraw %}
+
+<hr><p>Last updated: Jul 19 2020 at 13:36 UTC</p>

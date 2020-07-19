@@ -1,0 +1,50 @@
+[
+    {
+        "content": "<p>I'd love to poll people  and see what they're working on. Myself, I'm implementing a (co)inductive compiler and an equation compiler in Lean to implement the data type package described in <a href=\"https://drops.dagstuhl.de/opus/frontdoor.php?source_opus=11061\">https://drops.dagstuhl.de/opus/frontdoor.php?source_opus=11061</a>.</p>\n<p>One of my goal is to formalize the Haskell <a href=\"https://hackage.haskell.org/package/pipes\">Pipes</a> library and, separately, enter the <a href=\"https://github.com/lemmy/lets-prove-blocking-queue\">lets-prove-blocking-queue</a> challenge</p>",
+        "id": 197949787,
+        "sender_full_name": "Simon Hudon",
+        "timestamp": 1589815122
+    },
+    {
+        "content": "<p>Yay for the QPF implementation!</p>",
+        "id": 197950138,
+        "sender_full_name": "Gabriel Ebner",
+        "timestamp": 1589815271
+    },
+    {
+        "content": "<p>Are we still missing any features in core to make this happen?</p>",
+        "id": 197950205,
+        "sender_full_name": "Gabriel Ebner",
+        "timestamp": 1589815308
+    },
+    {
+        "content": "<p>:) Yes, I've been playing around to hook it up into the inductive compiler and equation compiler. That's what I've been busy at in the last month or so</p>",
+        "id": 197951203,
+        "sender_full_name": "Simon Hudon",
+        "timestamp": 1589815730
+    },
+    {
+        "content": "<p>My latest idea is to expose the machinery that mutual inductive declaration uses to translate it into basic inductive types</p>",
+        "id": 197951344,
+        "sender_full_name": "Simon Hudon",
+        "timestamp": 1589815797
+    },
+    {
+        "content": "<p>I feel pretty close to having the hooks that I need</p>",
+        "id": 197951543,
+        "sender_full_name": "Simon Hudon",
+        "timestamp": 1589815858
+    },
+    {
+        "content": "<p>I'm new here, but I'm interested in using Lean for program verification. I primarily use Coq for work but am hoping to one day use Lean for my research. I'm still very much in the learning phase. I'm working through Software Foundations with a few of my friends. They'll be doing the exercises in Coq while I try to port them to Lean.</p>",
+        "id": 198027619,
+        "sender_full_name": "John Hui",
+        "timestamp": 1589871401
+    },
+    {
+        "content": "<p>I learnt a lot about lean by doing exactly that (porting SF)</p>",
+        "id": 198038082,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1589878533
+    }
+]

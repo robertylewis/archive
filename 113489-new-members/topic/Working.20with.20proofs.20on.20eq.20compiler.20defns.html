@@ -1,0 +1,235 @@
+---
+layout: archive
+title: Zulip Chat Archive
+permalink: /stream/113489-new-members/topic/Working.20with.20proofs.20on.20eq.20compiler.20defns.html
+---
+
+<h2>Stream: <a href="http://robertylewis.com/archive/stream/113489-new-members/index.html">new members</a></h2>
+<h3>Topic: <a href="http://robertylewis.com/archive/stream/113489-new-members/topic/Working.20with.20proofs.20on.20eq.20compiler.20defns.html">Working with proofs on eq compiler defns</a></h3>
+
+<hr>
+
+<base href="https://leanprover.zulipchat.com">
+
+<head><link href="/style.css" rel="stylesheet"></head>
+
+{% raw %}
+
+<a name="204124934"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113489-new%20members/topic/Working%20with%20proofs%20on%20eq%20compiler%20defns/near/204124934" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Yakov Pechersky <a href="http://robertylewis.com/archive/stream/113489-new-members/topic/Working.20with.20proofs.20on.20eq.20compiler.20defns.html#204124934">(Jul 16 2020 at 18:40)</a>:</h4>
+<p>What's the way to simplify the <code>_match</code> statement in the proof below? The <code>#reduce</code> gives basically the right answer modulo some cancellations, so I wonder what the hang-up is.</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="n">data</span><span class="bp">.</span><span class="n">matrix</span><span class="bp">.</span><span class="kn">notation</span>
+<span class="kn">import</span> <span class="n">data</span><span class="bp">.</span><span class="n">real</span><span class="bp">.</span><span class="n">basic</span>
+
+<span class="kn">universe</span> <span class="n">u</span>
+<span class="kn">variables</span> <span class="o">{</span><span class="n">R</span> <span class="o">:</span> <span class="kt">Type</span><span class="bp">*</span><span class="o">}</span> <span class="o">[</span><span class="n">field</span> <span class="n">R</span><span class="o">]</span>
+<span class="kn">variables</span> <span class="o">{</span><span class="n">n</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">}</span>
+
+<span class="kn">variables</span> <span class="o">(</span><span class="n">a</span> <span class="n">b</span> <span class="n">c</span> <span class="n">d</span> <span class="o">:</span> <span class="n">R</span><span class="o">)</span>
+<span class="kn">variables</span> <span class="o">(</span><span class="n">A</span> <span class="n">B</span> <span class="o">:</span> <span class="n">matrix</span> <span class="o">(</span><span class="n">fin</span> <span class="n">n</span><span class="o">)</span> <span class="o">(</span><span class="n">fin</span> <span class="n">n</span><span class="o">)</span> <span class="n">R</span><span class="o">)</span>
+
+<span class="n">open_locale</span> <span class="n">matrix</span> <span class="n">big_operators</span>
+<span class="kn">open</span> <span class="n">matrix</span>
+
+<span class="n">def</span> <span class="n">det&#39;</span> <span class="o">{</span><span class="n">R</span> <span class="o">:</span> <span class="kt">Type</span><span class="bp">*</span><span class="o">}</span> <span class="o">[</span><span class="n">field</span> <span class="n">R</span><span class="o">]</span> <span class="o">:</span>
+    <span class="bp">Π</span> <span class="o">{</span><span class="n">n</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">},</span> <span class="n">matrix</span> <span class="o">(</span><span class="n">fin</span> <span class="n">n</span><span class="o">)</span> <span class="o">(</span><span class="n">fin</span> <span class="n">n</span><span class="o">)</span> <span class="n">R</span> <span class="bp">-&gt;</span> <span class="n">fin</span> <span class="n">n</span> <span class="bp">-&gt;</span> <span class="n">R</span>
+<span class="bp">|</span> <span class="mi">0</span> <span class="bp">_</span> <span class="bp">_</span> <span class="o">:=</span> <span class="mi">1</span>
+<span class="bp">|</span> <span class="mi">1</span> <span class="n">M</span> <span class="n">i</span> <span class="o">:=</span> <span class="n">M</span> <span class="n">i</span> <span class="n">i</span>
+<span class="bp">|</span> <span class="o">(</span><span class="n">n</span> <span class="bp">+</span> <span class="mi">2</span><span class="o">)</span> <span class="n">M</span> <span class="n">i</span> <span class="o">:=</span>
+  <span class="k">match</span> <span class="n">i</span> <span class="k">with</span>
+  <span class="bp">|</span> <span class="bp">⟨</span><span class="mi">0</span><span class="o">,</span> <span class="n">h</span><span class="bp">⟩</span>  <span class="o">:=</span> <span class="err">∑</span> <span class="n">j</span><span class="o">,</span> <span class="o">(</span><span class="n">M</span> <span class="n">i</span> <span class="n">j</span> <span class="bp">*</span> <span class="o">(</span><span class="bp">-</span><span class="mi">1</span> <span class="o">:</span> <span class="n">R</span><span class="o">)</span> <span class="bp">^</span> <span class="o">(</span><span class="n">i</span><span class="bp">.</span><span class="n">val</span> <span class="bp">+</span> <span class="n">j</span><span class="bp">.</span><span class="n">val</span><span class="o">)</span> <span class="bp">*</span> <span class="n">det&#39;</span> <span class="o">(</span><span class="n">minor</span> <span class="n">M</span> <span class="o">(</span><span class="n">fin</span><span class="bp">.</span><span class="n">succ_above</span> <span class="n">i</span><span class="o">)</span> <span class="o">(</span><span class="n">fin</span><span class="bp">.</span><span class="n">succ_above</span> <span class="n">j</span><span class="o">))</span> <span class="mi">0</span><span class="o">)</span>
+  <span class="bp">|</span> <span class="bp">⟨</span><span class="n">k</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">,</span> <span class="n">hk</span><span class="bp">⟩</span> <span class="o">:=</span> <span class="err">∑</span> <span class="n">j</span><span class="o">,</span> <span class="o">(</span><span class="n">M</span> <span class="n">i</span> <span class="n">j</span> <span class="bp">*</span> <span class="o">(</span><span class="bp">-</span><span class="mi">1</span> <span class="o">:</span> <span class="n">R</span><span class="o">)</span> <span class="bp">^</span> <span class="o">(</span><span class="n">i</span><span class="bp">.</span><span class="n">val</span> <span class="bp">+</span> <span class="n">j</span><span class="bp">.</span><span class="n">val</span><span class="o">)</span> <span class="bp">*</span> <span class="n">det&#39;</span> <span class="o">(</span><span class="n">minor</span> <span class="n">M</span> <span class="o">(</span><span class="n">fin</span><span class="bp">.</span><span class="n">succ_above</span> <span class="n">i</span><span class="o">)</span> <span class="o">(</span><span class="n">fin</span><span class="bp">.</span><span class="n">succ_above</span> <span class="n">j</span><span class="o">))</span>
+      <span class="bp">⟨</span><span class="n">k</span><span class="o">,</span> <span class="o">(</span><span class="n">add_lt_add_iff_right</span> <span class="mi">1</span><span class="o">)</span><span class="bp">.</span><span class="n">mp</span> <span class="n">hk</span><span class="bp">⟩</span>
+      <span class="o">)</span>
+  <span class="kn">end</span>
+
+<span class="c1">-- this seems to work</span>
+<span class="bp">#</span><span class="n">reduce</span> <span class="n">det&#39;</span> <span class="bp">!</span><span class="o">[</span><span class="bp">!</span><span class="o">[</span><span class="n">a</span><span class="o">,</span> <span class="n">b</span><span class="o">],</span> <span class="bp">!</span><span class="o">[</span><span class="n">c</span><span class="o">,</span> <span class="n">d</span><span class="o">]]</span> <span class="mi">0</span>
+<span class="c1">-- field.add (field.mul (field.mul a field.one) d)</span>
+<span class="c1">-- (field.add (field.mul (field.mul b (field.mul (field.neg field.one) field.one)) c) field.zero)</span>
+
+<span class="kn">example</span> <span class="o">{</span><span class="n">R</span> <span class="o">:</span> <span class="kt">Type</span><span class="bp">*</span><span class="o">}</span> <span class="o">[</span><span class="n">field</span> <span class="n">R</span><span class="o">]</span> <span class="o">{</span><span class="n">a</span> <span class="n">b</span> <span class="n">c</span> <span class="n">d</span> <span class="o">:</span> <span class="n">R</span><span class="o">}</span> <span class="o">{</span><span class="n">n&#39;</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">}</span> <span class="o">:</span> <span class="n">det&#39;</span> <span class="bp">!</span><span class="o">[</span><span class="bp">!</span><span class="o">[</span><span class="n">a</span><span class="o">,</span> <span class="n">b</span><span class="o">],</span> <span class="bp">!</span><span class="o">[</span><span class="n">c</span><span class="o">,</span> <span class="n">d</span><span class="o">]]</span> <span class="mi">0</span> <span class="bp">=</span> <span class="n">a</span> <span class="bp">*</span> <span class="n">d</span> <span class="bp">-</span> <span class="n">b</span> <span class="bp">*</span> <span class="n">c</span> <span class="o">:=</span>
+<span class="k">begin</span>
+  <span class="n">simp</span> <span class="o">[</span><span class="n">det&#39;</span><span class="o">,</span> <span class="n">minor</span><span class="o">,</span> <span class="n">vec_cons</span><span class="o">],</span>
+  <span class="n">sorry</span><span class="o">,</span>
+<span class="kn">end</span>
+
+<span class="c">/-</span><span class="cm"></span>
+<span class="cm">example {R : Type ?} {n&#39; : ℕ}</span>
+<span class="cm">  [field R]</span>
+<span class="cm">  {a b c d : R} :</span>
+<span class="cm">  det&#39;._match_1 0</span>
+<span class="cm">      (fin.cons (fin.cons a (fin.cons b vec_empty))</span>
+<span class="cm">         (fin.cons (fin.cons c (fin.cons d vec_empty)) vec_empty))</span>
+<span class="cm">      0</span>
+<span class="cm">      (λ (h : 0 &lt; 0 + 2) (j : fin (0 + 2)),</span>
+<span class="cm">         fin.cons (fin.cons a (fin.cons b vec_empty))</span>
+<span class="cm">           (fin.cons (fin.cons c (fin.cons d vec_empty)) vec_empty)</span>
+<span class="cm">           (0.succ_above 0)</span>
+<span class="cm">           (j.succ_above 0))</span>
+<span class="cm">      (λ (k : ℕ) (hk : k + 1 &lt; 0 + 2) (j : fin (0 + 2)),</span>
+<span class="cm">         fin.cons (fin.cons a (fin.cons b vec_empty))</span>
+<span class="cm">           (fin.cons (fin.cons c (fin.cons d vec_empty)) vec_empty)</span>
+<span class="cm">           (0.succ_above ⟨k, _⟩)</span>
+<span class="cm">           (j.succ_above ⟨k, _⟩))</span>
+<span class="cm">      0 =</span>
+<span class="cm">    a * d - b * c :=</span>
+<span class="cm">begin</span>
+<span class="cm">  admit</span>
+<span class="cm">end</span>
+<span class="cm">--/</span>
+</code></pre></div>
+
+
+
+<a name="204142617"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113489-new%20members/topic/Working%20with%20proofs%20on%20eq%20compiler%20defns/near/204142617" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="http://robertylewis.com/archive/stream/113489-new-members/topic/Working.20with.20proofs.20on.20eq.20compiler.20defns.html#204142617">(Jul 16 2020 at 21:03)</a>:</h4>
+<p>Can you not just put <code>| (n + 2) M ⟨0, h⟩ := ... | (n + 2) M ⟨k + 1, hk⟩ := ...</code> in the definition, and avoid <code>match</code>? Just a guess.</p>
+
+
+
+<a name="204150733"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113489-new%20members/topic/Working%20with%20proofs%20on%20eq%20compiler%20defns/near/204150733" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Yakov Pechersky <a href="http://robertylewis.com/archive/stream/113489-new-members/topic/Working.20with.20proofs.20on.20eq.20compiler.20defns.html#204150733">(Jul 16 2020 at 22:21)</a>:</h4>
+<p>Okay, this works. But how is<code>#reduce</code> able to reduce through the sum, but I have to go through the <code>calc, rw</code> step?</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="n">data</span><span class="bp">.</span><span class="n">matrix</span><span class="bp">.</span><span class="kn">notation</span>
+<span class="kn">import</span> <span class="n">data</span><span class="bp">.</span><span class="n">real</span><span class="bp">.</span><span class="n">basic</span>
+
+<span class="kn">universe</span> <span class="n">u</span>
+<span class="kn">variables</span> <span class="o">{</span><span class="n">R</span> <span class="o">:</span> <span class="kt">Type</span><span class="bp">*</span><span class="o">}</span> <span class="o">[</span><span class="n">field</span> <span class="n">R</span><span class="o">]</span>
+<span class="kn">variables</span> <span class="o">{</span><span class="n">n</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">}</span>
+
+<span class="kn">variables</span> <span class="o">(</span><span class="n">a</span> <span class="n">b</span> <span class="n">c</span> <span class="n">d</span> <span class="o">:</span> <span class="n">R</span><span class="o">)</span>
+<span class="kn">variables</span> <span class="o">(</span><span class="n">A</span> <span class="n">B</span> <span class="o">:</span> <span class="n">matrix</span> <span class="o">(</span><span class="n">fin</span> <span class="n">n</span><span class="o">)</span> <span class="o">(</span><span class="n">fin</span> <span class="n">n</span><span class="o">)</span> <span class="n">R</span><span class="o">)</span>
+
+<span class="n">open_locale</span> <span class="n">matrix</span> <span class="n">big_operators</span>
+<span class="kn">open</span> <span class="n">matrix</span>
+
+<span class="n">def</span> <span class="n">det&#39;</span> <span class="o">{</span><span class="n">R</span> <span class="o">:</span> <span class="kt">Type</span><span class="bp">*</span><span class="o">}</span> <span class="o">[</span><span class="n">field</span> <span class="n">R</span><span class="o">]</span> <span class="o">:</span>
+    <span class="bp">Π</span> <span class="o">{</span><span class="n">n</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">},</span> <span class="n">matrix</span> <span class="o">(</span><span class="n">fin</span> <span class="n">n</span><span class="o">)</span> <span class="o">(</span><span class="n">fin</span> <span class="n">n</span><span class="o">)</span> <span class="n">R</span> <span class="bp">-&gt;</span> <span class="n">fin</span> <span class="n">n</span> <span class="bp">-&gt;</span> <span class="n">R</span>
+<span class="bp">|</span> <span class="mi">0</span> <span class="bp">_</span> <span class="bp">_</span> <span class="o">:=</span> <span class="mi">1</span>
+<span class="bp">|</span> <span class="mi">1</span> <span class="n">M</span> <span class="n">i</span> <span class="o">:=</span> <span class="n">M</span> <span class="n">i</span> <span class="n">i</span>
+<span class="bp">|</span> <span class="o">(</span><span class="n">n</span> <span class="bp">+</span> <span class="mi">2</span><span class="o">)</span> <span class="n">M</span> <span class="bp">⟨</span><span class="mi">0</span><span class="o">,</span> <span class="n">h</span><span class="bp">⟩</span> <span class="o">:=</span> <span class="err">∑</span> <span class="n">j</span><span class="o">,</span> <span class="o">(</span><span class="n">M</span> <span class="mi">0</span> <span class="n">j</span> <span class="bp">*</span> <span class="o">(</span><span class="bp">-</span><span class="mi">1</span> <span class="o">:</span> <span class="n">R</span><span class="o">)</span> <span class="bp">^</span> <span class="o">(</span><span class="n">j</span><span class="bp">.</span><span class="n">val</span><span class="o">)</span> <span class="bp">*</span> <span class="n">det&#39;</span> <span class="o">(</span><span class="n">minor</span> <span class="n">M</span> <span class="o">(</span><span class="n">fin</span><span class="bp">.</span><span class="n">succ_above</span> <span class="bp">⟨</span><span class="mi">0</span><span class="o">,</span> <span class="n">h</span><span class="bp">⟩</span><span class="o">)</span> <span class="o">(</span><span class="n">fin</span><span class="bp">.</span><span class="n">succ_above</span> <span class="n">j</span><span class="o">))</span> <span class="mi">0</span><span class="o">)</span>
+<span class="bp">|</span> <span class="o">(</span><span class="n">n</span> <span class="bp">+</span> <span class="mi">2</span><span class="o">)</span> <span class="n">M</span> <span class="bp">⟨</span><span class="n">k</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">,</span> <span class="n">hk</span><span class="bp">⟩</span> <span class="o">:=</span> <span class="err">∑</span> <span class="n">j</span><span class="o">,</span> <span class="o">(</span><span class="n">M</span> <span class="bp">⟨</span><span class="n">k</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">,</span> <span class="n">hk</span><span class="bp">⟩</span> <span class="n">j</span> <span class="bp">*</span> <span class="o">(</span><span class="bp">-</span><span class="mi">1</span> <span class="o">:</span> <span class="n">R</span><span class="o">)</span> <span class="bp">^</span> <span class="o">(</span><span class="n">k</span> <span class="bp">+</span> <span class="mi">1</span> <span class="bp">+</span> <span class="n">j</span><span class="bp">.</span><span class="n">val</span><span class="o">)</span> <span class="bp">*</span> <span class="n">det&#39;</span> <span class="o">(</span><span class="n">minor</span> <span class="n">M</span> <span class="o">(</span><span class="n">fin</span><span class="bp">.</span><span class="n">succ_above</span> <span class="bp">⟨</span><span class="n">k</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">,</span> <span class="n">hk</span><span class="bp">⟩</span><span class="o">)</span> <span class="o">(</span><span class="n">fin</span><span class="bp">.</span><span class="n">succ_above</span> <span class="n">j</span><span class="o">))</span>
+      <span class="bp">⟨</span><span class="n">k</span><span class="o">,</span> <span class="o">(</span><span class="n">add_lt_add_iff_right</span> <span class="mi">1</span><span class="o">)</span><span class="bp">.</span><span class="n">mp</span> <span class="n">hk</span><span class="bp">⟩</span>
+      <span class="o">)</span>
+
+<span class="c1">-- this seems to work</span>
+<span class="bp">#</span><span class="n">reduce</span> <span class="n">det&#39;</span> <span class="bp">!</span><span class="o">[</span><span class="bp">!</span><span class="o">[</span><span class="n">a</span><span class="o">,</span> <span class="n">b</span><span class="o">],</span> <span class="bp">!</span><span class="o">[</span><span class="n">c</span><span class="o">,</span> <span class="n">d</span><span class="o">]]</span> <span class="mi">0</span>
+<span class="c1">-- field.add (field.mul (field.mul a field.one) d)</span>
+<span class="c1">-- (field.add (field.mul (field.mul b (field.mul (field.neg field.one) field.one)) c) field.zero)</span>
+
+<span class="kn">example</span> <span class="o">{</span><span class="n">R</span> <span class="o">:</span> <span class="kt">Type</span><span class="bp">*</span><span class="o">}</span> <span class="o">[</span><span class="n">field</span> <span class="n">R</span><span class="o">]</span> <span class="o">{</span><span class="n">a</span> <span class="n">b</span> <span class="n">c</span> <span class="n">d</span> <span class="o">:</span> <span class="n">R</span><span class="o">}</span> <span class="o">{</span><span class="n">n&#39;</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">}</span> <span class="o">:</span> <span class="n">det&#39;</span> <span class="bp">!</span><span class="o">[</span><span class="bp">!</span><span class="o">[</span><span class="n">a</span><span class="o">,</span> <span class="n">b</span><span class="o">],</span> <span class="bp">!</span><span class="o">[</span><span class="n">c</span><span class="o">,</span> <span class="n">d</span><span class="o">]]</span> <span class="mi">0</span> <span class="bp">=</span> <span class="n">a</span> <span class="bp">*</span> <span class="n">d</span> <span class="bp">-</span> <span class="n">b</span> <span class="bp">*</span> <span class="n">c</span> <span class="o">:=</span>
+<span class="k">begin</span>
+  <span class="n">dunfold</span> <span class="n">det&#39;</span><span class="o">,</span>
+  <span class="k">have</span> <span class="o">:</span> <span class="bp">∀</span> <span class="n">f</span> <span class="o">:</span> <span class="n">fin</span> <span class="mi">2</span> <span class="bp">→</span> <span class="n">R</span><span class="o">,</span> <span class="err">∑</span> <span class="n">x</span> <span class="o">:</span> <span class="n">fin</span> <span class="mi">2</span><span class="o">,</span> <span class="n">f</span> <span class="n">x</span> <span class="bp">=</span> <span class="n">f</span> <span class="mi">0</span> <span class="bp">+</span> <span class="n">f</span> <span class="mi">1</span><span class="o">,</span> <span class="k">by</span>
+    <span class="o">{</span> <span class="n">intro</span> <span class="n">f</span><span class="o">,</span>
+      <span class="k">calc</span> <span class="err">∑</span> <span class="n">x</span> <span class="o">:</span> <span class="n">fin</span> <span class="mi">2</span><span class="o">,</span> <span class="n">f</span> <span class="n">x</span> <span class="bp">=</span> <span class="bp">_</span> <span class="bp">+</span> <span class="bp">_</span> <span class="o">:</span> <span class="n">rfl</span>
+      <span class="bp">...</span>                   <span class="bp">=</span> <span class="n">f</span> <span class="mi">0</span> <span class="bp">+</span> <span class="n">f</span> <span class="mi">1</span> <span class="o">:</span> <span class="k">by</span> <span class="o">{</span> <span class="n">simp</span><span class="o">,</span> <span class="n">ring</span> <span class="o">}</span> <span class="o">},</span>
+  <span class="n">rw</span> <span class="n">this</span><span class="o">,</span>
+  <span class="n">simpa</span><span class="o">,</span>
+<span class="kn">end</span>
+</code></pre></div>
+
+
+
+<a name="204151696"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113489-new%20members/topic/Working%20with%20proofs%20on%20eq%20compiler%20defns/near/204151696" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="http://robertylewis.com/archive/stream/113489-new-members/topic/Working.20with.20proofs.20on.20eq.20compiler.20defns.html#204151696">(Jul 16 2020 at 22:33)</a>:</h4>
+<p>Maybe you can <code>show</code> what #reduce is printing out (there seem to be some negs and ones in there) and go on from there?</p>
+
+
+
+<a name="204163851"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113489-new%20members/topic/Working%20with%20proofs%20on%20eq%20compiler%20defns/near/204163851" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Scott Morrison <a href="http://robertylewis.com/archive/stream/113489-new-members/topic/Working.20with.20proofs.20on.20eq.20compiler.20defns.html#204163851">(Jul 17 2020 at 01:50)</a>:</h4>
+<p>There's a <code>unfold_aux</code> tactic which is sometimes helpful in these situations.</p>
+
+
+
+<a name="204165279"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113489-new%20members/topic/Working%20with%20proofs%20on%20eq%20compiler%20defns/near/204165279" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Yakov Pechersky <a href="http://robertylewis.com/archive/stream/113489-new-members/topic/Working.20with.20proofs.20on.20eq.20compiler.20defns.html#204165279">(Jul 17 2020 at 02:26)</a>:</h4>
+<p>I'm not sure where you would place the <code>unfold_aux</code> tactic. (Also, it's not listed in the docs at <a href="https://leanprover-community.github.io/mathlib_docs/tactics.html">https://leanprover-community.github.io/mathlib_docs/tactics.html</a>). I thought I would be able to also show the equivalent result for 3 dimensional matrices, but something is up with the arrangement of terms. The <code>#reduce</code> line for 3 dimensions seems like it works still.</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="n">data</span><span class="bp">.</span><span class="n">matrix</span><span class="bp">.</span><span class="kn">notation</span>
+<span class="kn">import</span> <span class="n">data</span><span class="bp">.</span><span class="n">real</span><span class="bp">.</span><span class="n">basic</span>
+
+<span class="kn">universe</span> <span class="n">u</span>
+<span class="kn">variables</span> <span class="o">{</span><span class="n">R</span> <span class="o">:</span> <span class="kt">Type</span><span class="bp">*</span><span class="o">}</span> <span class="o">[</span><span class="n">field</span> <span class="n">R</span><span class="o">]</span>
+<span class="kn">variables</span> <span class="o">{</span><span class="n">n</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">}</span>
+
+<span class="kn">variables</span> <span class="o">(</span><span class="n">a</span> <span class="n">b</span> <span class="n">c</span> <span class="n">d</span> <span class="o">:</span> <span class="n">R</span><span class="o">)</span>
+<span class="kn">variables</span> <span class="o">(</span><span class="n">A</span> <span class="n">B</span> <span class="o">:</span> <span class="n">matrix</span> <span class="o">(</span><span class="n">fin</span> <span class="n">n</span><span class="o">)</span> <span class="o">(</span><span class="n">fin</span> <span class="n">n</span><span class="o">)</span> <span class="n">R</span><span class="o">)</span>
+
+<span class="n">open_locale</span> <span class="n">matrix</span> <span class="n">big_operators</span>
+<span class="kn">open</span> <span class="n">matrix</span>
+
+<span class="n">def</span> <span class="n">det&#39;</span> <span class="o">{</span><span class="n">R</span> <span class="o">:</span> <span class="kt">Type</span><span class="bp">*</span><span class="o">}</span> <span class="o">[</span><span class="n">field</span> <span class="n">R</span><span class="o">]</span> <span class="o">:</span>
+    <span class="bp">Π</span> <span class="o">{</span><span class="n">n</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">},</span> <span class="n">matrix</span> <span class="o">(</span><span class="n">fin</span> <span class="n">n</span><span class="o">)</span> <span class="o">(</span><span class="n">fin</span> <span class="n">n</span><span class="o">)</span> <span class="n">R</span> <span class="bp">-&gt;</span> <span class="n">fin</span> <span class="n">n</span> <span class="bp">-&gt;</span> <span class="n">R</span>
+<span class="bp">|</span> <span class="mi">0</span> <span class="bp">_</span> <span class="bp">_</span> <span class="o">:=</span> <span class="mi">1</span>
+<span class="bp">|</span> <span class="mi">1</span> <span class="n">M</span> <span class="n">i</span> <span class="o">:=</span> <span class="n">M</span> <span class="n">i</span> <span class="n">i</span>
+<span class="bp">|</span> <span class="o">(</span><span class="n">n</span> <span class="bp">+</span> <span class="mi">2</span><span class="o">)</span> <span class="n">M</span> <span class="bp">⟨</span><span class="mi">0</span><span class="o">,</span> <span class="n">h</span><span class="bp">⟩</span> <span class="o">:=</span> <span class="err">∑</span> <span class="n">j</span><span class="o">,</span> <span class="o">(</span><span class="n">M</span> <span class="mi">0</span> <span class="n">j</span> <span class="bp">*</span> <span class="o">(</span><span class="bp">-</span><span class="mi">1</span> <span class="o">:</span> <span class="n">R</span><span class="o">)</span> <span class="bp">^</span> <span class="o">(</span><span class="n">j</span><span class="bp">.</span><span class="n">val</span><span class="o">)</span> <span class="bp">*</span> <span class="n">det&#39;</span> <span class="o">(</span><span class="n">minor</span> <span class="n">M</span> <span class="o">(</span><span class="n">fin</span><span class="bp">.</span><span class="n">succ_above</span> <span class="bp">⟨</span><span class="mi">0</span><span class="o">,</span> <span class="n">h</span><span class="bp">⟩</span><span class="o">)</span> <span class="o">(</span><span class="n">fin</span><span class="bp">.</span><span class="n">succ_above</span> <span class="n">j</span><span class="o">))</span> <span class="mi">0</span><span class="o">)</span>
+<span class="bp">|</span> <span class="o">(</span><span class="n">n</span> <span class="bp">+</span> <span class="mi">2</span><span class="o">)</span> <span class="n">M</span> <span class="bp">⟨</span><span class="n">k</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">,</span> <span class="n">hk</span><span class="bp">⟩</span> <span class="o">:=</span> <span class="err">∑</span> <span class="n">j</span><span class="o">,</span> <span class="o">(</span><span class="n">M</span> <span class="bp">⟨</span><span class="n">k</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">,</span> <span class="n">hk</span><span class="bp">⟩</span> <span class="n">j</span> <span class="bp">*</span> <span class="o">(</span><span class="bp">-</span><span class="mi">1</span> <span class="o">:</span> <span class="n">R</span><span class="o">)</span> <span class="bp">^</span> <span class="o">(</span><span class="n">k</span> <span class="bp">+</span> <span class="mi">1</span> <span class="bp">+</span> <span class="n">j</span><span class="bp">.</span><span class="n">val</span><span class="o">)</span> <span class="bp">*</span> <span class="n">det&#39;</span> <span class="o">(</span><span class="n">minor</span> <span class="n">M</span> <span class="o">(</span><span class="n">fin</span><span class="bp">.</span><span class="n">succ_above</span> <span class="bp">⟨</span><span class="n">k</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">,</span> <span class="n">hk</span><span class="bp">⟩</span><span class="o">)</span> <span class="o">(</span><span class="n">fin</span><span class="bp">.</span><span class="n">succ_above</span> <span class="n">j</span><span class="o">))</span>
+      <span class="bp">⟨</span><span class="n">k</span><span class="o">,</span> <span class="o">(</span><span class="n">add_lt_add_iff_right</span> <span class="mi">1</span><span class="o">)</span><span class="bp">.</span><span class="n">mp</span> <span class="n">hk</span><span class="bp">⟩</span>
+      <span class="o">)</span>
+
+<span class="kn">example</span> <span class="o">{</span><span class="n">R</span> <span class="o">:</span> <span class="kt">Type</span><span class="bp">*</span><span class="o">}</span> <span class="o">[</span><span class="n">field</span> <span class="n">R</span><span class="o">]</span> <span class="o">{</span><span class="n">a</span> <span class="n">b</span> <span class="n">c</span> <span class="n">d</span> <span class="o">:</span> <span class="n">R</span><span class="o">}</span> <span class="o">{</span><span class="n">n&#39;</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">}</span> <span class="o">:</span> <span class="n">det&#39;</span> <span class="bp">!</span><span class="o">[</span><span class="bp">!</span><span class="o">[</span><span class="n">a</span><span class="o">,</span> <span class="n">b</span><span class="o">],</span> <span class="bp">!</span><span class="o">[</span><span class="n">c</span><span class="o">,</span> <span class="n">d</span><span class="o">]]</span> <span class="mi">0</span> <span class="bp">=</span> <span class="n">a</span> <span class="bp">*</span> <span class="n">d</span> <span class="bp">-</span> <span class="n">b</span> <span class="bp">*</span> <span class="n">c</span> <span class="o">:=</span>
+<span class="k">begin</span>
+  <span class="n">dunfold</span> <span class="n">det&#39;</span><span class="o">,</span>
+  <span class="k">have</span> <span class="o">:</span> <span class="bp">∀</span> <span class="n">f</span> <span class="o">:</span> <span class="n">fin</span> <span class="mi">2</span> <span class="bp">→</span> <span class="n">R</span><span class="o">,</span> <span class="err">∑</span> <span class="n">x</span> <span class="o">:</span> <span class="n">fin</span> <span class="mi">2</span><span class="o">,</span> <span class="n">f</span> <span class="n">x</span> <span class="bp">=</span> <span class="n">f</span> <span class="mi">0</span> <span class="bp">+</span> <span class="n">f</span> <span class="mi">1</span><span class="o">,</span> <span class="k">by</span>
+    <span class="o">{</span> <span class="n">intro</span> <span class="n">f</span><span class="o">,</span>
+      <span class="k">calc</span> <span class="err">∑</span> <span class="n">x</span> <span class="o">:</span> <span class="n">fin</span> <span class="mi">2</span><span class="o">,</span> <span class="n">f</span> <span class="n">x</span> <span class="bp">=</span> <span class="bp">_</span> <span class="bp">+</span> <span class="bp">_</span> <span class="o">:</span> <span class="n">rfl</span>
+      <span class="bp">...</span>                   <span class="bp">=</span> <span class="n">f</span> <span class="mi">0</span> <span class="bp">+</span> <span class="n">f</span> <span class="mi">1</span> <span class="o">:</span> <span class="k">by</span> <span class="o">{</span> <span class="n">simp</span><span class="o">,</span> <span class="n">ring</span> <span class="o">}</span> <span class="o">},</span>
+  <span class="n">rw</span> <span class="n">this</span><span class="o">,</span>
+  <span class="n">simpa</span><span class="o">,</span>
+<span class="kn">end</span>
+
+<span class="kn">variables</span> <span class="o">{</span><span class="n">e</span> <span class="n">f</span> <span class="n">g</span> <span class="n">h</span> <span class="n">i</span><span class="o">:</span> <span class="n">R</span><span class="o">}</span>
+
+<span class="bp">#</span><span class="n">reduce</span> <span class="n">det&#39;</span> <span class="bp">!</span><span class="o">[</span><span class="bp">!</span><span class="o">[</span><span class="n">a</span><span class="o">,</span> <span class="n">b</span><span class="o">,</span> <span class="n">c</span><span class="o">],</span> <span class="bp">!</span><span class="o">[</span><span class="n">d</span><span class="o">,</span> <span class="n">e</span><span class="o">,</span> <span class="n">f</span><span class="o">],</span> <span class="bp">!</span><span class="o">[</span><span class="n">g</span><span class="o">,</span> <span class="n">h</span><span class="o">,</span> <span class="n">i</span><span class="o">]]</span> <span class="mi">0</span>
+
+<span class="kn">example</span> <span class="o">{</span><span class="n">R</span> <span class="o">:</span> <span class="kt">Type</span><span class="bp">*</span><span class="o">}</span> <span class="o">[</span><span class="n">field</span> <span class="n">R</span><span class="o">]</span> <span class="o">{</span><span class="n">a</span> <span class="n">b</span> <span class="n">c</span> <span class="n">d</span> <span class="n">e</span> <span class="n">f</span> <span class="n">g</span> <span class="n">h</span> <span class="n">i</span><span class="o">:</span> <span class="n">R</span><span class="o">}</span> <span class="o">{</span><span class="n">n&#39;</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">}</span> <span class="o">:</span>
+  <span class="n">det&#39;</span> <span class="bp">!</span><span class="o">[</span><span class="bp">!</span><span class="o">[</span><span class="n">a</span><span class="o">,</span> <span class="n">b</span><span class="o">,</span> <span class="n">c</span><span class="o">],</span> <span class="bp">!</span><span class="o">[</span><span class="n">d</span><span class="o">,</span> <span class="n">e</span><span class="o">,</span> <span class="n">f</span><span class="o">],</span> <span class="bp">!</span><span class="o">[</span><span class="n">g</span><span class="o">,</span> <span class="n">h</span><span class="o">,</span> <span class="n">i</span><span class="o">]]</span> <span class="mi">0</span> <span class="bp">=</span>
+  <span class="n">a</span> <span class="bp">*</span> <span class="n">e</span> <span class="bp">*</span> <span class="n">i</span> <span class="bp">-</span> <span class="n">a</span> <span class="bp">*</span> <span class="n">f</span> <span class="bp">*</span> <span class="n">h</span> <span class="bp">-</span> <span class="n">b</span> <span class="bp">*</span> <span class="n">d</span> <span class="bp">*</span> <span class="n">i</span> <span class="bp">+</span> <span class="n">b</span> <span class="bp">*</span> <span class="n">f</span> <span class="bp">*</span> <span class="n">g</span> <span class="bp">+</span> <span class="n">c</span> <span class="bp">*</span> <span class="n">d</span> <span class="bp">*</span> <span class="n">h</span> <span class="bp">-</span> <span class="n">c</span> <span class="bp">*</span> <span class="n">e</span> <span class="bp">*</span> <span class="n">g</span> <span class="o">:=</span>
+<span class="k">begin</span>
+  <span class="n">dunfold</span> <span class="n">det&#39;</span><span class="o">,</span>
+  <span class="k">have</span> <span class="n">f3</span> <span class="o">:</span> <span class="bp">∀</span> <span class="n">f</span> <span class="o">:</span> <span class="n">fin</span> <span class="mi">3</span> <span class="bp">→</span> <span class="n">R</span><span class="o">,</span> <span class="err">∑</span> <span class="n">x</span> <span class="o">:</span> <span class="n">fin</span> <span class="mi">3</span><span class="o">,</span> <span class="n">f</span> <span class="n">x</span> <span class="bp">=</span> <span class="n">f</span> <span class="mi">0</span> <span class="bp">+</span> <span class="n">f</span> <span class="mi">1</span> <span class="bp">+</span> <span class="n">f</span> <span class="mi">2</span><span class="o">,</span> <span class="k">by</span>
+    <span class="o">{</span> <span class="n">intro</span> <span class="n">f</span><span class="o">,</span>
+      <span class="k">calc</span> <span class="err">∑</span> <span class="n">x</span> <span class="o">:</span> <span class="n">fin</span> <span class="mi">3</span><span class="o">,</span> <span class="n">f</span> <span class="n">x</span> <span class="bp">=</span> <span class="bp">_</span> <span class="bp">+</span> <span class="bp">_</span><span class="o">:</span> <span class="n">rfl</span>
+      <span class="bp">...</span>                   <span class="bp">=</span> <span class="n">f</span> <span class="mi">0</span> <span class="bp">+</span> <span class="n">f</span> <span class="mi">1</span> <span class="bp">+</span> <span class="n">f</span> <span class="mi">2</span><span class="o">:</span> <span class="k">by</span> <span class="o">{</span> <span class="n">simp</span><span class="o">,</span> <span class="n">ring</span> <span class="o">}</span> <span class="o">},</span>
+  <span class="n">rw</span> <span class="n">f3</span><span class="o">,</span>
+  <span class="k">have</span> <span class="n">f2</span> <span class="o">:</span> <span class="bp">∀</span> <span class="n">f</span> <span class="o">:</span> <span class="n">fin</span> <span class="mi">2</span> <span class="bp">→</span> <span class="n">R</span><span class="o">,</span> <span class="err">∑</span> <span class="n">x</span> <span class="o">:</span> <span class="n">fin</span> <span class="mi">2</span><span class="o">,</span> <span class="n">f</span> <span class="n">x</span> <span class="bp">=</span> <span class="n">f</span> <span class="mi">0</span> <span class="bp">+</span> <span class="n">f</span> <span class="mi">1</span><span class="o">,</span> <span class="k">by</span>
+    <span class="o">{</span> <span class="n">intro</span> <span class="n">f</span><span class="o">,</span>
+      <span class="k">calc</span> <span class="err">∑</span> <span class="n">x</span> <span class="o">:</span> <span class="n">fin</span> <span class="mi">2</span><span class="o">,</span> <span class="n">f</span> <span class="n">x</span> <span class="bp">=</span> <span class="bp">_</span> <span class="bp">+</span> <span class="bp">_</span> <span class="o">:</span> <span class="n">rfl</span>
+      <span class="bp">...</span>                   <span class="bp">=</span> <span class="n">f</span> <span class="mi">0</span> <span class="bp">+</span> <span class="n">f</span> <span class="mi">1</span> <span class="o">:</span> <span class="k">by</span> <span class="o">{</span> <span class="n">simp</span><span class="o">,</span> <span class="n">ring</span> <span class="o">}</span> <span class="o">},</span>
+  <span class="n">rw</span> <span class="n">f2</span><span class="o">,</span>
+  <span class="n">abel</span><span class="o">,</span>
+  <span class="n">simp</span><span class="o">,</span>
+  <span class="n">sorry</span><span class="o">,</span>
+<span class="kn">end</span>
+</code></pre></div>
+
+
+
+<a name="204165517"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113489-new%20members/topic/Working%20with%20proofs%20on%20eq%20compiler%20defns/near/204165517" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Scott Morrison <a href="http://robertylewis.com/archive/stream/113489-new-members/topic/Working.20with.20proofs.20on.20eq.20compiler.20defns.html#204165517">(Jul 17 2020 at 02:32)</a>:</h4>
+<p><span class="user-mention" data-user-id="123965">@Bryan Gin-ge Chen</span> I don't actually know this --- what do we need to do to make core tactics appear in the mathlib documentation?</p>
+
+
+
+<a name="204166139"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113489-new%20members/topic/Working%20with%20proofs%20on%20eq%20compiler%20defns/near/204166139" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Scott Morrison <a href="http://robertylewis.com/archive/stream/113489-new-members/topic/Working.20with.20proofs.20on.20eq.20compiler.20defns.html#204166139">(Jul 17 2020 at 02:50)</a>:</h4>
+<p>What if you add lots of lemmas like </p>
+<div class="codehilite"><pre><span></span><code><span class="kn">lemma</span> <span class="n">foo</span> <span class="o">:</span> <span class="o">(</span><span class="mi">1</span> <span class="o">:</span> <span class="n">fin</span> <span class="mi">2</span><span class="o">)</span><span class="bp">.</span><span class="n">succ_above</span> <span class="o">(</span><span class="mi">0</span> <span class="o">:</span> <span class="n">fin</span> <span class="mi">1</span><span class="o">)</span> <span class="bp">=</span> <span class="o">(</span><span class="mi">2</span> <span class="o">:</span> <span class="n">fin</span> <span class="mi">2</span><span class="o">)</span> <span class="o">:=</span> <span class="n">rfl</span>
+</code></pre></div>
+
+
+<p>Then <code>dsimp [minor], dsimp [foo]</code> makes some further progress.</p>
+
+
+
+<a name="204166630"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113489-new%20members/topic/Working%20with%20proofs%20on%20eq%20compiler%20defns/near/204166630" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bryan Gin-ge Chen <a href="http://robertylewis.com/archive/stream/113489-new-members/topic/Working.20with.20proofs.20on.20eq.20compiler.20defns.html#204166630">(Jul 17 2020 at 03:07)</a>:</h4>
+<p><span class="user-mention" data-user-id="110087">@Scott Morrison</span> We've been putting tactic doc entries for core tactics in <a href="https://github.com/leanprover-community/mathlib/blob/master/src/tactic/lean_core_docs.lean"><code>tactic.lean_core_docs</code></a> (Thanks to <span class="user-mention" data-user-id="110038">@Kevin Buzzard</span> for adding these!).</p>
+
+
+
+{% endraw %}
+
+<hr><p>Last updated: Jul 19 2020 at 13:36 UTC</p>

@@ -1,0 +1,422 @@
+[
+    {
+        "content": "<p>I remember some people talking about how it's hard to think of a good API for probability (with random variables and independence and all that) in the context of proving the existence of special graphs with the probabilistic method</p>",
+        "id": 196201588,
+        "sender_full_name": "Jalex Stark",
+        "timestamp": 1588608055
+    },
+    {
+        "content": "<p>do we have any nontrivial theorems involving an infinite sequence of random variables on the same space, say a central limit theorem?</p>",
+        "id": 196201669,
+        "sender_full_name": "Jalex Stark",
+        "timestamp": 1588608100
+    },
+    {
+        "content": "<p>If not, I think that \"prove anything that looks like a central limit theorem, and then study it to understand what is needed from the probability API\" is a good line of work</p>",
+        "id": 196201789,
+        "sender_full_name": "Jalex Stark",
+        "timestamp": 1588608146
+    },
+    {
+        "content": "<p>We have a whole bunch of stuff on measure spaces. But nothing specialised to probability. At some point there was a PR by <span class=\"user-mention\" data-user-id=\"116448\">@Koundinya Vajjha</span>. I don't know what happened to it. Maybe it can be resurrected?</p>",
+        "id": 196207028,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1588610258
+    },
+    {
+        "content": "<p>Yeah, I agree that the measure spaces are mature enough that it should be easy to do probability on top of</p>",
+        "id": 196207417,
+        "sender_full_name": "Jalex Stark",
+        "timestamp": 1588610438
+    },
+    {
+        "content": "<p>Apologies. I do have a tiny probability theory library up in a different repo, but it's out of date and breaks with current mathlib. I keep putting it off but I promise to devote some time to it the next couple of weeks and will try to PR.</p>",
+        "id": 196208835,
+        "sender_full_name": "Koundinya Vajjha",
+        "timestamp": 1588611148
+    },
+    {
+        "content": "<p>PR, PR, PR before it's too late. Every Lean code that is not PRed to mathlib is doomed to bit rot.</p>",
+        "id": 196208990,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1588611229
+    },
+    {
+        "content": "<p>link to your repo?</p>",
+        "id": 196209957,
+        "sender_full_name": "Jalex Stark",
+        "timestamp": 1588611672
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"252300\">Jalex Stark</span> <a href=\"#narrow/stream/217875-Is-there.20code.20for.20X.3F/topic/probability/near/196209957\" title=\"#narrow/stream/217875-Is-there.20code.20for.20X.3F/topic/probability/near/196209957\">said</a>:</p>\n<blockquote>\n<p>link to your repo?</p>\n</blockquote>\n<p><a href=\"https://github.com/jtristan/stump-learnable/tree/master/src/lib/attributed\" title=\"https://github.com/jtristan/stump-learnable/tree/master/src/lib/attributed\">https://github.com/jtristan/stump-learnable/tree/master/src/lib/attributed</a></p>",
+        "id": 196210594,
+        "sender_full_name": "Koundinya Vajjha",
+        "timestamp": 1588611951
+    },
+    {
+        "content": "<p>This looks quite nice! I can see a pi-instance for measurable spaces, and binary products for measure spaces: is there a pi-instance for probability spaces somewhere?</p>",
+        "id": 196213638,
+        "sender_full_name": "David Wärn",
+        "timestamp": 1588613493
+    },
+    {
+        "content": "<p>no, sorry. isn't that <a href=\"https://en.wikipedia.org/wiki/Ionescu-Tulcea_theorem\" title=\"https://en.wikipedia.org/wiki/Ionescu-Tulcea_theorem\">https://en.wikipedia.org/wiki/Ionescu-Tulcea_theorem</a>?</p>",
+        "id": 196216403,
+        "sender_full_name": "Koundinya Vajjha",
+        "timestamp": 1588614903
+    },
+    {
+        "content": "<p>I think proving Ionescu Tulcea was originally what <span class=\"user-mention\" data-user-id=\"110294\">@Johannes Hölzl</span> was aiming at</p>",
+        "id": 196216615,
+        "sender_full_name": "Koundinya Vajjha",
+        "timestamp": 1588614987
+    },
+    {
+        "content": "<p>Hmm I haven't seen that. I'm thinking of something like question 14 here (countability is beside the point)<br>\n<a href=\"http://www.dpmms.cam.ac.uk/study/II/Probability%2BMeasure/ex2.pdf\" title=\"http://www.dpmms.cam.ac.uk/study/II/Probability%2BMeasure/ex2.pdf\">http://www.dpmms.cam.ac.uk/study/II/Probability%2BMeasure/ex2.pdf</a><br>\nIt seems to me like you have all the ingredients for this construction, but it's maybe a bit technical</p>",
+        "id": 196222611,
+        "sender_full_name": "David Wärn",
+        "timestamp": 1588617730
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"116448\">@Koundinya Vajjha</span> Would you mind starting a github project over at <a href=\"https://github.com/leanprover-community/mathlib/projects\" title=\"https://github.com/leanprover-community/mathlib/projects\">https://github.com/leanprover-community/mathlib/projects</a> with little stubs of what you think should be done?</p>",
+        "id": 196266991,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1588653206
+    },
+    {
+        "content": "<p>I guess what I want from a probability interface is to just expose the \"algebra of random variables\". The fact that this can be modeled with measure spaces should be left on the inside</p>",
+        "id": 197704887,
+        "sender_full_name": "Jalex Stark",
+        "timestamp": 1589555079
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"252300\">Jalex Stark</span> <a href=\"#narrow/stream/217875-Is-there.20code.20for.20X.3F/topic/probability/near/197704887\">said</a>:</p>\n<blockquote>\n<p>I guess what I want from a probability interface is to just expose the \"algebra of random variables\". The fact that this can be modeled with measure spaces should be left on the inside</p>\n</blockquote>\n<p>Many interesting theorems in probability really depend on the fact that you have a measure space, and that the notion of \"almost surely\" is well behaved. Think of the strong law of large numbers, or the martingale convergence theorem, for instance.</p>",
+        "id": 197709896,
+        "sender_full_name": "Sebastien Gouezel",
+        "timestamp": 1589557013
+    },
+    {
+        "content": "<p>how much well behavedness do you need? isn't it enough to know that countable intersections of almost sure events are almost sure?</p>",
+        "id": 197711120,
+        "sender_full_name": "Jalex Stark",
+        "timestamp": 1589557525
+    },
+    {
+        "content": "<p>isn't that basically a measure space?</p>",
+        "id": 197711457,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1589557657
+    },
+    {
+        "content": "<p>or at least a sigma algebra</p>",
+        "id": 197711498,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1589557681
+    },
+    {
+        "content": "<p>I don't know how you intend to say anything quantitative about probabilities themselves without a measure though</p>",
+        "id": 197711715,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1589557767
+    },
+    {
+        "content": "<p>I think the idea behind \"algebra of random variables\" is that you want to avoid committing to the idea that random variables are functions at all</p>",
+        "id": 197711885,
+        "sender_full_name": "Reid Barton",
+        "timestamp": 1589557846
+    },
+    {
+        "content": "<p>or at least, you want to avoid committing to the idea that they are functions on some specific measure space <span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi mathvariant=\"normal\">Ω</mi></mrow><annotation encoding=\"application/x-tex\">\\Omega</annotation></semantics></math></span><span aria-hidden=\"true\" class=\"katex-html\"><span class=\"base\"><span class=\"strut\" style=\"height:0.68333em;vertical-align:0em;\"></span><span class=\"mord\">Ω</span></span></span></span></p>",
+        "id": 197711923,
+        "sender_full_name": "Reid Barton",
+        "timestamp": 1589557863
+    },
+    {
+        "content": "<p>but you can still ask probability questions about them?</p>",
+        "id": 197711980,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1589557887
+    },
+    {
+        "content": "<p>yes</p>",
+        "id": 197712016,
+        "sender_full_name": "Jalex Stark",
+        "timestamp": 1589557904
+    },
+    {
+        "content": "<p>then can't you reverse engineer a measure space from that?</p>",
+        "id": 197712109,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1589557930
+    },
+    {
+        "content": "<p>What really matters is not that they are functions, but their joint distribution, as a measure on <span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mi mathvariant=\"double-struck\">R</mi><mi mathvariant=\"double-struck\">N</mi></msup></mrow><annotation encoding=\"application/x-tex\">\\mathbb{R}^{\\mathbb{N}}</annotation></semantics></math></span><span aria-hidden=\"true\" class=\"katex-html\"><span class=\"base\"><span class=\"strut\" style=\"height:0.845223em;vertical-align:0em;\"></span><span class=\"mord\"><span class=\"mord\"><span class=\"mord mathbb\">R</span></span><span class=\"msupsub\"><span class=\"vlist-t\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.845223em;\"><span style=\"top:-3.063em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"sizing reset-size6 size3 mtight\"><span class=\"mord mtight\"><span class=\"mord mtight\"><span class=\"mord mathbb mtight\">N</span></span></span></span></span></span></span></span></span></span></span></span></span> if you are considering real-valued random variables indexed by integers for instance.</p>",
+        "id": 197712119,
+        "sender_full_name": "Sebastien Gouezel",
+        "timestamp": 1589557933
+    },
+    {
+        "content": "<p>They still have expectations, for example. Except for the ones that don't, and that is where things start to get a bit tricky...</p>",
+        "id": 197712135,
+        "sender_full_name": "Reid Barton",
+        "timestamp": 1589557942
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"110049\">Mario Carneiro</span> <a href=\"#narrow/stream/217875-Is-there.20code.20for.20X.3F/topic/probability/near/197712109\">said</a>:</p>\n<blockquote>\n<p>then can't you reverse engineer a measure space from that?</p>\n</blockquote>\n<p>yes, once you've given any finite amount of information about your variables, there's surely some \"minimal\" measure space + functions from it that models the things you've said</p>",
+        "id": 197712243,
+        "sender_full_name": "Jalex Stark",
+        "timestamp": 1589558009
+    },
+    {
+        "content": "<p>but you want to remain agnostic about whether you're using the minimal one or an arbitrary extension of it</p>",
+        "id": 197712283,
+        "sender_full_name": "Jalex Stark",
+        "timestamp": 1589558036
+    },
+    {
+        "content": "<p>I was thinking of using all the possible questions you could ask about the variables</p>",
+        "id": 197712344,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1589558048
+    },
+    {
+        "content": "<p>(not finite)</p>",
+        "id": 197712356,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1589558057
+    },
+    {
+        "content": "<p>sure, that will have a minimal model by a measure space</p>",
+        "id": 197712410,
+        "sender_full_name": "Jalex Stark",
+        "timestamp": 1589558083
+    },
+    {
+        "content": "<p>and we remain agnostic about whether or not we're adding more variables later</p>",
+        "id": 197712436,
+        "sender_full_name": "Jalex Stark",
+        "timestamp": 1589558097
+    },
+    {
+        "content": "<p>that seems difficult to do in lean</p>",
+        "id": 197712470,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1589558113
+    },
+    {
+        "content": "<p>you can't just add elements to a type, not without rejiggering everything on top</p>",
+        "id": 197712514,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1589558134
+    },
+    {
+        "content": "<p>i agree that it's hard</p>",
+        "id": 197712672,
+        "sender_full_name": "Jalex Stark",
+        "timestamp": 1589558203
+    },
+    {
+        "content": "<p>I don't think it's adding complexity though</p>",
+        "id": 197712681,
+        "sender_full_name": "Jalex Stark",
+        "timestamp": 1589558208
+    },
+    {
+        "content": "<p>It's similar to how you might do a computation using \"indeterminates\", which you could think of as happening in a polynomial or power series ring, but then later you might introduce another indeterminate.</p>",
+        "id": 197712713,
+        "sender_full_name": "Reid Barton",
+        "timestamp": 1589558223
+    },
+    {
+        "content": "<p>if you \"do probability\" with measure spaces then you're going to be dealing with these extensions of your measure space all the time</p>",
+        "id": 197712741,
+        "sender_full_name": "Jalex Stark",
+        "timestamp": 1589558238
+    },
+    {
+        "content": "<p>if you have a measure space you already have all random variables that could ever exist, so adding a new one is trivial</p>",
+        "id": 197712747,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1589558241
+    },
+    {
+        "content": "<p>You only have the ones that exist on that space. The kind of thing you would want to add is a new variable that's independent from all of those (e.g., by forming a product measure space)</p>",
+        "id": 197712855,
+        "sender_full_name": "Reid Barton",
+        "timestamp": 1589558293
+    },
+    {
+        "content": "<p>if I want to add a new one with the constraint that it's independent from all the ones I have talked about before, without extending the space, that's not trivial<br>\nI guess the way you'd do it is to extend to a product space and then apply an isomorphism of measure spaces between the original space and its extension</p>",
+        "id": 197712879,
+        "sender_full_name": "Jalex Stark",
+        "timestamp": 1589558305
+    },
+    {
+        "content": "<p>and the point is that it would be nice to have machinery that does that for you</p>",
+        "id": 197713087,
+        "sender_full_name": "Jalex Stark",
+        "timestamp": 1589558404
+    },
+    {
+        "content": "<p>you have to keep track of the notion of \"random variables that are in scope for this discussion\"</p>",
+        "id": 197713124,
+        "sender_full_name": "Jalex Stark",
+        "timestamp": 1589558418
+    },
+    {
+        "content": "<p>but you already have to do that when doing probability informally anyway</p>",
+        "id": 197713154,
+        "sender_full_name": "Jalex Stark",
+        "timestamp": 1589558431
+    },
+    {
+        "content": "<p>Color me skeptical</p>",
+        "id": 197713173,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1589558438
+    },
+    {
+        "content": "<p>The funny thing is that type theory gets to have this built in</p>",
+        "id": 197713202,
+        "sender_full_name": "Reid Barton",
+        "timestamp": 1589558453
+    },
+    {
+        "content": "<p>gets what built in?</p>",
+        "id": 197713229,
+        "sender_full_name": "Jalex Stark",
+        "timestamp": 1589558465
+    },
+    {
+        "content": "<p>It basically took all the good ideas for itself but doesn't reexport them to the internal language</p>",
+        "id": 197713290,
+        "sender_full_name": "Reid Barton",
+        "timestamp": 1589558490
+    },
+    {
+        "content": "<p>having a variable context that can be extended by lambdas, etc</p>",
+        "id": 197713302,
+        "sender_full_name": "Reid Barton",
+        "timestamp": 1589558498
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"110049\">Mario Carneiro</span> <a href=\"#narrow/stream/217875-Is-there.20code.20for.20X.3F/topic/probability/near/197713173\">said</a>:</p>\n<blockquote>\n<p>Color me skeptical</p>\n</blockquote>\n<p>I'm taking your comment to mean \"the things you're describing sounds possible in principle, but I bet if I thought about it for a while I would find a different way to do probability that felt easier and/or more natural\"</p>",
+        "id": 197713425,
+        "sender_full_name": "Jalex Stark",
+        "timestamp": 1589558544
+    },
+    {
+        "content": "<p>You would need to first do it the hard way enough times for us to notice the pattern and abstract it into a tactic</p>",
+        "id": 197713501,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1589558578
+    },
+    {
+        "content": "<p>this is not the kind of design you are likely to get right on the first try</p>",
+        "id": 197713522,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1589558593
+    },
+    {
+        "content": "<p>I need to see some of these probability arguments where you are dynamically adding variables to give guidance about how best to model them</p>",
+        "id": 197713745,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1589558688
+    },
+    {
+        "content": "<p>As I said, this \"minimal model\" is exactly the joint distribution of all your random variables on <span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mi mathvariant=\"double-struck\">R</mi><mi mathvariant=\"double-struck\">N</mi></msup></mrow><annotation encoding=\"application/x-tex\">\\mathbb{R}^{\\mathbb{N}}</annotation></semantics></math></span><span aria-hidden=\"true\" class=\"katex-html\"><span class=\"base\"><span class=\"strut\" style=\"height:0.845223em;vertical-align:0em;\"></span><span class=\"mord\"><span class=\"mord\"><span class=\"mord mathbb\">R</span></span><span class=\"msupsub\"><span class=\"vlist-t\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.845223em;\"><span style=\"top:-3.063em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"sizing reset-size6 size3 mtight\"><span class=\"mord mtight\"><span class=\"mord mtight\"><span class=\"mord mathbb mtight\">N</span></span></span></span></span></span></span></span></span></span></span></span></span> (i.e., the image of your probability on <span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi mathvariant=\"normal\">Ω</mi></mrow><annotation encoding=\"application/x-tex\">\\Omega</annotation></semantics></math></span><span aria-hidden=\"true\" class=\"katex-html\"><span class=\"base\"><span class=\"strut\" style=\"height:0.68333em;vertical-align:0em;\"></span><span class=\"mord\">Ω</span></span></span></span> under the map <span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>ω</mi><mo>↦</mo><mo stretchy=\"false\">(</mo><msub><mi>X</mi><mn>0</mn></msub><mo stretchy=\"false\">(</mo><mi>ω</mi><mo stretchy=\"false\">)</mo><mo separator=\"true\">,</mo><msub><mi>X</mi><mn>1</mn></msub><mo stretchy=\"false\">(</mo><mi>ω</mi><mo stretchy=\"false\">)</mo><mo separator=\"true\">,</mo><mo>…</mo><mtext> </mtext><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">\\omega \\mapsto (X_0(\\omega), X_1(\\omega), \\dotsc)</annotation></semantics></math></span><span aria-hidden=\"true\" class=\"katex-html\"><span class=\"base\"><span class=\"strut\" style=\"height:0.522em;vertical-align:-0.011em;\"></span><span class=\"mord mathdefault\" style=\"margin-right:0.03588em;\">ω</span><span class=\"mspace\" style=\"margin-right:0.2777777777777778em;\"></span><span class=\"mrel\">↦</span><span class=\"mspace\" style=\"margin-right:0.2777777777777778em;\"></span></span><span class=\"base\"><span class=\"strut\" style=\"height:1em;vertical-align:-0.25em;\"></span><span class=\"mopen\">(</span><span class=\"mord\"><span class=\"mord mathdefault\" style=\"margin-right:0.07847em;\">X</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.30110799999999993em;\"><span style=\"top:-2.5500000000000003em;margin-left:-0.07847em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"sizing reset-size6 size3 mtight\"><span class=\"mord mtight\">0</span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.15em;\"><span></span></span></span></span></span></span><span class=\"mopen\">(</span><span class=\"mord mathdefault\" style=\"margin-right:0.03588em;\">ω</span><span class=\"mclose\">)</span><span class=\"mpunct\">,</span><span class=\"mspace\" style=\"margin-right:0.16666666666666666em;\"></span><span class=\"mord\"><span class=\"mord mathdefault\" style=\"margin-right:0.07847em;\">X</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.30110799999999993em;\"><span style=\"top:-2.5500000000000003em;margin-left:-0.07847em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"sizing reset-size6 size3 mtight\"><span class=\"mord mtight\">1</span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.15em;\"><span></span></span></span></span></span></span><span class=\"mopen\">(</span><span class=\"mord mathdefault\" style=\"margin-right:0.03588em;\">ω</span><span class=\"mclose\">)</span><span class=\"mpunct\">,</span><span class=\"mspace\" style=\"margin-right:0.16666666666666666em;\"></span><span class=\"minner\">…</span><span class=\"mspace\" style=\"margin-right:0.16666666666666666em;\"></span><span class=\"mclose\">)</span></span></span></span>), and your new random variable is just the <span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi></mrow><annotation encoding=\"application/x-tex\">n</annotation></semantics></math></span><span aria-hidden=\"true\" class=\"katex-html\"><span class=\"base\"><span class=\"strut\" style=\"height:0.43056em;vertical-align:0em;\"></span><span class=\"mord mathdefault\">n</span></span></span></span>-th coordinate.</p>",
+        "id": 197714024,
+        "sender_full_name": "Sebastien Gouezel",
+        "timestamp": 1589558801
+    },
+    {
+        "content": "<p>At POPL I had an interesting discussion with Neel Krishnaswami, and he explained that he was working on some DSL in DTT that captured the semantics of probability theory in a way interesting to the working probability theorist. Maybe we should ask him to explain it in more detail. (I guess that most of my first sentence is nonsense on the nose.)</p>",
+        "id": 197717724,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1589560428
+    },
+    {
+        "content": "<p>I think DTT is dependent type theory, what DSL?</p>",
+        "id": 197720845,
+        "sender_full_name": "Jalex Stark",
+        "timestamp": 1589561749
+    },
+    {
+        "content": "<p>Domain specific language?</p>",
+        "id": 197720945,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1589561783
+    },
+    {
+        "content": "<p>domain specific language</p>",
+        "id": 197720947,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1589561785
+    },
+    {
+        "content": "<p>cool, thanks</p>",
+        "id": 197720978,
+        "sender_full_name": "Jalex Stark",
+        "timestamp": 1589561799
+    },
+    {
+        "content": "<p>I put the question mark because I have no idea what this means ;-)</p>",
+        "id": 197721007,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1589561812
+    },
+    {
+        "content": "<p>my guess is it means \"programming language where you're always working inside of some specific monad\"</p>",
+        "id": 197721171,
+        "sender_full_name": "Jalex Stark",
+        "timestamp": 1589561897
+    },
+    {
+        "content": "<p>in this context it probably means that you can do things like Jalex suggested like create new random variables and put them together in a monad</p>",
+        "id": 197721225,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1589561928
+    },
+    {
+        "content": "<p>The Giry monad, right?</p>",
+        "id": 197721286,
+        "sender_full_name": "Sebastien Gouezel",
+        "timestamp": 1589561962
+    },
+    {
+        "content": "<p>I've been told there is some foundational issue with higher order functions in the Giry monad though</p>",
+        "id": 197721347,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1589561987
+    },
+    {
+        "content": "<p>which makes the denotation of \"probabilistic programs\" dubious</p>",
+        "id": 197721458,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1589562017
+    },
+    {
+        "content": "<p>The category of measurable spaces isn't Cartesian closed. (There isn't a canonical measurable space structure on the function type which makes the evaluation maps measurable). So the Giry monad can't eat higher order functions and so you can use it to denotate only a small uninteresting subset of probabilistic programming languages.</p>",
+        "id": 197775038,
+        "sender_full_name": "Koundinya Vajjha",
+        "timestamp": 1589601250
+    },
+    {
+        "content": "<p>But there have been other gadgets (\"Quasi-Borel Spaces\") which overcome this issue IIRC.</p>",
+        "id": 197775048,
+        "sender_full_name": "Koundinya Vajjha",
+        "timestamp": 1589601303
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"116448\">Koundinya Vajjha</span> <a href=\"#narrow/stream/217875-Is-there.20code.20for.20X.3F/topic/probability/near/196208835\">said</a>:</p>\n<blockquote>\n<p>Apologies. I do have a tiny probability theory library up in a different repo, but it's out of date and breaks with current mathlib. I keep putting it off but I promise to devote some time to it the next couple of weeks and will try to PR.</p>\n</blockquote>\n<p>I've updated (almost all of?) this to a recent mathlib over at <a href=\"https://github.com/alexjbest/stump-learnable\">https://github.com/alexjbest/stump-learnable</a></p>",
+        "id": 198711734,
+        "sender_full_name": "Alex J. Best",
+        "timestamp": 1590454101
+    },
+    {
+        "content": "<p>everything not PR’d is lost in time — Ancient Chinese Proverb</p>",
+        "id": 198718942,
+        "sender_full_name": "Kenny Lau",
+        "timestamp": 1590466252
+    }
+]

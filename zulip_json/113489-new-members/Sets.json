@@ -1,0 +1,152 @@
+[
+    {
+        "content": "<p>How do I do something as trivial as proving set membership?</p>\n<div class=\"codehilite\"><pre><span></span><code><span class=\"kn\">import</span> <span class=\"n\">data</span><span class=\"bp\">.</span><span class=\"n\">finset</span>\n\n<span class=\"n\">def</span> <span class=\"n\">x1</span> <span class=\"o\">:</span> <span class=\"n\">finset</span> <span class=\"bp\">ℕ</span> <span class=\"o\">:=</span> <span class=\"o\">{</span><span class=\"mi\">1</span><span class=\"o\">,</span><span class=\"mi\">2</span><span class=\"o\">,</span><span class=\"mi\">3</span><span class=\"o\">}</span>\n<span class=\"bp\">#</span><span class=\"n\">reduce</span> <span class=\"mi\">1</span> <span class=\"err\">∈</span> <span class=\"n\">x1</span>   <span class=\"c1\">--1 = 3 ∨ 1 = 2 ∨ 1 = 1 ∨ false</span>\n<span class=\"kn\">example</span> <span class=\"o\">:</span> <span class=\"mi\">1</span> <span class=\"err\">∈</span> <span class=\"n\">x1</span> <span class=\"o\">:=</span> <span class=\"n\">sorry</span>\n</code></pre></div>",
+        "id": 197645788,
+        "sender_full_name": "Brandon Brown",
+        "timestamp": 1589514782
+    },
+    {
+        "content": "<p>In this case you can use <code>dec_trivial</code>:</p>\n<div class=\"codehilite\"><pre><span></span><code><span class=\"kn\">import</span> <span class=\"n\">data</span><span class=\"bp\">.</span><span class=\"n\">finset</span>\n\n<span class=\"n\">def</span> <span class=\"n\">x1</span> <span class=\"o\">:</span> <span class=\"n\">finset</span> <span class=\"bp\">ℕ</span> <span class=\"o\">:=</span> <span class=\"o\">{</span><span class=\"mi\">1</span><span class=\"o\">,</span><span class=\"mi\">2</span><span class=\"o\">,</span><span class=\"mi\">3</span><span class=\"o\">}</span>\n<span class=\"bp\">#</span><span class=\"n\">reduce</span> <span class=\"mi\">1</span> <span class=\"err\">∈</span> <span class=\"n\">x1</span>   <span class=\"c1\">--1 = 3 ∨ 1 = 2 ∨ 1 = 1 ∨ false</span>\n<span class=\"kn\">example</span> <span class=\"o\">:</span> <span class=\"mi\">1</span> <span class=\"err\">∈</span> <span class=\"n\">x1</span> <span class=\"o\">:=</span> <span class=\"n\">dec_trivial</span>\n</code></pre></div>",
+        "id": 197645957,
+        "sender_full_name": "Bryan Gin-ge Chen",
+        "timestamp": 1589515022
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"243102\">@Brandon Brown</span> If you've got a very explicit set, like in your example, then it's <code>dec_trivial</code>, like Bryan said. If you have a set if the form <code>finset.range n</code> or <code>finset.filter foo bar</code>, then there will be lemmas <code>finset.mem_range</code> and <code>finset.mem_filter</code> etc... that help you proving this.</p>",
+        "id": 197646023,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1589515115
+    },
+    {
+        "content": "<p>Thanks!</p>",
+        "id": 197646051,
+        "sender_full_name": "Brandon Brown",
+        "timestamp": 1589515176
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"243102\">Brandon Brown</span> <a href=\"#narrow/stream/113489-new-members/topic/Sets/near/197645788\">said</a>:</p>\n<blockquote>\n<div class=\"codehilite\"><pre><span></span><code><span class=\"bp\">#</span><span class=\"n\">reduce</span> <span class=\"mi\">1</span> <span class=\"err\">∈</span> <span class=\"n\">x1</span>   <span class=\"c1\">--1 = 3 ∨ 1 = 2 ∨ 1 = 1 ∨ false</span>\n</code></pre></div>\n\n\n</blockquote>\n<p>Note that this is about to change to</p>\n<div class=\"codehilite\"><pre><span></span><code><span class=\"bp\">#</span><span class=\"n\">reduce</span> <span class=\"mi\">1</span> <span class=\"err\">∈</span> <span class=\"n\">x1</span>   <span class=\"c1\">--1 = 1 ∨ 1 = 2 ∨ 1 = 3</span>\n</code></pre></div>\n\n\n<p>which I think is a big improvement (-;</p>",
+        "id": 197646109,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1589515214
+    },
+    {
+        "content": "<p>Also, if you don't like <code>dec_trivial</code>, you could use a combination of <code>or.inl</code>, <code>or.inr</code> and <code>rfl</code>.</p>",
+        "id": 197646136,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1589515265
+    },
+    {
+        "content": "<p>This reminds me a lot of <a href=\"#narrow/stream/113489-new-members/topic/proof.20of.20something.20that.20.23eval.20.2F.20.23reduce.20computes\">one of my early threads here</a>.</p>",
+        "id": 197646205,
+        "sender_full_name": "Bryan Gin-ge Chen",
+        "timestamp": 1589515351
+    },
+    {
+        "content": "<p>I have a more basic question. I understand constructions of the form</p>\n<div class=\"codehilite\"><pre><span></span><code><span class=\"kn\">variables</span> <span class=\"o\">(</span><span class=\"n\">p</span> <span class=\"n\">q</span> <span class=\"o\">:</span> <span class=\"kt\">Prop</span><span class=\"o\">)</span>\n<span class=\"kn\">example</span> <span class=\"o\">(</span><span class=\"n\">h</span> <span class=\"o\">:</span> <span class=\"n\">p</span><span class=\"o\">)</span> <span class=\"o\">:</span> <span class=\"n\">p</span> <span class=\"bp\">∨</span> <span class=\"n\">q</span> <span class=\"o\">:=</span> <span class=\"n\">or</span><span class=\"bp\">.</span><span class=\"n\">inl</span> <span class=\"n\">h</span>\n</code></pre></div>\n\n\n<p>Because I'm injecting h</p>",
+        "id": 197646822,
+        "sender_full_name": "Brandon Brown",
+        "timestamp": 1589516258
+    },
+    {
+        "content": "<p>But I don't really understand what's going on under the hood with</p>\n<div class=\"codehilite\"><pre><span></span><code><span class=\"kn\">example</span> <span class=\"o\">:</span> <span class=\"o\">(</span><span class=\"mi\">1</span> <span class=\"bp\">=</span> <span class=\"mi\">1</span><span class=\"o\">)</span> <span class=\"bp\">∨</span> <span class=\"n\">false</span> <span class=\"o\">:=</span> <span class=\"n\">or</span><span class=\"bp\">.</span><span class=\"n\">inl</span> <span class=\"o\">(</span><span class=\"n\">rfl</span><span class=\"o\">)</span>\n</code></pre></div>",
+        "id": 197646869,
+        "sender_full_name": "Brandon Brown",
+        "timestamp": 1589516289
+    },
+    {
+        "content": "<p><code>or.inl _</code> would expect a proof of <code>1 = 1</code> at the location of the <code>_</code></p>",
+        "id": 197646881,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1589516314
+    },
+    {
+        "content": "<p>Well, you need to inject a proof of <code>1 = 1</code></p>",
+        "id": 197646882,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1589516314
+    },
+    {
+        "content": "<p>Let <code>p := 1=1</code>, <code>q := false</code> and <code>h := rfl</code>.</p>",
+        "id": 197646889,
+        "sender_full_name": "Bryan Gin-ge Chen",
+        "timestamp": 1589516328
+    },
+    {
+        "content": "<p>and <code>rfl</code> is a proof of <code>1 = 1</code></p>",
+        "id": 197646890,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1589516329
+    },
+    {
+        "content": "<p>Ahh right I see</p>\n<div class=\"codehilite\"><pre><span></span><code><span class=\"kn\">variable</span> <span class=\"n\">p</span> <span class=\"o\">:</span> <span class=\"o\">(</span><span class=\"mi\">1</span> <span class=\"bp\">=</span> <span class=\"mi\">1</span><span class=\"o\">)</span>\n<span class=\"kn\">example</span> <span class=\"o\">:</span> <span class=\"o\">(</span><span class=\"mi\">1</span> <span class=\"bp\">=</span> <span class=\"mi\">1</span><span class=\"o\">)</span> <span class=\"bp\">∨</span> <span class=\"n\">false</span> <span class=\"o\">:=</span> <span class=\"n\">or</span><span class=\"bp\">.</span><span class=\"n\">inl</span> <span class=\"n\">p</span>\n</code></pre></div>\n\n\n<p>So using rfl is inferring this since what else could it be</p>",
+        "id": 197647072,
+        "sender_full_name": "Brandon Brown",
+        "timestamp": 1589516574
+    },
+    {
+        "content": "<p><code>rfl</code> is short for <code>eq.refl _</code></p>",
+        "id": 197647079,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1589516594
+    },
+    {
+        "content": "<p>rfl is a smart kid (-;</p>",
+        "id": 197647080,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1589516595
+    },
+    {
+        "content": "<p><code>refl</code> is a powerful tactic!</p>",
+        "id": 197650843,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1589522346
+    },
+    {
+        "content": "<p>the correct way, much as I hate it, is <code>by simp</code>:</p>\n<div class=\"codehilite\"><pre><span></span><code><span class=\"kn\">import</span> <span class=\"n\">data</span><span class=\"bp\">.</span><span class=\"n\">finset</span>\n\n<span class=\"n\">def</span> <span class=\"n\">x1</span> <span class=\"o\">:</span> <span class=\"n\">finset</span> <span class=\"bp\">ℕ</span> <span class=\"o\">:=</span> <span class=\"o\">{</span><span class=\"mi\">1</span><span class=\"o\">,</span><span class=\"mi\">2</span><span class=\"o\">,</span><span class=\"mi\">3</span><span class=\"o\">}</span>\n<span class=\"kn\">example</span> <span class=\"o\">:</span> <span class=\"mi\">1</span> <span class=\"err\">∈</span> <span class=\"n\">x1</span> <span class=\"o\">:=</span> <span class=\"k\">by</span> <span class=\"n\">simp</span> <span class=\"o\">[</span><span class=\"n\">x1</span><span class=\"o\">]</span>\n\n<span class=\"kn\">variables</span> <span class=\"o\">{</span><span class=\"n\">α</span> <span class=\"o\">:</span> <span class=\"kt\">Type</span><span class=\"bp\">*</span><span class=\"o\">}</span> <span class=\"o\">[</span><span class=\"n\">has_one</span> <span class=\"n\">α</span><span class=\"o\">]</span> <span class=\"o\">[</span><span class=\"n\">has_add</span> <span class=\"n\">α</span><span class=\"o\">]</span> <span class=\"o\">[</span><span class=\"n\">decidable_eq</span> <span class=\"n\">α</span><span class=\"o\">]</span>\n<span class=\"n\">def</span> <span class=\"n\">x2</span> <span class=\"o\">:</span> <span class=\"n\">finset</span> <span class=\"n\">α</span> <span class=\"o\">:=</span> <span class=\"o\">{</span><span class=\"mi\">1</span><span class=\"o\">,</span><span class=\"mi\">2</span><span class=\"o\">,</span><span class=\"mi\">3</span><span class=\"o\">}</span>\n<span class=\"kn\">example</span> <span class=\"o\">:</span> <span class=\"o\">(</span><span class=\"mi\">1</span> <span class=\"o\">:</span> <span class=\"n\">α</span><span class=\"o\">)</span> <span class=\"err\">∈</span> <span class=\"o\">(</span><span class=\"n\">x2</span> <span class=\"o\">:</span> <span class=\"n\">finset</span> <span class=\"n\">α</span><span class=\"o\">)</span> <span class=\"o\">:=</span> <span class=\"n\">dec_trivial</span> <span class=\"c1\">-- fails</span>\n<span class=\"kn\">example</span> <span class=\"o\">:</span> <span class=\"o\">(</span><span class=\"mi\">1</span> <span class=\"o\">:</span> <span class=\"n\">α</span><span class=\"o\">)</span> <span class=\"err\">∈</span> <span class=\"o\">(</span><span class=\"n\">x2</span> <span class=\"o\">:</span> <span class=\"n\">finset</span> <span class=\"n\">α</span><span class=\"o\">)</span> <span class=\"o\">:=</span> <span class=\"k\">by</span> <span class=\"n\">simp</span> <span class=\"o\">[</span><span class=\"n\">x2</span><span class=\"o\">]</span> <span class=\"c1\">-- works</span>\n</code></pre></div>",
+        "id": 197653464,
+        "sender_full_name": "Kenny Lau",
+        "timestamp": 1589525657
+    },
+    {
+        "content": "<p>the last line is equivalent to <code>simp only [x2, eq_self_iff_true, or_true, finset.mem_insert, finset.mem_singleton, finset.singleton_eq_singleton]</code></p>",
+        "id": 197653671,
+        "sender_full_name": "Kenny Lau",
+        "timestamp": 1589525894
+    },
+    {
+        "content": "<p>(thanks, <code>squeeze_simp</code>)</p>",
+        "id": 197653679,
+        "sender_full_name": "Kenny Lau",
+        "timestamp": 1589525903
+    },
+    {
+        "content": "<p>That's surprising to me. Are there some missing decidability instances somewhere?</p>",
+        "id": 197653881,
+        "sender_full_name": "Bryan Gin-ge Chen",
+        "timestamp": 1589526090
+    },
+    {
+        "content": "<p>no, it's just that asserting <code>\\a</code> has decidable_eq does not actually give an algorithm to decide whether two terms of <code>\\a</code> are equal</p>",
+        "id": 197654036,
+        "sender_full_name": "Kenny Lau",
+        "timestamp": 1589526210
+    },
+    {
+        "content": "<p>if <code>\\a</code> is anything concrete (like <code>\\N</code>) then it will work</p>",
+        "id": 197654045,
+        "sender_full_name": "Kenny Lau",
+        "timestamp": 1589526227
+    },
+    {
+        "content": "<p>Oh, right. The type class is a <code>variable</code> so there's no actual definition.</p>",
+        "id": 197654333,
+        "sender_full_name": "Bryan Gin-ge Chen",
+        "timestamp": 1589526477
+    },
+    {
+        "content": "<p>yeah that also confused me for a while :P</p>",
+        "id": 197655263,
+        "sender_full_name": "Kenny Lau",
+        "timestamp": 1589527199
+    }
+]

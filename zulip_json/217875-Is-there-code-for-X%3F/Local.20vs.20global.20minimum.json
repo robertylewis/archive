@@ -1,0 +1,20 @@
+[
+    {
+        "content": "<p>Hi,</p>\n<p>Does anyone know whether there is a lemmas somewhere that says that a local minimum of a convex function is a global minimum (or anything along those lines)?</p>",
+        "id": 204241722,
+        "sender_full_name": "Frédéric Dupuis",
+        "timestamp": 1595010586
+    },
+    {
+        "content": "<p>AFAIK, no. Are you going to formalize and PR it?</p>",
+        "id": 204305084,
+        "sender_full_name": "Yury G. Kudryashov",
+        "timestamp": 1595086732
+    },
+    {
+        "content": "<p>Yes, I think I'll give it a shot!</p>",
+        "id": 204310281,
+        "sender_full_name": "Frédéric Dupuis",
+        "timestamp": 1595094387
+    }
+]

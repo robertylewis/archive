@@ -1,0 +1,50 @@
+---
+layout: archive
+title: Zulip Chat Archive
+permalink: /stream/219941-Machine-Learning-for-Theorem-Proving/topic/CoqGym.html
+---
+
+<h2>Stream: <a href="http://robertylewis.com/archive/stream/219941-Machine-Learning-for-Theorem-Proving/index.html">Machine Learning for Theorem Proving</a></h2>
+<h3>Topic: <a href="http://robertylewis.com/archive/stream/219941-Machine-Learning-for-Theorem-Proving/topic/CoqGym.html">CoqGym</a></h3>
+
+<hr>
+
+<base href="https://leanprover.zulipchat.com">
+
+<head><link href="/style.css" rel="stylesheet"></head>
+
+{% raw %}
+
+<a name="197053048"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/219941-Machine%20Learning%20for%20Theorem%20Proving/topic/CoqGym/near/197053048" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jason Rute <a href="http://robertylewis.com/archive/stream/219941-Machine-Learning-for-Theorem-Proving/topic/CoqGym.html#197053048">(May 10 2020 at 12:35)</a>:</h4>
+<p>This is specifically to talk about <a href="https://github.com/princeton-vl/CoqGym" title="https://github.com/princeton-vl/CoqGym">CoqGym</a> and its API for use in other projects.  It is not so much about ASTactic (which is talked about in <a href="#narrow/stream/219941-Machine-Learning.20for.20Theorem.20Proving/topic/Paper.3A.20Learning.20to.20Prove.20Theorems.20via.20Interacting.20with.20Proof" title="#narrow/stream/219941-Machine-Learning.20for.20Theorem.20Proving/topic/Paper.3A.20Learning.20to.20Prove.20Theorems.20via.20Interacting.20with.20Proof">this thread here</a>).</p>
+
+
+
+<a name="197053156"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/219941-Machine%20Learning%20for%20Theorem%20Proving/topic/CoqGym/near/197053156" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jason Rute <a href="http://robertylewis.com/archive/stream/219941-Machine-Learning-for-Theorem-Proving/topic/CoqGym.html#197053156">(May 10 2020 at 12:37)</a>:</h4>
+<p><span class="user-mention" data-user-id="246156">@Brando Miranda</span> told me (on GitHub) that he finds the CoqGym API very usable.  I'd like to understand the API more.  <span class="user-mention" data-user-id="246156">@Brando Miranda</span> is the best documentation just the README on Github?  Do you have any initial thoughts and commentary on this Gym?</p>
+
+
+
+<a name="197053484"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/219941-Machine%20Learning%20for%20Theorem%20Proving/topic/CoqGym/near/197053484" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jason Rute <a href="http://robertylewis.com/archive/stream/219941-Machine-Learning-for-Theorem-Proving/topic/CoqGym.html#197053484">(May 10 2020 at 12:43)</a>:</h4>
+<p>Also, how easy would it be to implement a Tactic-Toe style AI in Coq Gym?  That would be a great baseline.  Here is what I mean:</p>
+<ul>
+<li>Don't use neural networks.  Instead, for the embeddings used a fixed hand-coded embedding using the techniques from the recent TacticToe for Coq paper.  (These shouldn't be too hard to code and would be quite useful to anyone else using CoqGym.)</li>
+<li>For tactic selection, use k-nearest neighbors using the prerecorded CoqGym information.</li>
+<li>For premise selection, also use k-nearest neighbors (with both the goal and the premise to select).</li>
+<li>Look again at the CoqGym paper for some of the finer details, such as which tactics to use, how to use them, and how to fill in the non-theorem tactic arguments.</li>
+</ul>
+
+
+
+<a name="197053530"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/219941-Machine%20Learning%20for%20Theorem%20Proving/topic/CoqGym/near/197053530" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jason Rute <a href="http://robertylewis.com/archive/stream/219941-Machine-Learning-for-Theorem-Proving/topic/CoqGym.html#197053530">(May 10 2020 at 12:44)</a>:</h4>
+<p>Since it is not trained with neural networks or reinforcement learning, it should be much easier to reproduce.</p>
+
+
+
+{% endraw %}
+
+<hr><p>Last updated: Jul 19 2020 at 13:36 UTC</p>

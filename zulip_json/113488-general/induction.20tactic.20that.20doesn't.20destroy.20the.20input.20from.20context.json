@@ -1,0 +1,26 @@
+[
+    {
+        "content": "<p>I have a scenario where I need to do induction on a list and (in the <code>cons</code> case) keep track that the introduced variables for head and tail are equal to the original term in my context.  i.e. after doing <code>induction y with hy ty Hy</code> in the second branch I need an equation <code>y = hy::ty</code>. Normally doing induction on <code>x</code> makes <code>x</code> disappear from the context. The docs say </p>\n<div class=\"codehilite\"><pre><span></span><code>induction h : t will introduce an equality of the form h : t = C x y,\nasserting that the input term is equal to the current constructor case, to the context.\n</code></pre></div>\n\n\n<p>That sounds like what I'm looking for, but  I don't know what <code>t</code> is supposed to be (just putting the type of <code>h</code> doesn't work).</p>",
+        "id": 204125045,
+        "sender_full_name": "Kris Brown",
+        "timestamp": 1594924911
+    },
+    {
+        "content": "<p><code>induction h : y with hy ty Hy</code> I think</p>",
+        "id": 204125402,
+        "sender_full_name": "Reid Barton",
+        "timestamp": 1594925083
+    },
+    {
+        "content": "<p>I can see why you thought something named <code>t</code> that occurs after a colon was a type though.</p>",
+        "id": 204125476,
+        "sender_full_name": "Reid Barton",
+        "timestamp": 1594925115
+    },
+    {
+        "content": "<p>Ah makes sense, thanks!</p>",
+        "id": 204125497,
+        "sender_full_name": "Kris Brown",
+        "timestamp": 1594925127
+    }
+]

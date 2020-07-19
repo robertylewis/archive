@@ -1,0 +1,44 @@
+[
+    {
+        "content": "<p>In big_operators there is a <code>sum_smul'</code> lemma:</p>\n<div class=\"codehilite\"><pre><span></span><code><span class=\"kn\">lemma</span> <span class=\"n\">sum_smul&#39;</span> <span class=\"o\">[</span><span class=\"n\">add_comm_monoid</span> <span class=\"n\">β</span><span class=\"o\">]</span> <span class=\"o\">(</span><span class=\"n\">s</span> <span class=\"o\">:</span> <span class=\"n\">finset</span> <span class=\"n\">α</span><span class=\"o\">)</span> <span class=\"o\">(</span><span class=\"n\">n</span> <span class=\"o\">:</span> <span class=\"bp\">ℕ</span><span class=\"o\">)</span> <span class=\"o\">(</span><span class=\"n\">f</span> <span class=\"o\">:</span> <span class=\"n\">α</span> <span class=\"bp\">→</span> <span class=\"n\">β</span><span class=\"o\">)</span> <span class=\"o\">:</span>\n  <span class=\"o\">(</span><span class=\"err\">∑</span> <span class=\"n\">x</span> <span class=\"k\">in</span> <span class=\"n\">s</span><span class=\"o\">,</span> <span class=\"n\">add_monoid</span><span class=\"bp\">.</span><span class=\"n\">smul</span> <span class=\"n\">n</span> <span class=\"o\">(</span><span class=\"n\">f</span> <span class=\"n\">x</span><span class=\"o\">))</span> <span class=\"bp\">=</span> <span class=\"n\">add_monoid</span><span class=\"bp\">.</span><span class=\"n\">smul</span> <span class=\"n\">n</span> <span class=\"o\">((</span><span class=\"err\">∑</span> <span class=\"n\">x</span> <span class=\"k\">in</span> <span class=\"n\">s</span><span class=\"o\">,</span> <span class=\"n\">f</span> <span class=\"n\">x</span><span class=\"o\">))</span> <span class=\"o\">:=</span>\n<span class=\"bp\">@</span><span class=\"n\">prod_pow</span> <span class=\"bp\">_</span> <span class=\"o\">(</span><span class=\"n\">multiplicative</span> <span class=\"n\">β</span><span class=\"o\">)</span> <span class=\"bp\">_</span> <span class=\"bp\">_</span> <span class=\"bp\">_</span> <span class=\"bp\">_</span>\n<span class=\"n\">attribute</span> <span class=\"o\">[</span><span class=\"n\">to_additive</span> <span class=\"n\">sum_smul&#39;</span><span class=\"o\">]</span> <span class=\"n\">prod_pow</span>\n</code></pre></div>\n\n\n<p>Why can't I seem to use this lemma? I get <code>unknown identifier 'sum_smul''</code> even later in the big_operators file? <br>\nProbably related: Is there somewhere I can read up on <code>to_additive</code>?</p>",
+        "id": 198844438,
+        "sender_full_name": "Paul van Wamelen",
+        "timestamp": 1590547172
+    },
+    {
+        "content": "<p>did you open the right namespace?</p>",
+        "id": 198844501,
+        "sender_full_name": "Jalex Stark",
+        "timestamp": 1590547222
+    },
+    {
+        "content": "<p>it's probably in the <code>finset</code> namespace</p>",
+        "id": 198844507,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1590547241
+    },
+    {
+        "content": "<p><a href=\"https://leanprover-community.github.io/mathlib_docs/algebra/group/to_additive.html\">https://leanprover-community.github.io/mathlib_docs/algebra/group/to_additive.html</a></p>",
+        "id": 198844646,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1590547430
+    },
+    {
+        "content": "<p>Thanks and thanks! Yeah finset.sum_smul' does the trick.</p>",
+        "id": 198844719,
+        "sender_full_name": "Paul van Wamelen",
+        "timestamp": 1590547470
+    },
+    {
+        "content": "<p>Typing <code>#where</code> just after a definition will tell you the name of the namespace you're in when you made it.</p>\n<p>Unfortunately editing mathlib can cause recompilation issues.</p>\n<p>It's a shame that we can't hover over a definition and see exactly what we see when we hover over a use of that definition.</p>",
+        "id": 198864877,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1590569259
+    },
+    {
+        "content": "<p>Oh, this is good to know!</p>",
+        "id": 198884751,
+        "sender_full_name": "Paul van Wamelen",
+        "timestamp": 1590583358
+    }
+]

@@ -1,0 +1,326 @@
+[
+    {
+        "content": "<p>in maths this would be notated as <code>x ^ deg f * f(1/x)</code></p>",
+        "id": 200078636,
+        "sender_full_name": "Kenny Lau",
+        "timestamp": 1591611221
+    },
+    {
+        "content": "<p>this reverses the coefficients</p>",
+        "id": 200078640,
+        "sender_full_name": "Kenny Lau",
+        "timestamp": 1591611228
+    },
+    {
+        "content": "<p>this is a monoid isomorphism if the ring is an integral domain I think</p>",
+        "id": 200078695,
+        "sender_full_name": "Kenny Lau",
+        "timestamp": 1591611250
+    },
+    {
+        "content": "<p>should we put this in mathlib?</p>",
+        "id": 200078703,
+        "sender_full_name": "Kenny Lau",
+        "timestamp": 1591611257
+    },
+    {
+        "content": "<p>Looks good to me. <code>polynomial.reverse</code>?</p>",
+        "id": 200082943,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1591614384
+    },
+    {
+        "content": "<p>this does not preserve addition of polynomials of different degrees</p>",
+        "id": 200083879,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1591615117
+    },
+    {
+        "content": "<p>and it is not even a bijection: the reverse of X^n is 1</p>",
+        "id": 200083909,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1591615144
+    },
+    {
+        "content": "<p>Right. But it shows up sufficiently often that it should have it's own definition in mathlib.</p>",
+        "id": 200083949,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1591615189
+    },
+    {
+        "content": "<p>I think we can be sure that reverse^3 = reverse</p>",
+        "id": 200084628,
+        "sender_full_name": "Kenny Lau",
+        "timestamp": 1591615730
+    },
+    {
+        "content": "<p>(what is the name for this)</p>",
+        "id": 200084642,
+        "sender_full_name": "Kenny Lau",
+        "timestamp": 1591615738
+    },
+    {
+        "content": "<p>Galois insertion</p>",
+        "id": 200084662,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1591615752
+    },
+    {
+        "content": "<p>Maybe this should be parameterized on the maximum degree and treated as a bijection on the submodule of deg &lt;= n polynomials?</p>",
+        "id": 200085470,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1591616320
+    },
+    {
+        "content": "<p>I don't think it is true that reverse^3 = reverse</p>",
+        "id": 200085500,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1591616345
+    },
+    {
+        "content": "<p>why not?</p>",
+        "id": 200085520,
+        "sender_full_name": "Kenny Lau",
+        "timestamp": 1591616364
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"110049\">Mario Carneiro</span> <a href=\"#narrow/stream/116395-maths/topic/reversing.20the.20coefficients/near/200085470\">said</a>:</p>\n<blockquote>\n<p>Maybe this should be parameterized on the maximum degree and treated as a bijection on the submodule of deg &lt;= n polynomials?</p>\n</blockquote>\n<p>then we lose the fact that reverse is a monoid homomorphism</p>",
+        "id": 200085545,
+        "sender_full_name": "Kenny Lau",
+        "timestamp": 1591616389
+    },
+    {
+        "content": "<p>add monoid hom?</p>",
+        "id": 200085605,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1591616415
+    },
+    {
+        "content": "<p>or monoid hom</p>",
+        "id": 200085617,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1591616421
+    },
+    {
+        "content": "<p>monoid hom</p>",
+        "id": 200085625,
+        "sender_full_name": "Kenny Lau",
+        "timestamp": 1591616429
+    },
+    {
+        "content": "<p><code>reverse(pq) = x^(deg(pq)) (pq)(1/x) = x^(deg p + deg q) p(1/x) q(1/x) = [x^(deg p) p(1/x)] [x^(deg q) q(1/x)] = reverse(p) reverse(q)</code></p>",
+        "id": 200085683,
+        "sender_full_name": "Kenny Lau",
+        "timestamp": 1591616482
+    },
+    {
+        "content": "<p>the equality <code>deg(pq) = deg p + deg q</code> needs integral domain</p>",
+        "id": 200085694,
+        "sender_full_name": "Kenny Lau",
+        "timestamp": 1591616493
+    },
+    {
+        "content": "<p>I don't think you lose the monoid hom property, you just get some kind of graded multiplicativity property among the elements of the family</p>",
+        "id": 200085768,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1591616527
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"112680\">Johan Commelin</span> <a href=\"#narrow/stream/116395-maths/topic/reversing.20the.20coefficients/near/200083949\">said</a>:</p>\n<blockquote>\n<p>Right. But it shows up sufficiently often that it should have it's own definition in mathlib.</p>\n</blockquote>\n<p>citation?</p>",
+        "id": 200085874,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1591616614
+    },
+    {
+        "content": "<p>My algebra course notes</p>",
+        "id": 200085897,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1591616630
+    },
+    {
+        "content": "<p>To me without fixing the power of x this seems like a very awkward operation for the reasons Kevin noted</p>",
+        "id": 200085958,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1591616656
+    },
+    {
+        "content": "<p>and I thought we had already established that <code>deg</code> is not a very well behaved function and the graded family of submodules deg p &lt;= n plays much better</p>",
+        "id": 200086065,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1591616738
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"110064\">@Kenny Lau</span> If you fix the degree, it will become</p>\n<div class=\"codehilite\"><pre><span></span><code><span class=\"n\">reverse</span> <span class=\"o\">(</span><span class=\"n\">deg</span> <span class=\"n\">p</span> <span class=\"bp\">+</span> <span class=\"n\">deg</span> <span class=\"n\">q</span><span class=\"o\">)</span> <span class=\"o\">(</span><span class=\"n\">p</span> <span class=\"bp\">*</span> <span class=\"n\">q</span><span class=\"o\">)</span> <span class=\"bp\">=</span> <span class=\"n\">reverse</span> <span class=\"o\">(</span><span class=\"n\">deg</span> <span class=\"n\">p</span><span class=\"o\">)</span> <span class=\"n\">p</span> <span class=\"bp\">*</span> <span class=\"n\">reverse</span> <span class=\"o\">(</span><span class=\"n\">deg</span> <span class=\"n\">q</span><span class=\"o\">)</span> <span class=\"n\">q</span>\n</code></pre></div>",
+        "id": 200086086,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1591616752
+    },
+    {
+        "content": "<p>I think it's <code>reverse (m + n) (p * q) = reverse m p * reverse n q</code>, right?</p>",
+        "id": 200086149,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1591616781
+    },
+    {
+        "content": "<p>depends on how you totalize reverse m I guess</p>",
+        "id": 200086170,
+        "sender_full_name": "Kenny Lau",
+        "timestamp": 1591616810
+    },
+    {
+        "content": "<p>but sure</p>",
+        "id": 200086171,
+        "sender_full_name": "Kenny Lau",
+        "timestamp": 1591616812
+    },
+    {
+        "content": "<p>I think the right behavior is to drop coefficients that are flipped past zero</p>",
+        "id": 200086191,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1591616831
+    },
+    {
+        "content": "<p>does this satisfy the property?</p>",
+        "id": 200086235,
+        "sender_full_name": "Kenny Lau",
+        "timestamp": 1591616867
+    },
+    {
+        "content": "<p>Not without additional assumptions: <code>reverse 1 (x^2 + 1) = 1</code> but <code>reverse 2 (x^4 + 2x^2 + 1) = x^2 + 2</code></p>",
+        "id": 200086742,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1591617215
+    },
+    {
+        "content": "<p>I think it holds as long as at least one of <code>m</code> and <code>n</code> is more than its polynomial's degree</p>",
+        "id": 200086811,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1591617254
+    },
+    {
+        "content": "<p>that is a bit unfortunate</p>",
+        "id": 200087049,
+        "sender_full_name": "Kenny Lau",
+        "timestamp": 1591617451
+    },
+    {
+        "content": "<p>Obviously this all works out much better in Laurent series</p>",
+        "id": 200087164,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1591617534
+    },
+    {
+        "content": "<p>looks like there just is no section to the monoid surjection R[X] -&gt; R[X]/(X^n)</p>",
+        "id": 200087209,
+        "sender_full_name": "Kenny Lau",
+        "timestamp": 1591617565
+    },
+    {
+        "content": "<p>wait how does this work in laurent series</p>",
+        "id": 200087381,
+        "sender_full_name": "Kenny Lau",
+        "timestamp": 1591617660
+    },
+    {
+        "content": "<p>i dont think the result is still a Laurent series</p>",
+        "id": 200087436,
+        "sender_full_name": "Kenny Lau",
+        "timestamp": 1591617695
+    },
+    {
+        "content": "<p>Sending x^n to x^{d-n} sounds like it takes Laurent series to Laurent series to me</p>",
+        "id": 200087518,
+        "sender_full_name": "Jalex Stark",
+        "timestamp": 1591617736
+    },
+    {
+        "content": "<p>Ah, I mean Laurent polynomial</p>",
+        "id": 200087554,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1591617765
+    },
+    {
+        "content": "<p>ah ok</p>",
+        "id": 200087567,
+        "sender_full_name": "Kenny Lau",
+        "timestamp": 1591617776
+    },
+    {
+        "content": "<p>(is a Laurent polynomial a Laurent series with finitely many nonzero terms?)</p>",
+        "id": 200087613,
+        "sender_full_name": "Jalex Stark",
+        "timestamp": 1591617804
+    },
+    {
+        "content": "<p>yeah that sounds like cheating though</p>",
+        "id": 200087622,
+        "sender_full_name": "Kenny Lau",
+        "timestamp": 1591617813
+    },
+    {
+        "content": "<p>yes</p>",
+        "id": 200087627,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1591617819
+    },
+    {
+        "content": "<p>It pretty much is cheating, it's basically solving the problem by fiat</p>",
+        "id": 200087722,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1591617869
+    },
+    {
+        "content": "<p>It's pushing the work into defining the appropriate truncation map from Laurent polynomials to polynomials</p>",
+        "id": 200087773,
+        "sender_full_name": "Jalex Stark",
+        "timestamp": 1591617920
+    },
+    {
+        "content": "<p>This probably extends to group rings where the monomials take exponents in a group</p>",
+        "id": 200087789,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1591617935
+    },
+    {
+        "content": "<p>this is just a special case of R[G] being a bifunctor</p>",
+        "id": 200087865,
+        "sender_full_name": "Kenny Lau",
+        "timestamp": 1591617978
+    },
+    {
+        "content": "<p>The only times I've had to reverse polynomials, they were char polys, so monic and the degree was a constant which was everywhere</p>",
+        "id": 200090859,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1591619843
+    },
+    {
+        "content": "<p>And I guess typically the constant coefficient was nonzero...</p>",
+        "id": 200091656,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1591620303
+    },
+    {
+        "content": "<p>I was actually reminded by this when it was implicitly used in <a href=\"https://math.berkeley.edu/~hwl/papers/witt.pdf\">the paper I linked in the Witt vector paper</a> where every monic polynomial splits in some ring and as a consequence every polynomial with constant coefficient 1 splits</p>",
+        "id": 200095998,
+        "sender_full_name": "Kenny Lau",
+        "timestamp": 1591622424
+    },
+    {
+        "content": "<p>So I was in exactly this situation where the only polynomials I ever reversed were either monic or had constant coeff 1. It's a bijection between these two things, perhaps even an iso of multiplicative monoids</p>",
+        "id": 200097232,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1591623056
+    },
+    {
+        "content": "<p>I vote for having a name for <code>x ^ n * f(1 / x)</code> where <code>deg f ≤ n</code>. If it has better properties in case <code>n = deg f</code>, then we can have two names.</p>",
+        "id": 200116438,
+        "sender_full_name": "Yury G. Kudryashov",
+        "timestamp": 1591630957
+    },
+    {
+        "content": "<p>My thoughts are to associate the name to <code>x ^ n * f(1 / x)</code> without the constraint but with <code>deg f ≤ n</code> being the soft domain of the function. I don't think it will be used enough to justify the added convenience of no side assumptions in the multiplication theorem</p>",
+        "id": 200117165,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1591631279
+    }
+]

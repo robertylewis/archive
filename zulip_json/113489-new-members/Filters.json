@@ -1,0 +1,68 @@
+[
+    {
+        "content": "<p>I heard that analysis and topology in Lean is implemented using filters which are supposed to be more convenient from formalization point of view. I'd like to know what are advantages of this approach compared to the ordinary way of doing things.</p>",
+        "id": 197222241,
+        "sender_full_name": "Valery Isaev",
+        "timestamp": 1589242953
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"230946\">@Valery Isaev</span> Patrick wrote a nice short discussion in our perfectoid paper: <a href=\"https://math.commelin.net/files/poplws20cpp_perfectoid.pdf\">https://math.commelin.net/files/poplws20cpp_perfectoid.pdf</a></p>",
+        "id": 197233757,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1589258795
+    },
+    {
+        "content": "<p>You will want section 4</p>",
+        "id": 197233762,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1589258823
+    },
+    {
+        "content": "<p>I think Johannes Hoelzl ported a lot of the basic results from Isabelle, following a book by I James. Hoelzl might well have written the Isabelle code as well</p>",
+        "id": 197236879,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1589263697
+    },
+    {
+        "content": "<p>The first step is to  read the module docstring at <a href=\"https://leanprover-community.github.io/mathlib_docs/order/filter/basic.html\">https://leanprover-community.github.io/mathlib_docs/order/filter/basic.html</a>. Then indeed there should be stuff in the perfectoid paper (I already started to forgot what's in there exactly). The book by James is \"Topologies and uniformities\". PM me if you have difficulties finding it</p>",
+        "id": 197252472,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1589276378
+    },
+    {
+        "content": "<p>I see a badly formed doc string there!</p>",
+        "id": 197252560,
+        "sender_full_name": "Rob Lewis",
+        "timestamp": 1589276420
+    },
+    {
+        "content": "<p>Also note that the new book <a href=\"https://github.com/leanprover-community/mathematics_in_lean\">Mathematics in Lean</a> will eventually contain explanations about you need to know here</p>",
+        "id": 197252586,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1589276440
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"110596\">Rob Lewis</span> <a href=\"#narrow/stream/113489-new-members/topic/Filters/near/197252560\">said</a>:</p>\n<blockquote>\n<p>I see a badly formed doc string there!</p>\n</blockquote>\n<p>Probably a bad space again</p>",
+        "id": 197252623,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1589276469
+    },
+    {
+        "content": "<p>Thanks for the references. If I understand correctly, the advantage is that various notions of limits are defined in terms of filters and hence the same lemmas and definitions can be used to establish the basic theory for them.</p>",
+        "id": 197350351,
+        "sender_full_name": "Valery Isaev",
+        "timestamp": 1589323818
+    },
+    {
+        "content": "<p>As a mathematician the advantages I see to filters are pretty much what you say: I can say \"this sequence of reals tends to 7\", \"this sequence of reals diverges to +infinity\", \"this continuous function of x tends to 7 as x tends to 37\", \"this continuous function tends to 0 as x tends to -infinity\" etc. But my impression is that there are other advantages too.</p>",
+        "id": 197352891,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1589325978
+    },
+    {
+        "content": "<p>Note in particular this very general \"tendsto\" predicate; I think that this was one of the key insights.</p>",
+        "id": 197352912,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1589326007
+    }
+]

@@ -1,0 +1,53 @@
+---
+layout: archive
+title: Zulip Chat Archive
+permalink: /stream/113488-general/topic/to_multiplicative.html
+---
+
+<h2>Stream: <a href="http://robertylewis.com/archive/stream/113488-general/index.html">general</a></h2>
+<h3>Topic: <a href="http://robertylewis.com/archive/stream/113488-general/topic/to_multiplicative.html">to_multiplicative</a></h3>
+
+<hr>
+
+<base href="https://leanprover.zulipchat.com">
+
+<head><link href="/style.css" rel="stylesheet"></head>
+
+{% raw %}
+
+<a name="198869112"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113488-general/topic/to_multiplicative/near/198869112" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="http://robertylewis.com/archive/stream/113488-general/topic/to_multiplicative.html#198869112">(May 27 2020 at 09:34)</a>:</h4>
+<div class="codehilite"><pre><span></span><code>490,725 {# change these line numbers
+  /lemma/ { h
+    /@/ { s/@\[\(.*\)\] lemma \([a-z_.&#39;]*\).*/@[\1, to_additive \2]/;b goto }
+    s/lemma \([a-z_.&#39;]*\).*/@[to_additive \1]/
+    : goto
+    p; x
+    s/@\[.*\] // }
+  s/nonneg/one_le/g
+  s/nonpos/le_one/g
+  s/pos/one_lt/g
+  s/neg/lt_one/g
+  s/add/mul/g
+  s/zero/one/g
+  s/+/*/g
+  s/0/1/g }
+</code></pre></div>
+
+
+
+<a name="198869158"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113488-general/topic/to_multiplicative/near/198869158" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="http://robertylewis.com/archive/stream/113488-general/topic/to_multiplicative.html#198869158">(May 27 2020 at 09:35)</a>:</h4>
+<p>This <span aria-label="up" class="emoji emoji-2b06" role="img" title="up">:up:</span> sed script might be helpful if you want to turn some additive file into a multiplicative file with <code>@[to_additive]</code> attributes.</p>
+
+
+
+<a name="198869264"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113488-general/topic/to_multiplicative/near/198869264" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="http://robertylewis.com/archive/stream/113488-general/topic/to_multiplicative.html#198869264">(May 27 2020 at 09:36)</a>:</h4>
+<p>Also, it doesn't understand <code>theorem</code>, at the moment.</p>
+
+
+
+{% endraw %}
+
+<hr><p>Last updated: Jul 19 2020 at 13:36 UTC</p>

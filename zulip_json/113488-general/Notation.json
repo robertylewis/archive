@@ -1,0 +1,50 @@
+[
+    {
+        "content": "<p>What \"things\" are <code>binders</code> <code>foldr</code> <code>scoped</code>. I can't do <code>#check</code> on any of them. Is <code>foldr</code> different to <code>list.foldr</code> - the usage looks different.</p>\n<div class=\"codehilite\"><pre><span></span><code><span class=\"kn\">notation</span> <span class=\"bp\">`</span><span class=\"o\">[</span><span class=\"bp\">`</span> <span class=\"n\">l</span><span class=\"o\">:(</span><span class=\"n\">foldr</span> <span class=\"bp\">`</span><span class=\"o\">,</span> <span class=\"bp\">`</span> <span class=\"o\">(</span><span class=\"n\">h</span> <span class=\"n\">t</span><span class=\"o\">,</span> <span class=\"n\">list</span><span class=\"bp\">.</span><span class=\"n\">cons</span> <span class=\"n\">h</span> <span class=\"n\">t</span><span class=\"o\">)</span> <span class=\"n\">list</span><span class=\"bp\">.</span><span class=\"n\">nil</span> <span class=\"bp\">`</span><span class=\"o\">]</span><span class=\"bp\">`</span><span class=\"o\">)</span> <span class=\"o\">:=</span> <span class=\"n\">l</span>\n<span class=\"kn\">notation</span> <span class=\"bp\">`∃!`</span> <span class=\"n\">binders</span> <span class=\"bp\">`</span><span class=\"o\">,</span> <span class=\"bp\">`</span> <span class=\"n\">r</span><span class=\"o\">:(</span><span class=\"n\">scoped</span> <span class=\"n\">P</span><span class=\"o\">,</span> <span class=\"n\">exists_unique</span> <span class=\"n\">P</span><span class=\"o\">)</span> <span class=\"o\">:=</span> <span class=\"n\">r</span>\n</code></pre></div>",
+        "id": 202167673,
+        "sender_full_name": "Billy Price",
+        "timestamp": 1593232963
+    },
+    {
+        "content": "<p>they are all magic pieces of syntax of the <code>notation</code> command</p>",
+        "id": 202167758,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1593233105
+    },
+    {
+        "content": "<p>They are just keywords for the <code>notation</code> command. They have no meaning in Lean.</p>",
+        "id": 202167762,
+        "sender_full_name": "Floris van Doorn",
+        "timestamp": 1593233109
+    },
+    {
+        "content": "<p>Even the <code>(h t, list.cons h t)</code> isn't what it looks like - it's really more like <code>(\\lam h t, list.cons h t)</code></p>",
+        "id": 202167775,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1593233144
+    },
+    {
+        "content": "<p>I see some mentions in the Lean reference manual on binders, but not much for foldr or foldl - is there documentation for them?</p>\n<p>I am generally familiar with foldr and foldr, but it'd be nice to see docs on them.</p>",
+        "id": 202167951,
+        "sender_full_name": "Billy Price",
+        "timestamp": 1593233404
+    },
+    {
+        "content": "<p>Also scoped and binders</p>",
+        "id": 202167954,
+        "sender_full_name": "Billy Price",
+        "timestamp": 1593233415
+    },
+    {
+        "content": "<p>Actually I do understand what binders is, but not how it becomes related to the rest of the expression</p>",
+        "id": 202167964,
+        "sender_full_name": "Billy Price",
+        "timestamp": 1593233458
+    },
+    {
+        "content": "<p>It's pretty much entirely pro forma. I don't think there are many reusable subparts of the <code>notation</code> command, just those particular keywords in that order</p>",
+        "id": 202177910,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1593251658
+    }
+]

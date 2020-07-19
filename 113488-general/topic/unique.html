@@ -1,0 +1,56 @@
+---
+layout: archive
+title: Zulip Chat Archive
+permalink: /stream/113488-general/topic/unique.html
+---
+
+<h2>Stream: <a href="http://robertylewis.com/archive/stream/113488-general/index.html">general</a></h2>
+<h3>Topic: <a href="http://robertylewis.com/archive/stream/113488-general/topic/unique.html">unique</a></h3>
+
+<hr>
+
+<base href="https://leanprover.zulipchat.com">
+
+<head><link href="/style.css" rel="stylesheet"></head>
+
+{% raw %}
+
+<a name="202177060"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113488-general/topic/unique/near/202177060" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="http://robertylewis.com/archive/stream/113488-general/topic/unique.html#202177060">(Jun 27 2020 at 09:31)</a>:</h4>
+<p>how do I write "there are a unique integer and a unique natural number such that ..."?</p>
+
+
+
+<a name="202177067"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113488-general/topic/unique/near/202177067" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="http://robertylewis.com/archive/stream/113488-general/topic/unique.html#202177067">(Jun 27 2020 at 09:31)</a>:</h4>
+<p>I don't think <code>∃! (a : \Z) (b : \N)</code> is what I want because it says "there is a unique integer such that there is a unique natural number such that"</p>
+
+
+
+<a name="202177129"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113488-general/topic/unique/near/202177129" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="http://robertylewis.com/archive/stream/113488-general/topic/unique.html#202177129">(Jun 27 2020 at 09:32)</a>:</h4>
+<p>I guess I just can't write it and have to separate it into two theorems</p>
+
+
+
+<a name="202177144"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113488-general/topic/unique/near/202177144" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="http://robertylewis.com/archive/stream/113488-general/topic/unique.html#202177144">(Jun 27 2020 at 09:33)</a>:</h4>
+<p>What about using a product type?</p>
+
+
+
+<a name="202177710"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113488-general/topic/unique/near/202177710" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="http://robertylewis.com/archive/stream/113488-general/topic/unique.html#202177710">(Jun 27 2020 at 09:48)</a>:</h4>
+<p>Yes, exists unique does not concatenate correctly</p>
+
+
+
+<a name="202177975"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113488-general/topic/unique/near/202177975" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/archive/stream/113488-general/topic/unique.html#202177975">(Jun 27 2020 at 09:56)</a>:</h4>
+<p>You can also use <code>unique (\Sigma ...)</code> etc</p>
+
+
+
+{% endraw %}
+
+<hr><p>Last updated: Jul 19 2020 at 13:36 UTC</p>

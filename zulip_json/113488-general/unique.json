@@ -1,0 +1,38 @@
+[
+    {
+        "content": "<p>how do I write \"there are a unique integer and a unique natural number such that ...\"?</p>",
+        "id": 202177060,
+        "sender_full_name": "Kenny Lau",
+        "timestamp": 1593250295
+    },
+    {
+        "content": "<p>I don't think <code>∃! (a : \\Z) (b : \\N)</code> is what I want because it says \"there is a unique integer such that there is a unique natural number such that\"</p>",
+        "id": 202177067,
+        "sender_full_name": "Kenny Lau",
+        "timestamp": 1593250316
+    },
+    {
+        "content": "<p>I guess I just can't write it and have to separate it into two theorems</p>",
+        "id": 202177129,
+        "sender_full_name": "Kenny Lau",
+        "timestamp": 1593250368
+    },
+    {
+        "content": "<p>What about using a product type?</p>",
+        "id": 202177144,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1593250426
+    },
+    {
+        "content": "<p>Yes, exists unique does not concatenate correctly</p>",
+        "id": 202177710,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1593251321
+    },
+    {
+        "content": "<p>You can also use <code>unique (\\Sigma ...)</code> etc</p>",
+        "id": 202177975,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1593251796
+    }
+]

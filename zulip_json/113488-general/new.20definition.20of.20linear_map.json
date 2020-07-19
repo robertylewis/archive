@@ -1,0 +1,74 @@
+[
+    {
+        "content": "<p>In <a href=\"https://github.com/leanprover-community/mathlib/issues/2866\">#2866</a> I am categorifying <code>mul_action</code> (monoid acting on set) and <code>distrib_mul_action</code> (monoid acting on add_monoid) and <code>mul_semiring_action</code> (monoid acting on semiring)</p>",
+        "id": 199256649,
+        "sender_full_name": "Kenny Lau",
+        "timestamp": 1590844918
+    },
+    {
+        "content": "<p>and the homs are denoted <code>X →[M] Y</code> and <code>A →+[M] B</code> and <code>R →+*[M] S</code> respectively</p>",
+        "id": 199256689,
+        "sender_full_name": "Kenny Lau",
+        "timestamp": 1590844948
+    },
+    {
+        "content": "<p>and then I realized that <code>A →+[M] B</code> is exactly a <code>linear_map</code></p>",
+        "id": 199256697,
+        "sender_full_name": "Kenny Lau",
+        "timestamp": 1590844966
+    },
+    {
+        "content": "<p>so in the future should we redefine <code>linear_map</code> to be <code>distrib_mul_action_hom</code>?</p>",
+        "id": 199256706,
+        "sender_full_name": "Kenny Lau",
+        "timestamp": 1590844981
+    },
+    {
+        "content": "<p><span aria-label=\"thumbs up\" class=\"emoji emoji-1f44d\" role=\"img\" title=\"thumbs up\">:thumbs_up:</span> if you agree and <span aria-label=\"thumbs down\" class=\"emoji emoji-1f44e\" role=\"img\" title=\"thumbs down\">:thumbs_down:</span> if you disagree (you can vote both or neither)</p>",
+        "id": 199256806,
+        "sender_full_name": "Kenny Lau",
+        "timestamp": 1590845079
+    },
+    {
+        "content": "<p>Oof... that sounds like a major refactor...</p>",
+        "id": 199256991,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1590845383
+    },
+    {
+        "content": "<p>I think that answering this question is impossible without seeing whether everything would become painful.</p>",
+        "id": 199257045,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1590845448
+    },
+    {
+        "content": "<p>the API will be the same</p>",
+        "id": 199257058,
+        "sender_full_name": "Kenny Lau",
+        "timestamp": 1590845489
+    },
+    {
+        "content": "<p>like how <code>module</code> is to be an abbreviation of <code>semimodule</code></p>",
+        "id": 199257061,
+        "sender_full_name": "Kenny Lau",
+        "timestamp": 1590845501
+    },
+    {
+        "content": "<p>We should probably first merge <a href=\"https://github.com/leanprover-community/mathlib/issues/2848\">#2848</a>, which is a step in this direction as it already changes the definition of linear map from a linear map between modules on a ring to linear map between semimodules on a semiring. Then you can see how much breaks if you change the definition of linear maps to your definition (my guess would be: not too much, and at completely unexpected places).</p>",
+        "id": 199257340,
+        "sender_full_name": "Sebastien Gouezel",
+        "timestamp": 1590845912
+    },
+    {
+        "content": "<p>I'm happy to just call a <code>distrib_mul_action_hom</code> a <code>linear_map</code>.</p>",
+        "id": 199257729,
+        "sender_full_name": "Chris Hughes",
+        "timestamp": 1590846571
+    },
+    {
+        "content": "<p>in the future PR?</p>",
+        "id": 199257870,
+        "sender_full_name": "Kenny Lau",
+        "timestamp": 1590846777
+    }
+]

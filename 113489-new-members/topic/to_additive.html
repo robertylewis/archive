@@ -1,0 +1,73 @@
+---
+layout: archive
+title: Zulip Chat Archive
+permalink: /stream/113489-new-members/topic/to_additive.html
+---
+
+<h2>Stream: <a href="http://robertylewis.com/archive/stream/113489-new-members/index.html">new members</a></h2>
+<h3>Topic: <a href="http://robertylewis.com/archive/stream/113489-new-members/topic/to_additive.html">to_additive</a></h3>
+
+<hr>
+
+<base href="https://leanprover.zulipchat.com">
+
+<head><link href="/style.css" rel="stylesheet"></head>
+
+{% raw %}
+
+<a name="198844438"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113489-new%20members/topic/to_additive/near/198844438" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Paul van Wamelen <a href="http://robertylewis.com/archive/stream/113489-new-members/topic/to_additive.html#198844438">(May 27 2020 at 02:39)</a>:</h4>
+<p>In big_operators there is a <code>sum_smul'</code> lemma:</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">lemma</span> <span class="n">sum_smul&#39;</span> <span class="o">[</span><span class="n">add_comm_monoid</span> <span class="n">β</span><span class="o">]</span> <span class="o">(</span><span class="n">s</span> <span class="o">:</span> <span class="n">finset</span> <span class="n">α</span><span class="o">)</span> <span class="o">(</span><span class="n">n</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">)</span> <span class="o">(</span><span class="n">f</span> <span class="o">:</span> <span class="n">α</span> <span class="bp">→</span> <span class="n">β</span><span class="o">)</span> <span class="o">:</span>
+  <span class="o">(</span><span class="err">∑</span> <span class="n">x</span> <span class="k">in</span> <span class="n">s</span><span class="o">,</span> <span class="n">add_monoid</span><span class="bp">.</span><span class="n">smul</span> <span class="n">n</span> <span class="o">(</span><span class="n">f</span> <span class="n">x</span><span class="o">))</span> <span class="bp">=</span> <span class="n">add_monoid</span><span class="bp">.</span><span class="n">smul</span> <span class="n">n</span> <span class="o">((</span><span class="err">∑</span> <span class="n">x</span> <span class="k">in</span> <span class="n">s</span><span class="o">,</span> <span class="n">f</span> <span class="n">x</span><span class="o">))</span> <span class="o">:=</span>
+<span class="bp">@</span><span class="n">prod_pow</span> <span class="bp">_</span> <span class="o">(</span><span class="n">multiplicative</span> <span class="n">β</span><span class="o">)</span> <span class="bp">_</span> <span class="bp">_</span> <span class="bp">_</span> <span class="bp">_</span>
+<span class="n">attribute</span> <span class="o">[</span><span class="n">to_additive</span> <span class="n">sum_smul&#39;</span><span class="o">]</span> <span class="n">prod_pow</span>
+</code></pre></div>
+
+
+<p>Why can't I seem to use this lemma? I get <code>unknown identifier 'sum_smul''</code> even later in the big_operators file? <br>
+Probably related: Is there somewhere I can read up on <code>to_additive</code>?</p>
+
+
+
+<a name="198844501"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113489-new%20members/topic/to_additive/near/198844501" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jalex Stark <a href="http://robertylewis.com/archive/stream/113489-new-members/topic/to_additive.html#198844501">(May 27 2020 at 02:40)</a>:</h4>
+<p>did you open the right namespace?</p>
+
+
+
+<a name="198844507"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113489-new%20members/topic/to_additive/near/198844507" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/archive/stream/113489-new-members/topic/to_additive.html#198844507">(May 27 2020 at 02:40)</a>:</h4>
+<p>it's probably in the <code>finset</code> namespace</p>
+
+
+
+<a name="198844646"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113489-new%20members/topic/to_additive/near/198844646" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/archive/stream/113489-new-members/topic/to_additive.html#198844646">(May 27 2020 at 02:43)</a>:</h4>
+<p><a href="https://leanprover-community.github.io/mathlib_docs/algebra/group/to_additive.html">https://leanprover-community.github.io/mathlib_docs/algebra/group/to_additive.html</a></p>
+
+
+
+<a name="198844719"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113489-new%20members/topic/to_additive/near/198844719" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Paul van Wamelen <a href="http://robertylewis.com/archive/stream/113489-new-members/topic/to_additive.html#198844719">(May 27 2020 at 02:44)</a>:</h4>
+<p>Thanks and thanks! Yeah finset.sum_smul' does the trick.</p>
+
+
+
+<a name="198864877"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113489-new%20members/topic/to_additive/near/198864877" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="http://robertylewis.com/archive/stream/113489-new-members/topic/to_additive.html#198864877">(May 27 2020 at 08:47)</a>:</h4>
+<p>Typing <code>#where</code> just after a definition will tell you the name of the namespace you're in when you made it.</p>
+<p>Unfortunately editing mathlib can cause recompilation issues.</p>
+<p>It's a shame that we can't hover over a definition and see exactly what we see when we hover over a use of that definition.</p>
+
+
+
+<a name="198884751"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113489-new%20members/topic/to_additive/near/198884751" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Paul van Wamelen <a href="http://robertylewis.com/archive/stream/113489-new-members/topic/to_additive.html#198884751">(May 27 2020 at 12:42)</a>:</h4>
+<p>Oh, this is good to know!</p>
+
+
+
+{% endraw %}
+
+<hr><p>Last updated: Jul 19 2020 at 13:36 UTC</p>

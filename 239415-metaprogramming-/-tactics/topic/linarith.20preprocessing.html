@@ -1,0 +1,48 @@
+---
+layout: archive
+title: Zulip Chat Archive
+permalink: /stream/239415-metaprogramming-/-tactics/topic/linarith.20preprocessing.html
+---
+
+<h2>Stream: <a href="http://robertylewis.com/archive/stream/239415-metaprogramming-/-tactics/index.html">metaprogramming / tactics</a></h2>
+<h3>Topic: <a href="http://robertylewis.com/archive/stream/239415-metaprogramming-/-tactics/topic/linarith.20preprocessing.html">linarith preprocessing</a></h3>
+
+<hr>
+
+<base href="https://leanprover.zulipchat.com">
+
+<head><link href="/style.css" rel="stylesheet"></head>
+
+{% raw %}
+
+<a name="204059433"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/239415-metaprogramming%20/%20tactics/topic/linarith%20preprocessing/near/204059433" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Rob Lewis <a href="http://robertylewis.com/archive/stream/239415-metaprogramming-/-tactics/topic/linarith.20preprocessing.html#204059433">(Jul 16 2020 at 08:51)</a>:</h4>
+<p>Yesterday at LftCM, <span class="user-mention" data-user-id="260507">@Heather Macbeth</span> asked about adapting <code>linarith</code> to understand nonnegativity of norms. I think this is a nice exercise for anyone looking for a metaprogramming exercise, so I'm posting it as a suggestion here.</p>
+<p>The goal: a tactic <code>norm_nlinarith</code>, that does everything <code>nlinarith</code> does except it also uses proofs of <code>0 ≤ ∥x∥</code> for every <code>∥x∥</code> that appears in the problem.</p>
+<p><code>linarith</code> has a notion of a <a href="https://github.com/leanprover-community/mathlib/blob/master/src/tactic/linarith/datatypes.lean#L227">preprocessor</a>. In fact, <code>nlinarith</code> is exactly <code>linarith</code> plus <a href="https://github.com/leanprover-community/mathlib/blob/master/src/tactic/linarith/preprocessing.lean#L235">one extra preprocessor</a><code>. </code>norm_nlinarith<code> requires adding one simple preprocessing step before this </code>nlinarith` step. </p>
+<p>There's already a function <a href="https://github.com/leanprover-community/mathlib/blob/master/src/tactic/linarith/preprocessing.lean#L221">find_squares</a> that's used there; something similar, even simpler, could be done to look for norm expressions. If you followed my <a href="https://www.youtube.com/playlist?list=PLlF-CfQhukNnq2kDCw2P_vI5AfXN7egP2">metaprogramming videos</a> you know how to create a proof term showing a norm is nonnegative. (It's very much like the example showing a natural number is nonnegative.)</p>
+<p>The wrapper tactic <code>norm_nlinarith</code> (better name to be determined) would have to insert the new preprocessor at the right place in the preprocessor list.</p>
+
+
+
+<a name="204059497"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/239415-metaprogramming%20/%20tactics/topic/linarith%20preprocessing/near/204059497" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Rob Lewis <a href="http://robertylewis.com/archive/stream/239415-metaprogramming-/-tactics/topic/linarith.20preprocessing.html#204059497">(Jul 16 2020 at 08:52)</a>:</h4>
+<p>Maybe <span class="user-mention" data-user-id="260507">@Heather Macbeth</span> has suggestions of some test cases for this tactic!</p>
+
+
+
+<a name="204060115"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/239415-metaprogramming%20/%20tactics/topic/linarith%20preprocessing/near/204060115" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/archive/stream/239415-metaprogramming-/-tactics/topic/linarith.20preprocessing.html#204060115">(Jul 16 2020 at 09:00)</a>:</h4>
+<p>Maybe the commonalities of <code>nlinarith</code> and <code>norm_nlinarith</code> could be generalized to a preprocessor that does the general process of searching for some kind of subterm and adding some kind of lemma based on the term to the context</p>
+
+
+
+<a name="204087660"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/239415-metaprogramming%20/%20tactics/topic/linarith%20preprocessing/near/204087660" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Heather Macbeth <a href="http://robertylewis.com/archive/stream/239415-metaprogramming-/-tactics/topic/linarith.20preprocessing.html#204087660">(Jul 16 2020 at 14:04)</a>:</h4>
+<p>Along the lines Mario mentions, it would be nice to be able to do <code>linarith [norm_nonneg, triangle]</code>, like one can with <code>rw</code> or <code>simp</code>:  to mention just the lemmas, and have the tactic add to the hypotheses all possible applications of those lemmas to the expressions in the goal.  At the moment one has to be more specific and say <code>linarith [triangle a b]</code>.</p>
+
+
+
+{% endraw %}
+
+<hr><p>Last updated: Jul 19 2020 at 13:36 UTC</p>

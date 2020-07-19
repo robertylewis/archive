@@ -1,0 +1,44 @@
+---
+layout: archive
+title: Zulip Chat Archive
+permalink: /stream/113488-general/topic/nat.2Epow.html
+---
+
+<h2>Stream: <a href="http://robertylewis.com/archive/stream/113488-general/index.html">general</a></h2>
+<h3>Topic: <a href="http://robertylewis.com/archive/stream/113488-general/topic/nat.2Epow.html">nat.pow</a></h3>
+
+<hr>
+
+<base href="https://leanprover.zulipchat.com">
+
+<head><link href="/style.css" rel="stylesheet"></head>
+
+{% raw %}
+
+<a name="196340778"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113488-general/topic/nat.pow/near/196340778" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="http://robertylewis.com/archive/stream/113488-general/topic/nat.2Epow.html#196340778">(May 05 2020 at 17:39)</a>:</h4>
+<p>Someone just privately asked me how to prove 1 &lt;= 2^k, and applying <code>one_le_pow_of_one_le</code> doesn't work because <code>nat.has_pow</code> is not definitionally <code>monoid.has_pow</code>. We were always told that nothing could be done about this because it was in core. Is this something which can now be changed though? Or would it just break a gazillion things and nobody can be bothered to fix them? The issue I'm concerned about is that the two functions have different conventions about the succ case: <code>nat.pow</code> is <code>b^n*b</code> and <code>monoid.pow</code> is <code>a*a^n</code> :-(</p>
+
+
+
+<a name="196340955"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113488-general/topic/nat.pow/near/196340955" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="http://robertylewis.com/archive/stream/113488-general/topic/nat.2Epow.html#196340955">(May 05 2020 at 17:40)</a>:</h4>
+<p>I think it mostly requires having someone with enough time and energy.</p>
+
+
+
+<a name="196341288"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113488-general/topic/nat.pow/near/196341288" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/archive/stream/113488-general/topic/nat.2Epow.html#196341288">(May 05 2020 at 17:43)</a>:</h4>
+<p>there is a theorem to rewrite one in terms of the other</p>
+
+
+
+<a name="196341459"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/113488-general/topic/nat.pow/near/196341459" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Gabriel Ebner <a href="http://robertylewis.com/archive/stream/113488-general/topic/nat.2Epow.html#196341459">(May 05 2020 at 17:45)</a>:</h4>
+<p><a href="https://github.com/leanprover-community/lean/pull/128#issuecomment-610281436" title="https://github.com/leanprover-community/lean/pull/128#issuecomment-610281436">https://github.com/leanprover-community/lean/pull/128#issuecomment-610281436</a></p>
+
+
+
+{% endraw %}
+
+<hr><p>Last updated: Jul 19 2020 at 13:36 UTC</p>

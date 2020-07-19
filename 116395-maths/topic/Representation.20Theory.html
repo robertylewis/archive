@@ -1,0 +1,95 @@
+---
+layout: archive
+title: Zulip Chat Archive
+permalink: /stream/116395-maths/topic/Representation.20Theory.html
+---
+
+<h2>Stream: <a href="http://robertylewis.com/archive/stream/116395-maths/index.html">maths</a></h2>
+<h3>Topic: <a href="http://robertylewis.com/archive/stream/116395-maths/topic/Representation.20Theory.html">Representation Theory</a></h3>
+
+<hr>
+
+<base href="https://leanprover.zulipchat.com">
+
+<head><link href="/style.css" rel="stylesheet"></head>
+
+{% raw %}
+
+<a name="198297535"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/Representation%20Theory/near/198297535" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> orlando <a href="http://robertylewis.com/archive/stream/116395-maths/topic/Representation.20Theory.html#198297535">(May 21 2020 at 08:31)</a>:</h4>
+<p>Hello, That good <span class="user-mention" data-user-id="110087">@Scott Morrison</span> , i  have also a version of Maschke theorem.  </p>
+<p>But for me the big step is really to make the application over <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="double-struck">C</mi></mrow><annotation encoding="application/x-tex">\mathbb{C}</annotation></semantics></math></span><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.68889em;vertical-align:0em;"></span><span class="mord"><span class="mord mathbb">C</span></span></span></span></span> ! </p>
+<p>For example, the decomposition of a representation in irreducible representation.</p>
+<p>I think the decomposition in irrducible part is ok for field (not algebraically closed).</p>
+
+
+
+<a name="198307212"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/Representation%20Theory/near/198307212" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="http://robertylewis.com/archive/stream/116395-maths/topic/Representation.20Theory.html#198307212">(May 21 2020 at 10:42)</a>:</h4>
+<p>Could we move this thread to the math stream?</p>
+
+
+
+<a name="198341355"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/Representation%20Theory/near/198341355" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Notification Bot <a href="http://robertylewis.com/archive/stream/116395-maths/topic/Representation.20Theory.html#198341355">(May 21 2020 at 16:18)</a>:</h4>
+<p>This topic was moved here from <a class="stream-topic" data-stream-id="113489" href="/#narrow/stream/113489-new-members/topic/Representation.20Theory">#new members &gt; Representation Theory</a> by <span class="user-mention silent" data-user-id="110049">Mario Carneiro</span></p>
+
+
+
+<a name="198346016"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/Representation%20Theory/near/198346016" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="http://robertylewis.com/archive/stream/116395-maths/topic/Representation.20Theory.html#198346016">(May 21 2020 at 16:52)</a>:</h4>
+<p>Thanks Mario.</p>
+
+
+
+<a name="198419189"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/Representation%20Theory/near/198419189" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Syx Pek <a href="http://robertylewis.com/archive/stream/116395-maths/topic/Representation.20Theory.html#198419189">(May 22 2020 at 08:54)</a>:</h4>
+<p>I am very new to Lean (Ive checked it in the past many years ago but I had deemed it to unwieldy to get started). I am just curious why the PR for Maschke's Thm don't define the notion of semisimplicity, and just state that k[G] is semisimple, which I think would be how most people would think Maschke's Thm actually looks like. (It unpacks the notion of semisimplicity into the notion of every submodule has a complementary subspace, which I think its equivalent?, though I only work with algebra over (commutative unital) rings, so I don't know the subtleties.)</p>
+
+
+
+<a name="198421905"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/Representation%20Theory/near/198421905" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="http://robertylewis.com/archive/stream/116395-maths/topic/Representation.20Theory.html#198421905">(May 22 2020 at 09:29)</a>:</h4>
+<p><span class="user-mention" data-user-id="128818">@Syx Pek</span> Welcome! The reason is only that the definitions are not there yet. This PR does all the "real work", and we can easily repackage it in a follow-up PR. I agree that this should be done. We cannot claim that it's completely done yet (-;</p>
+
+
+
+<a name="198422199"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/Representation%20Theory/near/198422199" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Scott Morrison <a href="http://robertylewis.com/archive/stream/116395-maths/topic/Representation.20Theory.html#198422199">(May 22 2020 at 09:32)</a>:</h4>
+<p>In particular, the design decisions around "which definition of semisimplicity should we use" are probably harder than the actual calculation I did in that PR.</p>
+
+
+
+<a name="198422220"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/Representation%20Theory/near/198422220" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Scott Morrison <a href="http://robertylewis.com/archive/stream/116395-maths/topic/Representation.20Theory.html#198422220">(May 22 2020 at 09:33)</a>:</h4>
+<p>There are a lot of ways to talk about semisimplicity!</p>
+
+
+
+<a name="198422229"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/Representation%20Theory/near/198422229" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="http://robertylewis.com/archive/stream/116395-maths/topic/Representation.20Theory.html#198422229">(May 22 2020 at 09:33)</a>:</h4>
+<p>Yes, I think the issue will be that nobody has defined semisimple algebras yet. I wonder if this is one of those situations where mathematicians are quite happy with several definitions of the same thing but computer scientists can't have this. Is the definition of a semisimple algebra something like "finite sum of simple algebras" or "its representation theory is semisimple"? There are theorems to be proved here and nobody has got round to it yet</p>
+
+
+
+<a name="198422268"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/Representation%20Theory/near/198422268" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="http://robertylewis.com/archive/stream/116395-maths/topic/Representation.20Theory.html#198422268">(May 22 2020 at 09:33)</a>:</h4>
+<p>Yeah what Scott said</p>
+
+
+
+<a name="198422340"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/Representation%20Theory/near/198422340" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="http://robertylewis.com/archive/stream/116395-maths/topic/Representation.20Theory.html#198422340">(May 22 2020 at 09:34)</a>:</h4>
+<p>They won't be hard</p>
+
+
+
+<a name="198422381"></a>
+<h4><a href="https://leanprover.zulipchat.com#narrow/stream/116395-maths/topic/Representation%20Theory/near/198422381" class="zl"><img src="http://robertylewis.com/archive/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="http://robertylewis.com/archive/stream/116395-maths/topic/Representation.20Theory.html#198422381">(May 22 2020 at 09:34)</a>:</h4>
+<p>It's just that we are understaffed right now because the universities aren't teaching this stuff</p>
+
+
+
+{% endraw %}
+
+<hr><p>Last updated: Jul 19 2020 at 13:36 UTC</p>

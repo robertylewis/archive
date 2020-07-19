@@ -1,0 +1,38 @@
+[
+    {
+        "content": "<p><a href=\"https://leanprover-community.github.io/mathlib_stats.html\">June is now a record setting month for mathlib!</a> 70% more commits this month than our pre-corona high. Our 2020 total is already very close to our 2019 total. And there's a very good chance we'll have 300k lines of code in the repository before the end of the month.</p>",
+        "id": 202183382,
+        "sender_full_name": "Rob Lewis",
+        "timestamp": 1593260215
+    },
+    {
+        "content": "<p>My blog has also had has many hits this year as in the whole of last year</p>",
+        "id": 202211488,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1593303527
+    },
+    {
+        "content": "<p>43000 views and 20000 visitors this year. My post on mathematics in type theory has already had as many views as my viraly fashionable mathematics post. These posts are both just basically adverts for the lean and mathlib community. I'm really hoping that as the API gets better we'll be able to really start attracting mathematicians</p>",
+        "id": 202211638,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1593303838
+    },
+    {
+        "content": "<p>Yesterday was a big day! We closed out June by hitting a bunch of milestones. For one, we broke 300k loc. For another, the number of commits in June was more than double the pre-corona high. And hafway into 2020, we have more commits for the year than we did in all of 2019.</p>",
+        "id": 202543312,
+        "sender_full_name": "Rob Lewis",
+        "timestamp": 1593592441
+    },
+    {
+        "content": "<p>Let's hope we'll have another lockdown to migrate mathlib to Lean 4. We'll need that kind of productivity.</p>",
+        "id": 202543896,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1593592876
+    },
+    {
+        "content": "<p>And we didn't even count the commits to the community fork.</p>",
+        "id": 202545603,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1593594047
+    }
+]

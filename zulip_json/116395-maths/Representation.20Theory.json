@@ -1,0 +1,74 @@
+[
+    {
+        "content": "<p>Hello, That good <span class=\"user-mention\" data-user-id=\"110087\">@Scott Morrison</span> , i  have also a version of Maschke theorem.  </p>\n<p>But for me the big step is really to make the application over <span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi mathvariant=\"double-struck\">C</mi></mrow><annotation encoding=\"application/x-tex\">\\mathbb{C}</annotation></semantics></math></span><span aria-hidden=\"true\" class=\"katex-html\"><span class=\"base\"><span class=\"strut\" style=\"height:0.68889em;vertical-align:0em;\"></span><span class=\"mord\"><span class=\"mord mathbb\">C</span></span></span></span></span> ! </p>\n<p>For example, the decomposition of a representation in irreducible representation.</p>\n<p>I think the decomposition in irrducible part is ok for field (not algebraically closed).</p>",
+        "id": 198297535,
+        "sender_full_name": "orlando",
+        "timestamp": 1590049880
+    },
+    {
+        "content": "<p>Could we move this thread to the math stream?</p>",
+        "id": 198307212,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1590057748
+    },
+    {
+        "content": "<p>This topic was moved here from <a class=\"stream-topic\" data-stream-id=\"113489\" href=\"/#narrow/stream/113489-new-members/topic/Representation.20Theory\">#new members &gt; Representation Theory</a> by <span class=\"user-mention silent\" data-user-id=\"110049\">Mario Carneiro</span></p>",
+        "id": 198341355,
+        "sender_full_name": "Notification Bot",
+        "timestamp": 1590077920
+    },
+    {
+        "content": "<p>Thanks Mario.</p>",
+        "id": 198346016,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1590079921
+    },
+    {
+        "content": "<p>I am very new to Lean (Ive checked it in the past many years ago but I had deemed it to unwieldy to get started). I am just curious why the PR for Maschke's Thm don't define the notion of semisimplicity, and just state that k[G] is semisimple, which I think would be how most people would think Maschke's Thm actually looks like. (It unpacks the notion of semisimplicity into the notion of every submodule has a complementary subspace, which I think its equivalent?, though I only work with algebra over (commutative unital) rings, so I don't know the subtleties.)</p>",
+        "id": 198419189,
+        "sender_full_name": "Syx Pek",
+        "timestamp": 1590137645
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"128818\">@Syx Pek</span> Welcome! The reason is only that the definitions are not there yet. This PR does all the \"real work\", and we can easily repackage it in a follow-up PR. I agree that this should be done. We cannot claim that it's completely done yet (-;</p>",
+        "id": 198421905,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1590139787
+    },
+    {
+        "content": "<p>In particular, the design decisions around \"which definition of semisimplicity should we use\" are probably harder than the actual calculation I did in that PR.</p>",
+        "id": 198422199,
+        "sender_full_name": "Scott Morrison",
+        "timestamp": 1590139975
+    },
+    {
+        "content": "<p>There are a lot of ways to talk about semisimplicity!</p>",
+        "id": 198422220,
+        "sender_full_name": "Scott Morrison",
+        "timestamp": 1590139992
+    },
+    {
+        "content": "<p>Yes, I think the issue will be that nobody has defined semisimple algebras yet. I wonder if this is one of those situations where mathematicians are quite happy with several definitions of the same thing but computer scientists can't have this. Is the definition of a semisimple algebra something like \"finite sum of simple algebras\" or \"its representation theory is semisimple\"? There are theorems to be proved here and nobody has got round to it yet</p>",
+        "id": 198422229,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1590139999
+    },
+    {
+        "content": "<p>Yeah what Scott said</p>",
+        "id": 198422268,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1590140026
+    },
+    {
+        "content": "<p>They won't be hard</p>",
+        "id": 198422340,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1590140044
+    },
+    {
+        "content": "<p>It's just that we are understaffed right now because the universities aren't teaching this stuff</p>",
+        "id": 198422381,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1590140083
+    }
+]

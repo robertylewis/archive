@@ -1,0 +1,98 @@
+[
+    {
+        "content": "<p>I asked in a <a href=\"https://twitter.com/XenaProject/status/1259099619994320896\">tweet</a> about a formalised <a href=\"https://en.wikipedia.org/wiki/Seifert%E2%80%93van_Kampen_theorem\">Seifert--van Kampen theorem</a>. Here is something I am confused about. Hou and Shulman have \"<a href=\"https://home.sandiego.edu/~shulman/papers/vankampen.pdf\">formalised the Seifert--van Kampen theorem</a>\". I want to have the Seifert--van Kampen theorem in Lean. Can I get it?</p>\n<div class=\"inline-preview-twitter\"><div class=\"twitter-tweet\"><a href=\"https://twitter.com/XenaProject/status/1259099619994320896\"><img class=\"twitter-avatar\" src=\"https://pbs.twimg.com/profile_images/1130953085952712704/PqL5txUs_normal.png\"></a><p>Which non-univalent theorem provers contain a proof of the Seifert--van Kampen theorem <a href=\"https://t.co/DAjfwcWl4t\">https://en.wikipedia.org/wiki/Seifert%E2%80%93van_Kampen_theorem</a> ? #Coq #Isabelle #leanprover ? Note that Hou and Shulman gave a *synthetic* proof in a univalent theory; I am looking for a non-synthetic proof. I am not an expert.</p><span>- The Xena Project (@XenaProject)</span></div></div>",
+        "id": 197661782,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1589531783
+    },
+    {
+        "content": "<p>I thought a bit about how to do this--that's why I formalized the Lebesgue number theorem.</p>",
+        "id": 197662623,
+        "sender_full_name": "Reid Barton",
+        "timestamp": 1589532328
+    },
+    {
+        "content": "<p>I think the S-vK theorem is within reach for sure.</p>",
+        "id": 197662759,
+        "sender_full_name": "Reid Barton",
+        "timestamp": 1589532394
+    },
+    {
+        "content": "<p>(I assume you mean the theorem for topological spaces, though there are other versions which are also not synthetic, like for simplicial sets)</p>",
+        "id": 197662804,
+        "sender_full_name": "Reid Barton",
+        "timestamp": 1589532439
+    },
+    {
+        "content": "<p>It was the next big thing I wanted to add to lean-homotopy-theory before I decided to do model categories instead.</p>",
+        "id": 197663570,
+        "sender_full_name": "Reid Barton",
+        "timestamp": 1589532858
+    },
+    {
+        "content": "<p>Also, I realized that if you formalize the groupoid version, there is still a fair bit of other work needed to conclude that <span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>π</mi><mn>1</mn></msub><mo stretchy=\"false\">(</mo><msup><mi>S</mi><mn>1</mn></msup><mo stretchy=\"false\">)</mo><mo>=</mo><mi mathvariant=\"double-struck\">Z</mi></mrow><annotation encoding=\"application/x-tex\">\\pi_1(S^1) = \\mathbb{Z}</annotation></semantics></math></span><span aria-hidden=\"true\" class=\"katex-html\"><span class=\"base\"><span class=\"strut\" style=\"height:1.064108em;vertical-align:-0.25em;\"></span><span class=\"mord\"><span class=\"mord mathdefault\" style=\"margin-right:0.03588em;\">π</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.30110799999999993em;\"><span style=\"top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"sizing reset-size6 size3 mtight\"><span class=\"mord mtight\">1</span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.15em;\"><span></span></span></span></span></span></span><span class=\"mopen\">(</span><span class=\"mord\"><span class=\"mord mathdefault\" style=\"margin-right:0.05764em;\">S</span><span class=\"msupsub\"><span class=\"vlist-t\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.8141079999999999em;\"><span style=\"top:-3.063em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"sizing reset-size6 size3 mtight\"><span class=\"mord mtight\">1</span></span></span></span></span></span></span></span><span class=\"mclose\">)</span><span class=\"mspace\" style=\"margin-right:0.2777777777777778em;\"></span><span class=\"mrel\">=</span><span class=\"mspace\" style=\"margin-right:0.2777777777777778em;\"></span></span><span class=\"base\"><span class=\"strut\" style=\"height:0.68889em;vertical-align:0em;\"></span><span class=\"mord\"><span class=\"mord mathbb\">Z</span></span></span></span></span> from it.</p>",
+        "id": 197663604,
+        "sender_full_name": "Reid Barton",
+        "timestamp": 1589532885
+    },
+    {
+        "content": "<p>We don't even have the fundamental group, or the fundamental groupoid. If I recall correctly, there was a PR by <span class=\"user-mention\" data-user-id=\"110064\">@Kenny Lau</span> doing it, but it was decided that it should instead be an instance of a more general object, and that we should first get the more general object in mathlib. I don't know anything about the general versions, but maybe we should try to get <span class=\"user-mention\" data-user-id=\"110032\">@Reid Barton</span> 's homotopy theory library into mathlib.</p>",
+        "id": 197665428,
+        "sender_full_name": "Sebastien Gouezel",
+        "timestamp": 1589533984
+    },
+    {
+        "content": "<p>I'd love to have Reid's stuff into mathlib. But, whatever the road, I wouldn't say we have the fundamental group if we don't derive the concrete statement about continuous maps frrom <span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mi mathvariant=\"double-struck\">S</mi><mn>1</mn></msup></mrow><annotation encoding=\"application/x-tex\">\\mathbb S^1</annotation></semantics></math></span><span aria-hidden=\"true\" class=\"katex-html\"><span class=\"base\"><span class=\"strut\" style=\"height:0.8141079999999999em;vertical-align:0em;\"></span><span class=\"mord\"><span class=\"mord mathbb\">S</span><span class=\"msupsub\"><span class=\"vlist-t\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.8141079999999999em;\"><span style=\"top:-3.063em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"sizing reset-size6 size3 mtight\"><span class=\"mord mtight\">1</span></span></span></span></span></span></span></span></span></span></span> to itself</p>",
+        "id": 197666036,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1589534307
+    },
+    {
+        "content": "<p>Now that we have <span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>exp</mi><mo>⁡</mo></mrow><annotation encoding=\"application/x-tex\">\\exp</annotation></semantics></math></span><span aria-hidden=\"true\" class=\"katex-html\"><span class=\"base\"><span class=\"strut\" style=\"height:0.625em;vertical-align:-0.19444em;\"></span><span class=\"mop\">exp</span></span></span></span>, especially, it would be nice to do covering space theory and compute <span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>π</mi><mn>1</mn></msub><mo stretchy=\"false\">(</mo><msup><mi>S</mi><mn>1</mn></msup><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">\\pi_1(S^1)</annotation></semantics></math></span><span aria-hidden=\"true\" class=\"katex-html\"><span class=\"base\"><span class=\"strut\" style=\"height:1.064108em;vertical-align:-0.25em;\"></span><span class=\"mord\"><span class=\"mord mathdefault\" style=\"margin-right:0.03588em;\">π</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.30110799999999993em;\"><span style=\"top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"sizing reset-size6 size3 mtight\"><span class=\"mord mtight\">1</span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.15em;\"><span></span></span></span></span></span></span><span class=\"mopen\">(</span><span class=\"mord\"><span class=\"mord mathdefault\" style=\"margin-right:0.05764em;\">S</span><span class=\"msupsub\"><span class=\"vlist-t\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.8141079999999999em;\"><span style=\"top:-3.063em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"sizing reset-size6 size3 mtight\"><span class=\"mord mtight\">1</span></span></span></span></span></span></span></span><span class=\"mclose\">)</span></span></span></span> that way.</p>",
+        "id": 197666124,
+        "sender_full_name": "Reid Barton",
+        "timestamp": 1589534378
+    },
+    {
+        "content": "<p>However, the main obstruction I see is that no algebraic topologist actually uses the category of all topological spaces</p>",
+        "id": 197666205,
+        "sender_full_name": "Reid Barton",
+        "timestamp": 1589534411
+    },
+    {
+        "content": "<p>there are a number of different substitutes with slightly different technical properties</p>",
+        "id": 197666269,
+        "sender_full_name": "Reid Barton",
+        "timestamp": 1589534442
+    },
+    {
+        "content": "<p>That's why I say: let's do a fancy version, but make sure we can derive the concrete stuff</p>",
+        "id": 197666447,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1589534531
+    },
+    {
+        "content": "<p>Now the next level problem: there are a number of different technical frameworks in which to organize things that are like categories of topological spaces...</p>",
+        "id": 197666541,
+        "sender_full_name": "Reid Barton",
+        "timestamp": 1589534608
+    },
+    {
+        "content": "<p>In my opinion, the fundamental groupoid is so fundamental that it should be defined in the most general situation, i.e., general topological spaces. If machinery to compute it only applies in more limited situations, I don't mind at all (but I definitely want to be able at some point to say interesting things on the <span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>π</mi><mn>1</mn></msub></mrow><annotation encoding=\"application/x-tex\">\\pi_1</annotation></semantics></math></span><span aria-hidden=\"true\" class=\"katex-html\"><span class=\"base\"><span class=\"strut\" style=\"height:0.58056em;vertical-align:-0.15em;\"></span><span class=\"mord\"><span class=\"mord mathdefault\" style=\"margin-right:0.03588em;\">π</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.30110799999999993em;\"><span style=\"top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"sizing reset-size6 size3 mtight\"><span class=\"mord mtight\">1</span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.15em;\"><span></span></span></span></span></span></span></span></span></span> of hawaiian earrings, or the complement of the horned sphere)</p>",
+        "id": 197672780,
+        "sender_full_name": "Sebastien Gouezel",
+        "timestamp": 1589538563
+    },
+    {
+        "content": "<p>And the universal cover should be defined for semi-locally simply connected spaces, of course!</p>",
+        "id": 197672809,
+        "sender_full_name": "Sebastien Gouezel",
+        "timestamp": 1589538597
+    },
+    {
+        "content": "<p>You mean délaçables spaces, right?</p>",
+        "id": 197672889,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1589538637
+    }
+]
