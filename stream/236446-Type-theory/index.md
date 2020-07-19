@@ -21,4 +21,4 @@ permalink: /stream/236446-Type-theory/index.html
 * [Classical logic](topic/Classical.20logic.html) (7 messages, latest: May 13 2020 at 08:05)
 * [stream events](topic/stream.20events.html) (1 message, latest: Apr 28 2020 at 13:07)
 
-<hr><p>Last updated: Jul 19 2020 at 13:36 UTC</p>
+<hr><p>Last updated: Jul 19 2020 at 13:42 UTC</p>

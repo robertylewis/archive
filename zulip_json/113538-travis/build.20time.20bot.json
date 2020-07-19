@@ -11752,5 +11752,11 @@
         "id": 204343137,
         "sender_full_name": "build time bot",
         "timestamp": 1595154927
+    },
+    {
+        "content": "<p>Building <a href=\"https://github.com/leanprover-community/mathlib/commit/5228d557b4a7a52eba0c9d35bf0cd6830f1939d2\">https://github.com/leanprover-community/mathlib/commit/5228d557b4a7a52eba0c9d35bf0cd6830f1939d2</a> takes 96m18.795s<br>\nper file compilation times at <a href=\"https://tqft.net/lean/mathlib/5228d557b4a7a52eba0c9d35bf0cd6830f1939d2.json\">https://tqft.net/lean/mathlib/5228d557b4a7a52eba0c9d35bf0cd6830f1939d2.json</a><br>\n--profile output at <a href=\"https://tqft.net/lean/mathlib/5228d557b4a7a52eba0c9d35bf0cd6830f1939d2.log\">https://tqft.net/lean/mathlib/5228d557b4a7a52eba0c9d35bf0cd6830f1939d2.log</a></p>",
+        "id": 204350380,
+        "sender_full_name": "build time bot",
+        "timestamp": 1595165850
     }
 ]

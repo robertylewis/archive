@@ -19,4 +19,4 @@ permalink: /stream/239415-metaprogramming-/-tactics/index.html
 * [ideas for exercises](topic/ideas.20for.20exercises.html) (1 message, latest: May 17 2020 at 16:30)
 * [stream events](topic/stream.20events.html) (31 messages, latest: May 17 2020 at 14:19)
 
-<hr><p>Last updated: Jul 19 2020 at 13:36 UTC</p>
+<hr><p>Last updated: Jul 19 2020 at 13:42 UTC</p>

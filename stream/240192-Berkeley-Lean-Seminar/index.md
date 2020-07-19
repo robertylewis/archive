@@ -36,4 +36,4 @@ permalink: /stream/240192-Berkeley-Lean-Seminar/index.html
 * [seminar information](topic/seminar.20information.html) (1 message, latest: May 26 2020 at 19:07)
 * [stream events](topic/stream.20events.html) (1 message, latest: May 22 2020 at 21:14)
 
-<hr><p>Last updated: Jul 19 2020 at 13:36 UTC</p>
+<hr><p>Last updated: Jul 19 2020 at 13:42 UTC</p>

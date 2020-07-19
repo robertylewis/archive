@@ -45,4 +45,4 @@ permalink: /stream/238830-Lean-for-the-curious-mathematician-2020/index.html
 * [stream events](topic/stream.20events.html) (23 messages, latest: May 17 2020 at 14:07)
 * [audience](topic/audience.html) (39 messages, latest: May 13 2020 at 18:47)
 
-<hr><p>Last updated: Jul 19 2020 at 13:36 UTC</p>
+<hr><p>Last updated: Jul 19 2020 at 13:42 UTC</p>
